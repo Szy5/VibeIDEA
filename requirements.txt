@@ -1,0 +1,28 @@
+# ArXiv & RSS
+arxiv
+feedparser
+
+# Zotero
+pyzotero
+
+# LLM: OpenAI API
+openai
+tiktoken
+
+# LLM: 本地模型（不用本地可注释掉）
+llama-cpp-python
+
+# 推荐 / 向量
+numpy
+sentence-transformers
+# 知识图谱标题相似度融合（可选：有 GPU 可装 faiss-gpu 替代）
+faiss-cpu
+
+# HTTP
+requests
+
+# 配置与工具
+python-dotenv
+loguru
+tqdm
+gitignore-parser

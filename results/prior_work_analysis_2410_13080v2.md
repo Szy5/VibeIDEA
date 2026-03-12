@@ -1,0 +1,66 @@
+# Prior Work Analysis Report
+
+## Target Paper
+
+**Title:** Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models
+
+**arXiv ID:** [2410.13080v2](https://arxiv.org/abs/2410.13080v2)
+
+**Abstract:** 
+> Large language models (LLMs) have demonstrated impressive reasoning abilities, but they still struggle with faithful reasoning due to knowledge gaps and hallucinations. To address these issues, knowledge graphs (KGs) have been utilized to enhance LLM reasoning through their structured knowledge. However, existing KG-enhanced methods, either retrieval-based or agent-based, encounter difficulties in accurately retrieving knowledge and efficiently traversing KGs at scale. In this work, we introduce graph-constrained reasoning (GCR), a novel framework that bridges structured knowledge in KGs with unstructured reasoning in LLMs. To eliminate hallucinations, GCR ensures faithful KG-grounded reasoning by integrating KG structure into the LLM decoding process through KG-Trie, a trie-based index that encodes KG reasoning paths. KG-Trie constrains the decoding process, allowing LLMs to directly reason on graphs and generate faithful reasoning paths grounded in KGs. Additionally, GCR leverages a lightweight KG-specialized LLM for graph-constrained reasoning alongside a powerful general LLM for inductive reasoning over multiple reasoning paths, resulting in accurate reasoning with zero reasoning hallucination. Extensive experiments on several KGQA benchmarks demonstrate that GCR achieves state-of-the-art performance and exhibits strong zero-shot generalizability to unseen KGs without additional training.
+
+**Innovation pattern:** P09 (confidence: high)
+
+Secondary patterns: P10, P04
+
+*Reasoning:* Central idea is enforcing KG constraints at decoding time via prefix/trie guidance (inference-time control); also encodes graph structure as inductive bias and composes a modular pipeline (KG-specialized generator + general LLM synthesizer).
+
+---
+
+## Key Prior Works ({len(analysis.prior_works)} papers with direct influence)
+
+### 🏷️ Foundation
+
+**Chain of Thought Prompting Elicits Reasoning in Large Language Models** (2022) [[arXiv](https://arxiv.org/abs/if known)]
+- *Authors:* Jason Wei et al.
+- *Direct Connection:* Introduced the chain-of-thought (CoT) framing that models multi-step reasoning as autoregressive decoding, which provides the core formulation GCR reuses by treating KG-guided reasoning as a constrained decoding process.
+
+### 🏷️ Inspiration
+
+**Autoregressive Entity Retrieval** (2022) [[arXiv](https://arxiv.org/abs/if known)]
+- *Authors:* Nicolas De Cao et al.
+- *Direct Connection:* Demonstrated constraining autoregressive generation with prefix‑based indices (tries) to produce valid entity sequences, directly inspiring the KG-Trie idea of enforcing only KG-valid token prefixes during LLM decoding.
+
+**Self-Consistency Improves Chain of Thought Reasoning** (2024) [[arXiv](https://arxiv.org/abs/if known)]
+- *Authors:* Tao Wang et al.
+- *Direct Connection:* Showed the benefit of generating multiple reasoning chains and aggregating them to improve robustness, inspiring GCR's strategy of producing multiple KG-grounded paths and then using an inductive LLM stage to consolidate answers.
+
+### 🏷️ Gap Identification
+
+**Reasoning on graphs: Faithful and interpretable large language model reasoning (RoG)** (2024) [[arXiv](https://arxiv.org/abs/2410.13080)]
+- *Authors:* Linhao Luo et al.
+- *Direct Connection:* Served as the immediate KG-enhanced baseline that exposed substantial hallucination and retrieval limitations on KG paths, motivating a hard-constraint approach to eliminate reasoning hallucinations.
+
+**ToG: Treating LLMs as Agents to Interact with Knowledge Graphs** (2024) [[arXiv](https://arxiv.org/abs/if known)]
+- *Authors:* Xiaojun Sun et al.
+- *Direct Connection:* Formulated agent-based iterative interaction of LLMs with KGs to find paths but highlighted high latency and multi-call inefficiency, which motivated a single-pass, constrained decoding alternative for efficient graph traversal.
+
+### 🏷️ Extension
+
+**Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering (FiD)** (2021) [[arXiv](https://arxiv.org/abs/if known)]
+- *Authors:* Guillaume Izacard & Edouard Grave
+- *Direct Connection:* Provided the FiD-style mechanism to fuse multiple retrieved evidences into a single generative pass, which GCR extends by feeding multiple KG-grounded path+answer hypotheses into a general LLM for inductive aggregation.
+
+---
+
+## Synthesis: How Prior Work Led to This Paper
+
+在过去的研究中，核心的技术线索已十分明确：首先，Wei et al. 的 "Chain of Thought" 建立了将複雜推理視為自回歸解碼序列的形式化框架，這為以解碼為中心的推理建模提供了理論基礎；De Cao et al. 在 "Autoregressive Entity Retrieval" 中展示了用前綴結構（trie／prefix constraints）約束生成以強制輸出合法實體序列的可行性，給出了一種把結構索引直接嵌入解碼器的技術路徑；Luo et al. 的 RoG 明確揭示了現有 KG+LLM 方法在檢索準確性與推理可置信性上的短板，為追求“零幻覺”與更高信任度設定了具體目標；Sun et al. 的 ToG 把 LLM 當作與知識圖互動的 agent，暴露出迭代交互在延遲與計算上的代價，提示需要更高效的單次解碼方案；Izacard & Grave 的 FiD 提供了將多條檢索證據匯總到生成模型中的融合機制，說明了多證據合成的實用范式；同時，Wang et al. 的 self-consistency 證明了從多條推理路徑中聚合能顯著提升穩健性。綜合以上工作，可見一條自然的發展路徑：把 CoT 的解碼視角與 De Cao 式的前綴約束結合，利用 trie 將 KG 路徑作為合法前綴嵌入解碼器以杜絕幻覺，並借鑑 FiD／self-consistency 的多路徑聚合思路，用輕量化的 KG‑specialized LLM 生成多條 KG‑grounded 路徑，再由強力的通用 LLM 做誘導式合成；這些技術洞見共同指向了本文所提出的圖約束推理（GCR）作為下一步的自然延伸和實作路徑。
+
+---
+
+*Analysis generated on: 2026-03-08T15:43:15.871436*
+
+*Pipeline: Prior Work Extraction v2.0 (Direct Lineage Focus)*
+
+*Token usage (Qwen tokenizer): input=16819, output=1204*

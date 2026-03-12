@@ -1,0 +1,58 @@
+# Prior Work Analysis Report
+
+## Target Paper
+
+**Title:** KnowGPT: Knowledge Graph based Prompting for Large Language Models
+
+**arXiv ID:** [2312.06185](https://arxiv.org/abs/2312.06185)
+
+**Abstract:** 
+> Large Language Models (LLMs) have demonstrated remarkable capabilities in many real-world applications. Nonetheless, LLMs are often criticized for their tendency to produce hallucinations, wherein the models fabricate incorrect statements on tasks beyond their knowledge and perception. To alleviate this issue, researchers have explored leveraging the factual knowledge in knowledge graphs (KGs) to ground the LLM's responses in established facts and principles. However, most state-of-the-art LLMs are closed-source, making it challenging to develop a prompting framework that can efficiently and effectively integrate KGs into LLMs with hard prompts only. Generally, existing KG-enhanced LLMs usually suffer from three critical issues, including huge search space, high API costs, and laborious prompt engineering, that impede their widespread application in practice. To this end, we introduce a novel Knowledge Graph based PrompTing framework, namely KnowGPT, to enhance LLMs with domain knowledge. KnowGPT contains a knowledge extraction module to extract the most informative knowledge from KGs, and a context-aware prompt construction module to automatically convert extracted knowledge into effective prompts. Experiments on three benchmarks demonstrate that KnowGPT significantly outperforms all competitors. Notably, KnowGPT achieves a 92.6% accuracy on OpenbookQA leaderboard, comparable to human-level performance.
+
+---
+
+## Key Prior Works ({len(analysis.prior_works)} papers with direct influence)
+
+### 🏷️ Foundation
+
+**Retrieval-Augmented Generation for Knowledge-Intensive NLP** (2020) [[arXiv](https://arxiv.org/abs/2005.11401)]
+- *Authors:* Lewis et al.
+- *Direct Connection:* RAG introduced the core design pattern of retrieving external knowledge to condition a language model at inference time, a retrieval-and-context-construction paradigm that KnowGPT adapts to structured KG retrieval and prompt construction to ground closed-source LLM outputs.
+
+**LAMA: LAnguage Model Analysis** (2019) [[arXiv](https://arxiv.org/abs/1909.01066)]
+- *Authors:* Petroni et al.
+- *Direct Connection:* LAMA formalized probing factual knowledge in pretrained LMs via prompt-style queries and cloze evaluation, providing the conceptual foundation for using prompt-contexts of factual triples to elicit grounded (non-hallucinated) answers in KnowGPT.
+
+**OpenBookQA: A Dataset for Elementary-Science Question Answering** (2018) [[arXiv](https://arxiv.org/abs/1809.00277)]
+- *Authors:* Mihaylov et al.
+- *Direct Connection:* OpenBookQA defined the knowledge-grounded multi-choice scientific QA task and benchmark that KnowGPT targets and optimizes for, motivating the emphasis on selecting compact, high-utility KG facts to include in prompts for cost-efficient API usage.
+
+### 🏷️ Gap Identification
+
+**K-BERT: Enabling Language Representation with Knowledge** (2020)
+- *Authors:* Liu et al.
+- *Direct Connection:* K-BERT demonstrates injecting KG facts directly into model inputs by structure-aware masking and requires model access and fine-tuning, highlighting the practical limitation that KnowGPT addresses by enabling KG grounding using only hard prompts to closed-source LLMs.
+
+**K-Adapter: Learning and Reusing Knowledge for Pretrained Language Models** (2021)
+- *Authors:* Wang et al.
+- *Direct Connection:* K-Adapter shows effective injection of factual and linguistic knowledge via adapter modules but relies on model weight editing and additional training, underscoring the practical gap KnowGPT fills by enabling KG-informed behavior without model modification.
+
+### 🏷️ Extension
+
+**KG-BERT: BERT for Knowledge Graph Completion** (2019) [[arXiv](https://arxiv.org/abs/1909.03193)]
+- *Authors:* Yao et al.
+- *Direct Connection:* KG-BERT's practice of linearizing KG triples into natural-language sequences that can be consumed by pretrained LMs is directly extended by KnowGPT's module that converts extracted KG facts into hard prompt strings for closed-source LLMs.
+
+---
+
+## Synthesis: How Prior Work Led to This Paper
+
+Several lines of prior work established the pieces KnowGPT assembles. KG-BERT showed that KG triples can be linearized into natural-language sequences that pretrained LMs can consume, giving a concrete technique for converting structured facts into textual context; KnowGPT adopts and extends that linearization idea to produce compact prompt fragments. K-BERT demonstrated structure-aware injection of KG facts into inputs, but its reliance on model access and fine-tuning exposes the deployment gap that motivates a prompting-only design. Retrieval-Augmented Generation (RAG) provided the retrieval-conditioned inference paradigm—retrieve relevant knowledge and condition the LM—while LAMA established prompt-based probing as a mechanism to elicit factual content from LMs; together these works supply the conceptual framework for retrieving KG facts and presenting them as prompts to closed-source models. OpenBookQA supplies the knowledge-grounded QA formulation and evaluation target that shapes the choice to prioritize small, high-utility fact sets. Finally, K-Adapter highlights the effectiveness of knowledge infusion when model weights can be changed, further clarifying the practical need for a lightweight KG-grounding approach. The combination of triple-to-text conversion, retrieval-conditioned prompting, prompt-based factual elicitation, and the practical limitations of model-modification methods naturally points to KnowGPT's contribution: an efficient pipeline that extracts compact, high-utility KG facts and automatically constructs context-aware hard prompts to ground closed-source LLMs without fine-tuning or excessive API cost.
+
+---
+
+*Analysis generated on: 2026-03-09T00:25:08.049319*
+
+*Pipeline: Prior Work Extraction v2.0 (Direct Lineage Focus)*
+
+*Token usage (Qwen tokenizer): input=1293, output=1015*

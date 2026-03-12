@@ -1,0 +1,57 @@
+# 本地配置（含密钥，勿提交）
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# ========== 前端 / Node 不需要提交 ==========
+# 依赖目录（提交后别人用 npm install 自己装）
+node_modules/
+
+# 构建产物（可重新 npm run build 生成）
+dist/
+build/
+.vite/
+
+# 包管理器缓存与锁文件缓存
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnpm-store/
+*.tsbuildinfo
+
+# 调试与日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# 测试/覆盖率输出
+coverage/
+.nyc_output/
+
+# 编辑器/IDE 本地配置（按需保留，一般不提交）
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 其他前端缓存
+.cache/
+.parcel-cache/
+.turbo/
+
+# 临时/输出
+feishu_message.txt

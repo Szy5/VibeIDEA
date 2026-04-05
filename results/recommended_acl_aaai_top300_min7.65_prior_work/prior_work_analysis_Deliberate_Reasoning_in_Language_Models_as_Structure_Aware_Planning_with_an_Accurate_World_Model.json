@@ -1,0 +1,87 @@
+{
+  "paper_title": "Deliberate Reasoning in Language Models as Structure-Aware Planning with an Accurate World Model",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Enhancing the reasoning capabilities of language models (LMs) remains a key challenge, especially for tasks that require complex, multistep decision-making where existing Chain-of-Thought (CoT) approaches struggle with consistency and verification.In this paper, we propose a novel reasoning framework, referred to as Structure-aware Planning with an Accurate World Model (SWAP), that integrates structured knowledge representation with learned planning.Unlike prior methods that rely purely on natural language reasoning, SWAP leverages entailment graphs to encode structured dependencies and enable symbolic verification of intermediate steps.To systematically construct and update the graph, SWAP employs a policy model to propose candidate expansions and a world model to predict structural updates.To improve accuracy, the world model generates multiple alternative updates, and a discriminator re-ranks them based on plausibility.To encourage diverse exploration, we introduce Diversity-based Modelling (DM), which samples candidates from the remaining probability mass after removing previously sampled candidates from the original policy distribution.Additionally, SWAP improves the discrimination accuracy through Contrastive Ranking (CR), which directly compares candidates within prompts and incorporates metaknowledge to improve ranking quality.We evaluate SWAP across diverse reasoning-intensive benchmarks including math reasoning, logical reasoning, and coding tasks.Extensive experiments demonstrate that SWAP significantly improves upon the base models and consistently outperforms existing reasoning methods 1 .",
+  "prior_works": [
+    {
+      "title": "Explaining Answers with Entailment Trees",
+      "authors": "Bhavana Dalvi et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "This work introduced entailment graphs/trees as a structured representation linking premises to conclusions, which SWAP directly adopts as the world state to enable symbolic verification and structure-aware reasoning.",
+      "arxiv_id": "2104.08661",
+      "url": null
+    },
+    {
+      "title": "Reasoning with Language Model is Planning with World Model",
+      "authors": "Shibo Hao et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "RAP framed LM reasoning as planning with a learned world model, which SWAP extends by making the world model more accurate via multi-sampled state predictions and discriminator re-ranking and by operating over structured entailment graphs rather than raw text.",
+      "arxiv_id": "2305.14992",
+      "url": null
+    },
+    {
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "authors": "Shunyu Yao et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "ToT established deliberate multi-step search over reasoning paths, and SWAP builds on this planning paradigm while addressing ToT’s unstructured states by introducing entailment-graph states and a more accurate world model for state simulation.",
+      "arxiv_id": "2305.10601",
+      "url": null
+    },
+    {
+      "title": "Let’s Verify Step by Step",
+      "authors": "Hunter Lightman et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This paper popularized process reward models for stepwise verification, whose limitation of reducing rich decisions to scalar scores is explicitly addressed in SWAP by replacing PRM scoring with contrastive ranking between candidates.",
+      "arxiv_id": "2305.20050",
+      "url": null
+    },
+    {
+      "title": "When is tree search useful for LLM planning? It depends on the discriminator",
+      "authors": "Ziru Chen et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing that planning performance hinges on discriminator quality and that prompting the same LM is often insufficient, this work directly motivates SWAP’s trained contrastive discriminator with meta-knowledge for reliable candidate selection.",
+      "arxiv_id": "2402.10890",
+      "url": null
+    },
+    {
+      "title": "Can LLMs reason in the wild with programs?",
+      "authors": "Yuan Yang et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This study demonstrated that program-based and formal logic approaches often lack expressiveness and generalization, motivating SWAP’s semi-formal entailment-graph formulation that blends symbolic verification with flexible natural language reasoning.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Diverse Beam Search: Decoding Diverse Solutions from Neural Sequence Models",
+      "authors": "Ashwin K. Vijayakumar et al.",
+      "year": 2016,
+      "role": "Related Problem",
+      "relationship_sentence": "Diverse Beam Search foregrounded the importance of diversity in decoding but is impractical for long-form reasoning, directly motivating SWAP’s Diversity-based Modeling that promotes diversity by subtracting a semantic-equivalence distribution from the policy.",
+      "arxiv_id": "1610.02424",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Entailment trees were introduced to explicitly capture how premises support intermediate claims and final conclusions, providing a structured graph representation and an avenue for symbolic verification. Deliberate search over reasoning paths was later articulated as tree-based exploration, though typically over unstructured text and with heuristic selection. Planning with a learned world model framed reasoning as simulating next states, but early implementations relied on prompting the same LM for dynamics and struggled on complex tasks. Stepwise verification via process reward models brought supervision to intermediate reasoning steps, yet compressed rich decisions into single scores and introduced calibration issues. Subsequent analyses established that the success of planning critically depends on a strong discriminator and that naive prompt-based judges are insufficient. Parallel work on program-based and purely formal solvers revealed limited expressiveness and generalization, leaving room for semi-formal structures. Meanwhile, diversity-seeking decoding like Diverse Beam Search highlighted the value of exploration but proved unwieldy for long-form reasoning.\nBringing these strands together, the next step was to marry a flexible but verifiable structure with learned planning and stronger selection. SWAP instantiates entailment graphs as the state space for planning, improves world-model accuracy by multi-sampling and re-ranking predicted structural updates, replaces scalar PRM scoring with contrastive ranking conditioned on meta-knowledge, and scales exploration through diversity modeling that subtracts paraphrase-like mass from the policy distribution. This synthesis directly addresses the lack of verifiable structure, weak discriminators, and inadequate diversity in prior planning frameworks while retaining the flexibility that formal program-based methods lack.",
+  "analysis_timestamp": "2026-04-05T11:53:57.915211",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P09",
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Injects entailment-tree/structured-planning biases and performs structure-aware search with stepwise verification at inference.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

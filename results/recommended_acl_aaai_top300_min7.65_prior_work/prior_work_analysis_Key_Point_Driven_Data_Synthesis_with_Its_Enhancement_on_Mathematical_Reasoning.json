@@ -1,0 +1,87 @@
+{
+  "paper_title": "Key-Point-Driven Data Synthesis with Its Enhancement on Mathematical Reasoning",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models have shown great potential in complex reasoning tasks, yet their performance is often hampered by the scarcity of high-quality and reasoning-focused training datasets. Addressing this challenge, we propose Key-PointDriven Data Synthesis (KPDDS), a novel data synthesis framework that synthesizes question-answer pairs by leveraging key points and exemplar practices from authentic data sources. KPDDS ensures the generation of novel questions with rigorous quality control and substantial scalability. As a result, we present KPMath, an extensive synthetic dataset tailored for mathematical reasoning, comprising over 800K questionanswer pairs. Utilizing KPMath and augmenting it with additional reasoning-intensive corpora, we create the comprehensive KPMath-Plus dataset. Our experiments demonstrate that this dataset can enhance the mathematical reasoning performance of models across various architectures and sizes. The Qwen1.5-72B model, fine-tuned on KPMath-Plus, achieves 87.0% accuracy on GSM8K and 58.3% on MATH, surpassing competitors in the 7B to 72B range and best commercial models like GPT-4 across multiple math reasoning datasets.",
+  "prior_works": [
+    {
+      "title": "Training Verifiers to Solve Math Word Problems (GSM8K)",
+      "authors": "Cobbe et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "GSM8K provided a curated corpus of grade-school math problems that KPDDS explicitly uses as seed data to extract topics/key points and to build the TCPM for guiding topic sampling in the KPMath-G component.",
+      "arxiv_id": "2110.14168",
+      "url": null
+    },
+    {
+      "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+      "authors": "Hendrycks et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "The MATH training set serves as the second seed corpus from which KPDDS mines key points and topic co-occurrences to construct the MPKP and TCPM used for KPMath-M, and is also a primary evaluation benchmark.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models",
+      "authors": "Yu et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "MetaMath’s strategy of generating new math questions from existing ones via CoT prompting is a principal baseline that KPDDS improves upon by conditioning generation on mined key points and TCPM-guided topic combinations to ensure novelty and controllability.",
+      "arxiv_id": "2309.12284",
+      "url": null
+    },
+    {
+      "title": "WizardMath: Empowering mathematical reasoning for large language models via reinforced evol-instruct",
+      "authors": "Luo et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "WizardMath’s Evol-Instruct approach exemplifies augmentation that often yields textually or conceptually similar and hard-to-control variations, a limitation KPDDS addresses by grounding generation in explicit key points and modeled topic co-occurrence patterns.",
+      "arxiv_id": "2308.09583",
+      "url": null
+    },
+    {
+      "title": "Augmenting Math Word Problems via Iterative Question Composing",
+      "authors": "Liu et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Iterative question composing builds new problems from reasoning steps but tends to maintain the original distribution and similarity, directly motivating KPDDS’s key-point extraction plus TCPM sampling to broaden coverage while preserving realism.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Synthetic Data (Almost) from Scratch: Generalized Instruction Tuning for Language Models",
+      "authors": "Li et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "This work’s concept-taxonomy-driven data generation inspired KPDDS’s use of explicit conceptual scaffolds, which KPDDS adapts by mining key points from authentic datasets and pairing them with exemplar practices to keep distributions aligned and concepts teachable.",
+      "arxiv_id": "2402.13064",
+      "url": null
+    },
+    {
+      "title": "MUSTARD: Mastering Uniform Synthesis of Theorem and Proof Data",
+      "authors": "Huang et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "MUSTARD’s extraction of math concepts from educational resources and its emphasis on formal/verifiable synthesis informed KPDDS’s design to structure generation around explicit key points and to incorporate automated answer verification (scoring and consensus).",
+      "arxiv_id": "2402.08957",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Curated math benchmarks such as GSM8K and MATH established the problem format of question–rationale–answer and offered diverse, high-quality seeds that make topic distributions and solution styles observable. On the synthetic side, MetaMath demonstrated that chain‑of‑thought prompting can bootstrap substantial quantities of new math questions directly from existing items, while WizardMath’s Evol‑Instruct and Liu et al.’s iterative composing showed how reasoning steps or instruction evolution can generate further variants. However, these augmentation‑first methods often produce questions that are textually or conceptually similar to seeds and lack fine‑grained control over what knowledge is exercised. In contrast, concept‑centric efforts like Li et al.’s taxonomy‑from‑scratch and Huang et al.’s concept extraction and formal verification underscored the value of explicit conceptual scaffolds and rigorous quality control, but their constructed taxonomies can drift from real data distributions and may be hard to operationalize without concrete examples. Together, these works revealed two complementary strengths—augmentation preserves realism but lacks controllability, while concept‑driven generation offers controllability but risks distribution mismatch—along with the need for scalable verification. The current paper synthesizes these insights by mining explicit key points and topic co‑occurrences from GSM8K and MATH, using them with exemplar practices to condition generation for both novelty and alignment, and introducing an automated quality pipeline (GPT‑4 scoring, computational checks, and consensus voting) that delivers scalable, reliable math reasoning data.",
+  "analysis_timestamp": "2026-04-05T12:08:49.378233",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P15",
+      "P03"
+    ],
+    "confidence": "high",
+    "reasoning": "Engineers concept/key-point–controlled math data generation and evaluation to target specific skills and diversify beyond seed similarity.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Data-Centric Optimization & Active Sampling",
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

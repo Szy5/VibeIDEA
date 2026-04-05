@@ -1,0 +1,79 @@
+{
+  "paper_title": "Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning",
+  "paper_arxiv_id": "2310.01061",
+  "paper_abstract": "Large language models (LLMs) have demonstrated impressive reasoning abilities in complex tasks. However, they lack up-to-date knowledge and experience hallucinations during reasoning, which can lead to incorrect reasoning processes and diminish their performance and trustworthiness. Knowledge graphs (KGs), which capture vast amounts of facts in a structured format, offer a reliable source of knowledge for reasoning. Nevertheless, existing KG-based LLM reasoning methods only treat KGs as factual knowledge bases and overlook the importance of their structural information for reasoning. In this paper, we propose a novel method called reasoning on graphs (RoG) that synergizes LLMs with KGs to enable faithful and interpretable reasoning. Specifically, we present a planning-retrieval-reasoning framework, where RoG first generates relation paths grounded by KGs as faithful plans. These plans are then used to retrieve valid reasoning paths from the KGs for LLMs to conduct faithful reasoning. Furthermore, RoG not only distills knowledge from KGs to improve the reasoning ability of LLMs through training but also allows seamless integration with any arbitrary LLMs during inference. Extensive experiments on two benchmark KGQA datasets demonstrate that RoG achieves state-of-the-art performance on KG reasoning tasks and generates faithful and interpretable reasoning results.",
+  "prior_works": [
+    {
+      "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "authors": "Keheng Wang et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Introduced the plan-and-solve paradigm of prompting LLMs to first generate a plan and then execute stepwise reasoning, directly inspiring RoG's use of an explicit planning stage (relation-path plans) before retrieval and reasoning.",
+      "arxiv_id": "2305.04091",
+      "url": null
+    },
+    {
+      "title": "Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering",
+      "authors": "Gautier Izacard et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "Presented the FiD retrieval-into-generator architecture for fusing multiple retrieved passages into a generative model, which RoG directly adopts and extends as its retrieval–reasoning module to aggregate multiple KG reasoning-paths for answer generation.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "UniKGQA: Unified Retrieval and Reasoning for Solving Multi-hop Question Answering Over Knowledge Graph",
+      "authors": "Jinhao Jiang et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "Unified graph retrieval and LLM-based reasoning as a single system for KGQA and serves as a primary state-of-the-art baseline that RoG improves upon by explicitly exploiting relation-path structure as faithful plans.",
+      "arxiv_id": "2212.00959",
+      "url": null
+    },
+    {
+      "title": "DecAF: Joint Decoding of Answers and Logical Forms for Question Answering over Knowledge Bases",
+      "authors": "Donghan Yu et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "Combined semantic parsing and LLM reasoning to produce executable queries and answers, representing the competing paradigm (semantic parsing + LLM) whose limitations (non-executable queries / faithfulness) RoG targets with relation-path grounded plans.",
+      "arxiv_id": "2210.00063",
+      "url": null
+    },
+    {
+      "title": "Subgraph Retrieval Enhanced Model for Multi-hop Knowledge Base Question Answering",
+      "authors": "Jing Zhang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Demonstrated the value of relation-path based retrieval and subgraph/shortest-path supervision for multi-hop KGQA, motivating RoG to use relation paths (shortest-paths) as supervision and retrieval guides for faithful planning.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Knowledge-Driven CoT: Exploring Faithful Reasoning in LLMs for Knowledge-intensive Question Answering",
+      "authors": "Keheng Wang et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Showed that retrieving and integrating external KG knowledge can produce more faithful chain-of-thoughts, directly motivating RoG's objective of distilling KG-structured knowledge into LLM planning and using KG retrieval to reduce hallucination.",
+      "arxiv_id": "2308.13259",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Recent advances established two complementary technical threads relevant to RoG: explicit planning prompts for LLMs and retrieval-augmented generation. The plan-and-solve work provided the concrete paradigm of eliciting a plan from an LLM before execution, which directly motivated designing a separate planning module that outputs relation-path plans. On the retrieval side, Izacard & Grave’s Fusion-in-Decoder concretely showed how multiple retrieved contexts can be fused by a generator, and RoG re-purposes this FiD-style fusion to aggregate multiple reasoning-path instances retrieved from a KG. Prior KGQA systems—UniKGQA and DECAF—demonstrated strong unified retrieval/reasoning and joint logical-form/answer decoding baselines but also revealed limitations (treating KGs mainly as flat facts or producing non-executable queries). Work on subgraph/relation-path retrieval (Zhang et al., 2022) established shortest-path/relation-path supervision as an effective signal for multi-hop KGQA, which RoG leverages as ground-truth plans; and knowledge-driven CoT methods showed that injecting KG evidence into reasoning reduces hallucination, guiding RoG’s decision to distill KG structure into planning and to retrieve KG paths during inference. Together, these threads exposed a natural gap: combine plan-based LLM prompting with relation-path–grounded retrieval and FiD-style fusion so plans are both faithful and interpretable; RoG synthesizes these precise elements by training LLMs to produce KG-grounded relation-path plans, retrieving matching graph paths, and reasoning with a FiD-inspired fusion to yield faithful, interpretable KGQA.",
+  "analysis_timestamp": "2026-03-09T00:08:19.500407",
+  "input_tokens": 16263,
+  "output_tokens": 1128,
+  "innovation_classification": {
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P03",
+      "P02"
+    ],
+    "confidence": "high",
+    "reasoning": "Designs a separate planning module + FiD-style fusion of retrieved reasoning-paths (modular pipeline), while recasting primitives as relation-path plans and combining LLM planning with KG retrieval.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Cross-Domain Synthesis"
+    ]
+  }
+}

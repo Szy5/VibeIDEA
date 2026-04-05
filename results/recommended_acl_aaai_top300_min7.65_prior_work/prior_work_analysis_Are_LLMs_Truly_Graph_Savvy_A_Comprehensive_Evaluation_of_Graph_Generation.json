@@ -1,0 +1,85 @@
+{
+  "paper_title": "Are LLMs Truly Graph-Savvy? A Comprehensive Evaluation of Graph Generation",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "While large language models (LLMs) have demonstrated impressive capabilities across diverse tasks, their ability to generate valid graph structures remains underexplored.We evaluate fifteen state-of-the-art LLMs on five specialized graph generation tasks spanning delivery networks, social networks, quantum circuits, genedisease networks, and transportation systems.We also test the LLMs using 3 different prompt types: direct, iterative feedback, and programaugmented.Models supported with explicit reasoning modules (o3-mini-high, o1, Claude 3.7 Sonnet, DeepSeek-R1) solve more than twice as many tasks as their general-purpose peers, independent of parameter count.Error analysis reveals two recurring failure modes: smaller parameter size Llama models often violate basic structural constraints, whereas Claude models respect topology but mismanage higherorder logical rules.Allowing models to refine their answers iteratively yields uneven gains, underscoring fundamental differences in errorcorrection capacity.This work demonstrates that graph understanding stems from specialized training methodologies rather than scale, establishing a framework for developing truly graph-savvy language models.Results and verification scripts available at github.com/Are-LLMs-Truly-Graph-Savvy.",
+  "prior_works": [
+    {
+      "title": "Exploring the Potential of Large Language Models in Graph Generation",
+      "authors": "Yang Yao et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "This paper directly extends LLM4GraphGen’s rule/distribution-based evaluation by introducing five open-ended, cross-domain graph-generation tasks and adding iterative and program-augmented prompting to explicitly test whether prompting can improve structural fidelity.",
+      "arxiv_id": "2403.14358",
+      "url": null
+    },
+    {
+      "title": "Can Language Models Solve Graph Problems in Natural Language?",
+      "authors": "Heng Wang et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Their finding that LLM performance drops with increasing graph task complexity and that standard prompting often fails motivated the design of harder, constraint-heavy generation tasks that directly test structural reasoning beyond pattern matching.",
+      "arxiv_id": "2305.10037",
+      "url": null
+    },
+    {
+      "title": "GraphEval36K: Benchmarking Coding and Reasoning Capabilities of Large Language Models on Graph Datasets",
+      "authors": "Qiming Wu et al.",
+      "year": 2025,
+      "role": "Gap Identification",
+      "relationship_sentence": "By exposing algorithmic reasoning gaps (and proprietary vs. open-source disparities) in code-centric settings, GraphEval36K highlighted the need for a non-coding, cross-domain graph-generation benchmark with rigorous verification and multi-run robustness checks.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "LLMs Hallucinate Graphs Too: A Structural Perspective",
+      "authors": "Erwan Le Merrer et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Their focus on reproducing well-known benchmark graphs and single-prompt evaluation underscored the risks of memorization and lack of robustness, directly prompting the shift to unseen, open-ended tasks with repeated trials and strict structural verification.",
+      "arxiv_id": "2409.00159",
+      "url": null
+    },
+    {
+      "title": "Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs",
+      "authors": "Bowen Jin et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "The demonstration that structured, step-by-step graph reasoning improves performance inspired the paper’s iterative feedback prompting and its emphasis on evaluating reasoning-enhanced LLMs on graph-generation tasks.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "GCoder: Improving Large Language Model for Generalized Graph Problem Solving",
+      "authors": "Qifan Zhang et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "GCoder’s integration of programmatic tooling with LLMs directly inspired the program-augmented prompting setup in which verification code is provided to guide and self-check graph generation.",
+      "arxiv_id": "2410.19084",
+      "url": null
+    },
+    {
+      "title": "A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models",
+      "authors": "S. M. Towhidul Islam Tonmoy et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This survey’s call to explicitly detect and quantify hallucinations informed the benchmark’s constraint-based verification pipeline and error taxonomy that distinguish structural, logical, and attribute failures.",
+      "arxiv_id": "2401.01313",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior evaluations established both promise and limits of LLMs on graphs. LLM4GraphGen showed that LLMs can follow structural rules and distributions in graph generation but found that common prompting tactics often fail to yield consistent gains, suggesting a need for broader, more rigorous evaluation. NLGraph and GraphEval36K further exposed that LLM performance degrades with task complexity and revealed pronounced reasoning gaps, particularly in algorithmic graph problems and across model families, pointing to architectural and training differences rather than scale alone. A structural perspective highlighted by Le Merrer and Trédan emphasized that testing on well-known graphs risks memorization and that single-prompt probes miss robustness, underscoring the need for unseen, open-ended tasks and multi-run evaluation. Complementarily, Graph Chain-of-Thought demonstrated that structured, step-by-step reasoning can boost complex graph-related inference, while GCoder showed that integrating programmatic tools with LLMs can aid graph problem solving—though such gains may require tighter model-tool coupling. Finally, a survey on hallucination mitigation argued for protocols that explicitly detect and quantify structural inconsistencies, motivating precise verification. Taken together, these works exposed a gap: evaluations were either code-centric, narrow in scope, or vulnerable to memorization, and they lacked principled structural checks. The present study naturally synthesizes these insights by proposing open-ended, cross-domain graph-generation tasks with automatic constraint verification, testing iterative and program-augmented prompting inspired by structured reasoning and tool-use, and systematically comparing reasoning-enhanced versus general-purpose LLMs to isolate the sources of graph-savviness.",
+  "analysis_timestamp": "2026-04-05T11:56:43.160035",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Focuses on rigorous datasets/benchmarks and evaluation protocols to probe graph reasoning limits via controlled studies.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

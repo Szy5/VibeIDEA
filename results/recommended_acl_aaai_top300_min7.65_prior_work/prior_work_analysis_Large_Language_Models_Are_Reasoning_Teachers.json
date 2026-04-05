@@ -1,0 +1,87 @@
+{
+  "paper_title": "Large Language Models Are Reasoning Teachers",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Recent works have shown that chain-of-thought (CoT) prompting can elicit language models to solve complex reasoning tasks, step-by-step. However, prompt-based CoT methods are dependent on very large models such as GPT-3 175B which are prohibitive to deploy at scale. In this paper, we use these large models as reasoning teachers to enable complex reasoning in smaller models and reduce model size requirements by several orders of magnitude. We propose Fine-tune-CoT, a method that generates reasoning samples from very large teacher models to fine-tune smaller models. We evaluate our method on a wide range of public models and complex tasks. We find that Fine-tune-CoT enables substantial reasoning capability in small models, far outperforming prompt-based baselines and even the teacher model in many tasks. Additionally, we extend our method by leveraging the teacher model's ability to generate multiple distinct rationales for each original sample. Enriching the fine-tuning data with such diverse reasoning results in a substantial performance boost across datasets, even for very small models. We conduct ablations and sample studies to understand the emergence of reasoning capabilities of student models. Our code implementation and data are available at https://github.com/itsnamgyu/reasoning-teacher.",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "This work introduced few-shot chain-of-thought prompting and highlighted its heavy reliance on very large models, forming both the main prompting baseline and the specific scalability limitation that the new method addresses by transferring CoT to smaller models.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Large Language Models Are Zero-Shot Reasoners",
+      "authors": "Takeshi Kojima et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "The paper’s zero-shot CoT instruction (“Let’s think step by step”) is the exact prompting strategy used to generate teacher rationales for constructing fine-tuning data in a task-agnostic, low-context way.",
+      "arxiv_id": "2205.11916",
+      "url": null
+    },
+    {
+      "title": "STaR: Bootstrapping Reasoning With Reasoning",
+      "authors": "Ethan Zelikman et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "STaR demonstrated training on model-generated rationales filtered by answer correctness; the new method extends this idea by adopting correctness-based filtering but using a separate large teacher to distill reasoning into smaller students and at scale.",
+      "arxiv_id": "2203.14465",
+      "url": null
+    },
+    {
+      "title": "Large Language Models Can Self-Improve",
+      "authors": "Jiaxin Huang et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "This work explored self-generated CoT for iterative improvement mainly in very large proprietary models and limited settings, motivating a more accessible teacher–student approach that systematically targets small, open models and broad tasks.",
+      "arxiv_id": "2210.11610",
+      "url": null
+    },
+    {
+      "title": "Explanations from Large Language Models Make Small Reasoners Better",
+      "authors": "Shiyang Li et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "By showing that LLM-produced explanations can improve smaller models on specific tasks, it inspired the general idea of leveraging teacher-generated rationales to teach small students across a wider range of reasoning problems.",
+      "arxiv_id": "2210.06726",
+      "url": null
+    },
+    {
+      "title": "Show Your Work: Scratchpads for Intermediate Computation",
+      "authors": "Maxwell Nye et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "This paper established that fine-tuning with intermediate “scratchpad” steps enhances reasoning, providing the foundational insight that supervising on multi-step rationales (rather than only answers) is beneficial, though it relied on costly annotated steps.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "authors": "Xuezhi Wang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "By showing that sampling multiple diverse CoT paths and aggregating improves answers, it provided the key insight behind generating multiple distinct rationales per sample (“diverse reasoning”) to strengthen the supervision signal for students.",
+      "arxiv_id": "2203.07347",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Few-shot chain-of-thought prompting established that step-by-step rationales can unlock strong reasoning but typically only in very large models, with chain-of-thought serving as both an effective technique and a scalability pain point. Zero-shot CoT then showed that a simple “Let’s think step by step” instruction can elicit rationales without task-specific exemplars, making it a cost-effective way to produce explanations. STaR demonstrated that models can be trained on their own generated rationales, using answer-correctness filtering to curate supervision, and thereby validated the notion that rationales themselves are a powerful training signal. Complementing this, scratchpad training revealed that injecting explicit intermediate computations into fine-tuning improves reasoning, albeit at the cost of human-crafted steps. Concurrently, LLM self-improvement and LLM-generated explanations for small models suggested that teacher-produced rationales could be used to elevate smaller students, though prior demonstrations were typically narrow in task coverage or centered on very large, proprietary systems. Finally, self-consistency showed that multiple valid reasoning paths exist and that sampling diverse chains can boost performance.\nBringing these strands together revealed a natural opportunity: use zero-shot CoT to let a strong teacher cheaply generate step-by-step solutions across tasks, curate them by answer correctness as in STaR, and fine-tune smaller students on these rationales as suggested by scratchpad and explanation-based training. The recognition from self-consistency that many distinct chains can solve a problem directly motivated augmenting each example with multiple diverse rationales to amplify supervision, thus addressing the key limitation of CoT’s reliance on huge models by distilling their reasoning into compact, deployable students.",
+  "analysis_timestamp": "2026-04-05T11:57:26.254589",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P15",
+    "secondary_patterns": [
+      "P09",
+      "P03"
+    ],
+    "confidence": "medium-high",
+    "reasoning": "Uses model-generated rationales with correctness filtering as the primary lever for improvement (data-centric training), while relying on CoT prompting (inference-time guidance) and scratchpads (representation shift).",
+    "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "paper_title": "Lexical Recall or Logical Reasoning: Probing the Limits of Reasoning Abilities in Large Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Despite the increasing interest in the reasoning abilities of Large Language Models (LLMs), existing work shows limitations in assessing logic abilities independently from lexical memory. We address this gap with Mystery-Zebra. This robust two-part benchmark (4,290 puzzles) challenges the logic abstraction abilities of LLMs in two setups: (1) a lexical obfuscation setup tests the dependence of LLMs on lexical content based on two canonical grid puzzles widely spread on the Internet; (2) a set of new grid puzzles in 42 different sizes and 12 difficulty levels tests how the formal difficulty degree of a puzzle affects LLMs.We test open and closed-weight LLMs on both parts of the benchmark. The results on part two suggest that model sizes up to 70B parameters have only a minor influence when solving newly generated puzzles, while performance mainly relates to the number of items in the puzzle. The results on the first part of the benchmark suggest that the applied obfuscation strategies help to mitigate effects of logic puzzles being part of LLM training data, showing a drastic drop in performance for obfuscated versions of well-known puzzles. In addition we conduct a case-study on the first part of the benchmark predicting the position of single items, unveiling that the reasoning abilities of LLMs are mainly limited to a few consecutive steps of reasoning.",
+  "prior_works": [
+    {
+      "title": "On the Planning Abilities of Large Language Models - A Critical Investigation",
+      "authors": "Karthik Valmeekam et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Their systematic obfuscation of Blocks-World actions while preserving the underlying symbolic structure directly inspired the paper’s lexical obfuscation pipeline that replaces puzzle nouns/verbs without altering the logical constraints.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Alice in Wonderland: Simple tasks showing complete reasoning breakdown in state-of-the-art large language models",
+      "authors": "Marianna Nezhurina et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing that small lexical manipulations in simple logic tasks cause drastic performance collapses, this work exposed a key limitation—entanglement of reasoning with surface form—that the paper explicitly addresses via controlled obfuscations.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "On Memorization of Large Language Models in Logical Reasoning",
+      "authors": "Chulin Xie et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This study’s evidence that LLMs rely on memorization and degrade under paraphrases motivated the paper’s design choice to decouple lexical content from logic via obfuscation and to generate unseen puzzle instances.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Step-by-step Reasoning to Solve Grid Puzzles: Where Do LLMs Falter?",
+      "authors": "Nemika Tyagi et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Their grid-puzzle benchmark (limited sizes and coarse difficulty) and finding that errors spike in later reasoning steps directly motivated this paper’s larger size spectrum, finer-grained difficulty levels, and step-wise case study.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "ZebraLogic: Benchmarking the Logical Reasoning Ability of Language Models",
+      "authors": "Bill Yuchen Lin et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "As a primary comparator on Zebra-style puzzles that ties difficulty largely to grid size, this benchmark motivated the paper’s formal, clue-restrictiveness-based difficulty and its focus on disentangling lexical familiarity.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "The Automated Solution of Logic Puzzles",
+      "authors": "Mark Valentine and Robert H. Davis",
+      "year": 1987,
+      "role": "Foundation",
+      "relationship_sentence": "This classic CSP formulation of logic/grid puzzles underpins the paper’s conversion of natural-language clues into symbolic constraints and its difficulty definition based on the restrictiveness of logical relations.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "LiveBench: A challenging, contamination-free LLM benchmark",
+      "authors": "Colin White et al.",
+      "year": 2024,
+      "role": "Related Problem",
+      "relationship_sentence": "By emphasizing contamination-free evaluation and including Zebra-style Q&A (single-item queries), this work informed the paper’s single-item Q&A case study for probing reasoning depth while minimizing data leakage effects.",
+      "arxiv_id": "unknown",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work revealed that surface-form changes can dramatically affect LLMs’ logical performance. Valmeekam et al. showed that systematically obfuscating Blocks-World actions while keeping symbolic structure intact exposes fragile planning behavior, establishing a method for decoupling lexical form from underlying logic. Nezhurina et al. demonstrated that even modest lexical manipulations in simple logic tasks induce complete breakdowns, highlighting how tightly reasoning is entangled with wording. Complementing this, Xie et al. provided explicit evidence of memorization in logical reasoning, with paraphrases triggering sharp performance drops. For grid puzzles specifically, Tyagi et al. built a benchmark to analyze where LLMs falter and found more errors in later reasoning steps; however, their sizes and difficulty stratification were limited. Lin et al.’s ZebraLogic expanded sizes but still equated difficulty largely with grid size, leaving the logical information content of clues underexplored. Foundationally, Valentine and Davis formalized logic puzzles as constraint satisfaction problems, grounding the translation of natural-language clues into symbolic constraints. LiveBench underscored contamination-free evaluation and introduced Zebra-style single-item Q&A for probing reasoning. Taken together, these works surfaced two complementary opportunities: (i) isolate logical competence from lexical recall via controlled obfuscation, and (ii) measure difficulty by the restrictiveness of clue logic rather than size alone. The current paper synthesizes these insights by obfuscating canonical Zebra/Einstein puzzles while preserving symbolic structure, generating unseen grid puzzles with fine-grained, clue-based difficulty, and adopting a single-item Q&A probe to analyze step-wise reasoning depth—thereby disentangling lexical memory effects from genuine logical abstraction.",
+  "analysis_timestamp": "2026-04-05T12:02:52.472415",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Engineers controlled datasets/perturbations to decouple lexical recall from logical reasoning, enabling hypothesis-driven empirical probes.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

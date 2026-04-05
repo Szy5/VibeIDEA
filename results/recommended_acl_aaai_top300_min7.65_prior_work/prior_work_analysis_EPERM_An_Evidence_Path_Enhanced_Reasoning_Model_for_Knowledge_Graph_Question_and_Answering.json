@@ -1,0 +1,87 @@
+{
+  "paper_title": "EPERM: An Evidence Path Enhanced Reasoning Model for Knowledge Graph Question and Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Due to the remarkable reasoning ability, Large language models (LLMs) have demonstrated impressive performance in knowledge graph question answering (KGQA) tasks, which find answers to natural language questions over knowledge graphs (KGs). To alleviate the hallucinations and lack of knowledge issues of LLMs, existing methods often retrieve the question-related information from KGs to enrich the input context. However, most methods focus on retrieving the relevant information while ignoring the importance of different types of knowledge in reasoning, which degrades their performance. To this end, this paper reformulates the KGQA problem as a graphical model and proposes a three-stage framework named the Evidence Path Enhanced Reasoning Model (EPERM) for KGQA. In the first stage, EPERM uses the fine-tuned LLM to retrieve a subgraph related to the question from the original knowledge graph. In the second stage, EPERM filters out the evidence paths that faithfully support the reasoning of the questions, and score their importance in reasoning. Finally, EPERM uses the weighted evidence paths to reason the final answer. Since considering the importance of different structural information in KGs for reasoning, EPERM can improve the reasoning ability of LLMs in KGQA tasks. Extensive experiments on benchmark datasets demonstrate that EPERM achieves superior performances in KGQA tasks.",
+  "prior_works": [
+    {
+      "title": "Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning",
+      "authors": "Luo et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "EPERM extends RoG’s relation-plan–guided retrieval by generating weighted compositional plans and filtering KG evidence paths to reflect per-path importance, improving upon RoG’s practice of treating retrieved facts uniformly.",
+      "arxiv_id": "2310.01061",
+      "url": null
+    },
+    {
+      "title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model with Knowledge Graph",
+      "authors": "Sun et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "EPERM’s subgraph retriever adopts ToG’s core idea of LLM-guided iterative expansion (beam-like traversal) on KGs, but formalizes it as a probabilistic subgraph selection scored by a fine-tuned LLM.",
+      "arxiv_id": "2307.07697",
+      "url": null
+    },
+    {
+      "title": "UniKGQA: Unified Retrieval and Reasoning for Solving Multi-hop Question Answering over Knowledge Graph",
+      "authors": "Jiang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Building on UniKGQA’s unification of retrieval and reasoning with LLMs, EPERM further couples these stages via a probabilistic graphical model and joint instruction-tuning to align retrieval (subgraph/paths) with reasoning.",
+      "arxiv_id": "2212.00959",
+      "url": null
+    },
+    {
+      "title": "Subgraph Retrieval Enhanced Model for Multi-hop Knowledge Base Question Answering",
+      "authors": "Zhang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "EPERM extends the SR+NSM idea of relation-path based retrieval by using an LLM to generate and weight compositional relation plans, then scoring and filtering the resulting KG paths rather than treating all retrieved paths equally.",
+      "arxiv_id": "2202.13296",
+      "url": null
+    },
+    {
+      "title": "Enhancing Complex Question Answering over Knowledge Graphs through Evidence Pattern Retrieval",
+      "authors": "Ding et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "EPERM generalizes evidence pattern retrieval into an LLM-driven module that produces weighted evidence plans and explicitly scores KG paths, addressing the need to quantify path importance for downstream reasoning.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Probabilistic Graphical Models: Principles and Techniques",
+      "authors": "Koller and Friedman",
+      "year": 2009,
+      "role": "Foundation",
+      "relationship_sentence": "EPERM’s core factorization of P(A|G,Q) into latent subgraph and evidence-path variables and the use of d-separation for independence assumptions directly follow the probabilistic graphical models framework in this work.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "BeamQA: Multi-hop Knowledge Graph Question Answering with Sequence-to-Sequence Prediction and Beam Search",
+      "authors": "Atif et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "EPERM’s top-K path expansion and pruning strategy is informed by BeamQA’s demonstration that beam-search over relation sequences effectively enumerates multi-hop KG paths for QA.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work has shown that steering large language models with explicit graph structures improves multi-hop KGQA. RoG introduced relation-plan–guided retrieval, using LLMs to propose relation sequences and then fetching matching facts from a KG to ensure faithfulness, but treated the retrieved evidence uniformly. ToG framed KG traversal as an LLM agent performing iterative, beam-like expansions over graph neighbors, demonstrating that LLM-scored neighborhood exploration can guide search effectively. UniKGQA unified retrieval and reasoning in a single LLM-based pipeline, indicating that tighter integration of these stages benefits multi-hop QA. SR+NSM established that relation path retrieval is a powerful primitive: retrieving subgraphs via relation-path candidates and then reasoning over them clearly boosts performance. Evidence Pattern Retrieval (EPR+NSM) further focused the retrieval step on “evidence patterns,” showing the value of pattern-level guidance but without per-path importance estimation. Underpinning these methods, the probabilistic graphical model framework of Koller and Friedman provides the formal apparatus to factor QA into latent variables (e.g., subgraphs and paths), while work like BeamQA validated beam-search style path enumeration as a practical mechanism for multi-hop reasoning.\nCollectively, these studies reveal an opportunity: combine LLM-generated relation paths with KG-grounded traversal, but quantify and leverage the varying importance of each evidence path within a unified training framework. EPERM takes this natural next step by formalizing KGQA as a graphical model over latent subgraphs and evidence paths, using an LLM to generate weighted compositional plans, scoring and filtering instantiated KG paths, and jointly instruction-tuning retrieval and reasoning so that path weights directly shape answer generation.",
+  "analysis_timestamp": "2026-04-05T11:38:40.540562",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P10",
+      "P09"
+    ],
+    "confidence": "medium",
+    "reasoning": "Composes retrieval and reasoning around evidence paths; leverages KG structure (paths) and guided traversal during inference.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Inference-Time Control & Guided Sampling"
+    ]
+  }
+}

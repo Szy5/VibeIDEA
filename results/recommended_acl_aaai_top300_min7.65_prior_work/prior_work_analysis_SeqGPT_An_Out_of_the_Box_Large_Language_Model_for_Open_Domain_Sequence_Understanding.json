@@ -1,0 +1,87 @@
+{
+  "paper_title": "SeqGPT: An Out-of-the-Box Large Language Model for Open Domain Sequence Understanding",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models (LLMs) have shown impressive abilities for open-domain NLP tasks. However, LLMs are sometimes too footloose for natural language understanding (NLU) tasks which always have restricted output and input format. Their performances on NLU tasks are highly related to prompts or demonstrations and are shown to be poor at performing several representative NLU tasks, such as event extraction and entity typing. To this end, we present SeqGPT, a bilingual (i.e., English and Chinese) open-source autoregressive model specially enhanced for open-domain natural language understanding. We express all NLU tasks with two atomic tasks, which define fixed instructions to restrict the input and output format but still ``open'' for arbitrarily varied label sets. The model is first instruction-tuned with extremely fine-grained labeled data synthesized by ChatGPT and then further fine-tuned by 233 different atomic tasks from 152 datasets across various domains. The experimental results show that SeqGPT has decent classification and extraction ability, and is capable of performing language understanding tasks on unseen domains. We also conduct empirical studies on the scaling of data and model size as well as on the transfer across tasks. Our models are accessible at https://github.com/Alibaba-NLP/SeqGPT.",
+  "prior_works": [
+    {
+      "title": "InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction",
+      "authors": "X. Wang et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "SeqGPT takes the unified, instruction-tuned IE paradigm of InstructUIE as its primary baseline but extends it beyond IE to broader NLU by replacing verbose task descriptions with fixed EXT/CLS atomic templates and demonstrating stronger zero-shot robustness.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Unified Structure Generation for Universal Information Extraction",
+      "authors": "Y. Lu et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "UIE’s schema-based prompt mechanism and structured output formulation directly inspired SeqGPT’s idea of encoding task semantics via label/query tokens, which it simplifies into two atomic tasks (extraction and classification) with fixed output formats.",
+      "arxiv_id": "2203.12277",
+      "url": null
+    },
+    {
+      "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "authors": "Y. Wang et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "The notion of bootstrapping supervision by prompting an LLM directly motivated SeqGPT’s pretraining stage that uses ChatGPT to synthesize ultra–fine-grained open-label CLS/EXT annotations (and corresponding answers) at scale.",
+      "arxiv_id": "2212.10560",
+      "url": null
+    },
+    {
+      "title": "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+      "authors": "Y. Wang et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Its empirical finding that greater task diversity in instruction tuning yields better unseen-task generalization directly shaped SeqGPT’s strategy to prioritize breadth (152 datasets, 233 atomic tasks) over merely scaling data volume.",
+      "arxiv_id": "2204.07705",
+      "url": null
+    },
+    {
+      "title": "PIVOINE: Instruction Tuning for Open-world Information Extraction",
+      "authors": "K. Lu et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By relying on weakly supervised, single-domain and KB-anchored pipelines, PIVOINE exposed coverage and label-space limits that SeqGPT addresses by having ChatGPT invent diverse labels/answers across domains for open-world pretraining.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Crosslingual Generalization through Multitask Finetuning (BLOOMZ)",
+      "authors": "N. Muennighoff et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "SeqGPT builds on BLOOMZ as an instruction-tuned multilingual backbone and leverages its demonstrated crosslingual generalization from multitask finetuning to support a bilingual NLU model and two-stage training.",
+      "arxiv_id": "2211.01786",
+      "url": null
+    },
+    {
+      "title": "Is ChatGPT a General-Purpose Natural Language Processing Task Solver?",
+      "authors": "C. Qin et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Documented brittleness and subpar performance of ChatGPT on structured NLU tasks directly motivated SeqGPT’s fixed-format atomic prompting and dedicated finetuning to enforce constrained input/output adherence.",
+      "arxiv_id": "2302.06476",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Unified information extraction research showed how task semantics could be encoded via prompts and structured outputs: UIE introduced schema-based prompts and a structural generation language to unify heterogeneous IE tasks, while InstructUIE demonstrated that instruction-tuned, unified IE models provide strong zero-shot behavior when trained across many IE datasets. Parallel advances in instruction tuning established that scaling task diversity, not just data volume, is key to generalization; Super-NaturalInstructions systematically curated a large, diverse task set to improve unseen-task performance, and multitask instruction tuning over multilingual corpora (BLOOMZ) showed crosslingual generalization emerges from such finetuning. To scale supervision, Self-Instruct proposed generating training data by prompting LLMs, seeding a practical pathway to create large synthetic instruction datasets. Efforts toward open-world IE such as PIVOINE used weak supervision from single-domain sources and predefined knowledge bases, revealing limitations in label coverage and domain diversity. At the same time, evaluations like Qin et al. highlighted that off-the-shelf chat LLMs are brittle on constrained-format NLU, sensitive to prompts, and prone to format violations. Together, these works suggested a natural next step: unify a broader class of NLU problems with a minimal, fixed interface and train on many diverse tasks. Building on the prompt-unification insight from UIE/InstructUIE, the task-diversity principle from Super-NaturalInstructions, and crosslingual instruction tuning from BLOOMZ, this work synthesizes large-scale, LLM-generated, ultra–fine-grained annotations to overcome PIVOINE-style coverage limits and then fine-tunes across many real datasets, yielding a bilingual model that reliably adheres to constrained EXT/CLS formats while generalizing to unseen domains and labels.",
+  "analysis_timestamp": "2026-04-05T12:07:15.027027",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P15",
+    "secondary_patterns": [
+      "P05",
+      "P03"
+    ],
+    "confidence": "medium",
+    "reasoning": "Improves generalization by scaling diverse instruction/task data (including synthetic Self-Instruct) and using schema-structured outputs.",
+    "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+    "secondary_pattern_names": [
+      "Data & Evaluation Engineering",
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

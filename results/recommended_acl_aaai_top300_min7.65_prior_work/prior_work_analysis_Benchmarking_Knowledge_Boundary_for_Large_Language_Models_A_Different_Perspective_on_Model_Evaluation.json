@@ -1,0 +1,85 @@
+{
+  "paper_title": "Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation",
+  "prior_works": [
+    {
+      "title": "Measuring and Improving Consistency in Pretrained Language Models",
+      "authors": "Yanai Elazar et al.",
+      "year": 2021,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing that LMs answer the same fact inconsistently across paraphrased prompts and releasing PARAREL’s paraphrase sets, this work exposed the prompt-sensitivity gap that the current paper tackles by searching within a semantic neighborhood to find optimal prompts defining a model’s knowledge boundary.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Statistical Knowledge Assessment for Large Language Models",
+      "authors": "Qingxiu Dong et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "KAssess introduced large-scale knowledge assessment with multiple paraphrased templates and aliases, serving as the main evaluation/baseline framework whose limitation—coverage restricted to a finite set of paraphrases—the current paper overcomes via optimized prompt search.",
+      "arxiv_id": "2305.10519",
+      "url": null
+    },
+    {
+      "title": "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts",
+      "authors": "Taylor Shin et al.",
+      "year": 2020,
+      "role": "Extension",
+      "relationship_sentence": "AutoPrompt’s gradient-based discrete trigger discovery directly inspired the paper’s core idea of automatic prompt search, which is extended here by enforcing semantic preservation and a proximal projection to avoid adversarial, semantics-breaking triggers.",
+      "arxiv_id": "2010.15980",
+      "url": null
+    },
+    {
+      "title": "Seq2Sick: Evaluating the Robustness of Sequence-to-Sequence Models with Adversarial Examples",
+      "authors": "Minhao Cheng et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "Seq2Sick’s iterative projection of continuous perturbations back to discrete tokens informed the design choice to control when and how to project during optimization, motivating the paper’s thresholded proximal projection strategy.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Gradient-based Adversarial Attacks against Text Transformers",
+      "authors": "Chuan Guo et al.",
+      "year": 2021,
+      "role": "Inspiration",
+      "relationship_sentence": "This work’s approach of continuous optimization with discrete realization (e.g., end-of-optimization projection/Gumbel-style techniques) provided a contrasting projection schedule that the paper refines with intermediate, distance-thresholded projections.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Automatically Auditing Large Language Models via Discrete Optimization",
+      "authors": "Erik Jones et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By demonstrating that discrete prompt search can exploit models without preserving semantics, this paper motivated adding an explicit semantic loss to keep optimized prompts aligned with the original meaning.",
+      "arxiv_id": "2303.04381",
+      "url": null
+    },
+    {
+      "title": "Locating and Editing Factual Associations in GPT (COUNTERFACT)",
+      "authors": "Kevin Meng et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "COUNTERFACT provided the counterfactual dataset and evaluation protocol used to verify that prompt optimization does not induce false knowledge, underpinning the robustness criterion for the knowledge boundary method.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior studies established both the fragility and measurement landscape for parametric knowledge in language models. PARAREL demonstrated that models can answer the same fact inconsistently across paraphrases and supplied standardized paraphrase sets for consistency testing, emphasizing the centrality of prompt sensitivity. KAssess scaled knowledge assessment by aggregating multiple paraphrased templates and aliases per relation, but remained constrained to a finite set of human-written forms. On the prompting side, AutoPrompt showed that gradient-based token search can elicit factual outputs with automatically constructed triggers, while adversarial works like Seq2Sick and gradient-based attacks against transformers explored optimizing in continuous space and projecting back to discrete text, illuminating different projection schedules (per-iteration versus end-of-optimization). More recently, discrete optimization audits highlighted that unconstrained prompt search often exploits artifacts and drifts from the intended semantics, underscoring the need for semantic control. In parallel, COUNTERFACT introduced counterfactual facts and metrics to ensure that manipulation or prompting techniques do not merely force target strings, providing a way to test robustness against induced false knowledge.\nCombining these threads revealed a gap: benchmarks with limited paraphrases undercount knowledge due to prompt sensitivity, and unconstrained prompt search risks adversarial triggers that do not preserve meaning. The natural next step is to define a model’s “knowledge boundary” as the set of facts recoverable under any semantically equivalent prompt and to find such prompts by optimizing in embedding space while constraining semantics and carefully projecting to discrete tokens. Building on paraphrase-based evaluation (PARAREL, KAssess) and insights from adversarial/discrete optimization (AutoPrompt, Seq2Sick, transformer attacks), the approach formalizes a semantic loss and a thresholded proximal projection, then validates robustness against COUNTERFACT to ensure it uncovers genuine, not induced, knowledge.",
+  "analysis_timestamp": "2026-04-05T12:05:05.278365",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P01"
+    ],
+    "confidence": "high",
+    "reasoning": "Designs and scales benchmarks to probe LLM knowledge boundaries and prompt sensitivity; reframes knowledge assessment around paraphrase-driven gaps.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Gap-Driven Reframing"
+    ]
+  }
+}

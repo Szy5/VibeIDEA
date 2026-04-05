@@ -10,7 +10,7 @@
 参考 baoyu-post-to-wechat skill 的排版风格，采用简洁紧凑的格式
 """
 
-from .paper import ArxivPaper
+from paper import ArxivPaper
 import math
 from tqdm import tqdm
 import datetime

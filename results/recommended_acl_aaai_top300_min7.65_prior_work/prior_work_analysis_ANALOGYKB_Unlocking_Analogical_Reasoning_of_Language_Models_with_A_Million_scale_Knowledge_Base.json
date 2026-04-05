@@ -1,0 +1,87 @@
+{
+  "paper_title": "ANALOGYKB: Unlocking Analogical Reasoning of Language Models with A Million-scale Knowledge Base",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "ANALOGYKB: Unlocking Analogical Reasoning of Language Models with A Million-scale Knowledge Base",
+  "prior_works": [
+    {
+      "title": "V — On Defining Analogy",
+      "authors": "Mary B. Hesse",
+      "year": 1959,
+      "role": "Foundation",
+      "relationship_sentence": "Hesse’s account that analogous relations can be justified by induction to a shared higher-level (meta) relation directly underpins the paper’s Rule 2 filter that accepts a relation pair only if an LLM can summarize them into a common meta relation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Analogical reasoning",
+      "authors": "Dedre Gentner and Francisco Maravilla",
+      "year": 2017,
+      "role": "Foundation",
+      "relationship_sentence": "The structural alignment view of analogy articulated by Gentner and Maravilla grounds the paper’s notion of analogous relations (e.g., CEO and head of state) via abstraction to a meta relation like head of organization.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Wikidata: A free collaborative knowledgebase",
+      "authors": "Denny Vrandečić and Markus Krötzsch",
+      "year": 2014,
+      "role": "Foundation",
+      "relationship_sentence": "Wikidata supplies the large-scale subject–predicate–object triples and pageview signals that the paper directly reorganizes into same-relation analogies and ranks for inclusion in ANALOGYKB.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "ConceptNet 5.5: An Open Multilingual Graph of General Knowledge",
+      "authors": "Robyn Speer et al.",
+      "year": 2017,
+      "role": "Foundation",
+      "relationship_sentence": "ConceptNet provides high-quality commonsense relation pairs (filtered by edge weights) that are directly converted into same-relation analogies and used to seed the discovery of analogous relation pairs.",
+      "arxiv_id": "1612.03975",
+      "url": null
+    },
+    {
+      "title": "A Data-Driven Approach for Making Analogies.",
+      "authors": "Mei Si and Craig Carlson",
+      "year": 2017,
+      "role": "Extension",
+      "relationship_sentence": "This work showed how to derive analogies from encyclopedia KG relations, which the current paper generalizes by systematizing relation-pair discovery and scaling to million-level analogies, including analogous-relation cases.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Does Wikidata Support Analogical Reasoning?",
+      "authors": "Filip Ilievski et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "By examining analogical structure in Wikidata with relatively small-scale experiments, this paper highlighted both feasibility and limitations, motivating a comprehensive, large-scale analogy resource built from Wikidata.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Training language models to follow instructions with human feedback",
+      "authors": "Long Ouyang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "The instruction-following capabilities of InstructGPT directly enable the paper’s LLM-driven pipeline for selecting analogous relation candidates and inducing meta relations via in-context prompts with minimal human effort.",
+      "arxiv_id": "2203.02155",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Several strands of prior work laid the groundwork for constructing large-scale analogy resources from structured knowledge. Wikidata and ConceptNet established rich repositories of subject–predicate–object triples and commonsense relations; their scope, popularity signals, and edge weights offered immediately usable, high-quality relation–entity pairs suited for forming analogies within the same relation. Theoretical accounts of analogy emphasized structural alignment and abstraction: Hesse’s criterion that two relations are analogous if they can be induced into a shared meta relation, and Gentner and Maravilla’s view of relational mapping, together provided a principled basis for determining when distinct relations should be considered analogous via higher-level schemas (e.g., head of organization). Empirically, Si and Carlson demonstrated that analogies can be constructed from encyclopedia knowledge graphs, while Ilievski and colleagues showed Wikidata contains analogical structure yet prior explorations remained small and limited. Meanwhile, instruction-following language models, exemplified by InstructGPT, showed that LLMs can reliably execute few-shot in-context tasks such as selective matching and abstraction, suggesting a scalable way to automate relation-pair discovery. Collectively, these works exposed an opportunity: KGs make same-relation analogies readily extractable, theory prescribes how to validate analogous relations via meta-abstraction, and LLMs can operationalize this validation at scale. The current paper synthesizes these insights by harvesting same-relation analogies from ConceptNet and Wikidata, then using an instruction-following LLM to propose analogous relation pairs and induce their shared meta relations, with symmetry and meta-relation filters ensuring quality. This combination naturally yields a million-scale, high-quality analogy knowledge base that fills the data scarcity gap and enables both training and prompting for analogical reasoning.",
+  "analysis_timestamp": "2026-04-05T11:54:52.701382",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P02",
+      "P03"
+    ],
+    "confidence": "medium",
+    "reasoning": "Builds an analogy KB by combining KGs with cognitive theory and new relational schemas.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Cross-Domain Synthesis",
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

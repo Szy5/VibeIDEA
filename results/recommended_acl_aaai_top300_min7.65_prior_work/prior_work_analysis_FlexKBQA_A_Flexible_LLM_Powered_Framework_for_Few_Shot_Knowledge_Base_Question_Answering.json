@@ -1,0 +1,87 @@
+{
+  "paper_title": "FlexKBQA: A Flexible LLM-Powered Framework for Few-Shot Knowledge Base Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Knowledge base question answering (KBQA) is a critical yet challenging task due to the vast number of entities within knowledge bases and the diversity of natural language questions posed by users. Unfortunately, the performance of most KBQA models tends to decline significantly in real-world scenarios where high-quality annotated data is insufficient. To mitigate the burden associated with manual annotation, we introduce FlexKBQA by utilizing Large Language Models (LLMs) as program translators for addressing the challenges inherent in the few-shot KBQA task. Specifically, FlexKBQA leverages automated algorithms to sample diverse programs, such as SPARQL queries, from the knowledge base, which are subsequently converted into natural language questions via LLMs. This synthetic dataset facilitates training a specialized lightweight model for the KB. Additionally, to reduce the barriers of distribution shift between synthetic data and real user questions, FlexKBQA introduces an executionguided self-training method to iterative leverage unlabeled user questions. Furthermore, we explore harnessing the inherent reasoning capability of LLMs to enhance the entire framework. Consequently, FlexKBQA delivers substantial flexibility, encompassing data annotation, deployment, and being domain agnostic. Through extensive experiments on GrailQA, WebQSP, and KQA Pro, we observe that under the few-shot even the more challenging zero-shot scenarios, FlexKBQA achieves impressive results with a few annotations, surpassing all previous baselines and even approaching the performance of supervised models, achieving a remarkable 93% performance relative to the fully-supervised models. We posit that FlexKBQA represents a significant advancement towards exploring better integration of large and lightweight models. Code is available at https://github.com/leezythu/FlexKBQA.",
+  "prior_works": [
+    {
+      "title": "Few-shot In-context Learning for Knowledge Base Question Answering",
+      "authors": "Tianxing Li et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "KB-BINDER is the primary few-shot KBQA baseline that prompts Codex to map questions to logical forms via in-context examples, which FlexKBQA directly improves upon by flipping the direction—using LLMs to translate programs into questions to synthesize training data for a lightweight parser.",
+      "arxiv_id": "2305.01750",
+      "url": null
+    },
+    {
+      "title": "Don’t Generate, Discriminate: A Proposal for Grounding Language Models to Real-World Environments",
+      "authors": "Yu Gu et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Pangu’s in-context few-shot KBQA shows viability but exhibits context-window constraints and performance degradation with more shots, motivating FlexKBQA’s shift to LLM-generated synthetic data and execution-guided self-training to overcome these limitations.",
+      "arxiv_id": "2212.09736",
+      "url": null
+    },
+    {
+      "title": "Generating Data for Symbolic Language with Large Language Models",
+      "authors": "Jiaqi Ye et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "SYMGEN introduced LLM-generated symbolic data with execution-based verification, directly inspiring FlexKBQA’s use of execution signals to vet pseudo-labeled SPARQL programs within its self-training loop.",
+      "arxiv_id": "2305.13917",
+      "url": null
+    },
+    {
+      "title": "ZeroGen: Efficient Zero-shot Learning via Dataset Generation",
+      "authors": "Jiaqi Ye et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "ZeroGen’s ‘teaching via data’ paradigm—using LMs to synthesize task datasets for student models—underpins FlexKBQA’s strategy of generating KB-specific question–program pairs to train a compact semantic parser.",
+      "arxiv_id": "2202.07922",
+      "url": null
+    },
+    {
+      "title": "Large Language Models Are Reasoning Teachers",
+      "authors": "Namhoon Ho et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "This work advocates leveraging LLM reasoning outputs as supervision, which FlexKBQA operationalizes by using LLM-derived answers to filter pseudo labels and as a fallback when semantic parsing fails.",
+      "arxiv_id": "2212.10071",
+      "url": null
+    },
+    {
+      "title": "Template-based question answering over RDF data",
+      "authors": "Christina Unger et al.",
+      "year": 2012,
+      "role": "Foundation",
+      "relationship_sentence": "Template-based QA over RDF established instantiating query templates to generate question–query pairs, a principle FlexKBQA builds on by collecting SPARQL/S-expression templates and step-wise grounding them to sample executable programs.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "RNG-KBQA: Generation Augmented Iterative Ranking for Knowledge Base Question Answering",
+      "authors": "Xueguang Ye et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "RNG-KBQA provides the ranking-plus-generation semantic parsing backbone that FlexKBQA fine-tunes on synthetic and pseudo-labeled data as its lightweight student model.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Few-shot KBQA initially leaned on in-context learning: KB-BINDER showed that prompting Codex with question–program exemplars can directly synthesize logical forms, while Pangu further grounded LLMs to KB environments via discrimination-oriented prompting. These approaches, however, inherit context window limits, high inference cost, and fragility when unseen relations or larger demonstration sets are introduced. Parallelly, the ‘teaching via data’ line—exemplified by ZeroGen—demonstrated that language models can fabricate task-specific datasets to train compact students, and SYMGEN extended this to symbolic languages by adding execution-based verification of generated programs. The idea that LLMs can serve as reasoning teachers suggested using their answers and explanations as supervisory signals. Earlier template-based QA over RDF highlighted that query templates can be instantiated into question–query pairs via grounding, and semantic parsers like RNG-KBQA established a ranking-plus-generation backbone that benefits substantially from abundant, high-coverage training pairs.\nCollectively, these works suggested a natural opportunity: abandon in-context program generation at inference time and instead use LLMs to create training data. FlexKBQA synthesizes executable programs via template collection and step-wise grounding, translates them into fluent questions with an LLM, and trains a lightweight semantic parser (RNG-KBQA). It then closes the synthetic-to-real gap with execution-guided self-training—filtering pseudo labels with execution checks—and leverages LLM inherent reasoning both to validate pseudo labels and to backstop cases where parsing fails. This synthesis marries template-grounded program diversity, execution verification, and LLM-as-teacher supervision to achieve scalable, domain-agnostic few-shot KBQA.",
+  "analysis_timestamp": "2026-04-05T11:58:52.326524",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P15",
+    "secondary_patterns": [
+      "P05",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Uses LLMs to synthesize and verify task-specific data to train compact students, shifting performance gains to data generation and supervision design within a teacher–student pipeline.",
+    "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+    "secondary_pattern_names": [
+      "Data & Evaluation Engineering",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

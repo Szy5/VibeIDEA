@@ -1,0 +1,77 @@
+{
+  "paper_title": "SymAgent: A Neural-Symbolic Self-Learning Agent Framework for Complex Reasoning over Knowledge Graphs",
+  "paper_arxiv_id": "2502.03283",
+  "paper_abstract": "Recent advancements have highlighted that Large Language Models (LLMs) are prone to hallucinations when solving complex reasoning problems, leading to erroneous results. To tackle this issue, researchers incorporate Knowledge Graphs (KGs) to improve the reasoning ability of LLMs. However, existing methods face two limitations: 1) they typically assume that all answers to the questions are contained in KGs, neglecting the incompleteness issue of KGs, and 2) they treat the KG as a static repository and overlook the implicit logical reasoning structures inherent in KGs. In this paper, we introduce SymAgent, an innovative neural-symbolic agent framework that achieves collaborative augmentation between KGs and LLMs. We conceptualize KGs as dynamic environments and transform complex reasoning tasks into a multi-step interactive process, enabling KGs to participate deeply in the reasoning process. SymAgent consists of two modules: Agent-Planner and Agent-Executor. The Agent-Planner leverages LLM's inductive reasoning capability to extract symbolic rules from KGs, guiding efficient question decomposition. The Agent-Executor autonomously invokes predefined action tools to integrate information from KGs and external documents, addressing the issues of KG incompleteness. Furthermore, we design a self-learning framework comprising online exploration and offline iterative policy updating phases, enabling the agent to automatically synthesize reasoning trajectories and improve performance. Experimental results demonstrate that SymAgent with weak LLM backbones (i.e., 7B series) yields better or comparable performance compared to various strong baselines. Further analysis reveals that our agent can identify missing triples, facilitating automatic KG updates.",
+  "prior_works": [
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Yao et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Introduced the thought–action–observation loop and the pattern of interleaving chain-of-thought with environment actions, which SymAgent directly adopts as its reactive agent loop for KG interaction and tool invocation.",
+      "arxiv_id": "2210.03629v3",
+      "url": null
+    },
+    {
+      "title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+      "authors": "Sun et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Demonstrated an explore-and-exploit paradigm for traversing KGs to mitigate KG incompleteness but relied on strong closed-source LLMs, highlighting the incompleteness and dependency gaps that SymAgent addresses with symbolic-rule-guided planning and self-learning for weaker LLMs.",
+      "arxiv_id": "2307.07697",
+      "url": null
+    },
+    {
+      "title": "Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning",
+      "authors": "Luo et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "Provided a fine-tuned LLM approach for faithful, interpretable KG reasoning (RoG) that SymAgent directly compares to and aims to improve upon by combining symbolic rule induction and interactive tool-based execution.",
+      "arxiv_id": "2310.01061",
+      "url": null
+    },
+    {
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "authors": "Schick et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Showed how LLMs can be prompted/taught to call external functions and tools, a capability SymAgent leverages for its defined action-tool set (search, extractTriples, searchNeighbor, finish) and function-call orchestration in the executor.",
+      "arxiv_id": "2302.04761",
+      "url": null
+    },
+    {
+      "title": "AutoAct: Automatic Agent Learning from Scratch for QA via Self-Planning",
+      "authors": "Qiao et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Proposed self-interactive trajectory synthesis and learning from self-play instead of teacher distillation, directly inspiring SymAgent’s online exploration + offline iterative policy updating self-learning pipeline.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "ChatRule: Mining Logical Rules with Large Language Models for Knowledge Graph Reasoning",
+      "authors": "Luo et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Applied LLMs to induce symbolic/logical rules from KG data; SymAgent extends this idea by using LLM-driven inductive rule extraction as planner demonstrations to align question decomposition with KG structural patterns.",
+      "arxiv_id": "2309.01538",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work established the main building blocks that SymAgent assembles: ReAct provided the core reactive pattern of interleaving internal thoughts with concrete actions, enabling an agent loop of thought→action→observation that SymAgent adopts for multi-step KG interaction; Toolformer demonstrated that LLMs can reliably call external functions, which directly motivates SymAgent’s design of an explicit action-tool API (searchNeighbor, wikiSearch, extractTriples, getReasoningPath, finish) used by the executor; RoG introduced the line of work that fine-tunes LLMs for faithful, interpretable reasoning over graphs and serves as a primary baseline whose limitations (reliance on static retrieval and fine-tuning) SymAgent targets; Think-on-Graph (ToG) exemplified explore-and-exploit traversal of KGs to handle incompleteness but depended on powerful closed-source LLMs, highlighting the gap SymAgent fills by combining symbolic guidance with tool-based evidence retrieval for weaker backbones; ChatRule showed LLMs can induce logical rules from KG groundings, a capability SymAgent repurposes in its planner to extract KG-aligned symbolic rule bodies for robust decomposition; and AutoAct/related self-play work established self-synthesized trajectories as an alternative to costly teacher distillation, directly inspiring SymAgent’s online exploration plus offline iterative policy updates. Together these threads reveal an opportunity: combine LLM-driven rule induction, function-call execution over both KG and external text, and self-generated trajectories to let a lightweight LLM jointly (a) plan via symbolic rules that align with KG topology, (b) act with a toolset that expands evidence beyond an incomplete KG, and (c) self-improve without expensive teacher models — which is precisely what SymAgent operationalizes.",
+  "analysis_timestamp": "2026-03-09T00:21:11.370298",
+  "input_tokens": 16998,
+  "output_tokens": 1094,
+  "innovation_classification": {
+    "primary_pattern": "P02",
+    "secondary_patterns": [
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "SymAgent deliberately fuses neural LLM agents with symbolic KG operations (neural-symbolic, tool API), and composes specialized modules (thought/action loop, executor, tools) into a pipeline.",
+    "primary_pattern_name": "Cross-Domain Synthesis",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition"
+    ]
+  }
+}

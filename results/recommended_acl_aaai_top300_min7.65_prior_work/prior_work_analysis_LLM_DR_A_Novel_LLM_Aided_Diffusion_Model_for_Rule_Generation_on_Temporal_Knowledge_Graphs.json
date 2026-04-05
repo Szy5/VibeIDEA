@@ -1,0 +1,87 @@
+{
+  "paper_title": "LLM-DR: A Novel LLM-Aided Diffusion Model for Rule Generation on Temporal Knowledge Graphs",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Among various temporal knowledge graph (TKG) extrapolation methods, rule-based approaches stand out for their explicit rules and transparent reasoning paths. However, the vast search space for rule extraction poses a challenge in identifying high-quality logic rules. To navigate this challenge, we explore the use of generation models to generate new rules, thereby enriching our rule base and enhancing our reasoning capabilities. In this paper, we introduce LLM-DR, an innovative rule-based method for TKG extrapolation, which harnesses diffusion models to generate rules that are consistent with the distribution of the source data, while also amalgamating the rich semantic insights of Large Language Models (LLMs). Specifically, our LLM-DR generates semantically relevant and high-quality rules, employing conditional diffusion models in a classifier-free guidance fashion and refining them with LLM-based constraints. To assess rule efficacy, we meticulously design a coarse-to-fine evaluation strategy that initiates with coarse-grained filtering to eliminate less plausible rules and proceeds with fine-grained scoring to quantify the reliability of the retained. Extensive experiments demonstrate the promising capacity of our LLM-DR.",
+  "prior_works": [
+    {
+      "title": "TLogic: Temporal Logical Rules for Explainable Link Forecasting on Temporal Knowledge Graphs",
+      "authors": "Y. Liu et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "LLM-DR adopts TLogic’s temporal Horn rule formulation with the chronological order constraint and uses its temporal path sampling and path-to-rule alignment procedure to extract the seed rule base the diffusion model is trained to expand.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Denoising Diffusion Probabilistic Models",
+      "authors": "J. Ho et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "LLM-DR’s rule generator is built on the DDPM forward–reverse noise framework to model and sample rule-body embeddings consistent with the empirical distribution of extracted rules.",
+      "arxiv_id": "2006.11239",
+      "url": null
+    },
+    {
+      "title": "Classifier-Free Diffusion Guidance",
+      "authors": "J. Ho and T. Salimans",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "To control generation by the rule head without an extra classifier, LLM-DR directly applies classifier-free diffusion guidance to steer the reverse denoising conditioned on the head predicate.",
+      "arxiv_id": "2207.12598",
+      "url": null
+    },
+    {
+      "title": "Diffusion Recommender Model",
+      "authors": "W. Wang et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "LLM-DR follows DRM’s ELBO-style training and denoising objective for diffusion over discrete-structured items, adapting the objective to reconstruct rule-body embeddings from noise.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "ChatRule: Mining Logical Rules with Large Language Models for Knowledge Graph Reasoning",
+      "authors": "L. Luo et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing LLMs can mine KG rules yet are highly prompt-sensitive and prone to hallucinations, ChatRule motivates LLM-DR’s shift to diffusion-based controllable rule generation with LLMs used only as semantic constraints.",
+      "arxiv_id": "2309.01538",
+      "url": null
+    },
+    {
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "authors": "L. Zheng et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Evidence that strong LLM judges align well with human preferences directly inspires LLM-DR’s coarse-grained LLM-based plausibility filtering of generated rules.",
+      "arxiv_id": "2306.05685",
+      "url": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "J. Wei et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "LLM-DR’s coarse evaluation elicits step-by-step logical checks via chain-of-thought prompting to assess whether temporally ordered body predicates can entail the head, directly applying Wei et al.’s CoT technique.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Temporal logical rule learning for forecasting on temporal knowledge graphs was crystallized by TLogic, which defined Horn-style rules with a chronological order constraint and outlined a practical pipeline to sample temporal paths and align them to rules. In parallel, denoising diffusion probabilistic models established a general forward–reverse noise framework for learning data distributions, and classifier-free diffusion guidance showed how to condition generation on labels without training a separate classifier. Diffusion’s adaptation to discrete or structured domains, as in the Diffusion Recommender Model, further clarified ELBO-style denoising objectives that can reconstruct item-like embeddings from noise. On the rule generation front, ChatRule demonstrated that large language models can mine logical rules, but also exposed acute prompt sensitivity and hallucination risks when using LLMs as generators. At the same time, studies of LLMs as evaluators found that strong models like GPT-4 align closely with human judgments, and chain-of-thought prompting revealed a reliable way to elicit stepwise reasoning for logical assessment.\nThese threads jointly suggested a path: retain TLogic’s temporal rule formulation and extraction as a seed distribution; replace fragile LLM rule generation with a diffusion model conditioned on the head predicate via classifier-free guidance; and harness LLMs where they excel—as semantic filters using chain-of-thought—to coarsely vet plausibility, while optimizing diffusion with ELBO-style objectives proven effective on discrete structures. The resulting synthesis naturally yields a controllable, distribution-aligned rule generator augmented by LLM semantic constraints and a coarse-to-fine evaluator, addressing the search-space explosion and instability highlighted in LLM-centric rule mining.",
+  "analysis_timestamp": "2026-04-05T11:59:14.414615",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P02",
+    "secondary_patterns": [
+      "P09",
+      "P03"
+    ],
+    "confidence": "medium-high",
+    "reasoning": "Fuses diffusion models and LLMs for temporal rule generation, using guided sampling and a rule-embedding representation.",
+    "primary_pattern_name": "Cross-Domain Synthesis",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

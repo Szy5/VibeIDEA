@@ -1,0 +1,87 @@
+{
+  "paper_title": "LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large Language Models (LLMs) have impressive capabilities in text understanding and zero-shot reasoning. However, delays in knowledge updates may cause them to reason incorrectly or produce harmful results. Knowledge Graphs (KGs) provide rich and reliable contextual information for the reasoning process of LLMs by structurally organizing and connecting a wide range of entities and relations. Existing KG-based LLM reasoning methods only inject KGs' knowledge into prompts in a textual form, ignoring its structural information. Moreover, they mostly rely on close-source models or open-source models with large parameters, which poses challenges to high resource consumption. To address this, we propose a novel Lightweight and efficient Prompt learning-ReasOning Framework for KGQA (LightPROF), which leverages the full potential of LLMs to tackle complex reasoning tasks in a parameter-efficient manner. Specifically, LightPROF follows a “Retrieve-Embed-Reason” process, first accurately, and stably retrieving the corresponding reasoning graph from the KG through retrieval module. Next, through a Transformer-based Knowledge Adapter, it finely extracts and integrates factual and structural information from the KG, then maps this information to the LLM’s token embedding space, creating an LLM-friendly prompt to be used by the LLM for the final reasoning. Additionally, LightPROF only requires training Knowledge Adapter and can be compatible with any open-source LLM. Extensive experiments on two public KGQA benchmarks demonstrate that LightPROF achieves superior performance with small-scale LLMs. Furthermore, LightPROF shows significant advantages in terms of input token count and reasoning time.",
+  "prior_works": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Patrick Lewis et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "LightPROF adopts the retrieve-then-reason paradigm introduced by RAG but replaces unstructured document retrieval and raw concatenation with KG reasoning-graph retrieval and an embedding-level knowledge adapter to inject retrieved knowledge.",
+      "arxiv_id": "2005.11401",
+      "url": null
+    },
+    {
+      "title": "PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text",
+      "authors": "Haitian Sun et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "LightPROF’s retrieval module builds on PullNet’s idea of assembling a question-specific reasoning subgraph via iterative KG expansion to gather the necessary multi-hop evidence.",
+      "arxiv_id": "1904.09537",
+      "url": null
+    },
+    {
+      "title": "QA-GNN: Reasoning with Language Models and Knowledge Graphs for Question Answering",
+      "authors": "Michihiro Yasunaga et al.",
+      "year": 2021,
+      "role": "Inspiration",
+      "relationship_sentence": "By showing that explicitly modeling KG structure with graph networks substantially improves QA, QA-GNN motivates LightPROF to preserve and encode KG structural signals rather than linearizing triples into plain text prompts.",
+      "arxiv_id": "2104.06378",
+      "url": null
+    },
+    {
+      "title": "CoLAKE: Contextualized Language and Knowledge Embedding",
+      "authors": "Tao Shen et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "CoLAKE’s alignment of KG and text in a shared embedding space directly informs LightPROF’s design of mapping KG subgraph representations into the LLM’s token embedding space for knowledge injection.",
+      "arxiv_id": "2010.00309",
+      "url": null
+    },
+    {
+      "title": "K-Adapter: Infusing Knowledge into Pre-Trained Models with Adapters",
+      "authors": "Ruize Wang et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "K-Adapter’s plug-in, trainable adapter modules for freezing PLMs are extended in LightPROF via a Transformer-based Knowledge Adapter that extracts factual and structural KG cues and outputs continuous prompts for a frozen LLM.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "authors": "Xiang Lisa Li et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "Prefix-Tuning’s demonstration that learnable prefix vectors can steer a frozen generator underpins LightPROF’s strategy of using adapter-produced continuous embeddings as LLM-friendly prompts without updating the LLM.",
+      "arxiv_id": "2101.00190",
+      "url": null
+    },
+    {
+      "title": "GrailQA: A Benchmark for Generalization in Knowledge Base Question Answering",
+      "authors": "Xiang Deng et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "GrailQA’s multi-hop KGQA setting and evaluation protocol define the complex reasoning problem and benchmarks that LightPROF targets when retrieving and encoding question-specific reasoning graphs.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Retrieval-Augmented Generation established a simple yet powerful blueprint for knowledge-intensive tasks: retrieve external evidence and condition a frozen generator on it, while PullNet showed how, in the KG setting, iterative expansion can construct a compact, question-specific reasoning subgraph that captures multi-hop evidence. QA-GNN demonstrated that retaining and exploiting the structural topology of a KG—rather than treating facts as isolated triples—yields substantial gains in question answering, underscoring the importance of structural signals. In parallel, CoLAKE showed that aligning knowledge and text in a shared embedding space can more effectively infuse factual information, and K-Adapter introduced parameter-efficient adapter modules to inject specialized knowledge into frozen pre-trained language models. Complementing these, Prefix-Tuning revealed that learnable continuous prompts (prefixes) can reliably steer a generator without updating its parameters. Finally, GrailQA crystallized the multi-hop KGQA problem formulation, emphasizing the need for both accurate subgraph retrieval and robust reasoning.\nTogether, these works exposed a gap: many LLM-based KGQA approaches linearize KG triples into text and rely on large, often closed models, forfeiting structural cues and efficiency. A natural synthesis is to combine KG subgraph retrieval (à la PullNet) with parameter-efficient control of frozen LLMs (Prefix-Tuning/Adapters), while aligning knowledge and text spaces (CoLAKE). LightPROF realizes this by retrieving a reasoning graph, encoding its factual and structural information with a Transformer-based knowledge adapter, and mapping it into continuous token embeddings that act as soft prompts—achieving structure-aware, resource-efficient LLM reasoning on benchmarks like GrailQA within the retrieve–embed–reason paradigm.",
+  "analysis_timestamp": "2026-04-04T22:31:54.565645",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P10",
+      "P02"
+    ],
+    "confidence": "medium",
+    "reasoning": "Framework composes retrieval, KG expansion, and generation; leverages KG structure and adapter-style, parameter-efficient injections.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Cross-Domain Synthesis"
+    ]
+  }
+}

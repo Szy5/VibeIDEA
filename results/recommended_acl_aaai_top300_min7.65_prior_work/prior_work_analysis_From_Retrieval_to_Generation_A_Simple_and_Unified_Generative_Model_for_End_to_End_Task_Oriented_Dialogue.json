@@ -1,0 +1,78 @@
+{
+  "paper_title": "From Retrieval to Generation: A Simple and Unified Generative Model for End-to-End Task-Oriented Dialogue",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Retrieving appropriate records from the external knowledge base to generate informative responses is the core capability of end-to-end task-oriented dialogue systems (EToDs). Most of the existing methods additionally train the retrieval model or use the memory network to retrieve the knowledge base, which decouples the knowledge retrieval task from the response generation task, making it difficult to jointly optimize and failing to capture the internal relationship between the two tasks. In this paper, we propose a simple and unified generative model for task-oriented dialogue systems, which recasts the EToDs task as a single sequence generation task and uses maximum likelihood training to train the two tasks in a unified manner. To prevent the generation of non-existent records, we design the prefix trie to constrain the model generation, which ensures consistency between the generated records and the existing records in the knowledge base. Experimental results on three public benchmark datasets demonstrate that our method achieves robust performance on generating system responses and outperforms the baseline systems. To facilitate future research in this area, the code is available at https://github.com/dzy1011/Uni-ToD.",
+  "prior_works": [
+    {
+      "title": "Autoregressive Entity Retrieval",
+      "authors": "Nicola De Cao et al.",
+      "year": 2021,
+      "role": "Inspiration",
+      "relationship_sentence": "The paper explicitly inspires Uni-ToD’s core mechanism by introducing prefix-trie–based constrained decoding to force a generator to output only valid entities, which Uni-ToD adapts to KB records so retrieval becomes constrained generation.",
+      "arxiv_id": "2010.00904",
+      "url": null
+    },
+    {
+      "title": "Q-TOD: A Query-driven Task-oriented Dialogue System",
+      "authors": "Xiaotian Tian et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "Q-TOD’s pipeline—query rewriting, separate retriever, and generator—requires manual query annotations and prevents joint optimization, a limitation Uni-ToD addresses by unifying retrieval and response generation within a single MLE-trained sequence model.",
+      "arxiv_id": "2210.07564",
+      "url": null
+    },
+    {
+      "title": "Global-to-Local Memory Pointer Networks for Task-Oriented Dialogue",
+      "authors": "Chien-Sheng Wu et al.",
+      "year": 2019,
+      "role": "Baseline",
+      "relationship_sentence": "As a representative memory-network plus sketch-response approach that decouples KB retrieval from response generation, GLMP serves as a primary baseline that Uni-ToD replaces with unified, generative retrieval under prefix constraints.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "DialoKG: Knowledge-Structure Aware Task-Oriented Dialogue Generation",
+      "authors": "Md Rashadul Islam Rony et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "DialoKG concatenates KB content with dialogue history for generation, exposing input-length and scalability limits that motivate Uni-ToD’s strategy of generating only relevant records via constrained decoding rather than feeding the entire KB.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Autoregressive Entity Generation for End-to-End Task-Oriented Dialog",
+      "authors": "Guangxuan Huang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "This work’s idea of generating entities autoregressively is directly extended by Uni-ToD, which adds a prefix-trie constraint to guarantee that generated entities correspond to existing KB records and to support joint training.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Key-Value Retrieval Networks for Task-Oriented Dialogue",
+      "authors": "Mihail Eric et al.",
+      "year": 2017,
+      "role": "Foundation",
+      "relationship_sentence": "By formalizing KB-grounded task-oriented dialogue with key-value retrieval and popularizing the Entity F1 grounding metric and In-Car dataset, this work establishes the problem setting that Uni-ToD reframes as unified generation.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prefix-trie constrained generation first emerged in Autoregressive Entity Retrieval, where a generator is forced to emit only valid entries by traversing a trie built from permissible surface forms; this guarantees faithfulness to a closed set. Memory-pointer systems like Global-to-Local Memory Pointer Networks retrieved KB facts via memory networks and then filled sketch responses, but their architecture split retrieval from response generation. In another line, DialoKG fused dialogue history with knowledge structures by concatenating KB content into the input of a language model, which helped grounding but strained input length and scalability on large KBs. Autoregressive Entity Generation for task-oriented dialogue explored making entities themselves generative targets, but without mechanisms to ensure that outputs match existing KB entries. Meanwhile, the query-driven Q-TOD pipeline rewrote queries and used a separate retriever and generator, introducing manual annotations and preventing joint optimization. Key-Value Retrieval Networks framed KB-grounded dialogue as retrieving from a structured store and set the evaluation (e.g., Entity F1) that subsequent works targeted.\nTogether, these works exposed a clear opportunity: avoid long concatenated inputs and brittle, decoupled pipelines while preserving KB faithfulness in generative models. Uni-ToD synthesizes these insights by recasting both retrieval and response generation as a single sequence modeling problem and importing trie-constrained decoding to ensure generated records are valid KB entries. This unified, MLE-trained approach naturally enables joint optimization of retrieval and generation, sidesteps input-length bottlenecks by generating only relevant records, and extends earlier autoregressive entity generation with rigorous KB consistency.",
+  "analysis_timestamp": "2026-04-05T12:08:17.370149",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P03",
+    "secondary_patterns": [
+      "P09",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Recasts KB access as constrained generative decoding (prefix-trie) where entities are generation targets—representation shift enforced by inference-time constraints within a unified pipeline.",
+    "primary_pattern_name": "Representation Shift & Primitive Recasting",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

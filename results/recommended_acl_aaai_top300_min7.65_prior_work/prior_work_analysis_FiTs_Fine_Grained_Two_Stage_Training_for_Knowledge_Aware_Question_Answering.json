@@ -1,0 +1,78 @@
+{
+  "paper_title": "FiTs: Fine-Grained Two-Stage Training for Knowledge-Aware Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Knowledge-aware question answering (KAQA) requires the model to answer questions over a knowledge base, which is essential for both open-domain QA and domain-specific QA, especially when language models alone cannot provide all the knowledge needed. Despite the promising result of recent KAQA systems which tend to integrate linguistic knowledge from pre-trained language models (PLM) and factual knowledge from knowledge graphs (KG) to answer complex questions, a bottleneck exists in effectively fusing the representations from PLMs and KGs because of (i) the semantic and distributional gaps between them, and (ii) the difficulties in joint reasoning over the provided knowledge from both modalities. To address the above two problems, we propose a Fine-grained Two-stage training framework (FiTs) to boost the KAQA system performance: The first stage aims at aligning representations from the PLM and the KG, thus bridging the modality gaps between them, named knowledge adaptive post-training. The second stage, called knowledge-aware fine-tuning, aims to improve the model's joint reasoning ability based on the aligned representations. In detail, we fine-tune the post-trained model via two auxiliary self-supervised tasks in addition to the QA supervision. Extensive experiments demonstrate that our approach achieves state-of-the-art performance on three benchmarks in the commonsense reasoning (i.e., CommonsenseQA, OpenbookQA) and medical question answering (i.e., MedQA-USMILE) domains.",
+  "prior_works": [
+    {
+      "title": "GreaseLM: Graph REASoning Enhanced Language Models for Question Answering",
+      "authors": "X. Zhang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "FiTs retains GreaseLM’s LM–GNN cross-modality encoder and extends it with a knowledge-adaptive post-training stage and auxiliary fine-tuning losses to pre-align PLM–KG representations and strengthen joint reasoning that GreaseLM left unadapted.",
+      "arxiv_id": "2201.08860",
+      "url": null
+    },
+    {
+      "title": "QA-GNN: Reasoning with Language Models and Knowledge Graphs for Question Answering",
+      "authors": "M. Yasunaga et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "FiTs follows QA-GNN’s IR-based KAQA setup and entity-retrieval procedure to construct KG subgraphs and uses attentive pooling over KG nodes in the scoring head as the base for its two-stage training.",
+      "arxiv_id": "2104.06378",
+      "url": null
+    },
+    {
+      "title": "Mind the gap: Understanding the modality gap in multi-modal contrastive representation learning",
+      "authors": "W. Liang et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "The documented semantic and distributional ‘modality gap’ between modalities directly motivated FiTs’s contrastive knowledge-adaptive post-training to align PLM and KG representations before joint reasoning.",
+      "arxiv_id": "2203.02053",
+      "url": null
+    },
+    {
+      "title": "Translating embeddings for modeling multi-relational data",
+      "authors": "A. Bordes et al.",
+      "year": 2013,
+      "role": "Inspiration",
+      "relationship_sentence": "FiTs’s knowledge backbone regularization borrows the TransE insight by enforcing a translation-like constraint (eh + er ≈ et) on KG triples within the joint embedding space to encourage structured reasoning.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Beyond IID: three levels of generalization for question answering on knowledge bases",
+      "authors": "Y. Gu et al.",
+      "year": 2021,
+      "role": "Gap Identification",
+      "relationship_sentence": "This work’s observation that KAQA models struggle with noisy or shifted evidence motivated FiTs’s self-supervised Knowledge Source Distinction objective to explicitly teach the model to identify relevant versus irrelevant KG entities.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Scalable Multi-Hop Relational Reasoning for Knowledge-Aware Question Answering (MHGRN)",
+      "authors": "Y. Feng et al.",
+      "year": 2020,
+      "role": "Baseline",
+      "relationship_sentence": "As a strong LM+KG multi-hop reasoning baseline, MHGRN underscored the need for more effective PLM–KG fusion and robust joint reasoning, which FiTs achieves via representation pre-alignment and auxiliary regularization.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Graph-augmented QA systems have evolved from augmenting language models with retrieved knowledge graphs to tightly coupling both modalities. QA-GNN formalized an IR-based KAQA pipeline that retrieves entity-centric subgraphs and attentively pools graph features into the answer scorer, establishing the practical framework many LM+KG systems follow. GreaseLM advanced this paradigm by introducing two-way interaction layers between a pre-trained LM and a GNN, mixing an interaction token and node representation so information flows across modalities rather than only one way. Yet empirical analyses of multi-modal contrastive learning revealed a deeper issue: modality gaps where semantically aligned items reside in disparate, narrow cones across embedding spaces, hindering fusion and transfer. Concurrently, multi-hop graph reasoners like MHGRN showed that even with strong graph aggregation, leveraging noisy, imperfectly retrieved KGs remains challenging. At the knowledge representation level, TransE offered a simple but powerful insight—relations can be modeled as translations—providing a geometric constraint for triple coherence. Finally, studies on KAQA generalization highlighted that models degrade under distribution shifts and when faced with irrelevant or insufficient evidence, underscoring the need for mechanisms that explicitly distinguish useful from noisy knowledge.\nBuilding on this landscape, the next step was to pre-align PLM and KG spaces before cross-modal mixing while regularizing reasoning over retrieved triples and teaching models to filter knowledge. FiTs synthesizes these insights by adding a contrastive, knowledge-adaptive post-training stage to close semantic and distributional gaps, and by introducing two self-supervised fine-tuning objectives: a TransE-inspired backbone regularizer to preserve triple structure and a knowledge source distinction classifier to separate question-linked, answer-linked, peripheral, and irrelevant entities. Coupled with QA-GNN-style retrieval and GreaseLM’s interaction backbone, this two-stage design naturally addresses both modality mismatch and noisy evidence in KAQA.",
+  "analysis_timestamp": "2026-04-05T11:53:30.461578",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P02",
+    "secondary_patterns": [
+      "P10",
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Tightly couples LM and GNN with a two-stage alignment to bridge modality gaps—hybrid cross-domain fusion with graph-structured inductive bias in a coupled pipeline.",
+    "primary_pattern_name": "Cross-Domain Synthesis",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

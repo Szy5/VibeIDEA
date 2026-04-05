@@ -1,0 +1,87 @@
+{
+  "paper_title": "Inductive Learning of Logical Theories with LLMs: A Expressivity-graded Analysis",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "This work presents a novel systematic methodology to analyse the capabilities and limitations of Large Language Models (LLMs) with feedback from a formal inference engine, on logic theory induction. The analysis is complexity-graded w.r.t. rule dependency structure, allowing quantification of specific inference challenges on LLM performance. Integrating LLMs with formal methods is a promising frontier in the Natural Language Processing field, as an important avenue for improving model inference control and explainability. In particular, inductive learning over complex sets of facts and rules, poses unique challenges for current autoregressive models, as they lack explicit symbolic grounding. While they can be complemented by formal systems, the properties delivered by LLMs regarding inductive learning, are not well understood and quantified. Empirical results indicate that the largest LLMs can achieve competitive results against a SOTA Inductive Logic Programming (ILP) system baseline, but also that tracking long predicate relationship chains is a more difficult obstacle than theory complexity for LLMs.",
+  "prior_works": [
+    {
+      "title": "Inductive logic programming",
+      "authors": "Stephen Muggleton et al.",
+      "year": 1991,
+      "role": "Foundation",
+      "relationship_sentence": "This work defined the ILP problem of inducing a hypothesis H such that H ∪ BK entails positives and excludes negatives, which is the exact formal objective used for the LLM theory generation and Prolog-based evaluation in this paper.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Synthetic Datasets and Evaluation Tools for Inductive Neural Reasoning",
+      "authors": "Claudio Cornelio et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "It introduced the RuDaS generator and the expressivity taxonomy (CHAIN, RDG, DRDG, and variants) that this paper directly adopts to synthesize datasets and grade theory induction difficulty by rule-dependency structure.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Learning programs by learning from failures",
+      "authors": "Andrew Cropper et al.",
+      "year": 2021,
+      "role": "Baseline",
+      "relationship_sentence": "Popper serves as the primary SOTA ILP system baseline against which the LLM+Prolog approach is compared across expressivity levels, framing the competitive target for theory induction quality.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "authors": "Aman Madaan et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "The paper’s iterative refinement loop extends Self-Refine’s self-critique template by replacing self-generated feedback with formal feedback from a Prolog inference engine to guide successive theory updates.",
+      "arxiv_id": "2303.17651",
+      "url": null
+    },
+    {
+      "title": "Verification and Refinement of Natural Language Explanations through LLM-Symbolic Theorem Proving",
+      "authors": "Xue Quan et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "This work’s LLM-in-the-loop verification and iterative symbolic refinement with external provers directly inspires the paper’s design of a formal inference module that critiques and steers LLM-generated theories.",
+      "arxiv_id": "2405.01379",
+      "url": null
+    },
+    {
+      "title": "Large Language Models can Learn Rules (Hypotheses-to-Theories)",
+      "authors": "Zhengyang Zhu et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Its generate–verify pipeline showing LLMs can induce explicit rules motivates the paper’s approach of prompting LLMs to produce Prolog theories that are verified and refined via a formal interpreter.",
+      "arxiv_id": "2310.07064",
+      "url": null
+    },
+    {
+      "title": "Faith and Fate: Limits of Transformers on Compositionality",
+      "authors": "Nouha Dziri et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By documenting transformers’ struggles with compositional reasoning and long dependency chains, it motivates the paper’s expressivity-graded analysis and the focus on chain-depth and dependency complexity.",
+      "arxiv_id": "2305.18654",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Inductive Logic Programming established the learning objective of finding a hypothesis H that, together with background knowledge, entails all positives while excluding negatives, providing the formal backbone for logic theory induction. Building on this, a practical route to stress-test inductive reasoning was offered by a synthetic generator and taxonomy that stratify rule structures into CHAIN, RDG, DRDG and recursive/mixed variants, enabling controlled variation of rule-dependency expressivity. On the algorithmic side, Popper introduced a state-of-the-art ILP system based on learning-from-failures, setting a rigorous baseline for the quality and efficiency of learned logic programs. Parallel advances in LLM-guided reasoning proposed iterative refinement procedures where a model critiques and improves its own outputs, while complementary LLM-symbolic work showed that integrating external theorem provers can verify and refine generated content. Demonstrating the feasibility of rule learning with LLMs, a generate–verify pipeline showed that explicit rule libraries can be induced and validated, bridging free-form text models and formal rule induction. In contrast, analyses of transformer compositionality highlighted persistent failures on long relational chains and compositional generalization. Together, these threads reveal both a methodological opportunity and a diagnostic need: combine ILP’s formal objective with expressivity-graded synthetic tasks, and couple LLMs to a formal inference engine in an iterative loop. The resulting synthesis—LLM-driven theory generation refined by Prolog feedback and evaluated across graded rule-dependency classes—naturally follows from these foundations, allowing direct comparison to Popper while quantifying where LLMs falter (e.g., chain depth) versus where they remain robust under noise and complexity.",
+  "analysis_timestamp": "2026-04-05T11:59:53.896333",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P02",
+      "P07"
+    ],
+    "confidence": "medium",
+    "reasoning": "Constructs expressivity-stratified generators/benchmarks and compares against Popper while using LLM-guided iterative refinement, bridging ILP and LLMs.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Cross-Domain Synthesis",
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "paper_title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+  "paper_arxiv_id": "2307.07697v6",
+  "paper_abstract": "Although large language models (LLMs) have achieved significant success in various tasks, they often struggle with hallucination problems, especially in scenarios requiring deep and responsible reasoning. These issues could be partially addressed by introducing external knowledge graphs (KG) in LLM reasoning. In this paper, we propose a new LLM-KG integrating paradigm ``$\\hbox{LLM}\\otimes\\hbox{KG}$'' which treats the LLM as an agent to interactively explore related entities and relations on KGs and perform reasoning based on the retrieved knowledge. We further implement this paradigm by introducing a new approach called Think-on-Graph (ToG), in which the LLM agent iteratively executes beam search on KG, discovers the most promising reasoning paths, and returns the most likely reasoning results. We use a number of well-designed experiments to examine and illustrate the following advantages of ToG: 1) compared with LLMs, ToG has better deep reasoning power; 2) ToG has the ability of knowledge traceability and knowledge correctability by leveraging LLMs reasoning and expert feedback; 3) ToG provides a flexible plug-and-play framework for different LLMs, KGs and prompting strategies without any additional training cost; 4) the performance of ToG with small LLM models could exceed large LLM such as GPT-4 in certain scenarios and this reduces the cost of LLM deployment and application. As a training-free method with lower computational cost and better generality, ToG achieves overall SOTA in 6 out of 9 datasets where most previous SOTAs rely on additional training.",
+  "prior_works": [
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Shunyu Yao et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Introduced the paradigm of treating an LLM as an agent that interleaves reasoning and actions against external resources, directly inspiring ToG’s design to let an LLM actively query and act on a knowledge graph during multi-step reasoning.",
+      "arxiv_id": "2210.03629v3",
+      "url": null
+    },
+    {
+      "title": "BeamQA: Multi-hop Knowledge Graph Question Answering with Sequence-to-Sequence Prediction and Beam Search",
+      "authors": "Farah Atif et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Applied beam-search over knowledge graph paths for multi-hop QA, providing the concrete beam-search-on-KG algorithmic template that ToG adopts and augments by using an LLM to score/prune candidate paths.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "StructGPT: A General Framework for Large Language Model to Reason over Structured Data",
+      "authors": "Jinhao Jiang et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Demonstrated prompting LLMs to inspect and operate on structured knowledge (KG) — ToG extends this idea into a formal, iterative beam-search framework (entity/relation search + LLM-based prune/evaluate) with richer path management and stopping criteria.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Xuezhi Wei et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Established step-by-step prompting to elicit internal reasoning from LLMs, which ToG leverages when asking the model to evaluate, rank, and explain candidate KG paths during its iterative 'think' and pruning steps.",
+      "arxiv_id": "2201.11903v6",
+      "url": null
+    },
+    {
+      "title": "Chain of knowledge: A framework for grounding large language models with structured knowledge bases",
+      "authors": "Tianle Li et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Represented the prevalent LLM ⊕ KG paradigm that retrieves KG facts to augment prompts but treats LLM as a translator; ToG was motivated to address the limitations of this loose coupling by tightly integrating the LLM into the graph search loop.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "SKILL: Structured Knowledge Infusion for Large Language Models",
+      "authors": "Fedor Moiseev et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Showed how LLMs can be used to inject and align structured knowledge with models and knowledge sources, informing ToG’s capability for traceability and human/LLM-assisted correction of KG triples discovered during reasoning.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "ReAct introduced the concrete agent paradigm where an LLM alternates between internal reasoning and external actions, giving the conceptual foundation for treating the model as an active explorer rather than a passive translator; this idea is the behavioral core ToG borrows when the LLM issues KG queries and uses answers to guide subsequent steps. BeamQA provided the algorithmic precedent for applying beam search on a knowledge graph to enumerate multi-hop candidate paths, supplying the search/width/depth mechanics that ToG adapts and couples with LLM-based scoring. StructGPT demonstrated prompting LLMs to operate over structured data and thus served as an immediate predecessor that ToG extends into a disciplined pipeline of relation/entity search, LLM-driven pruning, and path-based evaluation. Chain-of-Thought gave the prompting methodology to elicit stepwise judgments and explanations from LLMs, which ToG leverages for path scoring, decision thresholds, and answer generation. Work like \"Chain of knowledge\" typifies the loose LLM ⊕ KG approaches and highlighted their reliance on KG completeness, motivating a tighter LLM⊗KG coupling; meanwhile SKILL showed feasibility and value in using LLMs to inject and correct structured knowledge, directly informing ToG’s traceability and corrective feedback design. Together these threads — agentic LLM behavior (ReAct), beam search over KG (BeamQA), LLM-structured-data interfacing (StructGPT), stepwise prompting (CoT), the identified limits of LLM⊕KG pipelines, and techniques for knowledge infusion/correction (SKILL) — naturally converge to the ToG idea: an LLM-driven, beam-search-on-graph framework that iteratively explores, ranks, explains, and if needed corrects KG-backed reasoning paths.",
+  "analysis_timestamp": "2026-03-08T15:53:03.791224",
+  "input_tokens": 17175,
+  "output_tokens": 1128,
+  "innovation_classification": {
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P02"
+    ],
+    "confidence": "high",
+    "reasoning": "ToG explicitly composes specialized modules (KG beam search, LLM-driven pruning/scoring, path evaluation) into a disciplined pipeline (modular decomposition) while synthesizing graph search algorithms with LLM reasoning, i.e., cross-domain integration.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Cross-Domain Synthesis"
+    ]
+  }
+}

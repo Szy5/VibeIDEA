@@ -1,0 +1,78 @@
+{
+  "paper_title": "NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes",
+  "prior_works": [
+    {
+      "title": "A catalog of complexity classes",
+      "authors": "David S. Johnson",
+      "year": 1990,
+      "role": "Foundation",
+      "relationship_sentence": "This work provides the formal taxonomy of P, NP-complete, and NP-hard that the benchmark directly uses to select tasks and stratify difficulty levels for a rigorously complexity-grounded evaluation.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "DyVal: Graph-informed dynamic evaluation of large language models",
+      "authors": "Kaijie Zhu et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "DyVal introduced dynamic, graph-informed evaluation with periodically refreshed instances focused on polynomial-time problems, which this work extends by generalizing the dynamic mechanism to a broader set of algorithmic tasks spanning NP-complete and NP-hard.",
+      "arxiv_id": "2309.17167",
+      "url": null
+    },
+    {
+      "title": "Pretraining on the test set is all you need",
+      "authors": "Rylan Schaeffer",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing that public static benchmarks are vulnerable to memorization and overfitting, this paper directly motivates the benchmark’s monthly refresh strategy to mitigate ‘benchmark hacking’.",
+      "arxiv_id": "2309.08632",
+      "url": null
+    },
+    {
+      "title": "Mathematical capabilities of ChatGPT",
+      "authors": "Simon Frieder et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This study’s reliance on manual verification for advanced reasoning tasks highlighted inefficiency and lack of standardization, prompting the use of automatic algorithmic checkers for end-to-end evaluation.",
+      "arxiv_id": "2301.13867",
+      "url": null
+    },
+    {
+      "title": "Challenging BIG-Bench tasks and whether chain-of-thought can solve them",
+      "authors": "Mirac Suzgun et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "By emphasizing multi-step prompting challenges without grounding in computational complexity, this work underscored the need for benchmarks centered on complexity-theoretic reasoning tasks.",
+      "arxiv_id": "2210.09261",
+      "url": null
+    },
+    {
+      "title": "Measuring Massive Multitask Language Understanding",
+      "authors": "Dan Hendrycks et al.",
+      "year": 2020,
+      "role": "Gap Identification",
+      "relationship_sentence": "As a prominent static, exam-style benchmark prone to memorization and not designed to quantify logical complexity, MMLU’s limitations motivated a complexity-based, dynamically updated alternative.",
+      "arxiv_id": "2009.03300",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "The foundations of computational complexity formalize a rigorous hierarchy of problem difficulty: Johnson’s taxonomy distinguishes P, NP-complete, and NP-hard problems and gives a principled basis for selecting tasks that inherently differ in resource requirements. Dynamic evaluation emerged as a promising direction in DyVal, which proposed graph-informed, periodically refreshed instances to test LLM reasoning but largely remained within polynomial-time settings. Empirical analyses exposed systemic weaknesses of static public benchmarks: Schaeffer demonstrated that pretraining on test sets can inflate scores and misrepresent capabilities, while Frieder and colleagues showed that graduate-level reasoning and math assessments often require manual verification, hampering scalability and consistency. Widely used reasoning suites like BIG-bench Hard focus on multi-step prompting strategies rather than complexity-grounded logic, and MMLU’s static, exam-style format emphasizes breadth of knowledge over quantified logical difficulty, both leaving gaps in measuring algorithmic reasoning depth. Together these works revealed a clear opportunity: couple the formal structure of complexity classes with dynamic, automatically verifiable evaluation to prevent benchmark hacking and to quantify reasoning across truly different hardness regimes. Building on Johnson’s framework and DyVal’s dynamic principle, the natural next step is to extend dynamism beyond polynomial-time graph tasks to a curated set of algorithmic problems that span P, NP-complete, and NP-hard, paired with deterministic solvers for automatic scoring and scheduled refreshes that resist memorization while enabling reliable longitudinal assessment of LLM reasoning.",
+  "analysis_timestamp": "2026-04-05T11:55:06.817635",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P07",
+      "P01"
+    ],
+    "confidence": "high",
+    "reasoning": "Engineers a dynamic benchmark grounded in NP-hardness; links formal complexity with empirical evaluation and reframes test scope.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening",
+      "Gap-Driven Reframing"
+    ]
+  }
+}

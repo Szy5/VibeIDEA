@@ -1,0 +1,87 @@
+{
+  "paper_title": "Evaluating LLM Reasoning in the Operations Research Domain with ORQA",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "In this paper, we introduce and apply Operations Research Question Answering (ORQA), a new benchmark, to assess the generalization capabilities of Large Language Models (LLMs) in the specialized technical domain of Operations Research (OR). This benchmark is designed to evaluate whether LLMs can emulate the knowledge and reasoning skills of OR experts when given diverse and complex optimization problems. The dataset, crafted by OR experts, presents real-world optimization problems that require multistep reasoning to build their mathematical models. Our evaluations of various open-source LLMs, such as LLaMA 3.1, DeepSeek, and Mixtral reveal their modest performance, indicating a gap in their aptitude to generalize to specialized technical domains. This work contributes to the ongoing discourse on LLMs’ generalization capabilities, providing insights for future research in this area. The dataset and evaluation code are publicly available.",
+  "prior_works": [
+    {
+      "title": "NL4OPT competition: Formulating optimization problems based on their natural language descriptions",
+      "authors": "R. Ramamonjison et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "NL4OPT introduced the concrete task of mapping natural-language problem descriptions to optimization models, which ORQA directly adopts but reframes as multiple-choice identification of model components to enable fine-grained, solver-free evaluation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "OptiMUS: Scalable Optimization Modeling with (MI)LP Solvers and Large Language Models",
+      "authors": "A. AhmadiTeshnizi et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing that solver-based, end-to-end evaluations confound modeling with code-generation errors (21–31%), OptiMUS/NLP4LP directly motivated ORQA’s design as a multiple-choice benchmark that isolates modeling comprehension from coding and solving.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+      "authors": "Z. Xiao et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "ComplexOR’s small size (37 problems), narrow domain coverage, and frequent naming of canonical problems highlighted the need for a larger, context-rich, jargon-free OR benchmark that ORQA addresses.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Modelling in Mathematical Programming",
+      "authors": "J. M. G. Sánchez et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "ORQA’s question taxonomy and annotations directly instantiate Sánchez et al.’s decomposition of optimization models into elements, decision activities, data attributes, objectives, and specifications.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Leveraging large language models for multiple choice question answering",
+      "authors": "J. Robinson et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "ORQA’s evaluation harness borrows Robinson and Wingate’s symbol-binding MCQ protocol (binding options to A–D and appending a standardized 'Therefore...' cue) to robustly parse model outputs.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "PlanBench: An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change",
+      "authors": "K. Valmeekam et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "The critique that existing reasoning benchmarks are overly simplistic and the call for more challenging, structured tasks directly motivated ORQA’s expert-crafted, multi-step reasoning questions in a technical domain.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Optimization modeling and verification from problem specifications using a multi-agent multi-stage LLM framework",
+      "authors": "M. Mostajabdaveh et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Empirically finding that SOTA LLMs achieved only modest performance on optimization modeling in a practical pipeline exposed evaluation blind spots and directly prompted the creation of ORQA as a diagnostic benchmark focused on the modeling step.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Work on natural language to optimization modeling first coalesced around NL4OPT, which formalized converting textual problem descriptions into mathematical models, establishing the concrete mapping that subsequent efforts explored. Sánchez and colleagues provided a practitioner-grounded decomposition of optimization models—elements, decision activities, data attributes, objectives, and specifications—that offered an actionable schema for breaking down modeling tasks. As researchers pushed LLMs into OR, the NLP4LP/OptiMUS effort revealed that end-to-end evaluation—requiring code generation and solving—entangled modeling ability with implementation errors, even quantifying substantial coding failure rates. ComplexOR demonstrated a more realistic direction by pairing natural language with models, but its limited size, narrow domain coverage, and frequent explicit naming of canonical problems underscored scale and contamination issues. In parallel, the LLM evaluation community showed that MCQ protocols can be made parse-robust via simple output-format cues and answer-symbol binding, as exemplified by Robinson and Wingate. At the same time, benchmarking studies like PlanBench argued that many reasoning datasets were too simple and called for more challenging, structured reasoning tasks.\nCollectively, these insights exposed a gap: a large, expert-curated, context-rich OR benchmark that tests multi-step modeling reasoning without confounding code or solvers, grounded in a principled component taxonomy and supported by robust MCQ evaluation. ORQA synthesizes these threads by adopting NL4OPT’s problem formulation, instantiating Sánchez et al.’s component schema as question types, addressing OptiMUS and ComplexOR’s dataset and evaluation limitations, and operationalizing a reliable MCQ protocol inspired by Robinson and Wingate to deliver a challenging, domain-specific reasoning benchmark.",
+  "analysis_timestamp": "2026-04-05T12:02:07.880827",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P04",
+      "P01"
+    ],
+    "confidence": "high",
+    "reasoning": "Designs task schemas and evaluation protocols to disentangle modeling from coding in OR (data/evaluation engineering), decomposing pipelines and addressing identified evaluation gaps.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Gap-Driven Reframing"
+    ]
+  }
+}

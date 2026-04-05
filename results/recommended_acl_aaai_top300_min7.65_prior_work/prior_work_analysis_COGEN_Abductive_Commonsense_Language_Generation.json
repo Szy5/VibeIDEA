@@ -1,0 +1,87 @@
+{
+  "paper_title": "COGEN: Abductive Commonsense Language Generation",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Reasoning is one of the most important elements in achieving Artificial General Intelligence (AGI), specifically when it comes to Abductive and counterfactual reasoning. In order to introduce these capabilities of reasoning in Natural Language Processing (NLP) models, there have been recent advances towards training NLP models to better perform on two main tasks - Abductive Natural Language Inference (alphaNLI) and Abductive Natural Language Generation Task (alphaNLG). This paper proposes CoGen, a model for both alphaNLI and alphaNLG tasks that employ a novel approach of combining the temporal commonsense reasoning for each observation (before and after a real hypothesis) from pre-trained models with contextual filtering for training. Additionally, we use state-of-the-art semantic entailment to filter out the contradictory hypothesis during the inference. Our experimental results show that CoGen outperforms current models and set a new state of the art in regards to alphaNLI and alphaNLG tasks. We make the source code of CoGen model publicly available for reproducibility and to facilitate relevant future research.",
+  "prior_works": [
+    {
+      "title": "Abductive Commonsense Reasoning",
+      "authors": "Chandra Bhagavatula et al.",
+      "year": 2019,
+      "role": "Baseline",
+      "relationship_sentence": "This work introduced the ART dataset and the αNLI/αNLG tasks and proposed the COMeT-Emb+GPT2 pipeline, which COGEN directly builds upon and surpasses by injecting temporal commonsense and applying contextual and entailment-based filtering.",
+      "arxiv_id": "1908.05739",
+      "url": null
+    },
+    {
+      "title": "Back to the Future: Unsupervised Backprop-based Decoding for Counterfactual and Abductive Commonsense Reasoning",
+      "authors": "Lianhui Qin et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "This paper formalized abductive generation as generating a hypothesis H that temporally fits between two observations O1 and O2, a formulation COGEN explicitly adopts for both its training and evaluation setup.",
+      "arxiv_id": "2010.05906",
+      "url": null
+    },
+    {
+      "title": "COMET: Commonsense Transformers for Automatic Knowledge Graph Construction",
+      "authors": "Antoine Bosselut et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "COGEN uses the COMET model to generate relation-specific commonsense inferences (e.g., xIntent, xEffect) for each observation, providing the before/after knowledge that underpins its temporal augmentation step.",
+      "arxiv_id": "1906.05317",
+      "url": null
+    },
+    {
+      "title": "(Comet-) Atomic 2020: On Symbolic and Neural Commonsense Knowledge Graphs",
+      "authors": "Jena D. Hwang et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "ATOMIC2020 supplies the expanded set of before/after relations (e.g., xIntent, xEffect, oEffect) and coverage that COGEN relies on to derive temporal commonsense facts for augmenting the observations.",
+      "arxiv_id": "2010.05953",
+      "url": null
+    },
+    {
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "authors": "Nils Reimers et al.",
+      "year": 2019,
+      "role": "Extension",
+      "relationship_sentence": "COGEN repurposes the BERT cross-encoder from this work for two critical filtering stages: selecting the most contextually relevant COMET-generated facts via similarity and removing contradictory hypotheses via entailment checks.",
+      "arxiv_id": "1908.10084",
+      "url": null
+    },
+    {
+      "title": "Generating Hypothetical Events for Abductive Inference",
+      "authors": "Debjit Paul et al.",
+      "year": 2021,
+      "role": "Inspiration",
+      "relationship_sentence": "The strategy of selecting candidate events by how well their consequences match observed outcomes directly inspired COGEN’s contextual filtering that keeps only COMET inferences most similar to the other observation.",
+      "arxiv_id": "2106.03973",
+      "url": null
+    },
+    {
+      "title": "Abductive reasoning with temporal information",
+      "authors": "Sven Verdoolaege et al.",
+      "year": 2000,
+      "role": "Inspiration",
+      "relationship_sentence": "This work’s insight that abductive reasoning intrinsically involves temporal cause-and-effect motivated COGEN’s focus on before/after temporal commonsense as the core knowledge to augment observations.",
+      "arxiv_id": "cs/0011035",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Abductive commonsense reasoning was framed concretely by the introduction of the ART benchmark and the αNLI/αNLG tasks, alongside a COMeT-Emb+GPT2 pipeline that demonstrated the feasibility of knowledge-augmented generation yet showed limited plausibility in human judgments (Bhagavatula et al., 2019). The abductive generation problem was further formalized as producing a hypothesis that temporally fits between two observations, emphasizing the infilling nature of the task (Qin et al., 2020). Neural commonsense generation via COMET provided relation-conditional inferences, such as intents and effects, that could be elicited from textual observations (Bosselut et al., 2019). ATOMIC2020 expanded and systematized these relations into before/after categories with broader coverage, enabling richer temporal reasoning (Hwang et al., 2020). For reliably measuring pairwise semantic relations, cross-encoder architectures offered strong similarity and entailment judgments (Reimers and Gurevych, 2019). Complementarily, abductive approaches that select events by their fit to observed outcomes underscored the value of context-sensitive filtering in choosing plausible explanations (Paul and Frank, 2021). Theoretical work had long argued that abduction is tightly coupled to temporal causality, pointing to causes and effects as key targets for reasoning (Verdoolaege et al., 2000). Collectively, these works highlighted a gap: knowledge-augmented generators lacked mechanisms to focus temporal commonsense on what best aligns with both observations and to enforce consistency at inference. The current paper synthesizes these insights by generating before/after commonsense with COMET trained on ATOMIC2020, filtering those inferences by cross-encoder similarity to the other observation, and finally applying entailment-based checks to remove contradictions—yielding a temporally grounded, context-sensitive abductive generator and a stronger inference model.",
+  "analysis_timestamp": "2026-04-05T12:03:59.027363",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P02",
+      "P10"
+    ],
+    "confidence": "medium",
+    "reasoning": "Builds a knowledge-augmented generation pipeline for abductive commonsense, combining KB inferences with neural LM and encoding temporal/causal structure.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Cross-Domain Synthesis",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

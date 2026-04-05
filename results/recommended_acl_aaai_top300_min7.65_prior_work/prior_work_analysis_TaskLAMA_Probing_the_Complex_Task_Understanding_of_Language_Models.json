@@ -1,0 +1,87 @@
+{
+  "paper_title": "TaskLAMA: Probing the Complex Task Understanding of Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Structured Complex Task Decomposition (SCTD) is the problem of breaking down a complex real-world task (such as planning a wedding) into a directed acyclic graph over individual steps that contribute to achieving the task, with edges specifying temporal dependencies between steps. SCTD is an important component of assistive planning tools, and a challenge for commonsense reasoning systems. We probe how accurately SCTD can be done with the knowledge extracted from pre-trained Large Language Models (LLMs). We introduce a new high-quality human-annotated dataset for this problem and novel metrics to fairly assess performance of LLMs against several baselines. Our experiments reveal that LLMs are able to decompose complex tasks into individual steps effectively, with a relative improvement of 15% to 280% over the best baseline. We also propose a number of approaches to further improve their performance, with a relative improvement of 7% to 37%. However, we find that LLMs still struggle to predict pairwise temporal dependencies, which reveals a gap in their understanding of complex tasks.",
+  "prior_works": [
+    {
+      "title": "Language Models as Knowledge Bases?",
+      "authors": "Fabio Petroni et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "Introduced the LAMA probing paradigm for extracting and evaluating latent knowledge in pretrained language models, providing the methodological template that this work extends to structured complex task knowledge.",
+      "arxiv_id": "1909.01066",
+      "url": null
+    },
+    {
+      "title": "Learning to Decompose and Organize Complex Tasks",
+      "authors": "Yiming Zhang et al.",
+      "year": 2021,
+      "role": "Gap Identification",
+      "relationship_sentence": "Proposed a web-summarization approach for SCTD and popularized evaluation via one-to-many matching metrics that are vulnerable to duplicate inflation, a limitation this work explicitly fixes with Hungarian-based one-to-one matching while also drawing task seeds from their MSComplexTasks pool.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Supporting Complex Search Tasks",
+      "authors": "Ahmed Hassan Awadallah et al.",
+      "year": 2014,
+      "role": "Baseline",
+      "relationship_sentence": "Pioneered inferring task steps from search query co-occurrence, which is directly instantiated here as the 'Search Query Co-occurrence' baseline against which LLM-based methods are compared.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Extracting Hierarchies of Search Tasks & Subtasks via a Bayesian Nonparametric Approach",
+      "authors": "Rishiraj S. Mehrotra and Emine Yilmaz",
+      "year": 2017,
+      "role": "Baseline",
+      "relationship_sentence": "Introduced hierarchical clustering of queries to induce task–subtask structure, adopted here as the 'Search Query Hierarchy' baseline to benchmark against LLM-generated decompositions.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Reasoning about Goals, Steps, and Temporal Ordering with WikiHow",
+      "authors": "Li Zhang et al.",
+      "year": 2020,
+      "role": "Gap Identification",
+      "relationship_sentence": "Constructed procedural goal–step datasets from public web sources (WikiHow), highlighting contamination and coverage issues that this work addresses by collecting human-authored task graphs independent of public websites.",
+      "arxiv_id": "2009.07690",
+      "url": null
+    },
+    {
+      "title": "Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents",
+      "authors": "Wenlong Huang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Showed that LLMs can decompose simple goals into actionable sequences, directly motivating a probe of how far such latent procedural knowledge extends to complex, multi-step task graphs and temporal dependencies.",
+      "arxiv_id": "2201.07207",
+      "url": null
+    },
+    {
+      "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+      "authors": "Brian Lester et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "Introduced soft prompt tuning, which is adapted here to learn task-specific prompt embeddings for step and edge prediction, yielding the substantial gains reported for temporal dependency classification.",
+      "arxiv_id": "2104.08691",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Early work established that pretrained language models could be systematically probed for latent knowledge: Petroni et al. introduced LAMA, a template-based framework for extracting and evaluating what models know without task-specific finetuning. In procedural domains, Zhang, Lyu, and Callison-Burch leveraged WikiHow to assemble resources coupling goals, steps, and temporal ordering from public web data, demonstrating feasibility but raising concerns about training contamination and uneven coverage inherent to web extraction. For structured complex task decomposition, Zhang et al. (2021) advanced a summarization-based pipeline that organizes complex tasks into graphs from retrieved web pages and popularized node-evaluation metrics based on one-to-many matching, while the query-centric line of research by Awadallah et al. and Mehrotra and Yilmaz inferred steps and hierarchies from query co-occurrence and clustering to support task planning at web scale. Concurrently, Huang et al. showed that LLMs can function as zero-shot planners for simple goals, suggesting a rich latent procedural prior that could be tapped for more complex settings. Parameter-efficient prompt tuning from Lester et al. offered a way to specialize LLM behavior without full finetuning, a practical lever for improving structured predictions.\nTogether, these threads revealed an opportunity: probe LLMs directly for complex task graphs using a contamination-resistant, human-authored benchmark; correct metric pathologies from prior SCTD evaluations by enforcing one-to-one matching; and pit LLM-derived decompositions against representative query- and web-based baselines. By uniting LAMA-style probing with robust matching metrics and soft prompt tuning, the present work naturally extends prior insights, showing LLMs’ strength in step generation while exposing a persistent gap in pairwise temporal dependency understanding.",
+  "analysis_timestamp": "2026-04-05T11:58:42.622619",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P03",
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Introduces a probing/benchmarking framework for complex task knowledge with graph-based task representations and node-level metrics—primarily dataset/evaluation engineering with representation and pipeline elements.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

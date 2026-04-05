@@ -1,0 +1,87 @@
+{
+  "paper_title": "Can We Further Elicit Reasoning in LLMs? Critic-Guided Planning with Retrieval-Augmentation for Solving Challenging Tasks",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models excel at problemsolving but often struggle with complex reasoning and factual accuracy.While chainof-thought and retrieval-augmented generation help break down problems and retrieve knowledge, they still falter on challenging tasks like competitive programming due to frequent reasoning errors and irrelevant retrieval.To address this, we introduce Critic-guided planning with Retrieval-augmentation, CR-Planner, a novel framework that leverages fine-tuned critic models to guide both reasoning and retrieval processes through planning.CR-Planner iteratively selects and executes sub-goals, guided by critic models.A sub-goal critic identifies promising sub-goals from reasoning, query generation, and retrieval, while an execution critic evaluates outputs of sub-goal executions.We employ Monte Carlo Tree Search to collect data for critic training, allowing systematic exploration of action sequences and effective navigation toward the final answer.We evaluate CR-Planner on challenging domain-knowledgeintensive and reasoning-heavy tasks, including competitive programming, theorem-driven math reasoning, and complex domain retrieval problems.It significantly outperforms baselines, demonstrating effectiveness in both reasoning and retrieval.",
+  "prior_works": [
+    {
+      "title": "Chain-Of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Established step-by-step rationale generation (CoT), providing the REASON sub-goal abstraction whose candidates CR-Planner scores and selects with an execution critic.",
+      "arxiv_id": "arXiv:2201.11903",
+      "url": null
+    },
+    {
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "authors": "Shunyu Yao et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Proposed planning as search over intermediate thoughts with self-evaluation, directly inspiring CR-Planner’s sub-goal planning and value-based selection across multi-step reasoning paths.",
+      "arxiv_id": "2305.10601",
+      "url": null
+    },
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Shunyu Yao et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "Introduced interleaving reasoning with tool use/retrieval at each step, forming the blueprint for CR-Planner’s alternating REASON–GENQUERY–RETRIEVE sub-goals.",
+      "arxiv_id": "arXiv:2210.03629",
+      "url": null
+    },
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Patrick Lewis et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "Defined the RAG paradigm and its core subtasks (query generation and document selection) that CR-Planner jointly optimizes via critics rather than tuning each in isolation.",
+      "arxiv_id": "arXiv:2005.11401",
+      "url": null
+    },
+    {
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "authors": "Akari Asai et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Showed how fine-tuning a base LLM to decide when/how to retrieve with reflection tokens aids simple tasks but requires base-model training and struggles on complex problems—limitations CR-Planner addresses by training external critics and targeting harder domains.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Let’s Verify Step by Step",
+      "authors": "Hunter Lightman et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "Demonstrated process supervision using a value model to predict future rewards of reasoning steps; CR-Planner extends this by training domain-specific critics as value functions for both reasoning and retrieval to guide planning.",
+      "arxiv_id": "arXiv:2305.20050",
+      "url": null
+    },
+    {
+      "title": "A Survey of Monte Carlo Tree Search Methods",
+      "authors": "Cameron Browne et al.",
+      "year": 2012,
+      "role": "Foundation",
+      "relationship_sentence": "Provided the MCTS framework that CR-Planner uses to simulate trajectories and backpropagate long-term rewards to construct training data for its critic models.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Step-by-step rationale prompting established that large language models could be guided through intermediate reasoning, with Chain-of-Thought introducing explicit rationales that shape a natural REASON sub-goal. Tree of Thoughts then moved beyond linear chains by casting problem solving as search over intermediate thoughts with self-evaluation, bringing a planning-centric perspective to multi-step reasoning. In parallel, ReAct interleaved reasoning with tool interactions, showing that query generation and retrieval can be woven into the reasoning loop at each step. Retrieval-Augmented Generation formalized this retrieval–generation paradigm and clarified the subcomponents—query construction and document selection—that must be coordinated for knowledge-intensive tasks. Self-RAG advanced this integration by fine-tuning models to decide when and how to retrieve and to critique their own outputs via reflection tokens, but it remained tied to base-model training and was most effective on simpler multi-hop tasks. Process supervision via a value model, exemplified by Let’s Verify Step by Step, introduced step-level reward estimation to steer reasoning trajectories. Finally, Monte Carlo Tree Search offered a principled way to explore action sequences and propagate simulated long-term rewards, enabling data collection for training value estimators.\nTogether, these works revealed that effective solutions require planning over both reasoning and retrieval actions, step-level evaluation of intermediate options, and mechanisms to assess long-term impact—not just local improvements to individual subtasks. The convergence of planning (ToT/ReAct), retrieval-aware reasoning (RAG/Self-RAG), and value-based process supervision (RAP), combined with MCTS for trajectory generation, naturally led to a framework that trains small, domain-specific critics as value functions to select sub-goals and executions—yielding a unified, critic-guided planner for complex, knowledge-intensive reasoning.",
+  "analysis_timestamp": "2026-04-05T11:53:18.722627",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P09",
+      "P02"
+    ],
+    "confidence": "high",
+    "reasoning": "Composes planning, reasoning, retrieval, and self-critique into a coordinated pipeline; relies on inference-time guidance to steer multi-step solutions.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Cross-Domain Synthesis"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "paper_title": "Improving Complex Reasoning over Knowledge Graph with Logic-Aware Curriculum Tuning",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Answering complex queries over incomplete knowledge graphs (KGs) is a challenging job. Most previous works have focused on learning entity/relation embeddings and simulating first-order logic operators with various neural networks. However, they are bottlenecked by the inability to share world knowledge to improve logical reasoning, thus resulting in suboptimal performance. In this paper, we propose a complex reasoning schema over KG upon large language models (LLMs), containing a curriculum-based logical-aware instruction tuning framework, named LACT. Specifically, we augment the arbitrary first-order logical queries via binary tree decomposition, to stimulate the reasoning capability of LLMs. To address the difficulty gap among different types of complex queries, we design a simple and flexible logic-aware curriculum learning framework. Experiments across widely used datasets demonstrate that LACT has substantial improvements~(brings an average +5.5% MRR score) over advanced methods, achieving the new state-of-the-art.",
+  "prior_works": [
+    {
+      "title": "Embedding Logical Queries on Knowledge Graphs",
+      "authors": "Hamilton et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "This work formalized answering EFO1 logical queries via computation graphs (DAGs) over KGs, providing the query structures and graph view that LACT textualizes and converts into logic-equivalent trees for LLM supervision.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Beta Embeddings for Multi-Hop Logical Reasoning in Knowledge Graphs",
+      "authors": "Ren and Leskovec",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "By introducing EFO1 reasoning with negation and highlighting divergence mitigated by DNF reformulation, this paper set the problem formulation and limitations that LACT sidesteps by avoiding neural operator learning and instead transforming queries into logic-equivalent trees.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Complex Query Answering with Neural Link Predictors",
+      "authors": "Arakelyan et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "It showed that decomposing complex logical queries into simpler one-hop subproblems reduces difficulty, directly inspiring LACT’s binary-tree-based decomposition used to create stepwise reasoning chains for instruction tuning.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Answering complex logical queries on knowledge graphs via query computation tree optimization",
+      "authors": "Bai et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "By introducing query computation tree optimization, this work provided the tree-based view of logical queries that LACT extends by systematically converting DAGs to binary computation trees and using reverse-level traversal to derive training step sequences.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Wei et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "It established that step-by-step rationales boost LLM reasoning, motivating LACT to embed explicit decomposition chains in the supervision signal rather than relying solely on in-context prompting.",
+      "arxiv_id": "arXiv:2201.11903",
+      "url": null
+    },
+    {
+      "title": "Curriculum Learning",
+      "authors": "Bengio et al.",
+      "year": 2009,
+      "role": "Foundation",
+      "relationship_sentence": "This seminal work introduced training from easy to hard, which LACT operationalizes via a logic-aware curriculum that measures difficulty by the number of decomposed sub-queries and mixes easy/medium/hard stages.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Complex Logical Reasoning over Knowledge Graphs using Large Language Models",
+      "authors": "Choudhary and Reddy",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This initial LLM-based approach relied on prompting with manual query handling and incurred high inference cost and hallucination, directly motivating LACT’s fine-tuned, KG-informed, curriculum-based framework on open models.",
+      "arxiv_id": "arXiv:2305.01157",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Early work formalized complex logical reasoning on knowledge graphs by casting EFO1 queries as computation graphs, defining standard query structures and DAG-based execution (Hamilton et al., 2018). Subsequent advances modeled negation and multi-hop reasoning via Beta distributions, while emphasizing DNF reformulations to avoid embedding divergence, setting both the expressive target and practical constraints of operator-learning approaches (Ren and Leskovec, 2020). In parallel, neural systems showed that reducing query difficulty by decomposing complex queries into simpler one-hop subproblems improves performance, grounding a decomposition paradigm for logic queries (Arakelyan et al., 2020). That perspective was refined with query computation tree optimization, which explicitly reified logical queries as trees to streamline reasoning over KGs (Bai et al., 2023). Independently, chain-of-thought prompting demonstrated that making intermediate steps explicit improves LLM reasoning, encouraging stepwise supervision as a mechanism for enhancing complex inference (Wei et al., 2022). The learning dynamics behind such steps naturally align with curriculum learning’s principle of progressing from easy to hard examples to stabilize training and improve generalization (Bengio et al., 2009). Meanwhile, an early attempt to apply LLMs to complex KG queries via prompting exposed practical limitations—hallucination, manual query-type handling, and cost-heavy multi-step prompting—highlighting the need for fine-tuned, logic-aware solutions (Choudhary and Reddy, 2023). Together, these works revealed a path: represent logical queries as trees, decompose them into explicit reasoning steps, and train LLMs with a curriculum. The natural next step is to synthesize KG-aware instruction tuning with binary-tree-based step supervision and a difficulty-aware schedule, thereby leveraging world knowledge and stabilizing learning for complex logical reasoning.",
+  "analysis_timestamp": "2026-04-05T11:37:53.879153",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P03",
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Leverages logical structure (computation trees, DNF) for KG reasoning, recasting representations and decomposing queries into modules.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "paper_title": "Making Natural Language Reasoning Explainable and Faithful",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Neural models, including large language models (LLMs), achieve superior performance on logical reasoning tasks such as question answering. To elicit reasoning capabilities from LLMs, recent works propose using the chain-of-thought (CoT) mechanism to generate both the reasoning chain and the answer, which enhances the model’s capabilities in conducting reasoning. However, due to LLM’s uninterpretable nature and the extreme flexibility of free-form explanations, several challenges remain: such as struggling with inaccurate reasoning, hallucinations, and not aligning with human preferences. In this talk, we will focus on (1) our design of leveraging structured information (that is grounded to the context), for the explainable complex question answering and reasoning; (2) our multi-module interpretable framework for inductive reasoning, which conducts step-wise faithful reasoning with iterative feedback.",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "This work established free-form chain-of-thought generation as the dominant way to elicit LLM reasoning, which the current paper directly constrains by replacing unconstrained CoT with structured, context-grounded semantic graphs to improve faithfulness.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "authors": "Xuezhi Wang et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing CoT’s variability and reliance on sampling for accuracy rather than faithfulness, this paper motivates the need for structured, grounded guidance that the current work provides via semantic graphs and verification.",
+      "arxiv_id": "2203.11171",
+      "url": null
+    },
+    {
+      "title": "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering",
+      "authors": "Zhilin Yang et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "HotpotQA defined multi-hop QA with supporting facts, directly framing the task setting where the current work builds entity–relation graphs from context to produce faithful, grounded reasoning and answers.",
+      "arxiv_id": "1809.09600",
+      "url": null
+    },
+    {
+      "title": "Cognitive Graph for Multi-Hop Reading Comprehension",
+      "authors": "Yuwei Ding et al.",
+      "year": 2019,
+      "role": "Inspiration",
+      "relationship_sentence": "This paper demonstrated that constructing entity-centric graphs from text and performing graph-based reasoning improves multi-hop interpretability, a key idea the current work adapts by extracting semantic graphs and using them to strictly guide LLM reasoning and explanations.",
+      "arxiv_id": "1905.05412",
+      "url": null
+    },
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Shunyu Yao et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "ReAct’s integration of step-wise thoughts with environment-grounded actions and feedback informs the current work’s step-wise, feedback-driven reasoning design, particularly the iterative verification and correction loop for faithful rule induction.",
+      "arxiv_id": "2210.03629",
+      "url": null
+    },
+    {
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "authors": "Aman Madaan et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Building on the idea of model-generated critiques to iteratively improve outputs, the current work extends this paradigm by instantiating dedicated clarity, reality, and novelty checkers that supply explicit feedback to refine induced rules.",
+      "arxiv_id": "2303.17651",
+      "url": null
+    },
+    {
+      "title": "Language Models as Inductive Reasoners",
+      "authors": "Z. Yang et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This work showed LLMs can transform natural language facts into candidate rules but that the process is opaque and prone to hallucinations, directly motivating the current paper’s modular decomposition with interpretable checking and iterative refinement for faithful induction.",
+      "arxiv_id": "2212.10923",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Chain-of-thought prompting revealed that large language models can improve on reasoning tasks by producing step-by-step explanations, but it did so through unconstrained, free-form rationales. Subsequent work on self-consistency highlighted that such chains vary widely and require sampling to stabilize answers, sharpening concerns about faithfulness rather than merely accuracy. Multi-hop QA was framed by HotpotQA, which mandated reasoning across multiple pieces of evidence and provided supporting facts, situating the need for explanations grounded in the input. Graph-based multi-hop reading comprehension research showed that extracting entity–relation graphs from text and reasoning over them makes the process more interpretable, indicating the value of structured, context-grounded representations. In parallel, “Language Models as Inductive Reasoners” demonstrated that LLMs can induce rules from facts but often hallucinate and lack interpretability. Agent-style methods such as ReAct introduced step-wise reasoning intertwined with environment-grounded actions and feedback, while Self-Refine showed that explicit critiques can iteratively improve model outputs.\nTogether, these works expose a gap: free-form CoT enhances capability but is unfaithful, while graph-based methods provide structure yet were not leveraged to steer LLM reasoning or rule induction; and LLM-induced rules lack verification. The current work synthesizes these insights by extracting semantic graphs from context to strictly guide reasoning for multi-hop QA, yielding grounded, faithful explanations, and by decomposing inductive rule generation into interpretable modules that provide clarity, reality, and novelty checks with iterative feedback, naturally extending self-improvement loops with structured verification.",
+  "analysis_timestamp": "2026-04-05T11:38:21.934929",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P03",
+    "secondary_patterns": [
+      "P10",
+      "P05"
+    ],
+    "confidence": "high",
+    "reasoning": "Shifts from free-form CoT to structured, graph-based representations for multi-hop reasoning; injects structural bias; leverages datasets with supporting-fact supervision for faithful explanations.",
+    "primary_pattern_name": "Representation Shift & Primitive Recasting",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Data & Evaluation Engineering"
+    ]
+  }
+}

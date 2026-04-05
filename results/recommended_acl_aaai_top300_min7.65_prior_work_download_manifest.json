@@ -1,0 +1,1256 @@
+{
+  "count": 178,
+  "downloaded": 171,
+  "exists": 7,
+  "no_pdf_url": 0,
+  "failed": 0,
+  "results": [
+    {
+      "title": "The Role of Exploration Modules in Small Language Models for Knowledge Graph Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/The_Role_of_Exploration_Modules_in_Small_Language_Models_for_Knowledge_Graph_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-srw.67.pdf",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "iQUEST: An Iterative Question-Guided Framework for Knowledge Base Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/iQUEST_An_Iterative_Question_Guided_Framework_for_Knowledge_Base_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.760.pdf",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "Graph Counselor: Adaptive Graph Exploration via Multi-Agent Synergy to Enhance LLM Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Graph_Counselor_Adaptive_Graph_Exploration_via_Multi_Agent_Synergy_to_Enhance_LLM_Reasoning.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1202.pdf",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Agentic_Reasoning_A_Streamlined_Framework_for_Enhancing_LLM_Reasoning_with_Agentic_Tools.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1383.pdf",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "KG-Agent: An Efficient Autonomous Agent Framework for Complex Reasoning over Knowledge Graph",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/KG_Agent_An_Efficient_Autonomous_Agent_Framework_for_Complex_Reasoning_over_Knowledge_Graph.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.468.pdf",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "MultiTool-CoT: GPT-3 Can Use Multiple External Tools with Chain of Thought Prompting",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/MultiTool_CoT_GPT_3_Can_Use_Multiple_External_Tools_with_Chain_of_Thought_Prompting.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-short.130.pdf",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/LightPROF_A_Lightweight_Reasoning_Framework_for_Large_Language_Model_on_Knowledge_Graph.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34510/36665",
+      "status": "exists",
+      "error": null
+    },
+    {
+      "title": "Decoding on Graphs: Faithful and Sound Reasoning on Knowledge Graphs through Generation of Well-Formed Chains",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Decoding_on_Graphs_Faithful_and_Sound_Reasoning_on_Knowledge_Graphs_through_Generation_of_Well_Formed_Chains.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1186.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Large Language Models Can Learn Temporal Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Large_Language_Models_Can_Learn_Temporal_Reasoning.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.563.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/KAM_CoT_Knowledge_Augmented_Multimodal_Chain_of_Thoughts_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29844/31469",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "MindMap: Knowledge Graph Prompting Sparks Graph of Thoughts in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/MindMap_Knowledge_Graph_Prompting_Sparks_Graph_of_Thoughts_in_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.558.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Knowledge Editing with Dynamic Knowledge Graphs for Multi-Hop Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Knowledge_Editing_with_Dynamic_Knowledge_Graphs_for_Multi_Hop_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34655/36810",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Harnessing Large Language Models for Knowledge Graph Question Answering via Adaptive Multi-Aspect Retrieval-Augmentation",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Harnessing_Large_Language_Models_for_Knowledge_Graph_Question_Answering_via_Adaptive_Multi_Aspect_Retrieval_Augmentation.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34747/36902",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Debate on Graph: A Flexible and Reliable Reasoning Framework for Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Debate_on_Graph_A_Flexible_and_Reliable_Reasoning_Framework_for_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34658/36813",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Can Knowledge Graphs Make Large Language Models More Trustworthy? An Empirical Study Over Open-ended Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Can_Knowledge_Graphs_Make_Large_Language_Models_More_Trustworthy_An_Empirical_Study_Over_Open_ended_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.622.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Graph Reasoning Transformers for Knowledge-Aware Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Graph_Reasoning_Transformers_for_Knowledge_Aware_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29938/31639",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ThinkSum: Probabilistic reasoning over sets using large language models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/ThinkSum_Probabilistic_reasoning_over_sets_using_large_language_models.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.68.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Enabling LLM Knowledge Analysis via Extensive Materialization",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Enabling_LLM_Knowledge_Analysis_via_Extensive_Materialization.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.789.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "LLM+AL: Bridging Large Language Models and Action Languages for Complex Reasoning About Actions",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/LLMAL_Bridging_Large_Language_Models_and_Action_Languages_for_Complex_Reasoning_About_Actions.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34597/36752",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "MindMap: Constructing Evidence Chains for Multi-Step Reasoning in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/MindMap_Constructing_Evidence_Chains_for_Multi_Step_Reasoning_in_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29896/31566",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "GraphInsight: Unlocking Insights in Large Language Models for Graph Structure Understanding",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/GraphInsight_Unlocking_Insights_in_Large_Language_Models_for_Graph_Structure_Understanding.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.591.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Promoting Knowledge Base Question Answering by Directing LLMs to Generate Task-relevant Logical Forms",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Promoting_Knowledge_Base_Question_Answering_by_Directing_LLMs_to_Generate_Task_relevant_Logical_Forms.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34564/36719",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Making Natural Language Reasoning Explainable and Faithful",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Making_Natural_Language_Reasoning_Explainable_and_Faithful.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/30280/32276",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Graph Neural Prompting with Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Graph_Neural_Prompting_with_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29875/31526",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Synergistic Multi-Agent Framework with Trajectory Learning for Knowledge-Intensive Tasks",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Synergistic_Multi_Agent_Framework_with_Trajectory_Learning_for_Knowledge_Intensive_Tasks.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34772/36927",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Improving Complex Reasoning over Knowledge Graph with Logic-Aware Curriculum Tuning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Improving_Complex_Reasoning_over_Knowledge_Graph_with_Logic_Aware_Curriculum_Tuning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33405/35560",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "CogMG: Collaborative Augmentation Between Large Language Model and Knowledge Graph",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/CogMG_Collaborative_Augmentation_Between_Large_Language_Model_and_Knowledge_Graph.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-demos.35.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Tree-of-Reasoning Question Decomposition for Complex Question Answering with Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Tree_of_Reasoning_Question_Decomposition_for_Complex_Question_Answering_with_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29928/31621",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Interleaving_Retrieval_with_Chain_of_Thought_Reasoning_for_Knowledge_Intensive_Multi_Step_Questions.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.557.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SoftCoT: Soft Chain-of-Thought for Efficient Reasoning with LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/SoftCoT_Soft_Chain_of_Thought_for_Efficient_Reasoning_with_LLMs.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1137.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "EPERM: An Evidence Path Enhanced Reasoning Model for Knowledge Graph Question and Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/EPERM_An_Evidence_Path_Enhanced_Reasoning_Model_for_Knowledge_Graph_Question_and_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33338/35493",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Mitigating Large Language Model Hallucinations via Autonomous Knowledge Graph-Based Retrofitting",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Mitigating_Large_Language_Model_Hallucinations_via_Autonomous_Knowledge_Graph_Based_Retrofitting.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29770/31326",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Interactive-KBQA: Multi-Turn Interactions for Knowledge Base Question Answering with Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Interactive_KBQA_Multi_Turn_Interactions_for_Knowledge_Base_Question_Answering_with_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.569.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Adapting to Non-Stationary Environments: Multi-Armed Bandit Enhanced Retrieval-Augmented Generation on Knowledge Graphs",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Adapting_to_Non_Stationary_Environments_Multi_Armed_Bandit_Enhanced_Retrieval_Augmented_Generation_on_Knowledge_Graphs.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33380/35535",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Eliciting Better Multilingual Structured Reasoning from LLMs through Code",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Eliciting_Better_Multilingual_Structured_Reasoning_from_LLMs_through_Code.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.281.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Boosting Language Models Reasoning with Chain-of-Knowledge Prompting",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Boosting_Language_Models_Reasoning_with_Chain_of_Knowledge_Prompting.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.271.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Reversal of Thought: Enhancing Large Language Models with Preference-Guided Reverse Reasoning Warm-up",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Reversal_of_Thought_Enhancing_Large_Language_Models_with_Preference_Guided_Reverse_Reasoning_Warm_up.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.955.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Knowledge Graph Prompting for Multi-Document Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Knowledge_Graph_Prompting_for_Multi_Document_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29889/31552",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "GRAT: Guiding Retrieval-Augmented Reasoning through Process Rewards Tree Search",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/GRAT_Guiding_Retrieval_Augmented_Reasoning_through_Process_Rewards_Tree_Search.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1352.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Digest the Knowledge: Large Language Models empowered Message Passing for Knowledge Graph Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Digest_the_Knowledge_Large_Language_Models_empowered_Message_Passing_for_Knowledge_Graph_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.750.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Can We Further Elicit Reasoning in LLMs? Critic-Guided Planning with Retrieval-Augmentation for Solving Challenging Tasks",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Can_We_Further_Elicit_Reasoning_in_LLMs_Critic_Guided_Planning_with_Retrieval_Augmentation_for_Solving_Challenging_Tasks.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1244.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Small Models, Big Insights: Leveraging Slim Proxy Models To Decide When and What to Retrieve for LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Small_Models_Big_Insights_Leveraging_Slim_Proxy_Models_To_Decide_When_and_What_to_Retrieve_for_LLMs.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.242.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "FiTs: Fine-Grained Two-Stage Training for Knowledge-Aware Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/FiTs_Fine_Grained_Two_Stage_Training_for_Knowledge_Aware_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26629/26401",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Com² : A Causal-Guided Benchmark for Exploring Complex Commonsense Reasoning in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Com²_A_Causal_Guided_Benchmark_for_Exploring_Complex_Commonsense_Reasoning_in_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.785.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Mitigating Hallucination by Integrating Knowledge Graphs into LLM Inference – a Systematic Literature Review",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Mitigating_Hallucination_by_Integrating_Knowledge_Graphs_into_LLM_Inference_a_Systematic_Literature_Review.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-srw.53.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Explore What LLM Does Not Know in Complex Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Explore_What_LLM_Does_Not_Know_in_Complex_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34638/36793",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Deliberate Reasoning in Language Models as Structure-Aware Planning with an Accurate World Model",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Deliberate_Reasoning_in_Language_Models_as_Structure_Aware_Planning_with_an_Accurate_World_Model.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1540.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "GAMEBoT: Transparent Assessment of LLM Reasoning in Games",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/GAMEBoT_Transparent_Assessment_of_LLM_Reasoning_in_Games.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.378.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Large Language and Reasoning Models are Shallow Disjunctive Reasoners",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Large_Language_and_Reasoning_Models_are_Shallow_Disjunctive_Reasoners.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.433.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Drift: Enhancing LLM Faithfulness in Rationale Generation via Dual-Reward Probabilistic Inference",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Drift_Enhancing_LLM_Faithfulness_in_Rationale_Generation_via_Dual_Reward_Probabilistic_Inference.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.340.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ReConcile: Round-Table Conference Improves Reasoning via Consensus among Diverse LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/ReConcile_Round_Table_Conference_Improves_Reasoning_via_Consensus_among_Diverse_LLMs.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.381.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SAC-KG: Exploiting Large Language Models as Skilled Automatic Constructors for Domain Knowledge Graph",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/SAC_KG_Exploiting_Large_Language_Models_as_Skilled_Automatic_Constructors_for_Domain_Knowledge_Graph.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.238.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Encoder of Thoughts: Enhancing Planning Ability in Language Agents Through Structural Embedding",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Encoder_of_Thoughts_Enhancing_Planning_Ability_in_Language_Agents_Through_Structural_Embedding.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34794/36949",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Faithful Question Answering with Monte-Carlo Planning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Faithful_Question_Answering_with_Monte_Carlo_Planning.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.218.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ANALOGYKB: Unlocking Analogical Reasoning of Language Models with A Million-scale Knowledge Base",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/ANALOGYKB_Unlocking_Analogical_Reasoning_of_Language_Models_with_A_Million_scale_Knowledge_Base.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.68.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "A Data Source for Reasoning Embodied Agents",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/A_Data_Source_for_Reasoning_Embodied_Agents.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26017/25789",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Semantic Exploration with Adaptive Gating for Efficient Problem Solving with Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Semantic_Exploration_with_Adaptive_Gating_for_Efficient_Problem_Solving_with_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.29.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SCOTT: Self-Consistent Chain-of-Thought Distillation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/SCOTT_Self_Consistent_Chain_of_Thought_Distillation.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.304.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "RATT: A Thought Structure for Coherent and Correct LLM Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/RATT_A_Thought_Structure_for_Coherent_and_Correct_LLM_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34876/37031",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/NPHardEval_Dynamic_Benchmark_on_Reasoning_Ability_of_Large_Language_Models_via_Complexity_Classes.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.225.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Improving Retrieval Augmented Language Model with Self-Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Improving_Retrieval_Augmented_Language_Model_with_Self_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34743/36898",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Complex Reasoning over Logical Queries on Commonsense Knowledge Graphs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Complex_Reasoning_over_Logical_Queries_on_Commonsense_Knowledge_Graphs.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.613.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Don’t Generate, Discriminate: A Proposal for Grounding Language Models to Real-World Environments",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Dont_Generate_Discriminate_A_Proposal_for_Grounding_Language_Models_to_Real_World_Environments.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.270.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Unleashing LLM Reasoning Capability via Scalable Question Synthesis from Scratch",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Unleashing_LLM_Reasoning_Capability_via_Scalable_Question_Synthesis_from_Scratch.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.658.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Learning to Reason Over Time: Timeline Self-Reflection for Improved Temporal Reasoning in Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Learning_to_Reason_Over_Time_Timeline_Self_Reflection_for_Improved_Temporal_Reasoning_in_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1358.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "A Systematic Exploration of Knowledge Graph Alignment with Large Language Models in Retrieval Augmented Generation",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/A_Systematic_Exploration_of_Knowledge_Graph_Alignment_with_Large_Language_Models_in_Retrieval_Augmented_Generation.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34716/36871",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "GrowOVER: How Can LLMs Adapt to Growing Real-World Knowledge?",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/GrowOVER_How_Can_LLMs_Adapt_to_Growing_Real_World_Knowledge.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.181.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ROGRAG: A Robustly Optimized GraphRAG Framework",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/ROGRAG_A_Robustly_Optimized_GraphRAG_Framework.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-demo.58.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Faithful Logical Reasoning via Symbolic Chain-of-Thought",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Faithful_Logical_Reasoning_via_Symbolic_Chain_of_Thought.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.720.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "INTERACT: Enabling Interactive, Question-Driven Learning in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/INTERACT_Enabling_Interactive_Question_Driven_Learning_in_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.441.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Dynamic Heterogeneous-Graph Reasoning with Language Models and Knowledge Representation Learning for Commonsense Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Dynamic_Heterogeneous_Graph_Reasoning_with_Language_Models_and_Knowledge_Representation_Learning_for_Commonsense_Questio.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.785.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ACPBench: Reasoning About Action, Change, and Planning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/ACPBench_Reasoning_About_Action_Change_and_Planning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34857/37012",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "T-SciQ: Teaching Multimodal Chain-of-Thought Reasoning via Large Language Model Signals for Science Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/T_SciQ_Teaching_Multimodal_Chain_of_Thought_Reasoning_via_Large_Language_Model_Signals_for_Science_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29884/31543",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Are LLMs Truly Graph-Savvy? A Comprehensive Evaluation of Graph Generation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Are_LLMs_Truly_Graph_Savvy_A_Comprehensive_Evaluation_of_Graph_Generation.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-srw.64.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Verify-and-Edit: A Knowledge-Enhanced Chain-of-Thought Framework",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Verify_and_Edit_A_Knowledge_Enhanced_Chain_of_Thought_Framework.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.320.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Enhancing Chain of Thought Prompting in Large Language Models via Reasoning Patterns",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Enhancing_Chain_of_Thought_Prompting_in_Large_Language_Models_via_Reasoning_Patterns.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34793/36948",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "KALM: Knowledge-Aware Integration of Local, Document, and Global Contexts for Long Document Understanding",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/KALM_Knowledge_Aware_Integration_of_Local_Document_and_Global_Contexts_for_Long_Document_Understanding.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.118.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Large Language Models Are Reasoning Teachers",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Large_Language_Models_Are_Reasoning_Teachers.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.830.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "C3oT: Generating Shorter Chain-of-Thought Without Compromising Effectiveness",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/C3oT_Generating_Shorter_Chain_of_Thought_Without_Compromising_Effectiveness.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34608/36763",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ReFT: Reasoning with Reinforced Fine-Tuning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/ReFT_Reasoning_with_Reinforced_Fine_Tuning.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.410.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Table-Critic: A Multi-Agent Framework for Collaborative Criticism and Refinement in Table Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Table_Critic_A_Multi_Agent_Framework_for_Collaborative_Criticism_and_Refinement_in_Table_Reasoning.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.853.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SR-FoT: A Syllogistic-Reasoning Framework of Thought for Large Language Models Tackling Knowledge-based Reasoning Tasks",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/SR_FoT_A_Syllogistic_Reasoning_Framework_of_Thought_for_Large_Language_Models_Tackling_Knowledge_based_Reasoning_Tasks.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33666/35821",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Code-Style In-Context Learning for Knowledge-Based Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Code_Style_In_Context_Learning_for_Knowledge_Based_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29848/31476",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Automated Creation of Reusable and Diverse Toolsets for Enhancing LLM Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Automated_Creation_of_Reusable_and_Diverse_Toolsets_for_Enhancing_LLM_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34664/36819",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "IRIS: Interactive Research Ideation System for Accelerating Scientific Discovery",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/IRIS_Interactive_Research_Ideation_System_for_Accelerating_Scientific_Discovery.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-demo.57.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Towards Trustworthy Knowledge Graph Reasoning: An Uncertainty Aware Perspective",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Towards_Trustworthy_Knowledge_Graph_Reasoning_An_Uncertainty_Aware_Perspective.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33353/35508",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "From Static to Dynamic: Knowledge Metabolism for Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/From_Static_to_Dynamic_Knowledge_Metabolism_for_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/30564/32726",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "DistilQwen2.5: Industrial Practices of Training Distilled Open Lightweight Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/DistilQwen2.5_Industrial_Practices_of_Training_Distilled_Open_Lightweight_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-industry.4.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "TaskLAMA: Probing the Complex Task Understanding of Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/TaskLAMA_Probing_the_Complex_Task_Understanding_of_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29918/31605",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Marco_o1_v2_Towards_Widening_The_Distillation_Bottleneck_for_Reasoning_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1145.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "BLADE: Enhancing Black-Box Large Language Models with Small Domain-Specific Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/BLADE_Enhancing_Black_Box_Large_Language_Models_with_Small_Domain_Specific_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34620/36775",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Beyond Prompt Engineering: A Reinforced Token-Level Input Refinement for Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Beyond_Prompt_Engineering_A_Reinforced_Token_Level_Input_Refinement_for_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34586/36741",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Graph of Thoughts: Solving Elaborate Problems with Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Graph_of_Thoughts_Solving_Elaborate_Problems_with_Large_Language_Models.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29720/31236",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/BELLE_A_Bi_Level_Multi_Agent_Reasoning_Framework_for_Multi_Hop_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.211.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "FlexKBQA: A Flexible LLM-Powered Framework for Few-Shot Knowledge Base Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/FlexKBQA_A_Flexible_LLM_Powered_Framework_for_Few_Shot_Knowledge_Base_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29823/31429",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Basic Reading Distillation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Basic_Reading_Distillation.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1472.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "LLM-DR: A Novel LLM-Aided Diffusion Model for Rule Generation on Temporal Knowledge Graphs",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/LLM_DR_A_Novel_LLM_Aided_Diffusion_Model_for_Rule_Generation_on_Temporal_Knowledge_Graphs.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33249/35404",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Multi-Aspect Explainable Inductive Relation Prediction by Sentence Transformer",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/Multi_Aspect_Explainable_Inductive_Relation_Prediction_by_Sentence_Transformer.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25803/25575",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Knowledge Tagging with Large Language Model Based Multi-Agent System",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Knowledge_Tagging_with_Large_Language_Model_Based_Multi_Agent_System.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/35141/37296",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Inductive Learning of Logical Theories with LLMs: A Expressivity-graded Analysis",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Inductive_Learning_of_Logical_Theories_with_LLMs_A_Expressivity_graded_Analysis.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34546/36701",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Relation-Aware Language-Graph Transformer for Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/Relation_Aware_Language_Graph_Transformer_for_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26578/26350",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Can_LMs_Learn_New_Entities_from_Descriptions_Challenges_in_Propagating_Injected_Knowledge.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.300.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/HOLMES_Hyper_Relational_Knowledge_Graphs_for_Multi_hop_Question_Answering_using_LLMs.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.717.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Fact-Driven Logical Reasoning for Machine Reading Comprehension",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Fact_Driven_Logical_Reasoning_for_Machine_Reading_Comprehension.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29850/31479",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Improving_Chain_of_Thought_Reasoning_via_Quasi_Symbolic_Abstractions.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.843.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/ChainEdit_Propagating_Ripple_Effects_in_LLM_Knowledge_Editing_through_Logical_Rule_Guided_Chains.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.665.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Why Prompt Design Matters and Works: A Complexity Analysis of Prompt Search Space in LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Why_Prompt_Design_Matters_and_Works_A_Complexity_Analysis_of_Prompt_Search_Space_in_LLMs.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1562.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "STaR-SQL: Self-Taught Reasoner for Text-to-SQL",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/STaR_SQL_Self_Taught_Reasoner_for_Text_to_SQL.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1187.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "CDW-CoT: Clustered Distance-Weighted Chain-of-Thoughts Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/CDW_CoT_Clustered_Distance_Weighted_Chain_of_Thoughts_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34560/36715",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "TrustUQA: A Trustful Framework for Unified Structured Data Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/TrustUQA_A_Trustful_Framework_for_Unified_Structured_Data_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34787/36942",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Temporal Knowledge Question Answering via Abstract Reasoning Induction",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Temporal_Knowledge_Question_Answering_via_Abstract_Reasoning_Induction.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.267.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Truth Behind the Scene: Designing Evaluations Benchmarks to Assess LLMs’ Task-Specific Understanding over Test-Taking Strategies",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Truth_Behind_the_Scene_Designing_Evaluations_Benchmarks_to_Assess_LLMs_Task_Specific_Understanding_over_Test_Taking_Stra.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/35337/37492",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Few_shot_In_context_Learning_on_Knowledge_Base_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.385.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Exclusion of Thought: Mitigating Cognitive Load in Large Language Models for Enhanced Reasoning in Multiple-Choice Tasks",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Exclusion_of_Thought_Mitigating_Cognitive_Load_in_Large_Language_Models_for_Enhanced_Reasoning_in_Multiple_Choice_Tasks.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1051.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Enhancing Mathematical Reasoning in LLMs by Stepwise Correction",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Enhancing_Mathematical_Reasoning_in_LLMs_by_Stepwise_Correction.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1048.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "K-ON: Stacking Knowledge on the Head Layer of Large Language Model",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/K_ON_Stacking_Knowledge_on_the_Head_Layer_of_Large_Language_Model.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33278/35433",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SEER: Facilitating Structured Reasoning and Explanation via Reinforcement Learning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/SEER_Facilitating_Structured_Reasoning_and_Explanation_via_Reinforcement_Learning.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.321.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Fast Think-on-Graph: Wider, Deeper and Faster Reasoning of Large Language Model on Knowledge Graph",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Fast_Think_on_Graph_Wider_Deeper_and_Faster_Reasoning_of_Large_Language_Model_on_Knowledge_Graph.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34635/36790",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "GainRAG: Preference Alignment in Retrieval-Augmented Generation through Gain Signal Synthesis",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/GainRAG_Preference_Alignment_in_Retrieval_Augmented_Generation_through_Gain_Signal_Synthesis.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.527.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Hypothesis, Verification, and Induction: Grounding Large Language Models with Self-Driven Skill Learning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Hypothesis_Verification_and_Induction_Grounding_Large_Language_Models_with_Self_Driven_Skill_Learning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29376/30598",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "M-RAG: Reinforcing Large Language Model Performance through Retrieval-Augmented Generation with Multiple Partitions",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/M_RAG_Reinforcing_Large_Language_Model_Performance_through_Retrieval_Augmented_Generation_with_Multiple_Partitions.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.108.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Graph Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Graph_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.245.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "KICE: A Knowledge Consolidation and Expansion Framework for Relation Extraction",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/KICE_A_Knowledge_Consolidation_and_Expansion_Framework_for_Relation_Extraction.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26565/26337",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Evaluating LLM Reasoning in the Operations Research Domain with ORQA",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Evaluating_LLM_Reasoning_in_the_Operations_Research_Domain_with_ORQA.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34673/36828",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Towards Context-Robust LLMs: A Gated Representation Fine-tuning Approach",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Towards_Context_Robust_LLMs_A_Gated_Representation_Fine_tuning_Approach.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.506.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "RankCoT: Refining Knowledge for Retrieval-Augmented Generation through Ranking Chain-of-Thoughts",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/RankCoT_Refining_Knowledge_for_Retrieval_Augmented_Generation_through_Ranking_Chain_of_Thoughts.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.629.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Lexical Recall or Logical Reasoning: Probing the Limits of Reasoning Abilities in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Lexical_Recall_or_Logical_Reasoning_Probing_the_Limits_of_Reasoning_Abilities_in_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.664.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Bridging the Preference Gap between Retrievers and LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Bridging_the_Preference_Gap_between_Retrievers_and_LLMs.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.562.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Journey_to_the_Center_of_the_Knowledge_Neurons_Discoveries_of_Language_Independent_Knowledge_Neurons_and_Degenerate_Know.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29735/31264",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/CypherBench_Towards_Precise_Retrieval_over_Full_scale_Modern_Knowledge_Graphs_in_the_LLM_Era.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.438.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "PathReasoner: Modeling Reasoning Path with Equivalent Extension for Logical Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/PathReasoner_Modeling_Reasoning_Path_with_Equivalent_Extension_for_Logical_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.724.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "COGEN: Abductive Commonsense Language Generation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/COGEN_Abductive_Commonsense_Language_Generation.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-short.26.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Capture the Key in Reasoning to Enhance CoT Distillation Generalization",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Capture_the_Key_in_Reasoning_to_Enhance_CoT_Distillation_Generalization.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.21.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Frugal LMs Trained to Invoke Symbolic Solvers Achieve Parameter-Efficient Arithmetic Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Frugal_LMs_Trained_to_Invoke_Symbolic_Solvers_Achieve_Parameter_Efficient_Arithmetic_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29750/31290",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "PokeMQA: Programmable knowledge editing for Multi-hop Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/PokeMQA_Programmable_knowledge_editing_for_Multi_hop_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.438.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Don’t Get Lost in the Trees: Streamlining LLM Reasoning by Overcoming Tree Search Exploration Pitfalls",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Dont_Get_Lost_in_the_Trees_Streamlining_LLM_Reasoning_by_Overcoming_Tree_Search_Exploration_Pitfalls.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1167.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Augmenting Math Word Problems via Iterative Question Composing",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Augmenting_Math_Word_Problems_via_Iterative_Question_Composing.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34640/36795",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Re-Tuning: Overcoming the Compositionality Limits of Large Language Models with Recursive Tuning",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Re_Tuning_Overcoming_the_Compositionality_Limits_of_Large_Language_Models_with_Recursive_Tuning.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.561.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Is That Your Final Answer? Test-Time Scaling Improves Selective Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Is_That_Your_Final_Answer_Test_Time_Scaling_Improves_Selective_Question_Answering.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-short.50.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Towards Fully Exploiting LLM Internal States to Enhance Knowledge Boundary Perception",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Towards_Fully_Exploiting_LLM_Internal_States_to_Enhance_Knowledge_Boundary_Perception.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1184.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "DDPrompt: Differential Diversity Prompting in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/DDPrompt_Differential_Diversity_Prompting_in_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-short.17.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Benchmarking_Knowledge_Boundary_for_Large_Language_Models_A_Different_Perspective_on_Model_Evaluation.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.124.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Multi-Grained Knowledge Retrieval for End-to-End Task-Oriented Dialog",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Multi_Grained_Knowledge_Retrieval_for_End_to_End_Task_Oriented_Dialog.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.627.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "ECLAIR: Enhanced Clarification for Interactive Responses in an Enterprise AI Assistant",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/ECLAIR_Enhanced_Clarification_for_Interactive_Responses_in_an_Enterprise_AI_Assistant.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/35363/37518",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/GraphCheck_Breaking_Long_Term_Text_Barriers_with_Extracted_Knowledge_Graph_Powered_Fact_Checking.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.729.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Single Sequence Prediction over Reasoning Graphs for Multi-hop QA",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2023/Single_Sequence_Prediction_over_Reasoning_Graphs_for_Multi_hop_QA.pdf",
+      "pdf_url": "https://aclanthology.org/2023.acl-long.642.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Efficient Embeddings of Logical Variables for Query Answering over Incomplete Knowledge Graphs",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/Efficient_Embeddings_of_Logical_Variables_for_Query_Answering_over_Incomplete_Knowledge_Graphs.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25588/25360",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "LocalRQA: From Generating Data to Locally Training, Testing, and Deploying Retrieval-Augmented QA Systems",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/LocalRQA_From_Generating_Data_to_Locally_Training_Testing_and_Deploying_Retrieval_Augmented_QA_Systems.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-demos.14.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Neural-Symbolic Collaborative Distillation: Advancing Small Language Models for Complex Reasoning Tasks",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Neural_Symbolic_Collaborative_Distillation_Advancing_Small_Language_Models_for_Complex_Reasoning_Tasks.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34636/36791",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Question Calibration and Multi-Hop Modeling for Temporal Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Question_Calibration_and_Multi_Hop_Modeling_for_Temporal_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29903/31579",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SCOP: Evaluating the Comprehension Process of Large Language Models from a Cognitive View",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/SCOP_Evaluating_the_Comprehension_Process_of_Large_Language_Models_from_a_Cognitive_View.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.852.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Cracking_Factual_Knowledge_A_Comprehensive_Analysis_of_Degenerate_Knowledge_Neurons_in_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.505.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Union Is Strength! Unite the Power of LLMs and MLLMs for Chart Question Answering",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Union_Is_Strength_Unite_the_Power_of_LLMs_and_MLLMs_for_Chart_Question_Answering.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32584/34739",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "RUBY: An Effective Framework for Multi-Constraint Multi-Hop Question Generation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/RUBY_An_Effective_Framework_for_Multi_Constraint_Multi_Hop_Question_Generation.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.889.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/TARGA_Targeted_Synthetic_Data_Generation_for_Practical_Reasoning_over_Structured_Data.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.137.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "CK12: A Rounded K12 Knowledge Graph Based Benchmark for Chinese Holistic Cognition Evaluation",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/CK12_A_Rounded_K12_Knowledge_Graph_Based_Benchmark_for_Chinese_Holistic_Cognition_Evaluation.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29914/31598",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Logical forms complement probability in understanding language model (and human) performance",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Logical_forms_complement_probability_in_understanding_language_model_and_human_performance.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.824.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "KnowPO: Knowledge-Aware Preference Optimization for Controllable Knowledge Selection in Retrieval-Augmented Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/KnowPO_Knowledge_Aware_Preference_Optimization_for_Controllable_Knowledge_Selection_in_Retrieval_Augmented_Language_Mode.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34783/36938",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Active Prompting with Chain-of-Thought for Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Active_Prompting_with_Chain_of_Thought_for_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.73.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Keys to Robust Edits: From Theoretical Insights to Practical Advances",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Keys_to_Robust_Edits_From_Theoretical_Insights_to_Practical_Advances.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1099.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "MARS: Benchmarking the Metaphysical Reasoning Abilities of Language Models with a Multi-task Evaluation Dataset",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/MARS_Benchmarking_the_Metaphysical_Reasoning_Abilities_of_Language_Models_with_a_Multi_task_Evaluation_Dataset.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.79.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/KiRAG_Knowledge_Driven_Iterative_Retriever_for_Enhancing_Retrieval_Augmented_Generation.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.929.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Making Long-Context Language Models Better Multi-Hop Reasoners",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Making_Long_Context_Language_Models_Better_Multi_Hop_Reasoners.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.135.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Re2LLM: Reflective Reinforcement Large Language Model for Session-based Recommendation",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Re2LLM_Reflective_Reinforcement_Large_Language_Model_for_Session_based_Recommendation.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33399/35554",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Multimodal Reasoning with Multimodal Knowledge Graph",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/Multimodal_Reasoning_with_Multimodal_Knowledge_Graph.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.579.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Meta-Tool: Unleash Open-World Function Calling Capabilities of General-Purpose Large Language Models",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2025/Meta_Tool_Unleash_Open_World_Function_Calling_Capabilities_of_General_Purpose_Large_Language_Models.pdf",
+      "pdf_url": "https://aclanthology.org/2025.acl-long.1481.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "SeqGPT: An Out-of-the-Box Large Language Model for Open Domain Sequence Understanding",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/SeqGPT_An_Out_of_the_Box_Large_Language_Model_for_Open_Domain_Sequence_Understanding.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29917/31604",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Turning Dust into Gold: Distilling Complex Reasoning Capabilities from LLMs by Leveraging Negative Data",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/Turning_Dust_into_Gold_Distilling_Complex_Reasoning_Capabilities_from_LLMs_by_Leveraging_Negative_Data.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29821/31426",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Towards Complex Scenarios: Building End-to-End Task-Oriented Dialogue System across Multiple Knowledge Bases",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2023/Towards_Complex_Scenarios_Building_End_to_End_Task_Oriented_Dialogue_System_across_Multiple_Knowledge_Bases.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26581/26353",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Importance Weighting Can Help Large Language Models Self-Improve",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Importance_Weighting_Can_Help_Large_Language_Models_Self_Improve.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34602/36757",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "From Retrieval to Generation: A Simple and Unified Generative Model for End-to-End Task-Oriented Dialogue",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2024/From_Retrieval_to_Generation_A_Simple_and_Unified_Generative_Model_for_End_to_End_Task_Oriented_Dialogue.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/29745/31282",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Key-Point-Driven Data Synthesis with Its Enhancement on Mathematical Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Key_Point_Driven_Data_Synthesis_with_Its_Enhancement_on_Mathematical_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34593/36748",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "XCOT: Cross-lingual Instruction Tuning for Cross-lingual Chain-of-Thought Reasoning",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/XCOT_Cross_lingual_Instruction_Tuning_for_Cross_lingual_Chain_of_Thought_Reasoning.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34524/36679",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Benchmarking and Understanding Compositional Relational Reasoning of LLMs",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Benchmarking_and_Understanding_Compositional_Relational_Reasoning_of_LLMs.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34170/36325",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "REANO: Optimising Retrieval-Augmented Reader Models through Knowledge Graph Generation",
+      "pdf_path": "raw_paper/pdfs/venue=ACL/year=2024/REANO_Optimising_Retrieval_Augmented_Reader_Models_through_Knowledge_Graph_Generation.pdf",
+      "pdf_url": "https://aclanthology.org/2024.acl-long.115.pdf",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "S^3cMath: Spontaneous Step-Level Self-Correction Makes Large Language Models Better Mathematical Reasoners",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/S3cMath_Spontaneous_Step_Level_Self_Correction_Makes_Large_Language_Models_Better_Mathematical_Reasoners.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34749/36904",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Automatically Generating Numerous Context-Driven SFT Data for LLMs Across Diverse Granularity",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Automatically_Generating_Numerous_Context_Driven_SFT_Data_for_LLMs_Across_Diverse_Granularity.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34692/36847",
+      "status": "downloaded",
+      "error": null
+    },
+    {
+      "title": "Walk Wisely on Graph: Knowledge Graph Reasoning with Dual Agents via Efficient Guidance-Exploration",
+      "pdf_path": "raw_paper/pdfs/venue=AAAI/year=2025/Walk_Wisely_on_Graph_Knowledge_Graph_Reasoning_with_Dual_Agents_via_Efficient_Guidance_Exploration.pdf",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/33398/35553",
+      "status": "downloaded",
+      "error": null
+    }
+  ],
+  "generated_at": "2026-04-04T22:58:05.271985"
+}

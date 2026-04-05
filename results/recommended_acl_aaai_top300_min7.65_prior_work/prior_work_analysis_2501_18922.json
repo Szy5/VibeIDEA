@@ -1,0 +1,77 @@
+{
+  "paper_title": "KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search",
+  "paper_arxiv_id": "2501.18922",
+  "paper_abstract": "Knowledge Base Question Answering (KBQA) aims to answer natural language questions with a large-scale structured knowledge base (KB). Despite advancements with large language models (LLMs), KBQA still faces challenges in weak KB awareness, imbalance between effectiveness and efficiency, and high reliance on annotated data. To address these challenges, we propose KBQA-o1, a novel agentic KBQA method with Monte Carlo Tree Search (MCTS). It introduces a ReAct-based agent process for stepwise logical form generation with KB environment exploration. Moreover, it employs MCTS, a heuristic search method driven by policy and reward models, to balance agentic exploration's performance and search space. With heuristic exploration, KBQA-o1 generates high-quality annotations for further improvement by incremental fine-tuning. Experimental results show that KBQA-o1 outperforms previous low-resource KBQA methods with limited annotated data, boosting Llama-3.1-8B model's GrailQA F1 performance to 78.5% compared to 48.5% of the previous sota method with GPT-3.5-turbo. Our code is publicly available.",
+  "prior_works": [
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "S. Yao et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Introduced the ReAct prompt-style Thought–Action–Observation agent paradigm and tool-use scaffolding that KBQA-o1 directly adopts for a stepwise, tool-invoking agent to interact with the KB environment and record observable functions as logical-form steps.",
+      "arxiv_id": "2210.03629v3",
+      "url": null
+    },
+    {
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "authors": "S. Yao et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Proposed tree-structured exploration of reasoning trajectories and highlighted the benefit of expanding the thought space but also the resulting large combinatorial search problem that KBQA-o1 addresses via heuristic MCTS to control search growth.",
+      "arxiv_id": "2305.10601",
+      "url": null
+    },
+    {
+      "title": "Reasoning with Language Model is Planning with World Model",
+      "authors": "S. Hao et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Applied Monte Carlo Tree Search combined with LLM-based policy/world-model signals to guide planning, a scheme KBQA-o1 directly extends by coupling policy and reward LLMs with MCTS for KB-specific trajectory simulation and selection.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Monte Carlo Tree Search: a review of recent modifications and applications",
+      "authors": "M. ´Swiechowski et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Formalized UCT selection, expansion, simulation and backpropagation mechanics for MCTS that KBQA-o1 reuses as the core heuristic search algorithm and UCT-based selection strategy over agent states in the KB environment.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+      "authors": "T. Li et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "Defined the low-resource KBQA evaluation setting and few-shot in-context strategies that KBQA-o1 explicitly compares against and seeks to outperform by reducing annotation reliance through heuristic exploration and auto-labeling.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Beyond I.I.D.: Three Levels of Generalization for Question Answering on Knowledge Bases",
+      "authors": "Y. Gu et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "Provided the compositional KBQA problem formulation and S-expression style logical forms and offered the GrailQA benchmark and splits (I.I.D./compositional/zero-shot) that KBQA-o1 uses to formulate, evaluate, and motivate its environment-aware generation and generalization claims.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "ReAct established a concrete agent framework—interleaving Thoughts, Actions (tool calls), and Observations—that made it possible to frame KBQA as a sequence of executable tool-driven steps rather than a monolithic text-to-query mapping; this directly motivated KBQA-o1’s ReAct-style agent prompt and atomic KB query tools. Tree of Thoughts demonstrated the value of expanding per-step search into a tree of candidate reasoning trajectories but also exposed combinatorial explosion issues that motivate controlled heuristic search. RAP showed how combining LLM policy/world-model scores with Monte Carlo Tree Search (MCTS) can guide exploration breadth and depth, while the MCTS survey formalized the UCT selection, expansion, simulation and backpropagation mechanisms that KBQA-o1 reuses to score and propagate trajectory values in a KB setting. KB-BINDER concretized the low-resource KBQA benchmark and revealed the strong dependence on annotated examples that KBQA-o1 targets by generating filtered auto-annotations. Finally, GrailQA supplied the compositional logical-form representations and evaluation splits that define the task’s generalization challenges. Together these works exposed a clear opportunity: combine a tool-using ReAct agent with MCTS-driven heuristic search (using learned policy and reward scorers) and judicious filtering to produce high-quality auto-labeled logical forms for incremental fine-tuning; KBQA-o1 is the natural synthesis that integrates these specific techniques to mitigate tree-search blowup, improve KB awareness, and reduce annotation dependence in KBQA.",
+  "analysis_timestamp": "2026-03-09T00:30:20.218493",
+  "input_tokens": 18632,
+  "output_tokens": 1064,
+  "innovation_classification": {
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Core contribution is using MCTS to guide LLM-driven agentic reasoning at inference/sampling time (guided exploration/control); it also composes modular tool-based KB query actions (agent pipeline).",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition"
+    ]
+  }
+}

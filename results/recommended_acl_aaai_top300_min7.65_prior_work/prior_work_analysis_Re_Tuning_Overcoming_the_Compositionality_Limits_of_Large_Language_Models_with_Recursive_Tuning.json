@@ -1,0 +1,85 @@
+{
+  "paper_title": "Re-Tuning: Overcoming the Compositionality Limits of Large Language Models with Recursive Tuning",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "We present a new method for large language models to solve compositional tasks.Although they have shown strong performance on traditional language understanding tasks, large language models struggle to solve compositional tasks, where the solution depends on solving smaller instances of the same problem.We propose a natural approach to solve compositional tasks recursively.Our method, Re-Tuning, tunes models to break down a problem into subproblems, solve those subproblems, and combine the results.We show that our method significantly improves model performance on three representative compositional tasks: integer addition, dynamic programming, and parity.Compared to state-of-the-art methods that keep intermediate steps towards solving the problems, Re-Tuning achieves significantly higher accuracy and is more GPU memory efficient.",
+  "prior_works": [
+    {
+      "title": "Show Your Work: Scratchpads for Intermediate Computation with Language Models",
+      "authors": "Maxwell Nye et al.",
+      "year": 2021,
+      "role": "Baseline",
+      "relationship_sentence": "Introduced training LMs with explicit intermediate scratchpads, which serves as the primary step-by-step reasoning baseline that Re-Tuning replaces with recursive self-calls executed in separate contexts.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Exploring Length Generalization in Large Language Models",
+      "authors": "Cem Anil et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "Demonstrated that even with scratchpads and in-context learning, LLMs fail to length-generalize on compositional tasks like parity and addition, motivating a new approach that better handles increasing problem size.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Faith and Fate: Limits of Transformers on Compositionality",
+      "authors": "Nouha Dziri et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "Defined and popularized the non-adjacent maximum-sum dynamic programming task and showed scratchpad failures on it, providing both the task formulation used and a key benchmark Re-Tuning targets.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "What Algorithms Can Transformers Learn? A Study in Length Generalization",
+      "authors": "Hattie Zhou et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Identified that addition’s carry propagation and precise indexing strain transformers, highlighting failure modes that Re-Tuning addresses by solving subproblems in fresh contexts to reduce long-range indexing burdens.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "authors": "Timo Schick et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Showed a call-then-resume control flow for tool use, directly inspiring Re-Tuning’s mechanism where the model pauses generation to ‘call’ a subproblem and then continues with the returned result.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "GOAT: Fine-tuned LLaMA Outperforms GPT-4 on Arithmetic Tasks",
+      "authors": "Tiedong Liu et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "Provided the integer addition training regimen (random pairs up to 15 digits) and reported sharp OOD drop-offs, a setup and empirical baseline that Re-Tuning adopts and seeks to surpass.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+      "authors": "Denny Zhou et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "Proposed prompting LMs to decompose tasks into simpler sequential steps, informing Re-Tuning’s learned decomposition idea while differing by introducing explicit recursion and self-calls.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Scratchpads for intermediate computation taught language models to expose step-by-step reasoning, establishing a powerful baseline for compositional tasks but keeping all steps in one growing context (Nye et al., 2021). Subsequent analyses revealed that length generalization remains elusive: even with scratchpads or in-context learning, performance collapses on longer instances of parity and arithmetic (Anil et al., 2022). On dynamic programming, the non-adjacent maximum-sum task was formalized and used to show that transformers often resort to surface matching and still fail under length increases, underscoring the need for algorithmic handling (Dziri et al., 2023). At a mechanistic level, addition strains transformers due to non-causal carry propagation and precise indexing, explaining brittle behavior as problem size grows (Zhou et al., 2023b). Meanwhile, data and training practices for addition with LLaMA (Liu & Low, 2023) offered a concrete regime where OOD failures are stark. Orthogonally, tool-use work showed how LMs can pause generation, invoke an external tool, and resume with the tool’s output—a call-and-return control flow (Schick et al., 2023). Related prompting research encouraged decomposition into simpler steps, though primarily in a non-recursive manner (Zhou et al., 2023a). Taken together, these works highlighted that single-context scratchpads overload attention and indexing, that length generalization on compositional tasks demands algorithmic structure, and that call-and-resume patterns can manage context and computation. The natural next step is to combine learned decomposition with an explicit recursive call mechanism: have the model generate subproblems, solve base cases in fresh contexts, and pass results back up, thereby reducing irrelevant context, easing indexing and carry propagation, and improving length generalization and efficiency.",
+  "analysis_timestamp": "2026-04-05T12:03:56.983358",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P07",
+    "secondary_patterns": [
+      "P10"
+    ],
+    "confidence": "medium",
+    "reasoning": "Builds on controlled algorithmic probes and mechanistic diagnoses (carry, indexing) to guide a targeted retuning for length/compositional generalization.",
+    "primary_pattern_name": "Formal-Experimental Tightening",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

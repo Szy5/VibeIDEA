@@ -1,0 +1,87 @@
+{
+  "paper_title": "Complex Reasoning over Logical Queries on Commonsense Knowledge Graphs",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Event commonsense reasoning requires the ability to reason about the relationship between events, as well as infer implicit context underlying that relationship.However, data scarcity makes it challenging for language models to learn to generate commonsense inferences for contexts and questions involving interactions between complex events.To address this demand, we present COM 2 (COMplex COMmonsense), a new dataset created by sampling multi-hop logical queries (e.g., the joint effect or cause of both event A and B, or the effect of the effect of event C) from an existing commonsense knowledge graph (CSKG), and verbalizing them using handcrafted rules and large language models into multiple-choice and text generation questions.Our experiments show that language models trained on COM 2 exhibit significant improvements in complex reasoning ability, resulting in enhanced zero-shot performance in both indomain and out-of-domain tasks for question answering and generative commonsense reasoning, without expensive human annotations. 1* Work done during",
+  "prior_works": [
+    {
+      "title": "Embedding Logical Queries on Knowledge Graphs",
+      "authors": "William L. Hamilton et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "This work formalized conjunctive logical queries with projection and intersection operators, providing the core query semantics that are used to sample multi-hop logical structures from a commonsense knowledge graph.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Query2box: Reasoning over Knowledge Graphs in Vector Space Using Box Embeddings",
+      "authors": "Hongyu Ren et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "Following this paper’s query taxonomy and practice, the work adopts projections (1p, 2p) and intersections (2i, 3i) as training query types and treats ip/pi as unseen evaluation structures when constructing and analyzing logical queries.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "(COMET-) ATOMIC 2020: On Symbolic and Neural Commonsense Knowledge Graphs",
+      "authors": "Jena D. Hwang et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "ATOMIC 2020 supplies the event-centric commonsense knowledge graph and relation schema (e.g., xIntent, xWant) that serve as the base resource for sampling anchors and for verbalizing relations into questions and narrative contexts.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "VERA: A General-Purpose Plausibility Estimation Model for Commonsense Statements",
+      "authors": "Jiacheng Liu et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Its plausibility scoring is directly integrated to filter low-quality triples before composing multi-hop queries, mitigating error propagation and enabling reliable logical query construction at scale.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Paragraph-level Commonsense Transformers with Recurrent Memory",
+      "authors": "Saadia Gabriel et al.",
+      "year": 2021,
+      "role": "Gap Identification",
+      "relationship_sentence": "By distilling one-hop paragraph-level inferences via distant supervision, this work exposed a limitation—lack of multi-hop event interactions—that motivates constructing narrative data from multi-hop logical queries.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "COMET-M: Reasoning about Multiple Events in Complex Sentences",
+      "authors": "Sahithya Ravi et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This crowdsourced multi-event corpus demonstrated the need for complex event reasoning but remained small and costly, directly motivating an automated, large-scale approach to multi-event data creation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Multi-hop Commonsense Knowledge Injection Framework for Zero-shot Commonsense Question Answering",
+      "authors": "Xin Guan et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "By leveraging two-hop projection and intersection queries in ConceptNet to aid QA, this paper showed that logical multi-hop structures encode useful signals, informing the choice of similar operators as building blocks for complex commonsense data.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Conjunctive logical queries were formalized with existential quantifiers and conjunctions, establishing projection and intersection as key operators for reasoning over graphs. Building on this formulation, subsequent work suggested a practical query taxonomy—using projection (1p, 2p) and intersection (2i, 3i) as main query types while reserving ip and pi as unseen structures for evaluation—thereby standardizing how complex queries are constructed and assessed. Event-centric commonsense knowledge graphs such as ATOMIC 2020 provided rich social and physical relations (e.g., xIntent, xWant) and natural-language glosses that facilitate both sampling anchors and deterministically verbalizing relations into questions. However, the sparsity and noise of such resources highlighted the need for quality control; plausibility models like VERA offered a direct, general-purpose way to filter implausible triples, reducing error propagation when composing multi-hop structures. At the same time, paragraph-level methods that distill one-hop inferences revealed a shortfall in capturing interactions among multiple events, while small, carefully curated multi-event datasets underscored both the value and the cost of complex reasoning data. Multi-hop knowledge injection in QA further demonstrated that two-hop projection and intersection operators carry useful signals beyond single-hop facts.\nTogether, these developments suggested a clear opportunity: sample multi-hop conjunctive queries from an event-centric commonsense graph, ensure quality through plausibility filtering, and verbalize them into coherent narratives and questions. By uniting formal query operators with a practical query taxonomy, leveraging a well-scoped CSKG, and enforcing plausibility-driven filtering, a scalable pipeline naturally emerges to create large training corpora for complex, multi-event commonsense reasoning without expensive human annotation.",
+  "analysis_timestamp": "2026-04-05T11:55:41.517207",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P03",
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Defines a logical query taxonomy and standardized evaluation over commonsense KGs, shaping datasets and protocols.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "paper_title": "ThinkSum: Probabilistic reasoning over sets using large language models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models (LLMs) have a substantial capacity for high-level analogical reasoning: reproducing patterns in linear text that occur in their training data (zero-shot evaluation) or in the provided context (few-shot in-context learning). However, recent studies show that even the more advanced LLMs fail in scenarios that require reasoning over multiple objects or facts and making sequences of logical deductions. We propose a two-stage probabilistic inference paradigm, ThinkSum, which reasons over sets of objects or facts in a structured manner. In the first stage (Think - retrieval of associations), a LLM is queried in parallel over a set of phrases extracted from the prompt or an auxiliary model call. In the second stage (Sum - probabilistic inference or reasoning), the results of these queries are aggregated to make the final prediction. We demonstrate the possibilities and advantages of ThinkSum on the BIG-bench suite of LLM evaluation tasks, achieving improvements over the state of the art using GPT-family models on thirteen difficult tasks, often with far smaller model variants. We also compare and contrast ThinkSum with other proposed modifications to direct prompting of LLMs, such as variants of chain-of-thought prompting. Our results suggest that because the probabilistic inference in ThinkSum is performed outside of calls to the LLM, ThinkSum is less sensitive to prompt design, yields more interpretable predictions, and can be flexibly combined with latent variable models to extract structured knowledge from LLMs. Overall, our proposed paradigm represents a promising approach for enhancing the reasoning capabilities of LLMs.",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "Used as the primary baseline, this work’s within-model rationale generation directly motivates ThinkSum’s choice to externalize the reasoning step and combine LM-evaluated hypotheses via probabilistic aggregation to reduce prompt sensitivity.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "authors": "Xuezhi Wang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Its central idea of aggregating multiple reasoning paths inspired ThinkSum’s Sum stage, which averages/products LM likelihoods across many structured substitutions instead of voting over sampled rationales.",
+      "arxiv_id": "2203.11171",
+      "url": null
+    },
+    {
+      "title": "Language Model Cascades",
+      "authors": "David Dohan et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "By framing prompt variants and multi-step LM use in a probabilistic, controller-driven pipeline, this work informed ThinkSum’s parallel LM ‘Think’ calls and explicit probabilistic ‘Sum’ inference outside the model.",
+      "arxiv_id": "2207.10342",
+      "url": null
+    },
+    {
+      "title": "An Explanation of In-Context Learning as Implicit Bayesian Inference",
+      "authors": "Sang Michael Xie et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "Its Bayesian perspective on in-context learning motivated ThinkSum’s explicit external Bayesian-style aggregation (mixtures and products of LM scores) rather than relying on implicit inference within self-attention.",
+      "arxiv_id": "2111.02080",
+      "url": null
+    },
+    {
+      "title": "Decomposed Prompting: A Modular Approach for Solving Complex Tasks",
+      "authors": "Tushar Khot et al.",
+      "year": 2022,
+      "role": "Related Problem",
+      "relationship_sentence": "Showing that external control-flow and modular subproblem prompting improves complex reasoning, this work informed ThinkSum’s controller-like separation of ‘Think’ and ‘Sum’ while replacing the final step with formal probabilistic inference over sets.",
+      "arxiv_id": "2210.02406",
+      "url": null
+    },
+    {
+      "title": "Calibrate Before Use: Improving Few-Shot Performance of Language Models",
+      "authors": "Zihao Zhao et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "ThinkSum extends the calibration-by-premise-erasure idea by explicitly using ratios of conditional to unconditional likelihoods when scoring substituted prompts in its mixture, directly borrowing this debiasing step.",
+      "arxiv_id": "2102.09690",
+      "url": null
+    },
+    {
+      "title": "Coherence Boosting: When Your Pretrained Language Model Is Not Paying Enough Attention",
+      "authors": "Nikolay Malkin et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "By documenting recency bias and surface-form competition when appending context, this work identified a failure mode that ThinkSum avoids by moving reasoning outside the prompt and aggregating across structured alternatives.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Chain-of-thought prompting showed that inserting intermediate rationales enables large language models to solve multi-step problems, but it performs all reasoning inside the LM’s linear workspace and is highly sensitive to prompt phrasing and examples. Self-consistency improved such reasoning by sampling multiple rationale paths and aggregating them, highlighting that combining many weak signals can yield stronger conclusions. Language Model Cascades framed prompting as a probabilistic, controller-driven composition of LM calls, encouraging structured multi-step use of LMs and making explicit the role of probabilistic combination across prompt variants. A Bayesian account of in-context learning clarified how priors and likelihoods are implicitly combined within models, suggesting that explicit, external Bayesian aggregation—via mixtures and products—could be beneficial. Decomposed prompting further demonstrated that modular pipelines with external control-flow can tackle complex tasks more reliably than monolithic prompting. Calibration-by-premise-erasure provided a concrete, likelihood-ratio technique to correct unconditional biases in LM scoring. Finally, analyses of recency bias and surface-form competition showed how appending auxiliary text can mislead models, underscoring the brittleness of within-prompt reasoning.\nTaken together, these works point to a gap: while decomposition and aggregation help, doing both entirely inside the LM leaves systems fragile. The natural next step is to separate fast associative retrieval from slow reasoning, using parallel LM calls to retrieve structured sets and explicit probabilistic inference to aggregate their likelihoods. Building on self-consistent aggregation, controller-driven cascades, and Bayesian calibration, ThinkSum formalizes this separation with a ‘Think’ stage for set construction and a ‘Sum’ stage for mixture/product-based inference, yielding robustness and interpretability beyond prompt-engineered chains.",
+  "analysis_timestamp": "2026-04-05T11:37:37.820761",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P06",
+    "secondary_patterns": [
+      "P09",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Implements probabilistic aggregation over sets/rationales (self-consistency, cascades), explicitly modeling uncertainty and combining multiple LM outputs at inference time.",
+    "primary_pattern_name": "Principled Probabilistic Modeling & Uncertainty",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

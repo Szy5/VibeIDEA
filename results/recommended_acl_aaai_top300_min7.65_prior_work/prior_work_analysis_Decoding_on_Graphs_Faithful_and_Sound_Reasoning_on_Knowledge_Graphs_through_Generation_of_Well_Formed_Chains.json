@@ -1,0 +1,78 @@
+{
+  "paper_title": "Decoding on Graphs: Faithful and Sound Reasoning on Knowledge Graphs through Generation of Well-Formed Chains",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Knowledge Graphs (KGs) can serve as reliable knowledge sources for question answering (QA) due to their structured representation of knowledge.Existing research on the utilization of KG for large language models (LLMs) prevalently relies on subgraph retriever or iterative prompting, overlooking the potential synergy of LLMs' step-wise reasoning capabilities and KGs' structural nature.In this paper, we present DoG (Decoding on Graphs), a novel framework that facilitates a deep synergy between LLMs and KGs.We first define a concept, well-formed chain, which consists of a sequence of interrelated fact triplets on the KGs, starting from question entities and leading to answers.We argue that this concept can serve as a principle for making faithful and sound reasoning for KGQA.To enable LLMs to generate well-formed chains, we propose graph-aware constrained decoding, in which a constraint derived from the topology of the KG regulates the decoding process of the LLMs.This constrained decoding method ensures the generation of well-formed chains while making full use of the step-wise reasoning capabilities of LLMs.Based on the above, DOG, a trainingfree approach, is able to provide faithful and sound reasoning trajectories grounded on the KGs.Experiments across various KGQA tasks with different background KGs demonstrate that DOG achieves superior and robust performance.DOG also shows general applicability with various open-source LLMs 1 .",
+  "prior_works": [
+    {
+      "title": "KGQA: A Methodology for Knowledge Graph-Based Question Answering",
+      "authors": "Luo et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "The work by Luo et al. introduced essential methodologies for utilizing knowledge graphs in question answering, providing the foundational problem formulation that DOG builds upon.",
+      "arxiv_id": "if known",
+      "url": null
+    },
+    {
+      "title": "GNN-RAG: Graph Neural Retrieval for Large Language Model Reasoning",
+      "authors": "Mavromatis and Karypis",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "Mavromatis and Karypis's GNN-RAG serves as a baseline method that DOG improves upon by eliminating the need for specialized retrievers through direct chain generation.",
+      "arxiv_id": "2405.20139",
+      "url": null
+    },
+    {
+      "title": "ToG: Exploring Knowledge Graphs with Large Language Models",
+      "authors": "Sun et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "The ToG method engages LLMs with iterative prompts, which DOG addresses by proposing a more direct reasoning process through the generation of well-formed chains.",
+      "arxiv_id": "if known",
+      "url": null
+    },
+    {
+      "title": "Tree-of-Traversals: Augmenting LLMs with Knowledge Graphs",
+      "authors": "Markowitz et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "Markowitz et al. investigated LLM interactions with KGs, providing insights that DOG builds on by utilizing a complete question graph instead of focusing on one hop at a time.",
+      "arxiv_id": "if known",
+      "url": null
+    },
+    {
+      "title": "Chain of Thought: A Theoretical Perspective",
+      "authors": "Feng et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Feng et al.’s exploration of chain-of-thought reasoning paths inspired DOG's core idea of generating sequential reasoning steps as a structured approach to KGQA.",
+      "arxiv_id": "if known",
+      "url": null
+    },
+    {
+      "title": "Grounded Dialogue Generation with Knowledge Graphs",
+      "authors": "Li et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "Li et al. identified limitations in the integration of KGs with dialogue systems, motivating the need for improved reasoning methods in DOG that leverage both LLMs and KGs effectively.",
+      "arxiv_id": "if known",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "The development of DOG is rooted in several pivotal prior studies addressing knowledge graph question answering (KGQA). Firstly, the foundational work by Luo et al. established a methodology for KGQA that DOG directly builds upon, defining key problem formulations essential for this field. Mavromatis and Karypis's GNN-RAG and Sun et al.'s ToG provided baseline methodologies wherein LLMs interacted with KGs but were constrained by their reliance on specialized retrievers or iterative prompts. Conversely, Markowitz et al. enhanced LLM-knowledge graph interactions by employing a tree-based approach, which DOG extends by advocating for the processing of complete question graphs. The exploration of reasoning via chain-of-thought by Feng et al. significantly inspired DOG's innovative direction to generate well-formed reasoning chains. Additionally, the work of Li et al. highlighted gaps in current methodologies, framing the necessity for DOG to improve how LLMs utilize KGs. Collectively, these studies shaped the emergence of DOG as a more integrated approach to KGQA, blending LLM capabilities with structured reasoning derived from KGs, thus filling the identified gaps and enhancing the constraints imposed by prior methodologies.",
+  "analysis_timestamp": "2026-04-04T23:21:52.984851",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P03",
+    "secondary_patterns": [
+      "P10",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Recasts the reasoning primitive to full question graphs and decodes over their structure, integrating LLM–KG components.",
+    "primary_pattern_name": "Representation Shift & Primitive Recasting",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

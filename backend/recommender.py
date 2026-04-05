@@ -1,5 +1,5 @@
 import numpy as np
-from .paper import ArxivPaper
+from paper import ArxivPaper
 from datetime import datetime
 from loguru import logger
 

@@ -1,0 +1,76 @@
+{
+  "paper_title": "Graph Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "While Language Models (LMs) are the workhorses of NLP, their interplay with structured knowledge graphs (KGs) is still actively researched.Current methods for encoding such graphs typically either (i) linearize them for embedding with LMs -which underutilize structural information, or (ii) use Graph Neural Networks (GNNs) to preserve the graph structurebut GNNs cannot represent text features as well as pretrained LMs.In our work we introduce a novel LM type, the Graph Language Model (GLM), that integrates the strengths of both approaches and mitigates their weaknesses.The GLM parameters are initialized from a pretrained LM to enhance understanding of individual graph concepts and triplets.Simultaneously, we design the GLM's architecture to incorporate graph biases, thereby promoting effective knowledge distribution within the graph.This enables GLMs to process graphs, texts, and interleaved inputs of both.Empirical evaluations on relation classification tasks show that GLM embeddings surpass both LM-and GNN-based baselines in supervised and zeroshot setting, demonstrating their versatility. 1",
+  "prior_works": [
+    {
+      "title": "Self-Attention with Relative Position Representations",
+      "authors": "Peter Shaw et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "GLM repurposes Shaw et al.’s relative position bias in self-attention by mapping graph hop distances into attention biases BP=f(P), forming the core mechanism that makes transformer attention graph-aware.",
+      "arxiv_id": "1803.02155",
+      "url": null
+    },
+    {
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "authors": "Colin Raffel et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "GLM initializes from T5 and directly leverages T5’s bucketed relative positional bias parameters—including using the ‘far distance’ bucket to seed new G2G/T2G biases—so the architectural changes remain compatible with pretrained LM weights.",
+      "arxiv_id": "1910.10683",
+      "url": null
+    },
+    {
+      "title": "Modeling graph structure via relative position for text generation from knowledge graphs",
+      "authors": "Martin Schmitt et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "GLM adopts the extended Levi graph transformation (turning edges into relation nodes) and relative distance-based encodings introduced by Schmitt et al., extending them by retaining and exploiting pretrained LM parameters instead of training a graph transformer from scratch.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Modeling global and local node contexts for text generation from knowledge graphs",
+      "authors": "Leonardo F. R. Ribeiro et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "The finding that combining global and local contexts improves information flow directly motivated GLM’s global-attention variant (gGLM), which connects all tokens with distance-dependent biases rather than restricting attention to local neighborhoods.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "GreaseLM: Graph REASoning Enhanced Language Models",
+      "authors": "Xikun Zhang et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "By coupling LM-derived token features with a separate GNN for reasoning, GREASELM highlighted the limitations of two-module solutions and motivated a unified architecture that performs language understanding and graph reasoning in a single model.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Deep Bidirectional Language-Knowledge Graph Pretraining",
+      "authors": "Michihiro Yasunaga et al.",
+      "year": 2022,
+      "role": "Related Problem",
+      "relationship_sentence": "This work evidences gains from joint pretraining over text and KGs while keeping graph reasoning and language modeling in separate components, informing the move toward a single architecture that natively processes both modalities.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Relative position representations in self-attention established a way to inject structured bias into transformers by mapping pairwise distances into additive attention biases, enabling models to condition on positions rather than token order. The T5 architecture operationalized this with bucketed, layer-shared relative position biases and provided strong pretrained weights and mask tokens that downstream tasks can exploit, making it a practical substrate for reuse. For graphs and knowledge-to-text generation, graph transformers with relative positional encodings and the extended Levi transformation showed how to encode graph structure by turning edges into relation nodes and using hop distances as attention biases, but they were trained from scratch, limiting vocabulary and transfer. Evidence from knowledge graph-to-text modeling demonstrated that global connectivity, in addition to local neighborhoods, facilitates efficient long-range information flow, suggesting that unrestricted attention with distance-aware biases can be beneficial. In parallel, LM+GNN hybrids like GREASELM and deep bidirectional LM–KG pretraining showed gains from combining text semantics with graph structure, yet relied on two-module systems or separate components, leaving a gap for a truly unified model.\nBuilding on these insights, the current work unifies language understanding and graph reasoning by converting a pretrained, relative-bias LM into a graph transformer via non-invasive positional and masking changes. It inherits Levi-style graph tokenization and distance-based biases for local structure, extends to a global variant guided by the global-context findings, and crucially reuses T5’s bucketed biases—initializing new G2G/T2G slots from the ‘far’ bucket—to keep compatibility with pretrained weights. This synthesis delivers early fusion over graphs and text within one backbone, naturally handling interleaved inputs while avoiding the drawbacks of linearization and two-module pipelines.",
+  "analysis_timestamp": "2026-04-05T12:02:35.242716",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P03"
+    ],
+    "confidence": "high",
+    "reasoning": "Injects graph structure via relative positional biases and Levi-style transformations into transformers; recasts edges/relations for structured attention.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

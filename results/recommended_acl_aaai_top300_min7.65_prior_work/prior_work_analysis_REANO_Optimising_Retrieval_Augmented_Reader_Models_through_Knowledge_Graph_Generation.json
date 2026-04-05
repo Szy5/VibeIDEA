@@ -1,0 +1,87 @@
+{
+  "paper_title": "REANO: Optimising Retrieval-Augmented Reader Models through Knowledge Graph Generation",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Open domain question answering (ODQA) aims to answer questions with knowledge from an external corpus.Fusion-in-Decoder (FiD) is an effective retrieval-augmented reader model to address this task.Given that FiD independently encodes passages, which overlooks the semantic relationships between passages, some studies use knowledge graphs (KGs) to establish dependencies among passages.However, they only leverage knowledge triples from existing KGs, which suffer from incompleteness and may lack certain information critical for answering given questions.To this end, in order to capture the dependencies between passages while tacking the issue of incompleteness in existing KGs, we propose to enhance the retrievalaugmented reader model with a knowledge graph generation module (REANO).Specifically, REANO consists of a KG generator and an answer predictor.The KG generator aims to generate KGs from the passages; the answer predictor then generates answers based on the passages and the generated KGs.Experimental results on five ODQA datasets indicate that compared with baselines, REANO 1 can improve the exact match score by up to 2.7% on the EntityQuestion dataset, with an average improvement of 1.8% across all the datasets.",
+  "prior_works": [
+    {
+      "title": "Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering",
+      "authors": "Gautier Izacard et al.",
+      "year": 2021,
+      "role": "Baseline",
+      "relationship_sentence": "REANO adopts FiD as its reader backbone and directly augments it by appending a GNN-selected, triple-derived passage to address FiD’s limitation of independently encoding passages without modeling their relations.",
+      "arxiv_id": "2007.01282",
+      "url": null
+    },
+    {
+      "title": "KG-FiD",
+      "authors": "Wenhao Yu et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "KG-FiD showed that adding KG signals to FiD can help multi-hop reasoning but relied on existing KGs like Wikidata, whose incompleteness motivated REANO to generate KGs directly from the retrieved passages.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "GRAPE: Knowledge Graph Enhanced Passage Reader for Open-Domain Question Answering",
+      "authors": "Mingxuan Ju et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "GRAPE fused external KG and contextual representations to aid reading, yet its dependence on pre-existing KG triples highlighted missing-fact failures that REANO addresses by inducing graphs from passages.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Empowering Language Models with Knowledge Graph Reasoning for Open-Domain Question Answering",
+      "authors": "Ziniu Hu et al.",
+      "year": 2022,
+      "role": "Related Problem",
+      "relationship_sentence": "OREOLM demonstrated gains from explicit KG reasoning for ODQA, informing REANO’s reasoning over a graph while underscoring the fragility of depending on incomplete external KGs.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "DocuNet: Document-level Relation Extraction as Image Segmentation",
+      "authors": "Zhang et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "REANO instantiates its intra-context relation extraction component with DocuNet to efficiently predict relations between all entity pairs within a passage in a single forward pass, enabling scalable KG generation from text.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Improving Multi-hop Knowledge Base Question Answering by Learning Intermediate Supervision Signals",
+      "authors": "Gaole He et al.",
+      "year": 2021,
+      "role": "Inspiration",
+      "relationship_sentence": "REANO’s relation-aware GNN that weights neighboring triples by question–relation similarity is inspired by He et al.’s question-conditioned message passing for multi-hop KBQA.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "REBEL: Relation Extraction By End-to-End Language Generation",
+      "authors": "Pere-Lluís Huguet Cabot et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "REANO trains its intra-context relation extractor under distant supervision using the REBEL dataset’s aligned Wikipedia text–Wikidata triples, enabling it to generate high-quality triples from passages.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Fusion-in-Decoder established a powerful generative reader that encodes each retrieved passage separately and fuses them in the decoder, but by design it leaves inter-passage relationships implicit. Subsequent KG-enhanced readers sought to inject structured relational signals: GRAPE fused external knowledge graph representations into passage encodings, while KG-FiD attached KG-derived structure to improve multi-hop reasoning in FiD; OREOLM further showed that explicit KG reasoning benefits open-domain QA. However, all three largely depended on triples sourced from existing KGs such as Wikidata, where missing facts and coverage gaps can omit critical information that is present in the retrieved passages. On the information extraction side, DocuNet provided an efficient document-level relation extraction mechanism that can predict relations for all entity pairs within a passage in one forward pass, and the REBEL dataset offered distantly supervised text–triple alignments at scale to train such relation extractors. For reasoning over graphs, relation-aware GNNs for KBQA, exemplified by He et al., introduced question-conditioned message passing that prioritizes edges likely to be useful for answering a given query.\n\nTogether, these works revealed a clear opportunity: preserve FiD’s strong generative reading while explicitly modeling inter- and intra-passage relations without relying on incomplete external KGs. The natural next step is to induce a knowledge graph directly from the retrieved passages (leveraging DocuNet trained on REBEL) and perform question-aware graph reasoning to surface only the most relevant triples. By selecting top-K question-relevant triples via a relation-aware GNN and appending them as an additional “structured” passage, the approach integrates structured multi-hop cues into FiD’s decoding, addressing the coverage limitations of prior KG-enhanced readers while retaining generative strengths.",
+  "analysis_timestamp": "2026-04-05T12:09:20.571338",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P04",
+      "P02"
+    ],
+    "confidence": "high",
+    "reasoning": "Imposes explicit relational structure extracted from passages to guide FiD-like readers via a retrieval→IE→reasoning composition.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Cross-Domain Synthesis"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "paper_title": "The Role of Exploration Modules in Small Language Models for Knowledge Graph Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Integrating knowledge graphs (KGs) into the reasoning processes of large language models (LLMs) has emerged as a promising approach to mitigate hallucination.However, existing work in this area often relies on proprietary or extremely large models, limiting accessibility and scalability.In this study, we investigate the capabilities of existing integration methods for small language models (SLMs) in KG-based question answering and observe that their performance is often constrained by their limited ability to traverse and reason over knowledge graphs.To address this limitation, we propose leveraging simple and efficient exploration modules to handle knowledge graph traversal in place of the language model itself.Experiment results demonstrate that these lightweight modules effectively improve the performance of small language models on knowledge graph question answering tasks.",
+  "prior_works": [
+    {
+      "title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+      "authors": "Jiashuo Sun et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "This work adopts Think-on-Graph’s training-free KGQA framework and directly replaces its LLM-driven exploration stage with lightweight retrieval modules to overcome the observed failure of ToG when applied to small language models.",
+      "arxiv_id": "2307.07697",
+      "url": null
+    },
+    {
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "authors": "Nils Reimers et al.",
+      "year": 2019,
+      "role": "Inspiration",
+      "relationship_sentence": "Sentence-BERT provides the dense, semantically meaningful embeddings the authors use as a zero-shot scoring function to rank candidate relations and entities during KG traversal, effectively delegating exploration away from the SLM.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Large Dual Encoders Are Generalizable Retrievers",
+      "authors": "Jianmo Ni et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "GTR supplies a compact dual-encoder retriever that the authors plug in as an alternative lightweight exploration scorer for selecting relation/entity candidates in the traversal loop.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering",
+      "authors": "Xiaoxin He et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "G-Retriever’s trained, task-specific retrieval augmentation for graph QA highlights the practical burden of fine-tuning, motivating this paper’s training-free, plug-and-play retriever-based exploration for SLMs.",
+      "arxiv_id": "2402.07630",
+      "url": null
+    },
+    {
+      "title": "Generate-on-Graph: Treat LLM as both Agent and KG for Incomplete Knowledge Graph Question Answering",
+      "authors": "Yao Xu et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By relying on powerful LLMs to act as both the agent and a surrogate KG, this work exemplifies the dependence on large proprietary models that the present study seeks to avoid via simple exploration modules for SLMs.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "Chain-of-Thought serves as the principal prompting baseline against which the authors show that ToG can underperform for SLMs and that retriever-assisted exploration yields consistent gains.",
+      "arxiv_id": "2201.11903v6",
+      "url": null
+    },
+    {
+      "title": "The Web as a Knowledge-Base for Answering Complex Questions",
+      "authors": "Alon Talmor et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "ComplexWebQuestions provides the multi-hop KGQA benchmark that exposes exploration failures and quantifies the benefit of substituting retrievers for the traversal stage.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Think-on-Graph introduced a training-free paradigm where a language model acts as an agent that initializes topic entities, explores neighbors via beam search, and reasons over collected paths on a knowledge graph, demonstrating strong results with large models but also revealing sensitivity to the quality of exploration decisions. Sentence-BERT offered compact sentence-level embeddings that reliably score semantic similarity in zero-shot settings, a property directly suited for ranking candidate relations and entities. GTR contributed a generalizable dual-encoder retriever that maintains high retrieval quality with modest size, making it a natural alternative dense scorer. In contrast, G-Retriever showed that retrieval augmentation for graph QA often depends on trained, task-specific retrievers, raising practical barriers for low-resource deployment. Generate-on-Graph further underscored the field’s reliance on powerful LLMs by treating the model as both agent and surrogate KG, reinforcing the accessibility gap. ComplexWebQuestions, with its multi-hop structure, provided a rigorous testbed where exploration quality critically determines downstream accuracy.\nCollectively, these works revealed a gap: ToG’s exploration is effective with LLMs but brittle for smaller models, and many graph-retrieval solutions impose training overheads ill-suited to SLMs. The natural next step was to decouple exploration from the SLM and replace it with training-free, lightweight dense retrievers like Sentence-BERT and GTR that can score relation/entity candidates zero-shot. By plugging these compact modules into the ToG exploration stage and validating on multi-hop benchmarks, the approach preserves ToG’s interpretability while overcoming the SLM exploration bottleneck without fine-tuning or large-model dependence.",
+  "analysis_timestamp": "2026-04-04T22:28:02.312525",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P04",
+      "P08"
+    ],
+    "confidence": "medium",
+    "reasoning": "Focuses on inference-time exploration control (beam search, dense scoring) in a training-free agent, modularizing exploration from reasoning to make small LMs effective and scalable.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Approximation Engineering for Scalability"
+    ]
+  }
+}

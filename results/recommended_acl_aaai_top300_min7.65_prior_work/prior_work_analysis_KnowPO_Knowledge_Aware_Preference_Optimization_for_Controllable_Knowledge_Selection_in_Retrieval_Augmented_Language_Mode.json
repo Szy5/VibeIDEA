@@ -1,0 +1,87 @@
+{
+  "paper_title": "KnowPO: Knowledge-Aware Preference Optimization for Controllable Knowledge Selection in Retrieval-Augmented Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "By integrating external knowledge, Retrieval-Augmented Generation (RAG) has become an effective strategy for mitigating the hallucination problems that large language models (LLMs) encounter when dealing with knowledge-intensive tasks. However, in the process of integrating external non-parametric supporting evidence with internal parametric knowledge, inevitable knowledge conflicts may arise, leading to confusion in the model's responses. To enhance the knowledge selection of LLMs in various contexts, some research has focused on refining their behavior patterns through instruction-tuning. Nonetheless, due to the absence of explicit negative signals and comparative objectives, models fine-tuned in this manner may still exhibit undesirable behaviors such as contextual ignorance and contextual overinclusion. To this end, we propose a Knowledge-aware Preference Optimization strategy, dubbed KnowPO, aimed at achieving adaptive knowledge selection based on contextual relevance in real retrieval scenarios. Concretely, we proposed a general paradigm for constructing knowledge conflict datasets, which comprehensively cover various error types and learn how to avoid these negative signals through preference optimization methods. Simultaneously, we proposed a rewriting strategy and data ratio optimization strategy to address preference imbalances. Experimental results show that KnowPO outperforms previous methods for handling knowledge conflicts by over 37%, while also exhibiting robust generalization across various out-of-distribution datasets.",
+  "prior_works": [
+    {
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "authors": "Rafailov et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "KnowPO directly extends DPO by defining knowledge-aware preference pairs that penalize contextual ignorance and contextual overinclusion, while adding response-length alignment and pair-ratio balancing to tailor DPO for RAG knowledge-conflict training.",
+      "arxiv_id": "2305.18290",
+      "url": null
+    },
+    {
+      "title": "Entity-Based Knowledge Conflicts in Question Answering",
+      "authors": "Longpre et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This work formalized knowledge-conflict scenarios and showed LMs’ tendency to favor parametric over contextual knowledge, establishing the precise problem setting that KnowPO targets with adherence-focused supervision.",
+      "arxiv_id": "2109.05052",
+      "url": null
+    },
+    {
+      "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+      "authors": "F. Shi et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By demonstrating that LLMs overuse irrelevant context, this paper motivated KnowPO’s explicit noise-robustness objective and guided the construction of irrelevant-context preference pairs.",
+      "arxiv_id": "2302.00093",
+      "url": null
+    },
+    {
+      "title": "ClashEval: Quantifying the tug-of-war between an LLM’s internal prior and external evidence",
+      "authors": "Wu et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "ClashEval showed that high prior token probabilities make external evidence hard to override, directly motivating KnowPO’s preference training to mitigate internal-prior dominance and its analysis of prior-probability effects.",
+      "arxiv_id": "2404.10198",
+      "url": null
+    },
+    {
+      "title": "Disentangling Length from Quality in Direct Preference Optimization",
+      "authors": "Park et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By revealing DPO’s susceptibility to length bias, this work prompted KnowPO’s rewriting strategy to align positive/negative response lengths and prevent length-driven reward hacking during preference optimization.",
+      "arxiv_id": "2403.19159",
+      "url": null
+    },
+    {
+      "title": "Trusting Your Evidence: Hallucinate Less with Context-aware Decoding",
+      "authors": "W. Shi et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "As a leading decoding-time approach conditioning on context, CAD served as a primary baseline whose coherence trade-offs motivated KnowPO’s training-time solution to improve adherence without harming fluency.",
+      "arxiv_id": "2305.14739",
+      "url": null
+    },
+    {
+      "title": "Know What You Don’t Know: Unanswerable Questions for SQuAD",
+      "authors": "Rajpurkar et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "SQuAD2.0’s answerable/unanswerable annotations enabled KnowPO’s controlled construction of conflicting versus irrelevant contexts and the formulation of preference pairs for adherence and robustness.",
+      "arxiv_id": "1806.03822",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Direct Preference Optimization introduced an efficient way to align language models with pairwise human preferences, but its vanilla objective is agnostic to domain-specific pitfalls and can be biased by response length. Work on DPO’s length confounds showed that longer responses can be spuriously preferred, indicating the need for length-controlled data when using preference learning. In parallel, entity-centric studies of knowledge conflicts established that large language models habitually privilege internal parametric knowledge over contextual evidence, precisely defining when adherence to retrieved content should be enforced. Research demonstrating that LLMs are easily distracted by irrelevant passages highlighted the complementary requirement of noise robustness, while analyses quantifying the tug-of-war between internal priors and external evidence revealed that high-probability internal answers are especially resistant to contextual override. At the method level, context-aware decoding provided a contrastive baseline that conditions on evidence at inference time, yet it can degrade semantic coherence, suggesting a need for training-time solutions.\nBringing these strands together naturally suggested a preference-learning approach purpose-built for retrieval settings: construct controlled conflicting and irrelevant contexts (facilitated by answerability annotations) and encode two explicit negative behaviors—contextual ignorance and overinclusion—into preference pairs. Extending DPO with length-aligned outputs and a balanced ratio of adherence-versus-robustness pairs directly addresses known DPO biases and the internal-prior dominance, enabling a trained model to selectively trust retrieved evidence while resisting distractors.",
+  "analysis_timestamp": "2026-04-05T12:06:19.427671",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P15",
+      "P10"
+    ],
+    "confidence": "medium",
+    "reasoning": "Introduces knowledge-aware preference data/objectives (length-controlled, conflict/noise-aware) to align models to retrieved evidence.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Data-Centric Optimization & Active Sampling",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

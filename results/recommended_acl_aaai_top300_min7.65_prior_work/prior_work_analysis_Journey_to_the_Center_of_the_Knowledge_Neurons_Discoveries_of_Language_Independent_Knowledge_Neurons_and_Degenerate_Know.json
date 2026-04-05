@@ -1,0 +1,85 @@
+{
+  "paper_title": "Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Pre-trained language models (PLMs) contain vast amounts of factual knowledge, but how the knowledge is stored in the parameters remains unclear. This paper delves into the complex task of understanding how factual knowledge is stored in multilingual PLMs, and introduces the Architecture-adapted Multilingual Integrated Gradients method, which successfully localizes knowledge neurons more precisely compared to current methods, and is more universal across various architectures and languages. Moreover, we conduct an in-depth exploration on knowledge neurons, leading to the following two important discoveries: (1) The discovery of Language-Independent Knowledge Neurons, which store factual knowledge in a form that transcends language. We design cross-lingual knowledge editing experiments, demonstrating that the PLMs can accomplish this task based on language-independent neurons; (2) The discovery of Degenerate Knowledge Neurons, a novel type of neuron showing that different knowledge neurons can store the same fact. Its property of functional overlap endows the PLMs with a robust mastery of factual knowledge. We design fact-checking experiments, proving that the degenerate knowledge neurons can help the PLMs to detect wrong facts. Experiments corroborate these findings, shedding light on the mechanisms of factual knowledge storage in multilingual PLMs, and contribute valuable insights to the field. The code is available at https://github.com/heng840/AMIG.",
+  "prior_works": [
+    {
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "authors": "Deren Lei Dai et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "This paper introduced the notion of “knowledge neurons” and an IG-based neuron attribution pipeline that serves as the primary localization baseline that AMIG generalizes and improves across architectures and languages.",
+      "arxiv_id": "2104.08696",
+      "url": null
+    },
+    {
+      "title": "Axiomatic Attribution for Deep Networks",
+      "authors": "Mukund Sundararajan et al.",
+      "year": 2017,
+      "role": "Foundation",
+      "relationship_sentence": "AMIG is built directly on Integrated Gradients’ axiomatic framework to compute neuron-level attribution, then adapts the baseline choice to suit differing PLM architectures.",
+      "arxiv_id": "1703.01365",
+      "url": null
+    },
+    {
+      "title": "A rigorous study of integrated gradients method and extensions to internal neuron attributions",
+      "authors": "Daniel D. Lundstrom et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "AMIG extends the internal-neuron IG formulation by introducing architecture-adapted baseline vectors that enable accurate attribution of internal activations in both auto-encoding and auto-regressive PLMs.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Sequential Integrated Gradients: a simple but effective method for explaining language models",
+      "authors": "Julien Enguehard",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Following Sequential IG’s word-wise decomposition, AMIG constructs low-information, word-conditioned baselines and then adapts them to different architectures to improve neuron localization fidelity.",
+      "arxiv_id": "2305.15853",
+      "url": null
+    },
+    {
+      "title": "The Effective coalitions of Shapley value For Integrated Gradients",
+      "authors": "Shu Liu et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "Because prior IG practice commonly used zero-vector baselines, this work highlights a limitation that AMIG addresses by designing architecture-specific baseline vectors rather than relying on the zero-baseline assumption.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Language Models as Knowledge Bases?",
+      "authors": "Fabio Petroni et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "The cloze-style factual probing setup and criterion for a model ‘knowing’ a fact define the localization objective and evaluation protocol that AMIG adopts for neuron-level knowledge attribution.",
+      "arxiv_id": "1909.01066",
+      "url": null
+    },
+    {
+      "title": "Multilingual LAMA: Investigating Knowledge in Multilingual Pretrained Language Models",
+      "authors": "Nora Kassner et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "mLAMA provides the multilingual factual triples and probing framework that directly enable the identification of language-independent knowledge neurons and cross-lingual editing evaluations.",
+      "arxiv_id": "2102.00894",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Knowledge neuron localization was first concretized by Dai et al., who defined “knowledge neurons” and used Integrated Gradients (IG) to attribute internal activations to factual predictions. IG itself, introduced by Sundararajan et al., provided the axiomatic basis—Sensitivity and Implementation Invariance—for reliable attribution, later extended by Lundstrom et al. to internal neuron attributions within deep networks. Enguehard’s Sequential IG contributed a practical technique for word-wise decomposition to build low-information, stepwise baselines tailored to language inputs. Meanwhile, common IG practice of using a zero-vector baseline, underscored by Liu et al., exposed a mismatch between baseline selection and the dynamics of different PLM architectures. For factual probing, Petroni et al. established the cloze-style evaluation that operationalizes whether a model “knows” a fact, and Kassner et al. extended this to multilingual probing via mLAMA, surfacing the cross-lingual dimension of stored knowledge.\nTogether these works highlighted two core opportunities: first, to reconcile IG-based neuron attribution with architectural diversity by replacing naive baselines with architecture-adapted, word-conditioned baselines; second, to probe multilingual models under a principled, cross-lingual regime. Building on IG’s neuron-level attributions, internal attribution extensions, and sequential baseline construction, the current work designs Architecture-adapted Multilingual Integrated Gradients to reliably localize knowledge neurons across BERT- and GPT-style models. Leveraging multilingual probing, it isolates intersections across languages to reveal language-independent knowledge neurons, and uses precise neuron-level attribution to discover degenerate knowledge neurons—overlapping neuron sets that redundantly encode the same facts—thereby enabling robust cross-lingual editing and internal fact-checking without external data.",
+  "analysis_timestamp": "2026-04-05T12:02:26.711982",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P12",
+    "secondary_patterns": [
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Localizes and manipulates 'knowledge neurons' via IG-based attribution and causal probes, tightening theory with controlled experiments.",
+    "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

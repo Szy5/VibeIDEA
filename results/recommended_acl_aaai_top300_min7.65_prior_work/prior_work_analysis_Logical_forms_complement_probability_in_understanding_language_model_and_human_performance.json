@@ -1,0 +1,87 @@
+{
+  "paper_title": "Logical forms complement probability in understanding language model (and human) performance",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "With the increasing interest in using large language models (LLMs) for planning in natural language, understanding their behaviors becomes an important research question.This work conducts a systematic investigation of LLMs' ability to perform logical reasoning in natural language.We introduce a controlled dataset of hypothetical and disjunctive syllogisms in propositional and modal logic and use it as the testbed for understanding LLM performance.Our results lead to novel insights in predicting LLM behaviors: in addition to the probability of input (Gonen et al., 2023;McCoy et al., 2024), logical forms should be considered as important factors.In addition, we show similarities and discrepancies between the logical reasoning performances of humans and LLMs by collecting and comparing behavioral data from both.",
+  "prior_works": [
+    {
+      "title": "Demystifying prompts in language models via perplexity estimation",
+      "authors": "Hila Gonen et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This work’s claim that perplexity is a strong predictor of LLM performance is directly revisited by showing, on controlled syllogism templates, that logical form (modality and argument pattern) explains additional variance beyond perplexity.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Embers of autoregression show how large language models are shaped by the problem they are trained to solve",
+      "authors": "R. Thomas McCoy et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Building on McCoy et al.’s probability–performance correlation, the study demonstrates that this correlation is weak for logical reasoning and must be complemented by explicit logical-form factors.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Language Models Are Greedy Reasoners: A Systematic Formal Analysis of Chain-of-Thought",
+      "authors": "Abulhair Saparov and He He",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "The dataset design adopts Saparov and He’s paradigm of synthesizing natural-language reasoning items from formal logic templates, extending it to controlled hypothetical/disjunctive syllogisms and modal operators.",
+      "arxiv_id": "arXiv:2210.01273",
+      "url": null
+    },
+    {
+      "title": "Conditional and Modal Reasoning in Large Language Models",
+      "authors": "Wesley H. Holliday et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This modal-logic case study motivated a broader, controlled benchmark by highlighting modal reasoning in LLMs but lacking systematic controls on knowledge bias and rigorous mixed-effects statistical evaluation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Prompting is not a substitute for probability measurements in large language models",
+      "authors": "Jennifer Hu and Roger Levy",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "Following Hu and Levy’s recommendation to evaluate with probabilities rather than greedy outputs, the study uses relative probabilities of 'Yes'/'No' to compute a soft-accuracy metric for logical judgments.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Language models, like humans, show content effects on reasoning tasks",
+      "authors": "Andrew K. Lampinen et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Their demonstration of content effects directly motivated controlling knowledge bias by assigning independent, neutral interpretations to propositional variables in the logic-to-language translation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "A systematic comparison of syllogistic reasoning in humans and language models",
+      "authors": "Tiwalayo Eisape et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "Inspired by their human–LLM comparison on categorical syllogisms, the study extends the paradigm by collecting new human data and analyzing hypothetical and disjunctive syllogisms, including modal variants.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Template-based logical reasoning benchmarks showed that natural-language questions can be systematically generated from formal logic schemata, enabling targeted evaluations of specific inference patterns. A case study on conditional and modal reasoning highlighted that LLMs do engage with modality, but without stringent controls it is hard to separate logical competence from confounds. Concurrently, methodological work argued that model competence should be assessed via probability measurements rather than greedy decoding, encouraging metrics that reflect token-level confidence. Two influential analyses reported that perplexity or probability often correlates with task success, suggesting input likelihood as a general predictor. However, research on content effects in both humans and LLMs warned that world knowledge and lexical choices can confound logical evaluation unless interpretations are carefully controlled. Parallel comparisons of human and LLM syllogistic reasoning supplied a framework and behavioral baselines for aligning machine patterns with human data.\nTogether, these strands exposed a gap: perplexity-based predictors alone do not isolate logical reasoning, and existing modal studies lacked controlled, statistically grounded tests disentangled from content effects. The natural next step was to synthesize a controlled benchmark that varies argument forms (disjunctive, modus ponens, modus tollens) and modalities (necessity, possibility) while neutralizing knowledge bias, evaluate with probability-based soft accuracy, and align findings with human behavior. By uniting template-driven data generation, probability-centric evaluation, and human comparison, the study demonstrates that logical form is a crucial complementary factor to probability in predicting LLM (and human) reasoning performance.",
+  "analysis_timestamp": "2026-04-05T12:06:30.432039",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P07",
+      "P06"
+    ],
+    "confidence": "high",
+    "reasoning": "Proposes evaluation using logical forms plus probability metrics; emphasizes benchmark/metric design with controlled analyses of competence.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening",
+      "Principled Probabilistic Modeling & Uncertainty"
+    ]
+  }
+}

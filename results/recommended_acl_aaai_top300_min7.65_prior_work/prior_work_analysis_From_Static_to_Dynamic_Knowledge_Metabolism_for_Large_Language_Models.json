@@ -1,0 +1,87 @@
+{
+  "paper_title": "From Static to Dynamic: Knowledge Metabolism for Large Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "The immense parameter space of Large Language Models (LLMs) endows them with superior knowledge retention capabilities, allowing them to excel in a variety of natural language processing tasks. However, it also instigates difficulties in consistently tuning LMs to incorporate the most recent knowledge, which may further lead LMs to produce inaccurate and fabricated content. To alleviate this issue, we propose a knowledge metabolism framework for LLMs. This framework proactively sustains the credibility of knowledge through an auxiliary external memory component and directly delivers pertinent knowledge for LM inference, thereby suppressing hallucinations caused by obsolete internal knowledge during the LM inference process. Benchmark experiments demonstrate DynaMind's effectiveness in overcoming this challenge. The code and demo of DynaMind are available at: https://github.com/Elfsong/DynaMind.",
+  "prior_works": [
+    {
+      "title": "Significant-gravitas/Auto-GPT: An experimental open-source attempt to make GPT-4 fully autonomous",
+      "authors": "Significant-Gravitas",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "AutoGPT’s lack of long-term memory and robust task management in complex scenarios is explicitly cited as a limitation, motivating the introduction of a persistent memory manager and operator-driven coordination to maintain and use knowledge across steps.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "yoheinakajima/BabyAGI",
+      "authors": "Yohei Nakajima",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "BabyAGI combines task prioritization with dense vector retrieval but cannot discern or replace outdated knowledge, directly motivating the paper’s knowledge metabolism mechanism that adjusts credibility and replaces stale entries.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Introduction to multi-armed bandits",
+      "authors": "Aleksandrs Slivkins",
+      "year": 2019,
+      "role": "Inspiration",
+      "relationship_sentence": "The paper’s adaptive knowledge credibility updates are inspired by multi-armed bandit principles, using contextual feedback to promote reliable knowledge and discount less credible items.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Hippocampus: cognitive processes and neural representations that underlie declarative memory",
+      "authors": "Howard Eichenbaum",
+      "year": 2004,
+      "role": "Inspiration",
+      "relationship_sentence": "The design of separate short-term (time-decaying) and long-term (persistent) memory stores draws conceptual inspiration from hippocampal mechanisms for memory consolidation and retrieval.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Embracing change: Continual learning in deep neural networks",
+      "authors": "Raia Hadsell et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "This survey frames the continual learning challenge and motivates non-parameteric strategies, supporting the choice to manage knowledge externally rather than repeatedly fine-tuning the LLM.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "What language model to train if you have one million GPU hours?",
+      "authors": "Teven Le Scao et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "It highlights that updating pretrained LLMs to incorporate new knowledge is resource-intensive and risks catastrophic forgetting, motivating a framework that updates knowledge without modifying model weights.",
+      "arxiv_id": "2210.15424",
+      "url": null
+    },
+    {
+      "title": "Large language models and the perils of their hallucinations",
+      "authors": "Radu Azamfirei et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By documenting hallucination risks and unreliable outputs, it motivates delivering verified external knowledge during inference to suppress errors arising from obsolete internal knowledge.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Agentic LLM systems such as AutoGPT demonstrated how to autonomously chain reasoning steps toward goals, but their lack of long-term memory and robust task management hindered performance on complex tasks. BabyAGI introduced task prioritization and dense vector retrieval to enrich context, yet provided no mechanism to detect or replace outdated items in its memory, leaving accumulated knowledge vulnerable to staleness. The multi-armed bandit literature established principled approaches for adaptively allocating trust among competing options under contextual feedback, offering a template for dynamically updating confidence in alternatives. Cognitive neuroscience work on the hippocampus highlighted the functional separation between transient working memory and persistent long-term stores, and the importance of consolidation dynamics for reliable recall. Surveys in continual learning emphasized that maintaining performance over evolving data requires strategies beyond repeated weight updates, and warned of interference and forgetting. Empirical and systems perspectives on LLM training underscored that tuning large models to absorb new knowledge is both resource-heavy and susceptible to catastrophic forgetting. Clinical commentary on LLM hallucinations articulated the reliability risks posed by outdated or unverified internal knowledge during deployment. Taken together, these works surfaced a clear opportunity: combine agentic orchestration with an explicit, dual-store external memory that does not require model retraining, and govern that memory with feedback-driven, bandit-inspired credibility updates. The resulting synthesis naturally injects vetted, up-to-date knowledge directly into inference, uses short- and long-term stores to manage recency and persistence, and systematically demotes stale or unhelpful items—addressing both continual knowledge integration and hallucination suppression without touching model parameters.",
+  "analysis_timestamp": "2026-04-05T11:58:10.392730",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P11",
+    "secondary_patterns": [
+      "P06",
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Implements multi-store (working vs long-term) memory with dynamic updates and bandit-based trust allocation—hierarchical organization augmented by principled uncertainty-driven control in a modular agent system.",
+    "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+    "secondary_pattern_names": [
+      "Principled Probabilistic Modeling & Uncertainty",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

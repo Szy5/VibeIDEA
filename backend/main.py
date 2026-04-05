@@ -12,10 +12,10 @@ load_dotenv(os.path.join(_ROOT_DIR, ".env"), override=True)
 # 代理：在 .env 中配置 HTTP_PROXY / HTTPS_PROXY 后，requests、huggingface_hub 等会自动使用
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 from pyzotero import zotero
-from .recommender import rerank_paper
-from .construct_email import render_email, send_email
-from .construct_wechat import render_wechat
-from .construct_feishu import render_feishu
+from recommender import rerank_paper
+from construct_email import render_email, send_email
+from construct_wechat import render_wechat
+from construct_feishu import render_feishu
 try:
     from wechat_publisher import WechatClient
 except ImportError:
@@ -24,8 +24,8 @@ from tqdm import trange, tqdm
 from loguru import logger
 from gitignore_parser import parse_gitignore
 from tempfile import mkstemp
-from .paper import ArxivPaper
-from .llm import set_global_llm
+from paper import ArxivPaper
+from llm import set_global_llm
 import feedparser
 
 def get_zotero_corpus(id:str,key:str) -> list[dict]:

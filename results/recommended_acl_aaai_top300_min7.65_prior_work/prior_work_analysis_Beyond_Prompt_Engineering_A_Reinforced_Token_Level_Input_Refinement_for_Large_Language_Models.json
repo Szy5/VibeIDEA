@@ -1,0 +1,85 @@
+{
+  "paper_title": "Beyond Prompt Engineering: A Reinforced Token-Level Input Refinement for Large Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "In the rapidly developing field of automatic text generation and understanding, the quality of input data has been shown to be a key factor affecting the efficiency and accuracy of large language model (LLM) output. With the advent of advanced tools such as ChatGPT, input refinement work has mainly focused on prompt engineering. However, existing methods are often too dependent on specific contexts and are easily affected by individual expert experience and potential biases, limiting their wide applicability in diverse real-world applications. To address this problem, this study develops an Reinforced Token-Level Input Refinement, called RTLIR. We choose to optimize the input data at the fine-grained level of tokens, cleverly preserving the original text structure. Operationally, each state is defined by the token set of the current text, and each action is a binary decision process to decide whether to retain a specific token information. The agent automatically calculates and determines the selection probability of each token based on the current state, thereby optimizing the entire decision process. Through continuous exploration and learning, the agent can autonomously learn to identify the key inputs that have the greatest impact on the generation results and achieve refinement of the input data. In addition, RTLIR is a plug-and-play, LLM-agnostic module that can be used for a wide range of tasks and models. Experimental results show that RTLIR improves the performance of LLM in various input scenarios and tasks, with an average accuracy increase of 6%.",
+  "prior_works": [
+    {
+      "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+      "authors": "Fangzhi Shi et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This paper empirically demonstrated that LLMs degrade when fed irrelevant context, directly motivating RTLIR’s core idea of proactively removing distracting tokens before generation to eliminate the documented failure mode.",
+      "arxiv_id": "2302.00093",
+      "url": null
+    },
+    {
+      "title": "Making Retrieval-Augmented Language Models Robust to Irrelevant Context",
+      "authors": "Omer Yoran et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "By showing that RAG pipelines need mechanisms to ignore distractors in retrieved passages, this work informed the need for a general, model-agnostic filtering layer that RTLIR realizes at token-level prior to inference.",
+      "arxiv_id": "2310.01558",
+      "url": null
+    },
+    {
+      "title": "Context-faithful Prompting for Large Language Models",
+      "authors": "Wenhan X. Zhou et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "This prompting method relies on carefully crafted instructions to keep models faithful to provided context, and its dependence on prompt design and expertise is explicitly addressed by RTLIR’s automated, learned token selection.",
+      "arxiv_id": "2303.11315",
+      "url": null
+    },
+    {
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "authors": "Aman Madaan et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Self-Refine’s demonstration that iterative, feedback-driven refinement improves outputs inspired RTLIR’s sequential decision process with immediate and terminal rewards to iteratively refine inputs rather than prompts or outputs.",
+      "arxiv_id": "2303.17651",
+      "url": null
+    },
+    {
+      "title": "Large Language Models as Data Preprocessors",
+      "authors": "Hanlin Zhang et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "By framing LLMs as data preprocessors for input cleaning, this work provided the conceptual foundation that RTLIR operationalizes via an LLM-agnostic module that selects which input tokens to retain.",
+      "arxiv_id": "2308.16361",
+      "url": null
+    },
+    {
+      "title": "Can Foundation Models Wrangle Your Data?",
+      "authors": "Amogh Narayan et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This paper established data wrangling and input quality as critical for foundation model pipelines, which RTLIR directly addresses by formalizing token-level input cleaning as an MDP optimized with RL.",
+      "arxiv_id": "2205.09911",
+      "url": null
+    },
+    {
+      "title": "R3L: Connecting Deep Reinforcement Learning To Recurrent Neural Networks For Image Denoising Via Residual Recovery",
+      "authors": "Rui Zhang et al.",
+      "year": 2021,
+      "role": "Extension",
+      "relationship_sentence": "R3L showed that RL can learn to remove noise via reward-driven actions; RTLIR generalizes this denoising paradigm from images to text by defining actions as token keep/remove and learning with Q-learning and dual (immediate/terminal) rewards.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work has shown that the presence of irrelevant or distracting context can significantly degrade large language model performance; in particular, empirical evidence established that even strong LLMs are prone to distraction by irrelevant context, underscoring the value of proactively filtering inputs. In the retrieval setting, methods for making retrieval-augmented models robust to distractors highlighted the importance of mechanisms that suppress irrelevant material, pointing to filtering as a general need beyond retrieval. Context-faithful prompting demonstrated that prompt design can steer models to adhere to given context, but also revealed a reliance on carefully crafted instructions and expert heuristics. Concurrently, Self-Refine showed that iterative, feedback-driven refinement loops can materially improve outcomes, suggesting sequential decision processes as a powerful mechanism for refinement. Complementing these insights, work on using LLMs as data preprocessors and broader perspectives on foundation models for data wrangling established both the feasibility and necessity of input cleaning within FM/LLM pipelines. Outside of NLP, RL-based denoising demonstrated that agents can learn to remove noise via reward signals, offering a general paradigm for selective input purification.\nTogether, these works expose a gap: robust input refinement needs to be automatic, model-agnostic, and fine-grained enough to excise distractions without hand-crafted prompts. The synthesis naturally leads to a token-level, sequential decision approach: cast input filtering as an MDP, use immediate signals reflecting token relevance and a terminal signal reflecting overall output quality, and learn a policy that keeps only informative tokens. This unifies the denoising insight from RL with the demonstrated benefits of iterative refinement while overcoming prompt dependence.",
+  "analysis_timestamp": "2026-04-05T11:58:44.276796",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Introduces an inference-time, RL-driven token-level input editor to suppress distractors, used as a preprocessor module before the LM.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition"
+    ]
+  }
+}

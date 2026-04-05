@@ -1,0 +1,87 @@
+{
+  "paper_title": "Exclusion of Thought: Mitigating Cognitive Load in Large Language Models for Enhanced Reasoning in Multiple-Choice Tasks",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Exclusion of Thought: Mitigating Cognitive Load in Large Language Models for Enhanced Reasoning in Multiple-Choice Tasks",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "CoT is the primary additive reasoning baseline whose multi-step chains EoT plugs into and improves upon by replacing attention-consuming option exposure with subtractive, elimination-based prompting.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "POE: Process of Elimination for Multiple Choice Reasoning",
+      "authors": "Chenkai Ma and Xinya Du",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "POE’s two-step self-scoring for MCQs inspired elimination-style reasoning, but its continued exposure to all options left models vulnerable to distractors—an explicit limitation EoT addresses by actually removing low-confidence options from the prompt.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "It’s Not Easy Being Wrong: Large Language Models Struggle with Process of Elimination Reasoning",
+      "authors": "Nishant Balepur et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This work showed LLMs often fail PoE-style tasks, highlighting that simply reasoning about eliminations is insufficient and motivating EoT’s design to reduce cognitive load by minimizing distractor exposure through prompt recomposition.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Eliminating Reasoning via Inferring with Planning: A New Framework to Guide LLMs’ Non-Linear Thinking",
+      "authors": "Yongqi Tong et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "This planning-based prompting guides elimination within a single prompt but keeps distractors visible; EoT contrasts by iteratively reconstructing the input to prevent re-attending to eliminated options.",
+      "arxiv_id": "2310.12342",
+      "url": null
+    },
+    {
+      "title": "Just Ask for Calibration: Strategies for Eliciting Calibrated Confidence Scores from Language Models Fine-Tuned with Human Feedback",
+      "authors": "Katherine Tian et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "EoT extends this calibrated confidence elicitation by using model-calibrated probabilities to compute exclusion confidence (Pexclude) and drive the confidence-gap thresholding that governs iterative elimination.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Self-Consistency Improves Chain-of-Thought Reasoning in Language Models",
+      "authors": "Xuezhi Wang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "EoT adopts the self-consistency idea of sampling multiple reasoning chains and aggregates them as local scores, resampling when the confidence gap is small to robustify elimination decisions.",
+      "arxiv_id": "2203.11171",
+      "url": null
+    },
+    {
+      "title": "Multiple-Choice Questions are Efficient and Robust LLM Evaluators",
+      "authors": "Ziyin Zhang et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This study empirically demonstrated that removing a distractor option in GSM8K-MC dramatically boosts accuracy, directly motivating EoT’s subtractive strategy to eliminate distractors and relieve cognitive load.",
+      "arxiv_id": "2405.11966",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Chain-of-Thought established that prompting models to generate intermediate steps enhances reasoning, but it does so by adding more content to the prompt while keeping all options visible. Process-of-Elimination (POE) introduced a two-step self-scoring scheme specifically for multiple-choice questions, encouraging elimination-style thinking yet still presenting all options together, which leaves room for distractor-driven errors. Empirical evidence deepened this concern: large language models often struggle with PoE-style reasoning, indicating that simply instructing models to eliminate choices does not overcome distractor interference. Planning-style prompting sought to guide non-linear elimination within a single prompt, but retained visibility of ruled-out options, risking renewed attention to distractors. In parallel, calibrated confidence elicitation provided practical techniques for extracting more reliable probability estimates from instruction-tuned models, while self-consistency showed that sampling and aggregating multiple reasoning chains can improve robustness. Finally, studies on MCQ evaluation demonstrated that the mere presence or removal of distractors can cause large swings in accuracy, underscoring distractor sensitivity as a central bottleneck. Together, these insights revealed a gap: existing methods either add more reasoning content or discuss eliminations without actually reducing option exposure. The natural next step was a subtractive prompting framework that physically removes low-confidence distractors from the prompt, uses calibrated probabilities to govern exclusions, and leverages multi-chain aggregation to stabilize decisions. EoT synthesizes these strands by iteratively eliminating options, recalibrating confidence, and reconstructing the input so models no longer re-attend to eliminated distractors, thereby reducing cognitive load and improving MCQ reasoning.",
+  "analysis_timestamp": "2026-04-05T12:01:10.375674",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P03",
+      "P01"
+    ],
+    "confidence": "medium",
+    "reasoning": "Controls prompt visibility and elimination dynamics at inference to reduce distractor interference (inference-time control), effectively shifting the representation of options based on a diagnosed gap.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Gap-Driven Reframing"
+    ]
+  }
+}

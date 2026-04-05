@@ -1,0 +1,87 @@
+{
+  "paper_title": "Benchmarking and Understanding Compositional Relational Reasoning of LLMs",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Compositional relational reasoning (CRR) is a hallmark of human intelligence, but we lack a clear understanding of whether and how existing transformer large language models (LLMs) can solve CRR tasks. To enable systematic exploration of the CRR capability of LLMs, we first propose a new synthetic benchmark called Generalized Associative Recall (GAR) by integrating and generalizing the essence of several tasks in mechanistic interpretability (MI) study in a unified framework. Evaluation shows that GAR is challenging enough for existing LLMs, revealing their fundamental deficiency in CRR. Meanwhile, it is easy enough for systematic MI study. Then, to understand how LLMs solve GAR tasks, we use attribution patching to discover the core circuits reused by Vicuna-33B across different tasks, and a set of vital attention heads. Intervention experiments show that the correct functioning of these heads significantly impacts task performance. Especially, we identify two classes of heads whose activations represent the abstract notion of true and false in GAR tasks respectively. They play fundamental roles in CRR across various models and tasks.",
+  "prior_works": [
+    {
+      "title": "Using Fast Weights to Attend to the Recent Past",
+      "authors": "Ba et al.",
+      "year": 2016,
+      "role": "Foundation",
+      "relationship_sentence": "This work introduced the associative recall (AR) key–value retrieval paradigm that GAR directly generalizes by replacing the AR ‘same’ semantic links with diverse relations while preserving the relational loop structure.",
+      "arxiv_id": "1610.06258",
+      "url": null
+    },
+    {
+      "title": "Locating and Editing Factual Associations in GPT",
+      "authors": "Meng et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "It formalized knowledge recall (KR) as retrieving parametric subject–relation–attribute facts, which GAR integrates with AR by swapping ‘same’ retrieval with KR-style relations (e.g., kindOf, inCountryOf) to control task semantics and difficulty.",
+      "arxiv_id": "2202.05262",
+      "url": null
+    },
+    {
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "authors": "Wang et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "The IOI task’s set-complement/negation semantics and its step-wise path patching analysis directly inspire GAR’s negate variation and the paper’s step-wise circuit-tracing strategy.",
+      "arxiv_id": "2211.00593",
+      "url": null
+    },
+    {
+      "title": "In-context Learning and Induction Heads",
+      "authors": "Olsson et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "By revealing induction heads that implement in-context learning, this work motivates and is extended by the discovery of higher-order induction heads that bridge demonstration and query tokens in GAR circuits.",
+      "arxiv_id": "2209.11895",
+      "url": null
+    },
+    {
+      "title": "Have Faith in Faithfulness: Going Beyond Circuit Overlap When Finding Model Mechanisms",
+      "authors": "Hanna et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "The paper adopts integrated-gradients–based attribution patching from this work to replace path patching, enabling faster, faithful circuit discovery at Vicuna-33B scale.",
+      "arxiv_id": "2403.17806",
+      "url": null
+    },
+    {
+      "title": "Measuring and Narrowing the Compositionality Gap in Language Models",
+      "authors": "Press et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Their definition of the compositionality gap—comparing subproblem success to composed-task performance—directly motivates GAR’s design and is used to quantify CRR failures across model scales.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Linearity of Relation Decoding in Transformer Language Models",
+      "authors": "Hernandez et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "This work provides relational schemas and evidence that relations like inCountryOf are linearly decodable; GAR directly uses several of these schemas to instantiate its relational tasks and loops.",
+      "arxiv_id": "2308.09124",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Associative recall established a controlled key–value retrieval setting where a query must recover a paired value via ‘same’ semantic links, offering a clean template for probing long-range dependencies (Ba et al., 2016). In parallel, knowledge recall framed factual retrieval as subject–relation–attribute decoding from model parameters (Meng et al., 2022), highlighting relations such as kindOf and inCountryOf as explicit semantic targets. The indirect object identification task showed that negation and set-complement structure can be made mechanistically tractable and introduced step-wise path patching to trace circuits that implement this reasoning (Wang et al., 2023). Induction heads were then identified as the mechanistic basis of in-context learning, implementing V→Q-style attention that propagates information across contextual spans (Olsson et al., 2022). To scale circuit discovery faithfully, integrated-gradients–based attribution patching was proposed to go beyond circuit overlap and accelerate mechanism attribution (Hanna et al., 2024). Complementing these, relation decoding was shown to be approximately linear for many semantic relations and released practical schemas (Hernandez et al., 2024). Finally, the compositionality gap was operationalized as a concrete metric contrasting subproblem success with composed-task performance (Press et al., 2023).\nTogether, these works spotlighted a gap: MI tasks like AR/IOI are mechanistically analyzable but too simple for modern LLMs, while multi-step composition benchmarks expose failures but are unwieldy for circuit analysis. The present work synthesizes AR and KR into a unified relational-loop framework, imports IOI’s negation via set complement, and instantiates tasks with decodable relation schemas, yielding a two-hop benchmark challenging enough to reveal compositional deficits yet simple enough for MI. Methodologically, it adopts IG-based attribution patching and targets induction-head–mediated pathways to expose reusable core circuits and identify True/False heads that implement truthfulness signals across tasks.",
+  "analysis_timestamp": "2026-04-05T12:08:33.221362",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P12",
+    "secondary_patterns": [
+      "P05",
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Dissects circuits (e.g., induction heads, path patching) for compositional reasoning and builds controlled tasks to test hypotheses.",
+    "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+    "secondary_pattern_names": [
+      "Data & Evaluation Engineering",
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

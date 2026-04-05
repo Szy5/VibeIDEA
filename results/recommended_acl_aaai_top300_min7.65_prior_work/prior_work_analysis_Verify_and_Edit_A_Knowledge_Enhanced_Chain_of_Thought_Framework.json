@@ -1,0 +1,87 @@
+{
+  "paper_title": "Verify-and-Edit: A Knowledge-Enhanced Chain-of-Thought Framework",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "As large language models (LLMs) have become the norm in NLP, demonstrating good performance in generation and reasoning tasks, one of its most fatal disadvantages is the lack of factual correctness. Generating unfactual texts not only leads to lower performances but also degrades the trust and validity of their applications. Chain-of-Thought (CoT) prompting improves trust and model performance on complex reasoning tasks by generating interpretable reasoning chains, but still suffers from factuality concerns in knowledge-intensive tasks. In this paper, we propose the Verify-and-Edit framework for CoT prompting, which seeks to increase prediction factuality by post-editing reasoning chains according to external knowledge. Building on top of GPT-3, our framework lead to accuracy improvements in multiple open-domain question-answering tasks.",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This work introduced chain-of-thought prompting, establishing the rationale–answer format that the Verify-and-Edit framework explicitly assumes and subsequently post-edits to improve factuality.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "authors": "Xuezhi Wang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "Verify-and-Edit directly repurposes self-consistency sampling from this paper as an uncertainty estimator, triggering verification and editing precisely when the majority of sampled CoTs do not agree.",
+      "arxiv_id": "2203.11171",
+      "url": null
+    },
+    {
+      "title": "The Unreliability of Explanations in Few-Shot Prompting for Textual Reasoning",
+      "authors": "Xi Ye et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing that explanation quality correlates with answer accuracy and that few-shot CoTs can be unreliable (and proposing a calibrator baseline), this work motivated Verify-and-Edit’s focus on improving the factuality of the reasoning chain itself.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Shunyu Yao et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "ReAct’s integration of step-by-step reasoning with retrieval actions is the primary comparable approach to using external information for factual checks, against which Verify-and-Edit positions its simpler post-editing of natural CoTs.",
+      "arxiv_id": "2210.03629",
+      "url": null
+    },
+    {
+      "title": "Selection-Inference: Exploiting Large Language Models for Interpretable Logical Reasoning",
+      "authors": "Antonia Creswell et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "This paper’s explicit focus on improving the factual correctness of intermediate reasoning steps inspired the idea of targeting CoT quality, which Verify-and-Edit extends to open-domain settings by editing rationales with retrieved evidence.",
+      "arxiv_id": "2205.09712",
+      "url": null
+    },
+    {
+      "title": "Measuring and Narrowing the Compositionality Gap in Language Models",
+      "authors": "Ofir Press et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "The self-ask technique of generating and answering follow-up questions directly informed Verify-and-Edit’s step of producing verifying questions that drive retrieval before rationale editing.",
+      "arxiv_id": "2210.03350",
+      "url": null
+    },
+    {
+      "title": "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering",
+      "authors": "Zhilin Yang et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "HotpotQA established the multi-hop, evidence-based QA setting that emphasizes interpretable reasoning and factual grounding, providing the core problem formulation on which Verify-and-Edit is developed and evaluated.",
+      "arxiv_id": "1809.09600",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Chain-of-thought prompting demonstrated that large language models can produce step-by-step rationales that enable complex reasoning by formatting inputs and outputs as “question, rationale, answer.” Building on this, self-consistency showed that sampling diverse reasoning paths and aggregating by majority correlates with correctness, yielding both a performance boost and a signal of uncertainty. Ye and Durrett identified a critical weakness: explanations in few-shot prompting often lack reliability, with factuality and consistency of rationales strongly tied to answer quality; they also introduced a calibrator baseline and a challenging HotpotQA split that sharpened evaluation of factual reasoning. ReAct intertwined explicit reasoning steps with retrieval actions to access external information mid-inference, illustrating how outside evidence can counter hallucinations. Selection-Inference took a complementary approach by iteratively constructing interpretable reasoning steps to improve factual correctness, highlighting the value of refining the reasoning itself. In parallel, the self-ask method showed that asking and answering sub-questions can structure problem solving, underscoring the utility of targeted follow-up questions. HotpotQA framed multi-hop QA with evidence, centering tasks where factual intermediate steps are essential.\nTogether, these works revealed that while CoT improves reasoning, unreliability and hallucination persist, especially without external evidence; self-consistency offers a natural uncertainty gate, and both retrieval and question decomposition can supply needed facts. The convergence of these insights makes it natural to post-edit CoTs: selectively detect uncertain cases via self-consistency, generate verifying sub-questions, retrieve external knowledge, and edit rationales before re-answering. This synthesis yields a streamlined, knowledge-enhanced reasoning process that bolsters factual alignment without abandoning the interpretability benefits of CoT.",
+  "analysis_timestamp": "2026-04-05T11:57:10.314344",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P04",
+      "P05"
+    ],
+    "confidence": "medium",
+    "reasoning": "Implements inference-time verify-and-edit with retrieval-guided reasoning; modularizes reasoning/retrieval and sharpens evaluation of factuality.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Data & Evaluation Engineering"
+    ]
+  }
+}

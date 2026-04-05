@@ -1,0 +1,87 @@
+{
+  "paper_title": "Adapting to Non-Stationary Environments: Multi-Armed Bandit Enhanced Retrieval-Augmented Generation on Knowledge Graphs",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Despite the superior performance of Large language models on many NLP tasks, they still face significant limitations in memorizing extensive world knowledge. Recent studies have demonstrated that leveraging the Retrieval-Augmented Generation (RAG) framework, combined with Knowledge Graphs that encapsulate extensive factual data in a structured format, robustly enhances the reasoning capabilities of LLMs. However, deploying such systems in real-world scenarios presents challenges: the continuous evolution of non-stationary environments may lead to performance degradation and user satisfaction requires a careful balance of performance and responsiveness. To address these challenges, we introduce a Multi-objective Multi-Armed Bandit enhanced RAG framework, supported by multiple retrieval methods with diverse capabilities under rich and evolving retrieval contexts in practice. Within this framework, each retrieval method is treated as a distinct \"arm''. The system utilizes real-time user feedback to adapt to dynamic environments, by selecting the appropriate retrieval method based on input queries and the historical multi-objective performance of each arm. Extensive experiments conducted on two benchmark KGQA datasets demonstrate that our method significantly outperforms baseline methods in non-stationary settings while achieving state-of-the-art performance in station environments.",
+  "prior_works": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Lewis et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "Introduced the RAG paradigm that this work directly builds upon by augmenting LLMs with external retrieval, which is here extended to knowledge-graph retrievers and dynamically selected via bandits.",
+      "arxiv_id": "2005.11401",
+      "url": null
+    },
+    {
+      "title": "ChatKBQA: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models",
+      "authors": "Luo et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "Provides the SPARQL-generation KG retrieval arm with high coverage but high latency that is explicitly included as an arm and whose latency–accuracy trade-off motivated the bandit-based, multi-objective selector.",
+      "arxiv_id": "2310.08975",
+      "url": null
+    },
+    {
+      "title": "Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning",
+      "authors": "Luo et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "Supplies the LLM agent-based KG retrieval arm with strong complex reasoning yet slow execution, directly framing the need for an adaptive router that can pick or avoid this arm based on context and multi-objective feedback.",
+      "arxiv_id": "2310.01061",
+      "url": null
+    },
+    {
+      "title": "Deep Contextual Multi-armed Bandits",
+      "authors": "Collier et al.",
+      "year": 2018,
+      "role": "Extension",
+      "relationship_sentence": "Provides the deep contextual bandit formulation that is extended here by using a PLM-based query encoder and by incorporating multi-objective optimization with online updates to handle non-stationarity.",
+      "arxiv_id": "1807.09809",
+      "url": null
+    },
+    {
+      "title": "Multi-objective Bandits: Optimizing the Generalized Gini Index",
+      "authors": "Busa-Fekete et al.",
+      "year": 2017,
+      "role": "Extension",
+      "relationship_sentence": "Introduces the use of the Generalized Gini Index in bandit optimization, which is directly adopted to aggregate hit/recall and latency into a single objective guiding arm selection.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Bandit based Optimization of Multiple Objectives on a Music Streaming Platform",
+      "authors": "Mehrotra et al.",
+      "year": 2020,
+      "role": "Related Problem",
+      "relationship_sentence": "Demonstrates practical multi-objective contextual bandit optimization (including GGI) to balance user-centric metrics, informing the design choice to balance accuracy, coverage, and delay in online selection.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Offline-to-Online Reinforcement Learning via Balanced Replay and Pessimistic Q-Ensemble",
+      "authors": "Lee et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Motivates the offline-to-online training protocol adopted here, where a selector is pre-trained offline and then adapted online using partial feedback to cope with non-stationary environments.",
+      "arxiv_id": "2107.00591",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Retrieval-augmented generation established the template for coupling a generator with external knowledge access, enabling factual grounding during generation. Within knowledge graph question answering, two complementary retrieval styles emerged: generate-then-execute SPARQL systems such as ChatKBQA that achieve broad coverage via executable graph queries at the cost of multiple LLM calls and latency, and LLM agent-based graph reasoning, as in Reasoning on Graphs, which excels on complex, multi-hop questions but similarly incurs substantial delays. In parallel, deep contextual bandits showed that non-linear encoders can map rich contexts to arm choices under partial-feedback, addressing scenarios where simple linear models fail to capture complex patterns. For decision-making with multiple competing goals, multi-objective bandits introduced the Generalized Gini Index as a principled scalarization, and platform-scale work demonstrated how contextual bandits with GGI can balance user-facing trade-offs among objectives. Finally, offline-to-online reinforcement learning advanced a practical recipe for pretraining policies offline and adapting them online with streaming feedback to handle distribution shift.\nCombining these strands revealed an opportunity: treat heterogeneous KG retrieval methods as arms whose strengths and costs vary by query, learn a deep contextual router that can be pre-trained offline and updated online from user feedback, and use a GGI-based scalarization to balance accuracy, coverage, and latency. This synthesis naturally yields a bandit-enhanced KG-RAG system that adapts to non-stationary demands and backend changes while routing each query to the most suitable retriever under multi-objective constraints.",
+  "analysis_timestamp": "2026-04-05T11:39:10.114645",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P06",
+    "secondary_patterns": [
+      "P02",
+      "P09"
+    ],
+    "confidence": "medium",
+    "reasoning": "Uses bandit formulations to adapt under uncertainty/non-stationarity, likely combining KG-QA/RAG choices with sequential decision control.",
+    "primary_pattern_name": "Principled Probabilistic Modeling & Uncertainty",
+    "secondary_pattern_names": [
+      "Cross-Domain Synthesis",
+      "Inference-Time Control & Guided Sampling"
+    ]
+  }
+}

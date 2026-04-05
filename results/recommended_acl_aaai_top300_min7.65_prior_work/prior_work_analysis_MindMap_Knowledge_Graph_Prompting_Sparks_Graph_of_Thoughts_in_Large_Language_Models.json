@@ -1,0 +1,80 @@
+{
+  "paper_title": "MindMap: Knowledge Graph Prompting Sparks Graph of Thoughts in Large Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models (LLMs) have achieved remarkable performance in natural language understanding and generation tasks.However, they often suffer from limitations such as difficulty in incorporating new knowledge, generating hallucinations, and explaining their reasoning process.To address these challenges, we propose a novel prompting pipeline, named MindMap, that leverages knowledge graphs (KGs) to enhance LLMs' inference and transparency.Our method enables LLMs to comprehend KG inputs and infer with a combination of implicit and external knowledge.Moreover, our method elicits the mind map of LLMs, which reveals their reasoning pathways based on the ontology of knowledge.We evaluate our method on diverse question & answering tasks, especially in medical domains, and show significant improvements over baselines.We also introduce a new hallucination evaluation benchmark and analyze the effects of different components of our method.Our results demonstrate the effectiveness and robustness of our method in merging knowledge from LLMs and KGs for combined inference.To reproduce our results and extend the framework further, we make our codebase available at https://github.com/wylwilling/MindMap.",
+  "prior_works": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Patrick Lewis et al.",
+      "year": 2020,
+      "role": "Baseline",
+      "relationship_sentence": "This work laid the foundation for using retrieval-augmented approaches in language models, which MindMap builds upon by integrating knowledge graphs (KGs) for enhanced inference.",
+      "arxiv_id": "N/A",
+      "url": null
+    },
+    {
+      "title": "Knowledge-Augmented Language Model Prompting for Zero-Shot Knowledge Graph Question Answering",
+      "authors": "Jinheon Baek et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "This paper inspired the concept of using KGs to formulate prompts for language models, which served as a key pivot for MindMap's novel prompting technique.",
+      "arxiv_id": "2306.04136",
+      "url": null
+    },
+    {
+      "title": "K-BERT: Enabling Language Representation with Knowledge Graph",
+      "authors": "Weijie Liu et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "K-BERT introduced the integration of KGs with language models, which provided a foundational understanding for MindMap's advancement of reasoning with graphical inputs.",
+      "arxiv_id": "N/A",
+      "url": null
+    },
+    {
+      "title": "GreaseLM: Graph REASoning Enhanced Language Models for Question Answering",
+      "authors": "Xikun Zhang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "MindMap extends the techniques from GreaseLM by specifically enhancing LLMs’ ability to interact with KGs, thereby improving reasoning capabilities.",
+      "arxiv_id": "2201.08860",
+      "url": null
+    },
+    {
+      "title": "QA-GNN: Reasoning with Language Models and Knowledge Graphs for Question Answering",
+      "authors": "Michihiro Yasunaga et al.",
+      "year": 2021,
+      "role": "Gap Identification",
+      "relationship_sentence": "This work identified limitations in the combinative reasoning of language models and KGs, which MindMap addresses by proposing a synergistic inference method.",
+      "arxiv_id": "N/A",
+      "url": null
+    },
+    {
+      "title": "Exploring the Potential of Large Language Models (LLMs) in Learning on Graphs",
+      "authors": "Zhikai Chen et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "This paper explores the intersection of LLMs and graph structures, informing MindMap's approach to engaging LLMs with complex evidence from KGs.",
+      "arxiv_id": "2307.03393",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior works in the area of knowledge graphs and language model integration set important milestones relevant to the innovation of MindMap. For instance, the foundational idea from Lewis et al. (2020) on retrieval-augmented generation inspired the use of external knowledge to enhance language model performance. Building on this, Baek et al. (2023) demonstrated the effectiveness of prompting LLMs using KGs for question answering, which motivated the specific prompting enhancements in MindMap. The introduction of K-BERT by Liu et al. (2020) provided critical insights into the language representation improvements achieved when integrating KGs, which MindMap extends through a more sophisticated reasoning framework. Yasunaga et al. (2021) pinpointed key limitations in existing models’ reasoning capabilities with KGs, opening a pathway that MindMap effectively navigates by introducing synergistic inference techniques. Furthermore, the exploration of LLMs in graph contexts by Chen et al. (2023) showcases the potential for LLMs to tackle complex queries by synthesizing information from diverse graph structures. Collectively, these works highlight a natural progression towards MindMap's innovative integration of KGs with LLMs, addressing existing gaps and enhancing the reasoning process.",
+  "analysis_timestamp": "2026-04-04T23:22:05.396094",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P03",
+    "secondary_patterns": [
+      "P10",
+      "P09",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Recasts linear CoT into a graph-of-thoughts by injecting KG structure via prompts, shifting the reasoning representation with inference-time guidance.",
+    "primary_pattern_name": "Representation Shift & Primitive Recasting",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Inference-Time Control & Guided Sampling",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

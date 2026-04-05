@@ -1,0 +1,66 @@
+# Prior Work Analysis Report
+
+## Target Paper
+
+**Title:** C3oT: Generating Shorter Chain-of-Thought Without Compromising Effectiveness
+
+**arXiv ID:** [N/A](https://arxiv.org/abs/N/A)
+
+**Abstract:** 
+> Generating Chain-of-Thought (CoT) before deriving the answer can effectively improve the reasoning capabilities of large language models (LLMs) and significantly improve the accuracy of the generated answer. However, in most cases, the length of the generated CoT is much longer than the desired final answer, which results in additional decoding costs. Furthermore, existing research has discovered that shortening the reasoning steps in CoT, even while preserving the key information, diminishes LLMs' abilities. These phenomena make it difficult to use LLMs and CoT in many real-world applications that only require the final answer and are sensitive to latency, such as search and recommendation. To reduce the costs of model decoding and shorten the length of the generated CoT, this paper presents Conditioned Compressed Chain-of-Thought (C3oT), a CoT compression framework that involves a compressor to compress an original longer CoT into a shorter CoT while maintaining key information and interpretability, a conditioned training method to train LLMs with both longer CoT and shorter CoT simultaneously to learn the corresponding relationships between them, and a conditioned inference method to gain the reasoning ability learned from longer CoT by generating shorter CoT. We conduct experiments over four datasets from arithmetic and commonsense scenarios, showing that the proposed method is capable of compressing the length of generated CoT by up to more than 50% without compromising its effectiveness.
+
+---
+
+## Key Prior Works (7 papers with direct influence)
+
+### 🏷️ Foundation
+
+**Chain-of-Thought Prompting Elicits Reasoning in Large Language Models** (2022) [[arXiv](https://arxiv.org/abs/2201.11903)]
+- *Authors:* Jason Wei et al.
+- *Direct Connection:* This work established explicit chain-of-thought prompting as the problem setting C3oT operates in, providing the explicit reasoning traces that C3oT seeks to compress while preserving effectiveness.
+
+### 🏷️ Inspiration
+
+**OpenChat: Advancing Open-Source Language Models with Mixed-Quality Data** (2023) [[arXiv](https://arxiv.org/abs/2309.11235)]
+- *Authors:* Guangtao Wang et al.
+- *Direct Connection:* OpenChat’s class-conditioned training with distinct prompt tokens directly inspired C3oT’s use of condition tokens to jointly learn and control long vs. short CoT generation within one model.
+
+### 🏷️ Gap Identification
+
+**Complexity-Based Prompting for Multi-Step Reasoning** (2022) [[arXiv](https://arxiv.org/abs/2210.00720)]
+- *Authors:* Yao Fu et al.
+- *Direct Connection:* By showing that higher-complexity (longer) reasoning chains yield substantially better performance, this paper highlighted that naive shortening harms accuracy, directly motivating C3oT’s need to compress CoT without losing reasoning ability.
+
+**The Expressive Power of Transformers with Chain of Thought** (2023) [[arXiv](https://arxiv.org/abs/2310.07923)]
+- *Authors:* William Merrill and Ashish Sabharwal
+- *Direct Connection:* This work theoretically tied model capability gains to the number of intermediate reasoning steps, underscoring why reducing steps degrades power and motivating C3oT’s conditioned training to retain capability while shortening CoT.
+
+### 🏷️ Baseline
+
+**Implicit Chain of Thought Reasoning via Knowledge Distillation** (2023) [[arXiv](https://arxiv.org/abs/2311.01460)]
+- *Authors:* Yixuan Deng et al.
+- *Direct Connection:* Implicit-CoT replaces explicit CoT with hidden-state reasoning to avoid decoding cost but suffers large accuracy drops, serving as the primary acceleration baseline that C3oT aims to outperform by keeping explicit yet shorter CoT via conditioning.
+
+### 🏷️ Extension
+
+**The Impact of Reasoning Step Length on Large Language Models** (2024) [[arXiv](https://arxiv.org/abs/2401.04925)]
+- *Authors:* Ming Jin et al.
+- *Direct Connection:* C3oT adopts Jin et al.’s controlled CoT expansion protocol to create an Expanded CoT setting and evaluate whether its conditioned compression can shorten these longer chains without sacrificing accuracy.
+
+### 🏷️ Related Problem
+
+**Expediting and Elevating Large Language Model Reasoning via Hidden Chain-of-Thought Decoding** (2024) [[arXiv](https://arxiv.org/abs/2409.08561)]
+- *Authors:* Tianyu Liu et al.
+- *Direct Connection:* This paper accelerates reasoning by decoding from hidden CoT, directly informing C3oT’s problem framing while motivating an alternative path that preserves explicit (but compressed) CoT through conditioned learning.
+
+---
+
+## Synthesis: How Prior Work Led to This Paper
+
+Chain-of-thought prompting showed that making intermediate reasoning explicit can markedly improve large language model performance, defining the explicit reasoning traces that many methods train and decode (Wei et al., 2022). Subsequent analyses established that longer chains systematically yield stronger results: complexity-based prompting demonstrated that chains with higher reasoning complexity outperform shorter ones (Fu et al., 2022), and theoretical work connected the number of intermediate steps to increased computational power and capability (Merrill and Sabharwal, 2023). Practical acceleration attempts targeted removing or hiding explicit chains: Implicit-CoT distilled hidden-state reasoning to avoid emitting CoT tokens, but incurred large accuracy losses despite 100% decoding savings (Deng et al., 2023). In parallel, class-conditioned training with prompt tags over mixed data sources showed that models can be conditioned to exhibit distinct behaviors using simple control tokens, a strategy that can be repurposed to control generation modes (Wang et al., 2023). Finally, controlled protocols for expanding or compressing reasoning steps provided a way to stress-test methods across chain lengths (Jin et al., 2024), while hidden CoT decoding offered another acceleration perspective centered on internal states (Liu et al., 2024). Together these works revealed a clear opportunity: decoding cost from explicit CoT is high, naive shortening harms accuracy, and purely implicit methods lose performance. C3oT synthesizes these insights by compressing explicit chains via a summarizing compressor, then using class-conditioned training tokens to couple long and short chains in one model so that, at inference, short chains recapture the reasoning benefits learned from long chains. Leveraging step-length protocols further shows this conditioning can compress even expanded chains without compromising effectiveness.
+
+---
+
+*Analysis generated on: 2026-04-05T11:57:09.292955*
+
+*Pipeline: Prior Work Extraction v2.0 (Direct Lineage Focus)*

@@ -1,0 +1,87 @@
+{
+  "paper_title": "Union Is Strength! Unite the Power of LLMs and MLLMs for Chart Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Chart Question Answering (CQA) requires models to perform chart perception and reasoning. Recent studies driven by Large Language Models (LLMs) have dominated CQA. These include employing more cognitively capable LLMs for indirectly reasoning over transformed charts, i.e., tables, and directly perceiving charts utilizing Multimodal Large Language Models (MLLMs) with a wider perceptual range. Yet, they often encounter bottlenecks due to the limitation of the receptive field of LLMs and the fragility of the complex reasoning of some MLLMs. To unite the strengths of LLMs and MLLMs to complement each other's limitations, we propose Synergy, a framework that unites the power of both models for CQA. Synergy first unites the chart with a table as the augmented perceptual signal. Next, it unites LLMs and MLLMs, scheduling the former to decompose a question into subquestions and the latter to answer these by perceiving the chart. Lastly, it operates LLMs to summarize the subquestion-answer pairs to refine the final answer. Extensive experimental results on popular CharQA and PlotQA benchmarks reveal that, with the power of union, Synergy outperforms strong competitors and achieves superior boosts over naive MLLMs by uniting them with a smaller LLM.",
+  "prior_works": [
+    {
+      "title": "DePlot: One-shot Visual Language Reasoning by Plot-to-Table Translation",
+      "authors": "F. Liu et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Synergy directly uses DePlot as its chart2table module to extract accurate numerical tables and builds on DePlot’s chart-to-table paradigm by augmenting MLLM inputs with both the chart image and DePlot’s JSON table.",
+      "arxiv_id": "arXiv:2212.10505",
+      "url": null
+    },
+    {
+      "title": "DOMINO: A Dual-System for Multi-step Visual Language Reasoning",
+      "authors": "P. Wang et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Synergy extends DOMINO’s dual-system pipeline—LLM-based question decomposition with a separate answering agent—by replacing DEPLOT-only answering with an MLLM that cross-perceives chart+table and adding an LLM verifier to refine the final answer without any fine-tuning.",
+      "arxiv_id": "arXiv:2310.02804",
+      "url": null
+    },
+    {
+      "title": "Do LLMs Work on Charts? Designing Few-Shot Prompts for Chart Question Answering and Summarization (PROMPTCHART)",
+      "authors": "X. L. Do et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "PROMPTCHART exposed information loss in chart-to-table conversion and attempted to add textual visual cues, directly motivating Synergy’s solution of feeding MLLMs the original chart alongside the table to recover color and spatial cues.",
+      "arxiv_id": "arXiv:2312.10610",
+      "url": null
+    },
+    {
+      "title": "CogVLM: Visual Expert for Pretrained Language Models",
+      "authors": "W. Wang et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "CogVLM showed that aligning LLMs with multimodal data weakens their pure-text reasoning, underpinning Synergy’s design choice to delegate cognition-heavy steps (decomposition and verification) to a native LLM while reserving perception for an MLLM.",
+      "arxiv_id": "arXiv:2311.03079",
+      "url": null
+    },
+    {
+      "title": "MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models",
+      "authors": "C. Fu et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "MME documented fragile and inconsistent reasoning chains in MLLMs, directly motivating Synergy’s final LLM-based summary-verification stage over subquestion-answer pairs.",
+      "arxiv_id": "arXiv:2306.13394",
+      "url": null
+    },
+    {
+      "title": "ChartQA: A Benchmark for Question Answering about Charts with Visual and Logical Reasoning",
+      "authors": "A. Masry et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "ChartQA defined the CQA task with human and augmented splits requiring combined visual perception and numerical/logical reasoning, providing the core problem setting and evaluation bed for Synergy.",
+      "arxiv_id": "arXiv:2203.10244",
+      "url": null
+    },
+    {
+      "title": "PlotQA: Reasoning over Scientific Plots",
+      "authors": "N. Methani et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "PlotQA introduced large-scale plot understanding with fine-grained numerical questions, forming the numerical reasoning benchmark (via PlotQA-sub) that Synergy targets to demonstrate its perception–reasoning integration.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "DePlot established the plot-to-table translation paradigm that enabled language models to reason over charts in textual form, providing accurate numerical extraction but inherently discarding visual cues. PROMPTCHART highlighted this information-loss problem and attempted to mitigate it by injecting textual surrogates for visual attributes (e.g., color), underscoring that table-only representations miss critical spatial and stylistic signals. DOMINO introduced a dual-system pipeline in which an LLM decomposes a complex question and a specialized answering module resolves subqueries on tabular inputs, demonstrating that decomposition can unlock multi-step visual-language reasoning but still relying on table-only perception and supervised fine-tuning. In parallel, CogVLM showed that multimodal alignment can erode the underlying LLM’s textual reasoning, revealing a tension between perception and cognition capacities in MLLMs. Complementing this, the MME benchmark documented brittle and inconsistent reasoning chains in MLLMs, pointing to the need for external verification to ensure reliable conclusions. ChartQA and PlotQA formalized chart QA as a combined perception–numerical reasoning problem, with human-authored and numerically intensive splits, respectively, that stress both visual fidelity and multi-step arithmetic. Together, these works indicated an opportunity: retain the strong textual cognition of LLMs, leverage MLLMs’ broader perception without losing visual cues, and add a mechanism to check fragile chains. Synergy naturally emerges by augmenting MLLM perception with both chart images and extracted tables, using an LLM to decompose questions into chart-grounded subqueries, delegating subquery answering to the MLLM, and finally employing an LLM verifier to summarize and correct subquestion-answer paths into a robust final answer.",
+  "analysis_timestamp": "2026-04-05T12:05:47.756028",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P03",
+      "P11"
+    ],
+    "confidence": "high",
+    "reasoning": "Composes LLM decomposition with specialized modules; shifts representation (plot-to-table) and uses hierarchical subquery reasoning.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Multiscale & Hierarchical Modeling"
+    ]
+  }
+}

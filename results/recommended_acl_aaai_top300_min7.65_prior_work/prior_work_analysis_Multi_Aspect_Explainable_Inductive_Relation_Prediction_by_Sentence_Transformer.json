@@ -1,0 +1,78 @@
+{
+  "paper_title": "Multi-Aspect Explainable Inductive Relation Prediction by Sentence Transformer",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Recent studies on knowledge graphs (KGs) show that path-based methods empowered by pre-trained language models perform well in the provision of inductive and explainable relation predictions. In this paper, we introduce the concepts of relation path coverage and relation path confidence to filter out unreliable paths prior to model training to elevate the model performance. Moreover, we propose Knowledge Reasoning Sentence Transformer (KRST) to predict inductive relations in KGs. KRST is designed to encode the extracted reliable paths in KGs, allowing us to properly cluster paths and provide multi-aspect explanations. We conduct extensive experiments on three real-world datasets. The experimental results show that compared to SOTA models, KRST achieves the best performance in most transductive and inductive test cases (4 of 6), and in 11 of 12 few-shot test cases.",
+  "prior_works": [
+    {
+      "title": "Inductive Relation Prediction by BERT",
+      "authors": "Hengrui Zha et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "KRST directly builds on BERTRL’s idea of converting triples and their connecting paths into text for PLM-based scoring, but addresses BERTRL’s limitation of using all (often noisy) paths and single-path explanations by introducing path reliability filtering and replacing sequence classification with a siamese sentence-transformer similarity framework.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "authors": "Nils Reimers et al.",
+      "year": 2019,
+      "role": "Inspiration",
+      "relationship_sentence": "KRST adopts Sentence-BERT’s siamese encoding and cosine similarity paradigm to separately embed triples and paths, enabling explicit similarity comparison and path clustering for multi-aspect explanations.",
+      "arxiv_id": "arXiv:1908.10084",
+      "url": null
+    },
+    {
+      "title": "Inductive Relation Prediction by Subgraph Reasoning",
+      "authors": "Keshav Teru et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "KRST follows GRAIL’s inductive relation prediction formulation and data splits while targeting GRAIL’s noted lack of explainability by reasoning over explicit, text-encoded paths.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "AMIE: Association Rule Mining under Incomplete Evidence in Ontological Knowledge Bases",
+      "authors": "Luis Galárraga et al.",
+      "year": 2013,
+      "role": "Extension",
+      "relationship_sentence": "KRST extends AMIE’s support and confidence notions for Horn rules by defining relation path coverage and relation path confidence to filter unreliable relation paths prior to training.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "KG-BERT: BERT for Knowledge Graph Completion",
+      "authors": "Liang Yao et al.",
+      "year": 2019,
+      "role": "Related Problem",
+      "relationship_sentence": "The textualization of entities/relations and fine-tuning of PLMs demonstrated in KG-BERT informs KRST’s use of natural language descriptions for triple scoring, which KRST augments with path conditioning and explainability.",
+      "arxiv_id": "arXiv:1909.03193",
+      "url": null
+    },
+    {
+      "title": "Go for a Walk and Arrive at the Answer: Reasoning Over Paths in Knowledge Bases using Reinforcement Learning (MINERVA)",
+      "authors": "Rajarshi Das et al.",
+      "year": 2017,
+      "role": "Gap Identification",
+      "relationship_sentence": "The sparse-reward and exponential branching limitations in RL-based path reasoning highlighted by MINERVA motivate KRST’s non-RL path extraction via BFS and pre-filtering to retain only reliable reasoning paths.",
+      "arxiv_id": "arXiv:1711.05851",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Path-centric reasoning has long leveraged the view that relation paths instantiate Horn-rule–like regularities; AMIE operationalized this by introducing support and confidence to assess rule reliability under incomplete evidence, showing that confidence-weighted rule selection can mitigate noise. Reinforcement learning methods such as MINERVA pursued path discovery directly on the graph, but exposed practical challenges—sparse rewards and exponential branching—that complicate reliable path acquisition at scale. Concurrently, PLM-based approaches demonstrated that textualizing KG components is a strong inductive signal: KG-BERT showed that BERT can score textualized triples, and BERTRL advanced this by textualizing both triples and connecting paths, using BERT sequence classification to choose a path-based explanation. However, BERTRL feeds all paths (below a length cap) to the model and largely yields single-path explanations, leaving path reliability unaddressed. In parallel, Sentence-BERT established a siamese architecture that produces sentence embeddings suitable for cosine comparison and clustering, often outperforming sequence classification on semantic similarity tasks. GRAIL defined the inductive relation prediction setting and benchmarks that isolate generalization to unseen entities, while acknowledging limited explainability.\nTaken together, these works suggested a natural next step: combine inductive PLM-based textualization with explicit, confidence-inspired path filtering and a similarity-centric encoder that can compare triples against multiple paths. KRST synthesizes AMIE’s reliability principles with a BFS-based extraction strategy (avoiding RL pitfalls), then uses a Sentence-BERT–style siamese encoder and cosine embedding loss to align triples with the most semantically consistent paths, enabling multi-path, multi-aspect explanations under GRAIL’s inductive setup.",
+  "analysis_timestamp": "2026-04-05T11:59:36.397071",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P03",
+      "P02"
+    ],
+    "confidence": "medium",
+    "reasoning": "Injects relational path/Horn-rule structure and confidence as inductive bias while textualizing KG paths for PLM scoring.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Cross-Domain Synthesis"
+    ]
+  }
+}

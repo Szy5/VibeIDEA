@@ -1,0 +1,87 @@
+{
+  "paper_title": "LLM+AL: Bridging Large Language Models and Action Languages for Complex Reasoning About Actions",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large Language Models (LLMs) have made significant strides in various intelligent tasks but still struggle with complex action reasoning tasks that require systematic search. To address this limitation, we propose a method that bridges the natural language understanding capabilities of LLMs with the symbolic reasoning strengths of action languages. Our approach, termed LLM+AL, leverages the LLM's strengths in semantic parsing and commonsense knowledge generation alongside the action language's proficiency in automated reasoning based on encoded knowledge. We compare LLM+AL against state-of-the-art LLMs, including ChatGPT-4, Claude 3 Opus, Gemini Ultra 1.0, and o1-preview, using benchmarks for complex reasoning about actions. Our findings indicate that, although all methods exhibit errors, LLM+AL, with relatively minimal human corrections, consistently leads to correct answers, whereas standalone LLMs fail to improve even with human feedback. LLM+AL also contributes to automated generation of action languages.",
+  "prior_works": [
+    {
+      "title": "Action language BC+",
+      "authors": "Babb and Lee",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "BC+ provides the specific action-language syntax and causal-semantics (defaults, indirect effects, state constraints) that the LLM is tasked to generate and that the solver executes for plan search and temporal prediction/postdiction.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Cplus2ASP: Computing Action Language C+ in Answer Set Programming",
+      "authors": "Babb and Lee",
+      "year": 2013,
+      "role": "Foundation",
+      "relationship_sentence": "Cplus2ASP supplies the BC+/C+ reasoning engine whose satisfiability/diagnostic outputs are explicitly used as external feedback in the iterative self-revision loop and to compute plans from the generated action descriptions.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Neuro-Symbolic Reasoning with Large Language Models and Answer Set Programming: A Case Study on Logic Puzzles",
+      "authors": "Ishay et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "This work showed that LLMs can act as semantic parsers to produce logic programs that are then solved by ASP, a pipeline directly generalized here from static logic puzzles to dynamic action domains via BC+.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Leveraging pre-trained large language models to construct and utilize world models for model-based task planning",
+      "authors": "Guan et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By attempting to have LLMs generate PDDL domain models and reporting that extensive expert corrections were needed, this work highlighted both the fragility of LLM-to-PDDL translation and the need for a more expressive, solver-friendly representation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "On the planning abilities of large language models—a critical investigation",
+      "authors": "Valmeekam et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "It empirically demonstrated that LLMs struggle with multi-step planning and reasoning about change, motivating offloading systematic search and constraint enforcement to a symbolic planner/solver.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Self-Refine: Iterative refinement with self-feedback",
+      "authors": "Madaan et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Introduced the idea that LLM outputs can be iteratively improved via self-feedback, directly inspiring the self-revision stage driven by external tool (solver) diagnostics and sample-query checks.",
+      "arxiv_id": "arXiv:2303.17651",
+      "url": null
+    },
+    {
+      "title": "Elaboration tolerance",
+      "authors": "McCarthy",
+      "year": 1998,
+      "role": "Foundation",
+      "relationship_sentence": "Defined the elaboration-tolerance agenda and provided the Missionaries and Cannibals family of elaborations that serve as the core benchmark and problem formulation for assessing action reasoning and adaptation.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "BC+ codified a concise, elaboration-friendly action description language with causal laws, defaults, and state constraints that cleanly capture indirect effects and temporal reasoning, and it is paired with a solver that compiles these high-level laws to answer set programs to compute plans and predictions. Cplus2ASP operationalized this semantic framework, delivering a robust engine whose satisfiability results and error diagnostics expose precise feedback about missing declarations, unsatisfiable constraints, or malformed rules. In parallel, prior neuro-symbolic work showed that large language models can be used as semantic parsers to produce logic programs consumable by ASP solvers, establishing a practical bridge from natural language to symbolic reasoning. Efforts to harness LLMs for planning via PDDL revealed that LLM-authored domain models often require substantial expert correction, signaling a mismatch between LLM generation and that representation’s expressivity and rigidity. Empirical studies further documented that even strong LLMs falter on multi-step planning and reasoning about change, underscoring the need to offload systematic search and constraint enforcement. At the same time, iterative self-refinement demonstrated that LLM outputs can be substantially improved when guided by external feedback.\nTaken together, these threads suggest a natural synthesis: use LLMs where they excel—semantic parsing and commonsense elicitation—while delegating search and consistency enforcement to an expressive action language and its solver. The BC+ semantics provide the right target for capturing elaboration-tolerant dynamics; Cplus2ASP furnishes verifiable feedback for iterative correction; and the self-refine paradigm offers a mechanism to bootstrap LLM translations into correct, executable action descriptions. With McCarthy’s elaborations as a stress test, this combination becomes a principled path to robust action reasoning that adapts to new constraints without sacrificing formal correctness.",
+  "analysis_timestamp": "2026-04-05T11:38:07.371392",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P02",
+    "secondary_patterns": [
+      "P04",
+      "P10"
+    ],
+    "confidence": "high",
+    "reasoning": "Combines LLM semantic parsing with action languages and ASP solvers in a neuro-symbolic pipeline that encodes causal structure.",
+    "primary_pattern_name": "Cross-Domain Synthesis",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

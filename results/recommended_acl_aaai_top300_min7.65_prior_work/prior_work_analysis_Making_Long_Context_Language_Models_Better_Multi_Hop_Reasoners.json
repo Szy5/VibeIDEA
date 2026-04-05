@@ -1,0 +1,87 @@
+{
+  "paper_title": "Making Long-Context Language Models Better Multi-Hop Reasoners",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Making Long-Context Language Models Better Multi-Hop Reasoners",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "This work’s stepwise reasoning format is directly extended by requiring each step to carry explicit attributions, turning CoT into Chain-of-Citation/Chain-of-Quote to ground every intermediate claim.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Teaching language models to support answers with verified quotes",
+      "authors": "Jacob Menick et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "The practice of backing answers with verbatim evidence directly inspired the Chain-of-Quote variant, which demands a quote for each reasoning step to ensure grounded multi-hop reasoning.",
+      "arxiv_id": "2203.11147",
+      "url": null
+    },
+    {
+      "title": "Enabling Large Language Models to Generate Text with Citations",
+      "authors": "Tianyu Gao et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Citation-conditioned generation and the precision/recall framing for attribution quality informed the Chain-of-Citation prompting and the paper’s evaluation of citation accuracy.",
+      "arxiv_id": "2305.14627",
+      "url": null
+    },
+    {
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "authors": "Nelson F. Liu et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "The documented position bias and failures in long, noisy contexts motivated enforcing per-step evidence attribution to help LMs identify and use the right spans during multi-hop reasoning.",
+      "arxiv_id": "2307.03172",
+      "url": null
+    },
+    {
+      "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+      "authors": "Freda Shi et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Findings that irrelevant sentences derail reasoning directly motivated attribution-based prompting and noise-focused data augmentation to improve robustness.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "MuSiQue: Multi-hop Questions via Single-hop Question Composition",
+      "authors": "Harsh Trivedi et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "The multi-hop compositional QA formulation and dataset provided the base corpus the authors annotated with attributions to create MuSiQue-Attribute for fine-tuning.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Chain-of-Note: Enhancing Robustness in Retrieval-Augmented Language Models",
+      "authors": "Wenhao Yu et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "By showing that reviewing document relevance before answering improves robustness, this work informed the idea of interleaving evidence selection with reasoning, here realized via per-step in-line attributions.",
+      "arxiv_id": "2311.09210",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Stepwise reasoning via Chain-of-Thought established that large language models can perform complex, multi-step inference when guided through explicit intermediate steps. Complementing this, verified-quote answering demonstrated that requiring verbatim citations from source texts can constrain models to factual, grounded responses. Citation-conditioned generation further formalized how to produce answers with linked sources and proposed concrete precision/recall measures for attribution quality. In parallel, two critical limitations of long-context reasoning emerged: long-context models often fail to use relevant information due to position biases and become distracted by irrelevant sentences, leading to substantial performance degradation under noisy contexts. The MuSiQue benchmark defined a compositional, multi-hop QA setting where answers require integrating multiple single-hop facts, offering a natural testbed for grounded multi-step reasoning. Finally, work on Chain-of-Note showed that explicitly assessing document relevance before answering improves robustness in retrieval-augmented settings, suggesting that intertwining evidence selection with reasoning can mitigate noise sensitivity.\nTogether, these strands pointed to a gap and a solution: CoT lacked built-in grounding, while long-context models struggled to filter noise. The natural next step was to blend stepwise reasoning with enforced grounding, decomposing multi-hop QA into per-step evidence localization plus claim construction. By adapting CoT to include per-step citations or quotes and evaluating attribution quality, and by annotating MuSiQue with such attributions for fine-tuning alongside noise-aware training strategies, the paper operationalizes a robust, attribution-centered multi-hop reasoning paradigm for long-context LMs.",
+  "analysis_timestamp": "2026-04-05T12:07:01.334771",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P09",
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Defines MuSiQue and citation attribution metrics; applies citation-conditioned/verified-quote answering as inference-time constraints; empirically diagnoses long-context position/noise biases.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

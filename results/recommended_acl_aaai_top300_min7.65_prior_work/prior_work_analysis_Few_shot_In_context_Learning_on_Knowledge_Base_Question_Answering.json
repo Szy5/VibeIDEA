@@ -1,0 +1,87 @@
+{
+  "paper_title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Question answering over knowledge bases is considered a difficult problem due to the challenge of generalizing to a wide variety of possible natural language questions. Additionally, the heterogeneity of knowledge base schema items between different knowledge bases often necessitates specialized training for different knowledge base question-answering (KBQA) datasets. To handle questions over diverse KBQA datasets with a unified training-free framework, we propose KB-BINDER, which for the first time enables few-shot in-context learning over KBQA tasks. Firstly, KB-BINDER leverages large language models like Codex to generate logical forms as the draft for a specific question by imitating a few demonstrations. Secondly, KB-BINDER grounds on the knowledge base to bind the generated draft to an executable one with BM25 score matching. The experimental results on four public heterogeneous KBQA datasets show that KB-BINDER can achieve a strong performance with only a few in-context demonstrations. Especially on GraphQA and 3-hop MetaQA, KB-BINDER can even outperform the state-of-the-art trained models. On GrailQA and WebQSP, our model is also on par with other fully-trained models. We believe KB-BINDER can serve as an important baseline for future research. We plan to release all the code and data. Our code is available at https://github.com/ltl3A87/KB-BINDER.",
+  "prior_works": [
+    {
+      "title": "Binding Language Models in Symbolic Languages",
+      "authors": "Zhoujun Cheng et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "This work’s generate-then-bind paradigm for text-to-SQL—prompting an LLM to propose a program and then schema-linking it to an executable query—directly inspired KB-BINDER’s extension to KB logical forms with explicit entity and relation binding under graph constraints.",
+      "arxiv_id": "2210.02875",
+      "url": null
+    },
+    {
+      "title": "Evaluating Large Language Models Trained on Code",
+      "authors": "Mark Chen et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "By demonstrating that Codex can translate natural language into structured, executable code from few in-context exemplars, this paper enabled KB-BINDER’s draft logical form generation via LLM imitation of <question, logical form> pairs.",
+      "arxiv_id": "2107.03374",
+      "url": null
+    },
+    {
+      "title": "What Makes Good In-Context Examples for GPT-3?",
+      "authors": "Jiachang Liu et al.",
+      "year": 2021,
+      "role": "Inspiration",
+      "relationship_sentence": "This study showed that retrieving semantically similar examples improves in-context learning, directly motivating KB-BINDER-R’s BM25-based exemplar retrieval to select demonstrations covering relevant schema items.",
+      "arxiv_id": "2101.06804",
+      "url": null
+    },
+    {
+      "title": "Self-Consistency Improves Chain-of-Thought Reasoning in Language Models",
+      "authors": "Xuezhi Wang et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "The self-consistency idea—sampling multiple reasoning outputs and majority voting—was adapted in KB-BINDER by sampling multiple logical-form drafts and voting on executed answers to improve robustness.",
+      "arxiv_id": "2203.11171",
+      "url": null
+    },
+    {
+      "title": "Semantic Parsing via Staged Query Graph Generation: Question Answering with Knowledge Base",
+      "authors": "Scott Wen-tau Yih et al.",
+      "year": 2015,
+      "role": "Related Problem",
+      "relationship_sentence": "Its staged query graph generation with entity linking and relation constraints (e.g., 2-hop neighborhoods and domain–range compatibility) informed KB-BINDER’s relation binder that restricts candidate relations to 2-hop vicinities and type-consistent links.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "ArcaneQA: Dynamic Program Induction and Contextualized Encoding for Knowledge Base Question Answering",
+      "authors": "Yu Gu et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "As a strong supervised KBQA system that relies on candidate-generation heuristics and fine-tuning, ArcaneQA serves as KB-BINDER’s primary baseline that it seeks to match or surpass without training or KB-specific heuristics.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Few-shot Complex Knowledge Base Question Answering via Meta Reinforcement Learning",
+      "authors": "Yuncheng Hua et al.",
+      "year": 2020,
+      "role": "Gap Identification",
+      "relationship_sentence": "This prior ‘few-shot’ approach required ~2,000 labeled questions to train a meta-learner, highlighting the lack of true training-free few-shot KBQA that KB-BINDER explicitly addresses with in-context generation and binding.",
+      "arxiv_id": "2010.15877",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "A few pivotal strands set the stage for training-free few-shot KBQA. Binder showed that an LLM can propose a formal program and then be tethered to a real schema, using a post hoc linking stage to turn free-form outputs into executable SQL. Codex established that code-generation LLMs can translate natural language into structured, executable artifacts with only a handful of demonstrations, validating the feasibility of prompting for logical forms. Independent analyses of in-context learning revealed that carefully chosen demonstrations matter: retrieving semantically similar examples improves prompt effectiveness and sample efficiency. In parallel, self-consistency demonstrated that sampling multiple candidate solutions and majority voting significantly boosts reliability. Earlier KBQA semantic parsing research introduced staged query graph generation with entity linking and relation constraints—such as pruning to 2-hop neighborhoods and enforcing domain–range compatibility—codifying practical ways to reduce the search space in large KBs. Meanwhile, strong supervised systems like ArcaneQA and meta-learning attempts like few-shot meta-RL for KBQA highlighted two limitations: reliance on KB-specific heuristics with large labeled datasets, or a ‘few-shot’ setup that still needs thousands of labels to pretrain a meta-learner.\nTogether, these works suggested a path where LLMs generate approximate, semantically structured drafts that need not be schema-valid, then a KB-aware binding step resolves them into executable queries. By pairing Codex-powered draft generation with a Binder-style schema grounding extended to KB graphs—augmented by retrieved exemplars and self-consistency voting, and guided by classic relation and neighborhood constraints—the field had a natural next step: a truly training-free, few-shot KBQA pipeline that generalizes across heterogeneous schemas without bespoke heuristics.",
+  "analysis_timestamp": "2026-04-05T12:01:32.120869",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P04",
+      "P15"
+    ],
+    "confidence": "high",
+    "reasoning": "Training-free KBQA via ICL uses retrieved demonstrations and self-consistency voting at inference, with a post-hoc linking stage—classic inference-time control plus a modular generate-link pipeline and data selection.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Data-Centric Optimization & Active Sampling"
+    ]
+  }
+}

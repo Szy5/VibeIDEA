@@ -1,0 +1,87 @@
+{
+  "paper_title": "Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "We introduce Agentic Reasoning, a framework that enhances large language model (LLM) reasoning by integrating external tool-using agents.Agentic Reasoning dynamically leverages web search, code execution, and structured memory to address complex problems requiring deep research.A key innovation in our framework is the Mind-Map agent, which constructs a structured knowledge graph to store reasoning context and track logical relationships, ensuring coherence in long reasoning chains with extensive tool usage.Additionally, we conduct a comprehensive exploration of the Web-Search agent, leading to a highly effective search mechanism that surpasses all prior approaches.When deployed on DeepSeek-R1, our method achieves a new state-of-the-art (SOTA) among public models and delivers performance comparable to OpenAI Deep Research, the leading proprietary model in this domain.Extensive ablation studies validate the optimal selection of agentic tools and confirm the effectiveness of our Mind-Map and Web-Search agents in enhancing LLM reasoning.Our code and data are publicly available.",
+  "prior_works": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Patrick Lewis et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "Agentic Reasoning’s Web-Search agent and its querying of the Mind-Map both adopt RAG’s retrieve-then-generate paradigm to ground generation in external evidence.",
+      "arxiv_id": "2005.11401",
+      "url": null
+    },
+    {
+      "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+      "authors": "Darren Edge et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "The Mind-Map agent directly follows GraphRAG’s practice of building a knowledge graph and querying it with RAG, extending it into a dynamic structured memory that tracks entities and relations across long reasoning chains.",
+      "arxiv_id": "2404.16130",
+      "url": null
+    },
+    {
+      "title": "Search-o1: Agentic Search-Enhanced Large Reasoning Models",
+      "authors": "Xiaoxi Li et al.",
+      "year": 2025,
+      "role": "Baseline",
+      "relationship_sentence": "Search-O1 established the 'search-in-the-loop' formulation for LRMs that Agentic Reasoning explicitly improves upon via systematic query breakdown, reranking, and Mind-Map–aware context integration.",
+      "arxiv_id": "2501.05366",
+      "url": null
+    },
+    {
+      "title": "Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models",
+      "authors": "Yijia Shao et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "STORM introduced the FreshWiki long-form, web-research writing setup that defines the deep-research problem and evaluation adopted and advanced by Agentic Reasoning.",
+      "arxiv_id": "2402.14207",
+      "url": null
+    },
+    {
+      "title": "Open-RAG: Enhanced Retrieval Augmented Reasoning with Open-Source Large Language Models",
+      "authors": "Shayekh Bin Islam et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Open-RAG’s agentic retrieval loop—autonomously deciding when and what to retrieve during reasoning—directly inspired the Web-Search agent’s design that Agentic Reasoning refines with structured query breakdown and robust reranking.",
+      "arxiv_id": "2410.01782",
+      "url": null
+    },
+    {
+      "title": "MemGPT: Towards LLMs as Operating Systems",
+      "authors": "Charles Packer et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "MemGPT’s unstructured, summary-driven memory exposed brittleness in long, multi-step tasks, motivating Agentic Reasoning’s graph-structured Mind-Map to preserve logical relations and reduce drift during extended tool use.",
+      "arxiv_id": "2310.08560",
+      "url": null
+    },
+    {
+      "title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
+      "authors": "Wanjun Zhong et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "MemoryBank demonstrated long-term retrieval from past interactions but lacked explicit relational structure, a limitation directly addressed by Agentic Reasoning’s knowledge-graph Mind-Map that encodes and queries entity-level links.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Retrieval-augmented generation established the core mechanism of retrieving external evidence and conditioning generation on it, enabling language models to ground answers in sources rather than parametric memory. GraphRAG advanced this idea by converting text into a knowledge graph and using graph-aware retrieval to answer queries, showing that explicit entity and relation structure can organize and surface relevant context for complex information needs. On the search side, Search-O1 framed a practical blueprint for weaving web search into long reasoning, highlighting how iterative search during inference can lift performance on difficult questions. Complementing this, Open-RAG introduced an agentic retrieval loop in which the model autonomously decides when and what to retrieve while reasoning, demonstrating the value of retrieval decisions as part of the reasoning policy. For long-form knowledge work, STORM not only provided the FreshWiki benchmark but also presented a multi-step, web-research writing process that crystallized the deep-research problem setting. Meanwhile, memory-centric systems such as MemGPT and MemoryBank revealed that unstructured or slot-based memories often struggle to maintain coherence and logical relations across extended interactions, especially when tool calls and long chains are involved.\nTaken together, these works exposed both the promise and the gaps: search must be integrated as a deliberative agentic step, retrieval should be precise and context-aware, and memory must track relations to avoid drift. Agentic Reasoning emerges as a natural synthesis—retaining RAG’s grounding, adopting agentic search decisions, and elevating memory to a graph-structured Mind-Map—while operationalizing improvements like query breakdown, reranking, and graph-informed context to create a streamlined, multi-tool reasoning loop that is both coherent and empirically stronger.",
+  "analysis_timestamp": "2026-04-04T22:29:59.969906",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P09",
+      "P11"
+    ],
+    "confidence": "high",
+    "reasoning": "Agentic framework composes retrieval, graph-based context, and web search into a coordinated pipeline with inference-time control.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Multiscale & Hierarchical Modeling"
+    ]
+  }
+}

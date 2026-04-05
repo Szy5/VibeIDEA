@@ -1,0 +1,78 @@
+{
+  "paper_title": "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Chain-of-Thought (CoT) represents a common strategy for reasoning in Large Language Models (LLMs) by decomposing complex tasks into intermediate inference steps.However, explanations generated via CoT are susceptible to content biases that negatively affect their robustness and faithfulness.To mitigate existing limitations, recent work has proposed the use of logical formalisms coupled with external symbolic solvers.However, fully symbolically formalised approaches introduce the bottleneck of requiring a complete translation from natural language to formal languages, a process that affects efficiency and flexibility.To achieve a trade-off, this paper investigates methods to disentangle content from logical reasoning without a complete formalisation.In particular, we present QuaSAR (for Quasi-Symbolic Abstract Reasoning), a variation of CoT that guides LLMs to operate at a higher level of abstraction via quasi-symbolic explanations.Our framework leverages the capability of LLMs to formalise only relevant variables and predicates, enabling the coexistence of symbolic elements with natural language.We show the impact of QuaSAR for in-context learning and for constructing demonstrations to improve the reasoning capabilities of smaller models.Our experiments show that quasi-symbolic abstractions can improve CoTbased methods by up to 8% accuracy, enhancing robustness and consistency on challenging adversarial variations on both natural language (i.e.MMLU-Redux) and symbolic reasoning tasks (i.e., GSM-Symbolic).",
+  "prior_works": [
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This work introduced the step-by-step CoT paradigm that QuaSAR directly modifies by inserting explicit abstraction and semi-formalisation stages into the reasoning chain.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Faithful Chain-of-Thought Reasoning",
+      "authors": "Qing Lyu et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "By diagnosing content biases and unfaithful rationales in free-form CoT and advocating structured, faithful reasoning, this paper directly motivated QuaSAR’s use of structured instructions to disentangle reasoning from content via quasi-symbolic steps.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+      "authors": "Joshua Ong Jun Leang et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "As a primary comparison point using formal mathematical annotations to guide CoT, CoMAT’s multi-stage formalism set the benchmark that QuaSAR seeks to surpass with a single-step, lighter-weight quasi-symbolic prompt.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "LeanReasoner: Boosting Complex Logical Reasoning with Lean",
+      "authors": "Dongwei Jiang et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This work demonstrated strong logic performance via external proof assistants but highlighted the bottleneck of full translation to formal systems, a limitation QuaSAR addresses by avoiding complete formalisation while retaining symbolic structure.",
+      "arxiv_id": "2403.13312",
+      "url": null
+    },
+    {
+      "title": "Verification and Refinement of Natural Language Explanations through LLM-Symbolic Theorem Proving",
+      "authors": "Xin Quan et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing verifier-in-the-loop pipelines that improve correctness at the cost of solver dependence and translation overhead, this paper underscored the practical inefficiency QuaSAR sidesteps with in-model quasi-symbolic reasoning.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
+      "authors": "Huaixiu Steven Zheng et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "This work provided the key insight that operating at a higher level of abstraction improves LLM reasoning, directly inspiring QuaSAR’s explicit Abstraction and Formalisation stages.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Step-by-step reasoning with large language models was catalyzed by Chain-of-Thought prompting, which established that explicit intermediate steps can unlock latent reasoning abilities. Subsequent scrutiny revealed weaknesses in free-form rationales: Faithful Chain-of-Thought identified content biases and unfaithful explanations, arguing for structured constraints to separate reasoning from domain content. Parallel efforts sought stronger logical guarantees by embracing formal systems; LeanReasoner integrated LLMs with the Lean proof assistant, demonstrating the benefits of fully symbolic pipelines while exposing the overhead and brittleness of complete translations to formal languages. Similarly, verifier-in-the-loop approaches that refine natural language explanations via theorem provers improved correctness yet incurred significant solver dependence and translation costs. In mathematical domains, CoMAT showed that annotating thoughts with formal mathematical constructs can guide models toward more reliable solutions, albeit through multi-stage formalization and higher prompting costs. Complementing these, Take a Step Back showed that abstraction itself—stepping away from concrete content—enhances reasoning by fostering generalizable patterns.\nThese strands collectively point to a gap: we need the faithfulness and robustness of symbolic guidance without the inefficiencies of full formalization and external solvers. The natural next step is to combine CoT’s stepwise reasoning with explicit yet lightweight abstraction, using just enough symbolic structure to mitigate content effects. By formalizing only relevant variables and predicates and blending them with natural language, the current work synthesizes these insights into a single-prompt, quasi-symbolic protocol that retains flexibility, improves robustness, and reduces costs relative to solver-dependent or fully formal approaches.",
+  "analysis_timestamp": "2026-04-05T12:00:08.990203",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P04",
+      "P09"
+    ],
+    "confidence": "medium",
+    "reasoning": "Adds quasi-symbolic constraints and verifier loops to CoT, injecting structural bias and modular LLM+symbolic control at inference.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Inference-Time Control & Guided Sampling"
+    ]
+  }
+}

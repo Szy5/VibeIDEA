@@ -1,0 +1,76 @@
+{
+  "paper_title": "Graph Reasoning Transformers for Knowledge-Aware Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Augmenting Language Models (LMs) with structured knowledge graphs (KGs) aims to leverage structured world knowledge to enhance the capability of LMs to complete knowledge-intensive tasks. However, existing methods are unable to effectively utilize the structured knowledge in a KG due to their inability to capture the rich relational semantics of knowledge triplets. Moreover, the modality gap between natural language text and KGs has become a challenging obstacle when aligning and fusing cross-modal information. To address these challenges, we propose a novel knowledge-augmented question answering (QA) model, namely, Graph Reasoning Transformers (GRT). Different from conventional node-level methods, the GRT serves knowledge triplets as atomic knowledge and utilize a triplet-level graph encoder to capture triplet-level graph features. Furthermore, to alleviate the negative effect of the modality gap on joint reasoning, we propose a representation alignment pretraining to align the cross-modal representations and introduce a cross-modal information fusion module with attention bias to enable fine-grained information fusion. Extensive experiments conducted on three knowledge-intensive QA benchmarks show that the GRT outperforms the state-of-the-art KG-augmented QA systems, demonstrating the effectiveness and adaptation of our proposed model.",
+  "prior_works": [
+    {
+      "title": "QA-GNN: Reasoning with Language Models and Knowledge Graphs for Question Answering",
+      "authors": "Yasunaga et al.",
+      "year": 2021,
+      "role": "Baseline",
+      "relationship_sentence": "This work introduced a method that combines language models with knowledge graphs using GNNs, which serves as a fundamental baseline that the GRT model seeks to improve upon.",
+      "arxiv_id": "2104.09214",
+      "url": null
+    },
+    {
+      "title": "Scalable Multi-Hop Relational Reasoning for Knowledge-Aware Question Answering",
+      "authors": "Feng et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "Feng et al. presented multi-hop reasoning techniques that informed the current work's approach to capturing relational knowledge through triplet-level structures.",
+      "arxiv_id": "2004.05548",
+      "url": null
+    },
+    {
+      "title": "Great Truths are Always Simple: A Rather Simple Knowledge Encoder for Enhancing the Commonsense Reasoning Capacity of Pre-Trained Models",
+      "authors": "Jiang et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "Jiang et al. highlighted the limitations of traditional GNN approaches in knowledge-augmented QA, emphasizing the need for better alignment between knowledge graphs and language models, which GRT directly addresses.",
+      "arxiv_id": "2205.01841",
+      "url": null
+    },
+    {
+      "title": "GNN is a Counter? Revisiting GNN for Question Answering",
+      "authors": "Wang et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "This paper pointed out the inadequacies of using GNNs for knowledge-augmented QA, which directly motivated the GRT’s approach of using triplet-level graph encoders.",
+      "arxiv_id": "2110.03192",
+      "url": null
+    },
+    {
+      "title": "GreaseLM: Graph REASoning Enhanced Language Models for Question Answering",
+      "authors": "Zhang et al.",
+      "year": 2022,
+      "role": "Related Problem",
+      "relationship_sentence": "Zhang et al. proposed a model that integrates reasoning capabilities into language models, serving as a closely related work that informs the fusion and reasoning strategies adopted in GRT.",
+      "arxiv_id": "2201.08860",
+      "url": null
+    },
+    {
+      "title": "KagNet: Knowledge-Aware Graph Networks for Commonsense Reasoning",
+      "authors": "Lin et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "This work established a foundation for knowledge-augmented models by focusing on graph networks for commonsense reasoning, laying the groundwork for the subsequent innovations in triplet-level graph encoders.",
+      "arxiv_id": "1910.07145",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "The development of Knowledge-Aware Question Answering models relies on various prior works that have established crucial methods and insights. For instance, the QA-GNN model by Yasunaga et al. innovatively combined language models with knowledge graphs using a GNN framework, which remains a significant baseline for the current study. Similarly, Feng et al.'s exploration of scalable multi-hop relational reasoning introduced essential concepts that highlighted the importance of relational knowledge, inspiring the GRT’s focus on triplet-level structures. Jiang et al. identified critical limitations in the existing GNN applications, emphasizing the necessity for better alignment between textual and graphical data, which the GRT model aims to address. Wang et al. further reiterated these inadequacies of GNNs for knowledge-augmented QA, influencing the design of the triplet-level graph encoder utilized in GRT. Additionally, Zhang et al.'s GreaseLM brought attention to enhancing language models with reasoning capabilities, informing the GRT’s strategies for cross-modal information fusion. Finally, Lin et al.'s foundational work on knowledge-aware graph networks constructed the theoretical groundwork that is built upon in GRT. Collectively, these papers illuminate the gaps and opportunities that the current work effectively exploits, directing the evolution toward more sophisticated and effective knowledge-aware reasoning models.",
+  "analysis_timestamp": "2026-04-04T23:22:05.586913",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P10",
+    "secondary_patterns": [
+      "P03"
+    ],
+    "confidence": "medium_high",
+    "reasoning": "Architectural bias for triplet-level relational reasoning in transformers to align text and KG; uses triplets as core primitives.",
+    "primary_pattern_name": "Inject Structural Inductive Bias",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

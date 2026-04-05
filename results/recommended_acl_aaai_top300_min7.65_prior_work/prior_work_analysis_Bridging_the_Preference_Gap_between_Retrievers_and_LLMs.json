@@ -1,0 +1,87 @@
+{
+  "paper_title": "Bridging the Preference Gap between Retrievers and LLMs",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large Language Models (LLMs) have demonstrated superior results across a wide range of tasks, and Retrieval-augmented Generation (RAG) is an effective way to enhance the performance by locating relevant information and placing it into the context window of the LLM.However, the relationship between retrievers and LLM in a RAG is still under-investigated.Most existing work treats the retriever and the LLM as independent components and leaves a gap between retrieving human-\"friendly\" information and assembling a LLM-\"friendly\" context.In this work, we examine a novel bridge mechanism.We validate the ranking and selection assumptions of retrievers in the context of RAG and propose a framework that chains together supervised and reinforcement learning to train a bridge model that optimizes the connection between the retriever and the LLM.Empirical results demonstrate the effectiveness of our method in both questionanswering and personalized generation tasks.",
+  "prior_works": [
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Patrick Lewis et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "This work formalized the RAG paradigm of a retriever feeding a generator, establishing the two-component pipeline that BGM explicitly operates within while interrogating and redesigning the interface between them.",
+      "arxiv_id": "2005.11401",
+      "url": null
+    },
+    {
+      "title": "Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering",
+      "authors": "Gautier Izacard et al.",
+      "year": 2020,
+      "role": "Gap Identification",
+      "relationship_sentence": "FiD showed that finetuning the generator to fuse many retrieved passages can improve QA, but this requires updating the LLM—impractical for large black-box models—directly motivating BGM’s bridge that keeps the LLM frozen.",
+      "arxiv_id": "2007.01282",
+      "url": null
+    },
+    {
+      "title": "Atlas: Few-shot Learning with Retrieval Augmented Language Models",
+      "authors": "Gautier Izacard et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "Atlas introduced perplexity distillation to derive pointwise supervision from an LM for reranking/retriever training, which BGM extends to sequence-level supervision via greedy synthesis and then augments with RL using downstream-task rewards.",
+      "arxiv_id": "2208.03299",
+      "url": null
+    },
+    {
+      "title": "REPLUG: Retrieval-Augmented Black-Box Language Models",
+      "authors": "Weijia Shi et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "REPLUG adapted retrievers to fixed LMs in a retriever-only update regime but relied on thresholded top-k selection, highlighting the lack of dynamic, sample-level sequencing and selection that BGM’s bridge explicitly addresses.",
+      "arxiv_id": "2301.12652",
+      "url": null
+    },
+    {
+      "title": "RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation",
+      "authors": "Fangyuan Xu et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "RECOMP’s compression and gating improve RAG without LLM finetuning but still use threshold-based inclusion, underscoring the need for a mechanism like BGM that jointly optimizes selection and ordering conditioned on downstream performance.",
+      "arxiv_id": "2310.04408",
+      "url": null
+    },
+    {
+      "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+      "authors": "Freda Shi et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "This paper’s finding that irrelevant retrieved content can harm LLM performance directly motivated BGM’s emphasis on dynamic selection over mere reranking to produce LLM-friendly contexts.",
+      "arxiv_id": "2302.00093",
+      "url": null
+    },
+    {
+      "title": "Reinforcement Learning to Rank with Markov Decision Process",
+      "authors": "Wei Zeng et al.",
+      "year": 2017,
+      "role": "Related Problem",
+      "relationship_sentence": "Framing ranking as sequential decision-making with rewards informed BGM’s use of reinforcement learning to optimize passage sequencing with the downstream task metric as the reward.",
+      "arxiv_id": null,
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Retrieval-augmented generation (RAG) was crystallized as a two-stage pipeline—retriever plus generator—by work demonstrating that feeding retrieved evidence into a generator benefits knowledge-intensive tasks. Subsequent advances showed that finetuning the generator to fuse multiple retrieved passages yields gains, but this requires updating the language model, which is impractical for large black-box LLMs. Atlas introduced perplexity distillation to let LMs supervise retrieval or reranking via pointwise signals derived from generation likelihoods. In the black-box setting, retriever-only approaches such as REPLUG adapt retrieval to a fixed LM but typically rely on thresholded top-k selection. Compression and selective augmentation methods like RECOMP reduce token budgets and filter content, but still employ threshold-based inclusion rather than jointly deciding which passages to include and in what order. Complementing these system designs, behavioral studies revealed that LLMs are sensitive to irrelevant context, implying that merely retrieving more is not always better. Meanwhile, reinforcement learning to rank has modeled ranking as a sequential decision process with list-level rewards, suggesting an avenue to optimize context assembly holistically.\nTaken together, these works exposed a gap: RAG systems either finetune components (often infeasible), or apply pointwise reranking and thresholding that ignore sequence-level selection and ordering attuned to LLM preferences. This naturally led to a bridging mechanism that keeps both retriever and LLM fixed while explicitly optimizing the interface: a seq2seq model that outputs passage IDs to jointly select, order, and even repeat items. Building on perplexity-based supervision, the bridge first learns from sequence-level silver labels synthesized via greedy search grounded in downstream performance, then leverages reinforcement learning—echoing RL-to-rank—to directly optimize list construction against task rewards, thereby converting disparate insights into a practical, LLM-friendly context assembly strategy.",
+  "analysis_timestamp": "2026-04-05T12:03:14.420769",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P15",
+    "secondary_patterns": [
+      "P04",
+      "P09"
+    ],
+    "confidence": "medium_high",
+    "reasoning": "Optimizes retrieval selection to match LM preferences (distillation/reranking) within a RAG pipeline, controlling inputs at inference.",
+    "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Inference-Time Control & Guided Sampling"
+    ]
+  }
+}

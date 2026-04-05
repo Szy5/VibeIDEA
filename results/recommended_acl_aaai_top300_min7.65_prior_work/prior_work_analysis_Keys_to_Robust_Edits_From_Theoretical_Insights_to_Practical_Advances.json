@@ -1,0 +1,78 @@
+{
+  "paper_title": "Keys to Robust Edits: From Theoretical Insights to Practical Advances",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models (LLMs) struggle with maintaining accurate knowledge due to conflicting/outdated parametric memories.While locate-and-edit methods address this, their reliance on models' internal representations leads to robustness failures in long-context reasoning and paraphrased queries.We identify a fundamental limitation of locate-and-edit methods: existing semantic keys (for memory localization) cannot simultaneously satisfy robustness (context-invariant activation) and specificity (precise knowledge discrimination).Through theoretical error-bound analysis, we establish formal criteria for effective editing.Our solution introduces Robust Edit Pathway (REP), a plug-and-play module that: (1) disentangles editing keys from native model representations; (2) dynamically adjusts keys via contrastive learning to achieve robustness-specificity balance.Extensive experiments across various editing methods (ROME/MEMIT/R-ROME/EMMET), existing LLMs (LLaMA2, QWen, Mistral), and datasets (CounterFact, ZsRE) show that REP improves success rate over robustness tests by up-to 66.4% while maintaining the success rate unaffected.",
+  "prior_works": [
+    {
+      "title": "Locating and Editing Factual Associations in GPT",
+      "authors": "Kevin Meng et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This work framed MLP layers as associative memories and operationalized editing via internal activations as semantic keys (including the whitening matrix C and key extraction), which is the exact locate-and-edit mechanism analyzed by the theory here and the base interface that REP augments.",
+      "arxiv_id": "2202.05262",
+      "url": null
+    },
+    {
+      "title": "Mass-Editing Memory in a Transformer",
+      "authors": "Kevin Meng et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "As a principal baseline that extends ROME’s key-based editing across layers and facts, MEMIT’s dependence on native activations as keys directly motivates REP’s disentangled key pathway and serves as a target method on which REP delivers robustness gains.",
+      "arxiv_id": "2210.07229",
+      "url": null
+    },
+    {
+      "title": "Is it possible to edit large language models robustly?",
+      "authors": "Xinbei Ma et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "This study systematically exposed dramatic failures of locate-and-edit methods under paraphrases, shuffled subjects, and long contexts, explicitly pinpointing the robustness gap that the theoretical bounds and REP are designed to address.",
+      "arxiv_id": "2402.05827",
+      "url": null
+    },
+    {
+      "title": "Aging with GRACE: Lifelong Model Editing with Discrete Key-Value Adaptors",
+      "authors": "Tom Hartvigsen et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "GRACE’s discrete key–value adaptors and deferral router exemplify decoupling edited pathways from native representations, directly inspiring REP’s design of a separate projection path and a dynamic gate to control edit activation.",
+      "arxiv_id": "2305.13172",
+      "url": null
+    },
+    {
+      "title": "WISE: Rethinking the knowledge memory for lifelong model editing of large language models",
+      "authors": "Peng Wang et al.",
+      "year": 2024,
+      "role": "Related Problem",
+      "relationship_sentence": "WISE’s router-driven dual memory shows that activation-based routing can preserve locality while applying edits, informing REP’s token-level gate that selectively activates the projected key pathway to balance robustness and specificity.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Editing Factual Knowledge in Language Models",
+      "authors": "Nicola De Cao et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "This work formalized the knowledge editing problem and introduced the ZsRE benchmark used for evaluation here, establishing the head–relation–tail setup and paraphrase-style prompts that underlie the paper’s problem formulation and tests.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Early work on knowledge editing established that factual associations in transformer MLPs can be treated as linear associative memories, with internal activations serving as semantic keys and closed-form rank-one updates writing new key–value pairs. This view, crystallized by ROME, provided the key extraction protocol, whitening matrix usage, and layer-local interventions that became the de facto mechanism for locate-and-edit. MEMIT extended this paradigm to multi-layer, multi-fact settings while still relying on native activations as keys, demonstrating broad applicability yet inheriting the same dependence on internal representations. In parallel, GRACE introduced discrete key–value adaptors and a deferral router, showing that decoupling edited pathways from the base model and controlling when edits fire can mitigate interference. WISE further emphasized router-based dual memories to gate when edited content is consulted, illustrating that activation-aware routing can preserve locality. Foundationally, De Cao et al. codified the editing task and released ZsRE, shaping a standard head–relation–tail evaluation with paraphrase-style prompts. Crucially, Ma et al. revealed that locate-and-edit fails under paraphrases, shuffled subjects, and long contexts, highlighting a robustness gap specific to key activation behavior.\nTaken together, these works exposed a central opportunity: the associative-memory edit is powerful but fragile because native activation keys are neither invariant enough to perturbations nor specific enough to avoid collisions. The routing/adaptor literature suggested a remedy—separate the edited pathway and control its activation—while ROME’s whitening machinery implied measurable similarity constraints. Synthesizing these insights, the present work theorizes robustness–specificity bounds for keys and instantiates a disentangled, contrastively trained projection with a dynamic gate that yields context-invariant yet selective edit activation across locate-and-edit methods.",
+  "analysis_timestamp": "2026-04-05T12:07:04.849011",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P12",
+    "secondary_patterns": [
+      "P07",
+      "P03"
+    ],
+    "confidence": "high",
+    "reasoning": "Localizes and edits factual mechanisms via keys/adaptors, supported by theory-to-practice experiments to make edits robust.",
+    "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening",
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

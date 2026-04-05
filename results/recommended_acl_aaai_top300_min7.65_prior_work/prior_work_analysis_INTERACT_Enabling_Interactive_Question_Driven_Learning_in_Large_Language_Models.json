@@ -1,0 +1,87 @@
+{
+  "paper_title": "INTERACT: Enabling Interactive, Question-Driven Learning in Large Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "INTERACT: Enabling Interactive, Question-Driven Learning in Large Language Models",
+  "prior_works": [
+    {
+      "title": "Learning to ask for conversational machine learning",
+      "authors": "Shashank Srivastava et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "This work formalized learner-initiated clarification questions to reduce uncertainty during learning, directly underpinning the student-led, question-asking mechanism that drives knowledge acquisition in the interactive teacher–student setup.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Learning to Ask Good Questions: Ranking Clarification Questions using Neural Expected Value of Perfect Information",
+      "authors": "Sudha Rao et al.",
+      "year": 2018,
+      "role": "Gap Identification",
+      "relationship_sentence": "By proposing EVPI-based ranking for clarification questions—often within templated or narrow question spaces—this paper highlighted limitations that are addressed by allowing LLM students to generate open-ended, context-sensitive questions.",
+      "arxiv_id": "1805.04655",
+      "url": null
+    },
+    {
+      "title": "MultiDoc2Dial: Modeling Dialogues Grounded in Multiple Documents",
+      "authors": "Song Feng et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "This work established multi-turn, document-grounded dialogue, directly informing the design where a teacher conditions answers on a ground-truth document while the student queries to gather concept information.",
+      "arxiv_id": "2109.12595",
+      "url": null
+    },
+    {
+      "title": "MediQ: Question-asking LLMs and a benchmark for reliable interactive clinical reasoning",
+      "authors": "Shuyue Stella Li et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "By benchmarking multi-turn question-asking LLMs for interactive reasoning in medicine, this work provided the core insight that question-driven inquiry improves understanding, inspiring a generalization across diverse domains.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Let the LLMs Talk: Simulating Human-to-Human Conversational QA via Zero-Shot LLM-to-LLM Interactions",
+      "authors": "Zahra Abbasiantaeb et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "Demonstrating the viability of LLM-to-LLM conversations to simulate human interactions, this paper enabled the methodological choice to use an LLM teacher and an LLM student for scalable, controlled interactive learning experiments.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Large Language Models are Reasoning Teachers",
+      "authors": "Namgyu Ho et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Showing that smaller models benefit from larger models’ rationales via teacher–student distillation, this work exposed the passivity of student learning in prior setups, motivating an active inquiry paradigm rather than one-way explanation transfer.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Toward In-Context Teaching: Adapting Examples to Students’ Misconceptions",
+      "authors": "Alexis Ross et al.",
+      "year": 2024,
+      "role": "Related Problem",
+      "relationship_sentence": "By adapting teaching examples to inferred student misconceptions, this paper underscored the value of adaptive pedagogy and motivated shifting control to the learner via question-driven interactions to resolve uncertainties.",
+      "arxiv_id": "unknown",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work on clarification questions established that learners can reduce uncertainty by asking targeted queries during training, with formulations that explicitly model the value of information in choosing what to ask. This line began with systems that learned to ask (rather than only answer), typically operating over templated or narrow question spaces and showing that such questions can guide learning. In parallel, document-grounded dialogue demonstrated how multi-turn conversations can be anchored in specific texts, shaping answers directly from source materials. In medicine, multi-turn question-asking benchmarks showed that eliciting missing information interactively improves clinical reasoning reliability. Complementing these, LLM-to-LLM simulations validated that synthetic conversational settings can approximate human-to-human interactions at scale, making rigorous, repeatable studies feasible. Teacher–student approaches in reasoning further showed that smaller models benefit from larger models’ rationales, and adaptive teaching methods suggested tailoring to student misconceptions can boost learning—even though prior systems largely kept control with the teacher. Taken together, these strands revealed a gap: most settings delivered explanations or teacher-driven adaptivity, but did not empower the learner to steer discourse through questions across diverse domains. The current work synthesizes these ideas by grounding teacher responses in source documents, placing agency with the student to ask open-ended, context-sensitive questions, and evaluating learning via quizzes over unseen concepts. It leverages LLM-to-LLM simulations for scale and control, extends question-asking beyond a single domain, and probes how teacher strength, lesson quality, and proactive engagement shape the gains from interactive, question-driven learning.",
+  "analysis_timestamp": "2026-04-05T11:56:58.816930",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P15",
+    "secondary_patterns": [
+      "P09",
+      "P06"
+    ],
+    "confidence": "high",
+    "reasoning": "Interactive question selection to reduce uncertainty is active sampling; VOI modeling adds probabilistic grounding and guidance at inference/training.",
+    "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+    "secondary_pattern_names": [
+      "Inference-Time Control & Guided Sampling",
+      "Principled Probabilistic Modeling & Uncertainty"
+    ]
+  }
+}

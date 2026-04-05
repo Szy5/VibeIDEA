@@ -1,0 +1,87 @@
+{
+  "paper_title": "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Multi-hop question answering (QA) involves finding multiple relevant passages and performing step-by-step reasoning to answer complex questions.Previous works on multi-hop QA employ specific methods from different modeling perspectives based on large language models (LLMs), regardless of question types.In this paper, we first conduct an in-depth analysis of public multi-hop QA benchmarks, categorizing questions into four types and evaluating five types of cutting-edge methods: Chainof-Thought (CoT), Single-step, Iterative-step, Sub-step, and Adaptive-step.We find that different types of multi-hop questions exhibit varying degrees of sensitivity to different types of methods.Thus, we propose a Bi-levEL muLti-agEnt reasoning (BELLE) framework to address multi-hop QA by specifically focusing on the correspondence between question types and methods, with each type of method regarded as an \"operator\" by prompting LLMs differently.The first level of BELLE includes multiple agents that debate to formulate an executable plan of combined \"operators\" to address the multi-hop QA task comprehensively.During the debate, in addition to the basic roles of affirmative debater, negative debater, and judge, at the second level, we further leverage fast and slow debaters to monitor whether changes in viewpoints are reasonable.Extensive experiments demonstrate that BELLE significantly outperforms strong baselines in various datasets.Additionally, the model consumption of BELLE is higher cost-effectiveness than that of single models in more complex multihop QA scenarios.",
+  "prior_works": [
+    {
+      "title": "Chain-Of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This work provides the step-by-step reasoning paradigm that BELLE treats as a closed-book “operator” and selects when external retrieval is unnecessary.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "authors": "Harsh Trivedi et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "It introduces the iterative retrieval–reasoning procedure that BELLE directly invokes as its iterative-step operator for complex inference questions.",
+      "arxiv_id": "2305.12117",
+      "url": null
+    },
+    {
+      "title": "Successive Prompting for Decomposing Complex Questions",
+      "authors": "Dheeru Dua et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "This paper establishes the sub-question decomposition strategy that BELLE uses as its sub-step operator to break multi-hop questions into solvable parts.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity",
+      "authors": "Soyeong Jeong et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Adaptive-RAG’s classifier adapts retrieval depth within a single pipeline, highlighting the limitation that BELLE addresses by routing and composing across multiple operator families based on question types.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries",
+      "authors": "Yixuan Tang and Yi Yang",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "It defines the four-way question-type taxonomy (Inference, Comparison, Temporal, Null) that BELLE adopts to condition planning and operator selection.",
+      "arxiv_id": "2401.15391",
+      "url": null
+    },
+    {
+      "title": "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate",
+      "authors": "Tian Liang et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "This work provides the basic affirmative/negative/judge debate setup upon which BELLE builds its planning procedure for selecting operators.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Agents Thinking Fast and Slow: A Talker-Reasoner Architecture",
+      "authors": "Konstantina Christakopoulou et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "The fast/slow separation of reasoning directly inspires BELLE’s fast and slow debater roles that evaluate current operator choices and integrate historical debate summaries.",
+      "arxiv_id": "2410.08328",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Step-by-step prompting demonstrated that large language models can carry out explicit reasoning chains, establishing a closed-book operator that answers many questions without retrieval. For knowledge-intensive multi-step tasks, interleaving retrieval with chain-of-thought showed how iterative retrieval conditioned on intermediate reasoning improves factual grounding, while successive prompting introduced a practical mechanism to decompose a complex question into sub-questions solvable in stages. Adaptive-RAG advanced the idea of question-contingent reasoning by learning to modulate retrieval effort using a complexity classifier, but its adaptation remains confined to a single retrieval pipeline. In parallel, MultiHop-RAG formalized a four-type taxonomy—Inference, Comparison, Temporal, and Null—revealing that multi-hop questions vary systematically and suggesting that different procedural tools may suit different types. On the control side, multi-agent debate works crystallized an affirmative/negative/judge interaction pattern that can guide decision making, and the talker–reasoner (fast/slow) split illuminated how near-term deliberation can be complemented by slower, memory-based reflection. Collectively, these insights exposed a gap: despite diverse operators and emerging adaptive and debate mechanisms, there was no planner that selects and composes across operator families conditioned on question type and debate history. The natural next step is a planner that first recognizes question type, then uses a structured debate—augmented with fast evaluation and slow memory—to produce an execution plan that composes operators like sub-step decomposition, single- or iterative-step retrieval, and CoT where appropriate, yielding both higher accuracy and better cost-effectiveness for multi-hop QA.",
+  "analysis_timestamp": "2026-04-05T11:59:15.441642",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P11",
+    "secondary_patterns": [
+      "P04",
+      "P09"
+    ],
+    "confidence": "medium-high",
+    "reasoning": "Bi-level multi-agent framework imposes hierarchical planning/execution over retrieval-and-reasoning modules, adapting effort at inference time.",
+    "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Inference-Time Control & Guided Sampling"
+    ]
+  }
+}

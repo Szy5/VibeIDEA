@@ -1,0 +1,81 @@
+{
+  "paper_title": "Mitigating Hallucination by Integrating Knowledge Graphs into LLM Inference – a Systematic Literature Review",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large Language Models (LLMs) demonstrate strong performance on different language tasks, but tend to hallucinate -generate plausible but factually incorrect outputs.Recently, several approaches to integrate Knowledge Graphs (KGs) into LLM inference were published to reduce hallucinations.This paper presents a systematic literature review (SLR) of such approaches.Following established SLR methodology, we identified relevant work by systematically search in different academic online libraries and applying a selection process.Nine publications were chosen for in-depth analysis.Our synthesis reveals differences and similarities of how the KG is accessed, traversed, and how the context is finally assembled.KG integration can significantly improve LLM performance on benchmark datasets and additionally to mitigate hallucination enhance reasoning capabilities, explainability, and access to domain-specific knowledge.We also point out current limitations and outline directions for future work. LLMs meet KGs",
+  "prior_works": [
+    {
+      "title": "Guidelines for performing systematic literature reviews in software engineering",
+      "authors": "Staffs Keele et al.",
+      "year": 2007,
+      "role": "Foundation",
+      "relationship_sentence": "Provided the standardized SLR protocol—covering search strategy, inclusion/exclusion criteria, scoring, and data extraction—that this paper follows to systematically identify, select, and synthesize KG-inference works.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Unifying Large Language Models and Knowledge Graphs: A Roadmap",
+      "authors": "Shirui Pan et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "Introduced the LLM–KG integration taxonomy (e.g., 'KG-enhanced LLM inference') that the paper adopts to scope and organize the reviewed approaches (Figure 1).",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Can Knowledge Graphs Reduce Hallucinations in LLMs? : A Survey",
+      "authors": "Garima Agrawal et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Outlined a hallucination-centric categorization across training, inference, retrieval, and validation, highlighting the need for a focused synthesis on knowledge-aware inference that this paper explicitly undertakes (Figure 2).",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Patrick Lewis et al.",
+      "year": 2020,
+      "role": "Foundation",
+      "relationship_sentence": "Established retrieval-augmented generation as the core paradigm for reducing hallucinations by injecting external knowledge, which the reviewed methods instantiate using structured knowledge graphs rather than unstructured documents.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning",
+      "authors": "Linhao Luo et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Demonstrated LLM-guided relation-path extraction and instantiation over KGs during inference, forming the 'apply relation path from extracted entity' traversal pattern analyzed in the review.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+      "authors": "Jiashuo Sun et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Pioneered iterative KG traversal with LLM-controlled adjacent expansion and prompting, directly informing the review’s category of iterative traversal and context assembly from reasoning paths.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Correcting Factual Errors in LLMs via Inference Paths Based on Knowledge Graph",
+      "authors": "Weiqi Ye et al.",
+      "year": 2024,
+      "role": "Related Problem",
+      "relationship_sentence": "Proposed KG-based verification and correction of generated answers via inferred paths, shaping the review’s coverage of KG-controlled answer validation within the inference phase.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Methodologically, systematic literature reviews were codified by Keele et al., who defined rigorous procedures for search, selection, scoring, and data extraction that enable reproducible evidence synthesis. Conceptually, Pan et al. charted a comprehensive roadmap unifying large language models and knowledge graphs and introduced a taxonomy that distinguishes KG-enhanced LLM inference, providing a clear lens for categorizing techniques. Complementing this, Agrawal et al. surveyed hallucination mitigation through KGs across training, inference, retrieval, and validation, foregrounding the need to understand inference-specific mechanisms. At the technical core, Lewis et al. established retrieval-augmented generation as the principal paradigm for grounding LLMs with external knowledge to reduce hallucinations. Building on this paradigm with structured knowledge, Luo et al. showed how LLMs can extract and apply relation paths over KGs for faithful, interpretable reasoning. Sun et al. advanced iterative LLM-guided traversal that incrementally expands reasoning paths through adjacent relations to assemble effective prompts. Ye et al. targeted factuality by verifying and correcting model outputs via KG-derived inference paths, integrating validation into the inference workflow. Together these works revealed a rapidly growing set of KG-aware inference strategies—path application, adjacent expansion, and KG-guided validation—yet lacked a focused synthesis on hallucination mitigation. Given the breadth of the roadmaps and surveys and the diversity of 2023–2024 methods, a dedicated SLR that systematically selects and analyzes KG-inference approaches emerged as the natural next step, organizing how queries enter KGs, how traversal proceeds, and how context is assembled, while quantifying benefits and limits for factuality, reasoning, and explainability.",
+  "analysis_timestamp": "2026-04-05T11:53:45.002604",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P05",
+    "secondary_patterns": [],
+    "confidence": "medium",
+    "reasoning": "Systematic review and taxonomy that organize techniques and evaluation for KG-enhanced LLM hallucination mitigation.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": []
+  }
+}

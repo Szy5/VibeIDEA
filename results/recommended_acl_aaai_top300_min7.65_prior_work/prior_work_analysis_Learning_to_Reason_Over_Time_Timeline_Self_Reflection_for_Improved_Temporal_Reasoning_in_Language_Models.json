@@ -1,0 +1,85 @@
+{
+  "paper_title": "Learning to Reason Over Time: Timeline Self-Reflection for Improved Temporal Reasoning in Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large Language Models (LLMs) have emerged as powerful tools for generating coherent text, understanding context, and performing reasoning tasks.However, they struggle with temporal reasoning, which requires processing time-related information such as event sequencing, durations, and inter-temporal relationships.These capabilities are critical for applications including question answering, scheduling, and historical analysis.In this paper, we introduce TISER, a novel framework that enhances the temporal reasoning abilities of LLMs through a multi-stage process that combines timeline construction with iterative self-reflection.Our approach leverages test-time scaling to extend the length of reasoning traces, enabling models to capture complex temporal dependencies more effectively.This strategy not only boosts reasoning accuracy but also improves the traceability of the inference process.Experimental results demonstrate state-of-the-art performance across multiple benchmarks, including out-of-distribution test sets, and reveal that TISER enables smaller open-source models to surpass larger closed-weight models on challenging temporal reasoning tasks.",
+  "prior_works": [
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "TISER explicitly extends Chain-of-Thought by using the initial CoT trace as Stage I and then augmenting it with timeline construction and iterative self-reflection to correct temporal inconsistencies.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Self-Refine: Iterative refinement with self-feedback",
+      "authors": "Aman Madaan et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "TISER’s Stage III reflection borrows the core idea of Self-Refine’s self-feedback loop—having the model critique and revise its own reasoning—repurposed to verify and fix temporal logic against a constructed timeline.",
+      "arxiv_id": "2303.17651",
+      "url": null
+    },
+    {
+      "title": "s1: Simple test-time scaling",
+      "authors": "Niklas Muennighoff et al.",
+      "year": 2025,
+      "role": "Inspiration",
+      "relationship_sentence": "TISER’s use of extended reasoning at inference (test-time compute scaling) follows s1’s principle that longer, structured reasoning traces can improve accuracy, here specialized to temporal tasks via dedicated timeline and reflection stages.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Large language models can learn temporal reasoning",
+      "authors": "Siheng Xiong et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "TG-LLM (and its TGQA dataset) serves as TISER’s primary temporal reasoning baseline, with TISER replacing explicit temporal graph supervision by constructing timelines and reflecting at test time to surpass TG-LLM on the same benchmarks.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Towards benchmarking and improving the temporal reasoning capability of large language models",
+      "authors": "Qingyu Tan et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "TempReason defines the event–time and event–event relation tasks (L2/L3) that TISER trains on and directly operationalizes by extracting salient events into ordered timelines for reasoning.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "A dataset for answering time-sensitive questions",
+      "authors": "Wenhu Chen et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "TimeQA introduces time-anchored QA that TISER uses for training/evaluation, motivating the need for explicit temporal anchoring via constructed timelines and reflective verification.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "TRAM: Benchmarking temporal reasoning for large language models",
+      "authors": "Yuqing Wang et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "TRAM systematically exposes LLM failures on complex temporal ordering and duration queries, directly motivating TISER’s combination of explicit timeline construction and self-reflection to address these weaknesses.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Chain-of-Thought prompting showed that decomposing problems into explicit reasoning steps improves LLM performance, establishing a template for stepwise inference that is particularly pertinent to temporally complex queries. Self-Refine demonstrated that having a model critique and iteratively revise its own outputs yields measurable gains, suggesting a general recipe for self-correction that can be specialized to temporal logic. In parallel, s1 exemplified that allocating more compute at inference to lengthen and structure reasoning traces—test-time scaling—can lift accuracy without retraining, indicating a pathway to better reasoning through longer, better organized traces. On the task side, TempReason formalized event–time and event–event relations (L2/L3), surfacing scenarios where correct answers depend on reconstructing ordered temporal dependencies. TimeQA framed time-sensitive question answering with temporal anchoring demands, highlighting the need to localize answers relative to explicit timelines. TG-LLM, paired with TGQA, provided a strong temporal-reasoning baseline using structured temporal graphs, but required explicit graph supervision and still showed weaknesses across diverse temporal benchmarks. TRAM further documented that state-of-the-art LLMs frequently misorder events and mishandle durations. Together, these works revealed both the promise of structured, extended reasoning and the persistent gaps in temporal coherence. The natural next step is to fuse longer test-time reasoning with a temporal-specific structure and a revision mechanism. Building on CoT, TISER introduces an intermediate timeline to explicitly order events, then applies iterative self-reflection to detect and correct temporal inconsistencies, while leveraging test-time scaling to extend reasoning depth—thereby addressing the gaps surfaced by TRAM and outperforming baselines like TG-LLM on TempReason, TimeQA, and TGQA.",
+  "analysis_timestamp": "2026-04-05T11:56:10.916634",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Implements inference-time self-reflection and test-time scaling to iteratively refine temporal reasoning, structured as critique–revise modules.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition"
+    ]
+  }
+}

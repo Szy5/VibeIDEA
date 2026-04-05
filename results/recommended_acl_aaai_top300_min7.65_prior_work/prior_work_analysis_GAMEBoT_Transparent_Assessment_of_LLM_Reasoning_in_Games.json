@@ -1,0 +1,76 @@
+{
+  "paper_title": "GAMEBoT: Transparent Assessment of LLM Reasoning in Games",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large Language Models (LLMs) are increasingly deployed in real-world applications that demand complex reasoning.To track progress, robust benchmarks are required to evaluate their capabilities beyond superficial pattern recognition.However, current LLM reasoning benchmarks often face challenges such as insufficient interpretability, performance saturation or data contamination.To address these challenges, we introduce GAMEBOT (GAME Battle of Tactics), a gaming arena designed for rigorous and transparent assessment of LLM reasoning capabilities.GAMEBOT decomposes complex reasoning in games into predefined modular subproblems.This decomposition allows us to design a suite of Chain-of-Thought (CoT) prompts that leverage domain knowledge to guide LLMs in addressing these subproblems before action selection.Furthermore, we develop a suite of rule-based algorithms to generate ground truth for these subproblems, enabling rigorous validation of the LLMs' intermediate reasoning steps.This approach facilitates evaluation of both the quality of final actions and the accuracy of the underlying reasoning process.GAMEBOT also naturally alleviates the risk of data contamination through dynamic games and head-to-head LLM competitions.We benchmark 17 prominent LLMs across eight games, encompassing various strategic abilities and game characteristics.Our results suggest that GAMEBOT presents a significant challenge, even when LLMs are provided with detailed CoT prompts.Project page: https://visual-ai.github.io/gamebotLLMs CoT Prompts <Role Setting> You are an expert player in <Game Rules> <Inputs and denotations> You will receive the current game state denoted <Output> Provide your chosen move.Before making a decision, articulate your internal thinking process.Your performance will be assessed on both the intermediate thinking results and the final decision.Follow the thinking process:",
+  "prior_works": [
+    {
+      "title": "GTBench: Uncovering the Strategic Reasoning Capabilities of LLMs via Game-Theoretic Evaluations",
+      "authors": "Jinhao Duan et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "GTBench evaluates LLMs in strategic games primarily via win rates and generic “think step by step” prompting, highlighting the lack of interpretability and prompting strength that GAMEBoT addresses with rule-verified subproblems and strategy-guided CoT.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "LLMArena: Assessing Capabilities of Large Language Models in Dynamic Multi-Agent Environments",
+      "authors": "Junzhe Chen et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "LLMArena’s head-to-head, outcome-based evaluation with action-only prompts is a direct baseline that GAMEBoT extends by requiring structured intermediate reasoning and automatic verification in the same competitive setting.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "How far are we on the decision-making of LLMs? Evaluating LLMs’ gaming ability in multi-agent environments (GamaBench)",
+      "authors": "Jen-tse Huang et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "GamaBench’s outcome-only metrics and action-only prompting serve as a primary comparison point that GAMEBoT improves upon via curated, domain-informed CoT prompts and per-step, rule-based checks.",
+      "arxiv_id": "2403.11807",
+      "url": null
+    },
+    {
+      "title": "SmartPlay: A Benchmark for LLMs as Intelligent Agents",
+      "authors": "Yue Wu et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "SmartPlay established dynamic game environments and win/score-based assessment for LLM agents, a formulation that GAMEBoT builds on while adding decomposition into subproblems and verification of intermediate reasoning.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "The core idea that prompts can elicit step-by-step reasoning directly underpins GAMEBoT’s strategy-guided CoT templates with explicit intermediate fields designed for automated validation.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "Large Language Models are Zero-Shot Reasoners",
+      "authors": "Takeshi Kojima et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Zero-shot CoT’s ‘let’s think step by step’ insight inspires GAMEBoT’s move beyond generic templates to modular subproblems and structured [Intermediate Thinking Result] outputs that can be programmatically checked.",
+      "arxiv_id": "2205.11916",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Recent game-centric evaluations framed LLM assessment as multi-agent competition with outcome-based scores. SmartPlay demonstrated that dynamic game environments provide clear objectives and measurable performance, cementing games as a natural testbed for agentic evaluation. Building on this, LLMArena introduced head-to-head matchups in dynamic multi-agent environments and standardized action-only prompting, emphasizing win rate as the central metric. GamaBench broadened the set of multi-agent games and continued the outcome-centric, action-only paradigm for decision-making evaluation. GTBench introduced game-theoretic evaluations in strategic settings and commonly used generic ‘think step by step’ prompts, exposing that outcome-only metrics and weak reasoning elicitation can obscure whether models truly understand game logic. In parallel, Chain-of-Thought prompting established that prompts can induce stepwise reasoning, and zero-shot CoT showed that even simple ‘let’s think step by step’ instructions can unlock reasoning without exemplars.\nTogether, these works surfaced a gap: game-based benchmarks assess end results but not the correctness of intermediate reasoning, and generic or action-only prompts often fail to reliably elicit strong strategic thought. The natural next step is to retain the dynamic, competitive setup while making reasoning transparent and verifiable. GAMEBoT synthesizes these threads by decomposing each game’s decision into modular subproblems, crafting domain-informed CoT prompts that require structured intermediate outputs, and introducing rule-based solvers to generate ground truth for per-step verification. This design transforms opaque win/loss signals into interpretable, fine-grained assessments and establishes stronger prompting baselines than action-only or generic CoT approaches.",
+  "analysis_timestamp": "2026-04-05T11:53:59.780988",
+  "innovation_classification": {
+    "paper_index": 2,
+    "primary_pattern": "P05",
+    "secondary_patterns": [
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Designs transparent, game-based benchmarks and protocols to assess reasoning beyond win rates; tightens evaluation with controlled setups.",
+    "primary_pattern_name": "Data & Evaluation Engineering",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

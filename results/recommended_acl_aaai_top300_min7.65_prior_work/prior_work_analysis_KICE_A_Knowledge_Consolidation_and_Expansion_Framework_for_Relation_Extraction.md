@@ -1,0 +1,61 @@
+# Prior Work Analysis Report
+
+## Target Paper
+
+**Title:** KICE: A Knowledge Consolidation and Expansion Framework for Relation Extraction
+
+**arXiv ID:** [N/A](https://arxiv.org/abs/N/A)
+
+**Abstract:** 
+> Machine Learning is often challenged by insufficient labeled data. Previous methods employing implicit commonsense knowledge of pre-trained language models (PLMs) or pattern-based symbolic knowledge have achieved great success in mitigating manual annotation efforts. In this paper, we focus on the collaboration among different knowledge sources and present KICE, a Knowledge-evolving framework by Iterative Consolidation and Expansion with the guidance of PLMs and rule-based patterns. Specifically, starting with limited labeled data as seeds, KICE first builds a Rule Generator by prompt-tuning to stimulate the rich knowledge distributed in PLMs, generate seed rules, and initialize the rules set. Afterwards, based on the rule-labeled data, the task model is trained in a self-training pipeline where the knowledge in rules set is consolidated with self-learned high-confidence rules. Finally, for the low-confidence rules, KICE solicits human-enlightened understanding and expands the knowledge coverage for better task model training. Our framework is verified on relation extraction (RE) task, and the experiments on TACRED show that the model performance (F1) grows from 33.24% to 79.84% with the enrichment of knowledge, outperforming all the baselines including other knowledgeable methods.
+
+---
+
+## Key Prior Works (7 papers with direct influence)
+
+### 🏷️ Inspiration
+
+**NERO: A Neural Rule Grounding Framework for Label-Efficient Relation Extraction** (2020)
+- *Authors:* W. Zhou et al.
+- *Direct Connection:* KICE adopts NERO’s core insight of soft-matching rules to sentences via neural similarity, extending it by using PLM-extracted pattern words (embedded with BERT and cosine similarity) as rules to weakly label unlabeled instances.
+
+**Learning Dual Retrieval Module for Semi-Supervised Relation Extraction** (2019)
+- *Authors:* H. Lin et al.
+- *Direct Connection:* KICE’s Self-Reviewing Module echoes DualRE’s iterative self-training paradigm by assigning pseudo-labels to high-confidence unlabeled instances and leveraging them to expand supervision, here further distilled into new rules.
+
+**PTR: Prompt Tuning with Rules for Text Classification** (2021)
+- *Authors:* X. Han et al.
+- *Direct Connection:* PTR’s demonstration that rule-informed prompts can extract structured signals from PLMs inspires KICE’s use of prompt templates to stimulate PLM knowledge and harvest rule-like pattern words instead of direct label predictions.
+
+### 🏷️ Gap Identification
+
+**Neural Snowball for Few-Shot Relation Learning** (2020)
+- *Authors:* T. Gao et al.
+- *Direct Connection:* Snowball’s observation that iterative self-training overfits existing rules and fails to discover novel patterns motivates KICE’s rule-induced breakthrough learning that solicits human labels on high-uncertainty instances to inject new rules.
+
+**Prompt-Based Rule Discovery and Boosting for Interactive Weakly-Supervised Learning (PRBOOST)** (2022)
+- *Authors:* R. Zhang et al.
+- *Direct Connection:* PRBOOST’s reliance on human-in-the-loop rule selection highlights the annotation burden of rule labeling, which KICE addresses by asking humans to label instances and using a PLM to automatically convert them into rules.
+
+### 🏷️ Extension
+
+**Fine-tuning Pre-trained Language Model with Weak Supervision: A Contrastive-Regularized Self-Training Approach (COSINE)** (2020) [[arXiv](https://arxiv.org/abs/arXiv:2010.07835)]
+- *Authors:* Y. Yu et al.
+- *Direct Connection:* KICE directly borrows COSINE’s denoising principle by using previous-model soft predictions and an entropy-weighted KL divergence to stabilize training on noisy, rule-derived weak labels.
+
+**GPT Understands, Too (P-Tuning)** (2021) [[arXiv](https://arxiv.org/abs/arXiv:2103.10385)]
+- *Authors:* X. Liu et al.
+- *Direct Connection:* KICE’s Rule Generator explicitly uses P-Tuning’s learnable continuous prompts to elicit concept and relation tokens from PLMs, turning these outputs into contextual rule patterns without manual label-word engineering.
+
+---
+
+## Synthesis: How Prior Work Led to This Paper
+
+Neural rule grounding showed that symbolic patterns can supervise relation extraction when matched softly to text, with NERO learning neural similarities to expand rule coverage beyond brittle exact matches. Semi-supervised RE methods like DualRE demonstrated that high-confidence unlabeled instances can be iteratively harvested to enlarge supervision via a self-training loop. Weak-supervision fine-tuning work such as COSINE established that leveraging previous-model soft predictions with entropy-weighted consistency losses mitigates noise in pseudo-labels. Prompt-based research revealed that pre-trained language models can be guided by prompts to surface relation-relevant signals: P-Tuning introduced learnable continuous prompts for flexible knowledge elicitation, while PTR showed rules can shape prompt designs to extract structured cues from PLMs. Yet, Neural Snowball highlighted a critical failure mode—iterative self-training tends to overfit existing rules and struggles to discover genuinely new patterns—while interactive weak supervision like PRBOOST exposed the practical burden of requiring humans to author or curate rules directly.
+Together, these works suggested a path forward: ground supervision in adaptable rule-like patterns, elicit them from PLMs via prompts rather than manual engineering, consolidate knowledge through self-training while denoising noisy labels, and deliberately escape the self-training “comfort zone” by injecting human-curated novelty. KICE synthesizes these threads by using P-Tuning to extract concept and relation tokens as rule patterns from seeds, applying a DualRE-style consolidation loop to mine new rules from high-confidence pseudo-labeled data under a COSINE-inspired denoising objective, and addressing Snowball’s stagnation by sampling high-uncertainty instances for human labeling and converting them—via prompts—into new rules, thereby avoiding PRBOOST’s rule-annotation overhead while steadily expanding coverage.
+
+---
+
+*Analysis generated on: 2026-04-05T12:02:36.450660*
+
+*Pipeline: Prior Work Extraction v2.0 (Direct Lineage Focus)*

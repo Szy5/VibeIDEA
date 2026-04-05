@@ -1,0 +1,78 @@
+{
+  "paper_title": "ROGRAG: A Robustly Optimized GraphRAG Framework",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models (LLMs) commonly struggle with specialized or emerging topics which are rarely seen in the training corpus.Graph-based retrieval-augmented generation (GraphRAG) addresses this by structuring domain knowledge as a graph for dynamic retrieval.However, existing pipelines involve complex engineering workflows, making it difficult to isolate the impact of individual components.It is also challenging to evaluate the retrieval effectiveness due to the overlap between the pretraining and evaluation datasets.In this work, we introduce ROGRAG, a Robustly Optimized GraphRAG framework.Specifically, we propose a multi-stage retrieval mechanism that integrates dual-level with logic form retrieval methods to improve retrieval robustness without increasing computational cost.To further refine the system, we incorporate various result verification methods and adopt an incremental database construction approach.Through extensive ablation experiments, we rigorously assess the effectiveness of each component.Our implementation includes comparative experiments on SeedBench, where Qwen2.5-7B-Instructinitially underperformed.ROGRAG significantly improves the score from 60.0% to 75.0% and outperforms mainstream methods.Experiments on domainspecific datasets reveal that dual-level retrieval enhances fuzzy matching, while logic form retrieval improves structured reasoning, highlighting the importance of multi-stage retrieval.ROGRAG is released as an open-source resource 1 and supports installation with pip.",
+  "prior_works": [
+    {
+      "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+      "authors": "Darren Edge et al.",
+      "year": 2024,
+      "role": "Foundation",
+      "relationship_sentence": "This paper established the GraphRAG paradigm—building and traversing entity–relation graphs to support multi-hop, query-focused retrieval—which underpins ROGRAG’s graph-based indexing and retrieval design.",
+      "arxiv_id": "2404.16130",
+      "url": null
+    },
+    {
+      "title": "Lightrag: Simple and Fast Retrieval-Augmented Generation",
+      "authors": "Zirui Guo et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "Lightrag’s lightweight graph-centric pipeline and practical entity/edge extraction and matching strategies are directly integrated and then refined into ROGRAG’s dual-level (entity vs. relation) fuzzy-matching retrieval.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation",
+      "authors": "Lei Liang et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "KAG’s knowledge-augmented reasoning in professional domains, which leverages structured knowledge and operator-like decomposition, directly motivates ROGRAG’s logic-form retrieval using LLM-planned operators.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "DB-GPT: Empowering Database Interactions with Private Large Language Models",
+      "authors": "Siqiao Xue et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "DB-GPT’s scalable knowledge-base integration and graph/database management informed ROGRAG’s incremental database construction and practical graph storage choice for dynamic knowledge growth.",
+      "arxiv_id": "2312.17449",
+      "url": null
+    },
+    {
+      "title": "HuixiangDou: Overcoming Group Chat Scenarios with LLM-based Technical Assistance",
+      "authors": "Huanjun Kong et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "HuixiangDou’s refusal-to-answer and intent-slot mechanisms are retrained and incorporated to bolster ROGRAG’s robustness via pre-check style verification before answer generation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "RQ-RAG: Learning to Refine Queries for Retrieval Augmented Generation",
+      "authors": "Chi-Min Chan et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "RQ-RAG serves as a principal baseline emphasizing query refinement, against which ROGRAG’s multi-stage (logic-form plus dual-level fuzzy) retrieval is positioned to overcome limitations in structured reasoning.",
+      "arxiv_id": "2404.00610",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Graph-based retrieval-augmented generation emerged as a focused alternative to flat document retrieval with Edge et al. introducing the GraphRAG paradigm: constructing entity–relation graphs and navigating them to support query-focused, multi-hop summarization. Building on this foundation, Lightrag operationalized a simple, fast graph-centric pipeline that emphasized pragmatic entity and relation extraction and lightweight matching, making graph-structured retrieval more accessible. In parallel, KAG targeted professional domains and showed that knowledge augmentation paired with structured, operator-like reasoning can better align retrieval with task logic, suggesting that LLMs can plan and execute decomposed operations over knowledge. DB-GPT contributed practical system design by coupling LLMs with scalable database/graph backends and dynamic knowledge management, demonstrating how graph stores can be incrementally expanded and switched in production settings. Complementing these retrieval and storage advances, HuixiangDou presented refusal-to-answer and intent recognition modules to guard against unsupported responses in complex dialogues—an approach that foreshadowed verification gates in RAG pipelines. Finally, RQ-RAG highlighted the power and limits of query refinement within RAG, serving as a strong baseline where refined queries alone may still falter on structured, multi-hop tasks.\nAgainst this backdrop, a clear opportunity emerged: fuse operator-driven logical decomposition with robust, multi-granularity graph matching, and place verification ahead of generation. ROGRAG synthesizes these threads by adopting logic-form retrieval inspired by KAG’s operator planning, unifying it with Lightrag-style dual-level fuzzy matching for coverage, and grounding the system in DB-GPT-like incremental graph storage. HuixiangDou’s refusal/intent gating is adapted into pre-check verification, yielding a multi-stage, resilient pipeline that outperforms query-refinement baselines like RQ-RAG on knowledge-intensive, structured queries.",
+  "analysis_timestamp": "2026-04-05T11:56:16.538949",
+  "innovation_classification": {
+    "paper_index": 1,
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P03",
+      "P10"
+    ],
+    "confidence": "medium",
+    "reasoning": "Builds a graph-centric RAG pipeline (extraction→graph→navigation→summarization); shifts from flat to graph representations and injects structural bias.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

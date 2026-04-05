@@ -1,0 +1,87 @@
+{
+  "paper_title": "Eliciting Better Multilingual Structured Reasoning from LLMs through Code",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "The development of large language models (LLM) has shown progress on reasoning, though studies have largely considered either English or simple reasoning tasks.To address this, we introduce a multilingual structured reasoning and explanation dataset, termed xSTREET, that covers four tasks across six languages.xSTREET exposes a gap in base LLM performance between English and non-English reasoning tasks. 1 We then propose two methods to remedy this gap, building on the insight that LLMs trained on code are better reasoners.First, at training time, we augment a code dataset with multilingual comments using machine translation while keeping program code as-is.Second, at inference time, we bridge the gap between training and inference by employing a prompt structure that incorporates step-by-step code primitives to derive new facts and find a solution.Our methods show improved multilingual performance on xSTREET, most notably on the scientific commonsense reasoning subtask.Furthermore, the models show no regression on non-reasoning tasks, thus demonstrating our techniques maintain general-purpose abilities.",
+  "prior_works": [
+    {
+      "title": "STREET: A Multi-task Structured Reasoning and Explanation Benchmark",
+      "authors": "Danilo Neves Ribeiro et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Introduced the structured reasoning graph formulation and linearized prompts that are directly translated and used as the target structure and baseline format for the multilingual xSTREET benchmark.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Language models are multilingual chain-of-thought reasoners",
+      "authors": "Freda Shi et al.",
+      "year": 2022,
+      "role": "Gap Identification",
+      "relationship_sentence": "Revealed a multilingual reasoning gap and showed English chain-of-thought often outperforms native-language CoT, motivating a multilingual evaluation setting and techniques that bridge training–inference across languages.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Language Models of Code are Few-Shot Commonsense Learners",
+      "authors": "Aman Madaan et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Demonstrated that reformulating natural language commonsense problems as code prompts markedly improves reasoning with code-trained LMs, directly inspiring the paper’s code-like prompting strategy.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Selection-Inference: Exploiting Large Language Models for Interpretable Logical Reasoning",
+      "authors": "Antonia Creswell et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Provided the select–infer loop that is adapted into single-prompt functions (select_facts and infer_new_fact) in the SIM prompting format to structure multi-step reasoning.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Causal reasoning of entities and events in procedural texts",
+      "authors": "Li Zhang et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "Inspired annotating function calls with inline comments specifying return values, a design adopted to make code prompts self-explanatory and align with the model’s code-trained representations.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "Holistic Evaluation of Language Models",
+      "authors": "Percy Liang et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Reported that code-trained models consistently outperform text-only models on reasoning-heavy scenarios, motivating both the training-time code-centric augmentation and the inference-time alignment via code-like prompts.",
+      "arxiv_id": null,
+      "url": null
+    },
+    {
+      "title": "The Stack: 3 TB of permissively licensed source code",
+      "authors": "Denis Kocetkov et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "Provided the large-scale code-with-comments corpus that was directly augmented by translating comments to create the multilingual TCC fine-tuning data central to the training-time method.",
+      "arxiv_id": "2211.15533",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Structured reasoning graphs and their linearized instantiation were established by STREET, which curated expert multi-premise explanations and a graph-based, stepwise proof format for tasks like ARC science questions and GSM8K arithmetic. Multilingual chain-of-thought work showed that step-by-step prompting generalizes across languages but also uncovered a striking gap: English chain-of-thought often beats native-language prompting, pointing to a fundamental limitation in multilingual reasoning. In parallel, code-centric prompting demonstrated that casting natural language reasoning as code—especially for commonsense problems—improves performance with code-trained models, suggesting that code structures naturally scaffold multi-step inference. The Selection-Inference framework contributed a simple yet powerful select–infer loop for interpretable logical reasoning, while procedural text prompting work refined code prompt design by annotating function calls with inline comments and explicit return values to make prompts self-descriptive. Broader evaluations reported that models trained on code consistently outperform text-only models on reasoning-intensive tasks, strengthening the case for code as indirect supervision. Finally, The Stack offered a permissively licensed code corpus with rich comments to manipulate at scale.\n\nTogether, these works surfaced a clear opportunity: there was no multilingual benchmark with structured reasoning graphs, code-trained models benefited from code-aligned inputs, and multilingual prompting lagged English. The current paper synthesizes these insights by extending STREET into a six-language benchmark, designing a single-prompt Selection-Inference-inspired code format with inline return annotations to bridge training–inference representations, and augmenting a real code corpus by translating comments to create multilingual supervision without altering code. This combination naturally follows from prior findings and directly targets the multilingual reasoning gap while leveraging the demonstrated strengths of code-based reasoning.",
+  "analysis_timestamp": "2026-04-05T11:53:05.244935",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P09",
+    "secondary_patterns": [
+      "P10",
+      "P04"
+    ],
+    "confidence": "medium",
+    "reasoning": "Elicits structured multilingual reasoning via prompt-time controls and structured formats (graphs/code), imposing reasoning scaffolds.",
+    "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

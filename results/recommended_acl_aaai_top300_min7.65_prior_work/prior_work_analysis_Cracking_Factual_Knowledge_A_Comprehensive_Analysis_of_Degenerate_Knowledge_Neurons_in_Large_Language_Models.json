@@ -1,0 +1,85 @@
+{
+  "paper_title": "Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models",
+  "prior_works": [
+    {
+      "title": "Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons",
+      "authors": "Yuheng Chen et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "This work introduced degenerate knowledge neurons (DKNs) and the AMIG procedure but restricted DKNs to two-neuron sets without modeling connectivity, which our paper generalizes to arbitrary-sized base degenerate components and augments with structural connectivity via the proposed neuronal topology clustering.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "authors": "Damai Dai et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "By establishing that some MLP neurons store factual knowledge and can be probed via activation/suppression, this paper underpins our functional definition of knowledge neurons and the evaluation protocol for whether a neuron set expresses a fact.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Physics of Language Models: Part 3.1, Knowledge Storage and Extraction",
+      "authors": "Zeyuan Allen-Zhu and Yuanzhi Li",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Their theory that knowledge tends to concentrate along tightly connected neuron pathways directly motivates our weight-based neuron distance and the search for structurally cohesive neuron clusters as candidate base degenerate components.",
+      "arxiv_id": "2309.14316",
+      "url": null
+    },
+    {
+      "title": "Physics of Language Models: Part 3.2, Knowledge Manipulation",
+      "authors": "Zeyuan Allen-Zhu and Yuanzhi Li",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Their observation that expressing a fact generally requires coordination among multiple neurons motivates lifting the two-neuron constraint and defining DKN elements as multi-neuron components with varying cardinalities.",
+      "arxiv_id": "2309.14402",
+      "url": null
+    },
+    {
+      "title": "Persistent Homology: Theory and Practice",
+      "authors": "Herbert Edelsbrunner",
+      "year": 2013,
+      "role": "Inspiration",
+      "relationship_sentence": "The notion of persistence from topological data analysis directly inspires our use of cluster birth–death radii (R1, R2) to score the structural stability of neuron clusters and select base degenerate components in neuronal topology clustering.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Time-aware Language Models as Temporal Knowledge Bases",
+      "authors": "Bhuwan Dhingra et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "TempLAMA’s timestamped factual triples provide the temporal supervision needed to identify, compare, and update neuron sets across time, enabling our analyses of DKNs for learning new knowledge and robustness.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Locating and Editing Factual Associations in GPT",
+      "authors": "Kevin Meng et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "We adopt the CounterFact-style counterfactual labeling strategy from this work to ensure target facts are not pre-known during fine-tuning, and follow their practice of probing layer-wise information flow when defining neuron distances.",
+      "arxiv_id": "2202.05262",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work established that specific MLP neurons can encode factual associations and can be probed by activation and suppression, with Knowledge Neurons in Pretrained Transformers providing the core functional lens for localizing such units. Building on a theoretical account of how knowledge concentrates along tightly connected pathways, Physics of Language Models Part 3.1 framed the importance of inter-neuronal connectivity when reasoning about where facts live in the network. Complementarily, Part 3.2 argued that factual expression typically arises from the coordinated activity of multiple neurons, highlighting limitations of pairwise-only views. Degenerate Knowledge Neurons were first introduced in Journey to the Center of the Knowledge Neurons, which operationalized DKNs and proposed AMIG to find them, albeit restricted to two-neuron pairs and without modeling connectivity structures. From topological data analysis, Persistent Homology provided a way to formalize cluster stability via persistence, offering a principled criterion for selecting structurally robust neuron sets. For evaluating knowledge evolution and updates, Time-aware Language Models as Temporal Knowledge Bases supplied timestamped facts, and CounterFact-inspired practices from Locating and Editing Factual Associations in GPT offered counterfactual labeling to ensure models genuinely learn new information.\nCollectively, these insights revealed an opportunity: DKNs should be defined as multi-neuron components that are both functionally sufficient to express a fact and structurally cohesive in the network’s connectivity graph. By synthesizing the KN functional probe with multi-neuron coordination theory and persistent clustering from TDA, it was natural to propose a topology-aware identification method that removes the two-neuron constraint and explicitly leverages weight-derived distances. With TempLAMA and CounterFact-style setups enabling controlled knowledge updates, this framework could both refine DKN discovery and demonstrate their practical roles in guiding learning and bolstering robustness to input perturbations.",
+  "analysis_timestamp": "2026-04-05T12:06:25.504523",
+  "innovation_classification": {
+    "paper_index": 4,
+    "primary_pattern": "P12",
+    "secondary_patterns": [
+      "P07"
+    ],
+    "confidence": "high",
+    "reasoning": "Mechanistically localizes and analyzes degenerate knowledge neurons with targeted probes and theory-driven tests.",
+    "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+    "secondary_pattern_names": [
+      "Formal-Experimental Tightening"
+    ]
+  }
+}

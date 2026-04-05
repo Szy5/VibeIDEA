@@ -1,0 +1,86 @@
+{
+  "paper_title": "LEGO-GraphRAG: Modularizing Graph-based Retrieval-Augmented Generation for Design Space Exploration",
+  "paper_arxiv_id": "2411.05844",
+  "paper_abstract": "GraphRAG integrates (knowledge) graphs with large language models (LLMs) to improve reasoning accuracy and contextual relevance. Despite its promising applications and strong relevance to multiple research communities, such as databases and natural language processing, GraphRAG currently lacks modular workflow analysis, systematic solution frameworks, and insightful empirical studies. To bridge these gaps, we propose LEGO-GraphRAG, a modular framework that enables: 1) fine-grained decomposition of the GraphRAG workflow, 2) systematic classification of existing techniques and implemented GraphRAG instances, and 3) creation of new GraphRAG instances. Our framework facilitates comprehensive empirical studies of GraphRAG on large-scale real-world graphs and diverse query sets, revealing insights into balancing reasoning quality, runtime efficiency, and token or GPU cost, that are essential for building advanced GraphRAG systems.",
+  "prior_works": [
+    {
+      "title": "Microsoft GraphRAG",
+      "authors": "Microsoft Research et al.",
+      "year": 2023,
+      "role": "Foundation",
+      "relationship_sentence": "Introduced the GraphRAG concept and practical problem framing—replacing document retrieval with graph-based retrieval, text-to-graph construction and optional precomputation—providing the problem formulation and motivation that LEGO-GraphRAG modularizes and systematically analyzes.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Modular RAG",
+      "authors": "First author et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "Modularized general RAG workflows but did not dissect GraphRAG’s retrieval internals, directly motivating LEGO-GraphRAG’s finer decomposition of retrieval into subgraph-extraction and path-retrieval modules.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "RoG (LLM planning + SPARQL-style extraction)",
+      "authors": "First author et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "Demonstrated LLM-driven planning and SPARQL-like extraction for graph retrieval, serving as a concrete GraphRAG instance that LEGO reimplements, compares against, and generalizes within its modular taxonomy while exposing limits of LLM-only extraction.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "GCR (LLM + beam-search refinement)",
+      "authors": "First author et al.",
+      "year": 2024,
+      "role": "Inspiration",
+      "relationship_sentence": "Combined LLM scoring with beam-search style path refinement (an ISAR-style approach), directly inspiring LEGO-GraphRAG’s incorporation of interactive semantic-augmented retrieval and hybrid EEM/LLM strategies.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "GSR (PPR-based subgraph retrieval)",
+      "authors": "First author et al.",
+      "year": 2024,
+      "role": "Extension",
+      "relationship_sentence": "Used Personalized PageRank (PPR) and structural subgraph extraction to scale graph retrieval, providing the concrete structure-based extraction techniques and revealing scalability/latency issues that LEGO addresses within a modular design.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "KELP (path refinement with fine-tuned encoders)",
+      "authors": "First author et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "Applied fine-tuned encoders (e.g., BERT-style re-rankers) to refine retrieved paths in one-way semantic augmentation, acting as a practical baseline that LEGO reimplements and situates in its OSAR category to compare trade-offs of cost vs quality.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "StructGPT (LLM agents for structured reasoning)",
+      "authors": "First author et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "Showed LLM-agent approaches for planning over structured data, informing LEGO-GraphRAG’s design space for ISAR methods while also motivating LEGO’s empirical scrutiny of agent-based limitations (cost, prompt length, generalizability).",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Prior work established both the promise and the gaps that LEGO-GraphRAG addresses. Microsoft GraphRAG provided the core GraphRAG problem formulation—text-attributed graphs, retrieval-to-generation pipeline, and the practical value of graph-based over text-based retrieval—so that retrieving query-specific reasoning paths became the central challenge. Modular RAG introduced the value of modularizing RAG pipelines but left the GraphRAG retrieval phase underspecified, highlighting the need for a finer-grained decomposition. System-level GraphRAG instances such as RoG (LLM planning + SPARQL extraction), GCR (LLM plus beam-search refinement), GSR (PPR-based subgraph retrieval), and KELP (re-ranker-based path refinement) contributed concrete methods: LLM-driven planning, ISAR-style beam search, structure-based PPR extraction, and EEM re-ranking, respectively—each representing a point in the design space LEGO maps and implements. StructGPT’s demonstration of LLM agents over structured data further informed the interactive retrieval end of the spectrum while also surfacing practical limits (cost, scalability). Collectively these works left an actionable opportunity: unify structure- and semantic-centered techniques, split retrieval into subgraph-extraction and path-retrieval, and provide systematic empirical trade-offs; LEGO-GraphRAG synthesizes these specific techniques into a modular taxonomy, generates new hybrid instances (e.g., hybrid EEM/LLM ISAR), and builds a testbed to evaluate the efficiency/quality/cost trade-offs that those prior systems individually exposed but did not comprehensively resolve.",
+  "analysis_timestamp": "2026-03-09T00:20:19.965961",
+  "input_tokens": 17667,
+  "output_tokens": 1157,
+  "innovation_classification": {
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P03"
+    ],
+    "confidence": "high",
+    "reasoning": "The paper focuses on decomposing Graph-based RAG into finer-grained, interchangeable modules (retrieval, planning, reranking, generation) — a clear modular-pipeline composition approach. It also leverages graph-structured primitives over pure text, reflecting a representation shift.",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting"
+    ]
+  }
+}

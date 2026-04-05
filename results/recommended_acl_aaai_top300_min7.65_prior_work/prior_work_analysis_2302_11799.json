@@ -1,0 +1,79 @@
+{
+  "paper_title": "FiTs: Fine-grained Two-stage Training for Knowledge-aware Question Answering",
+  "paper_arxiv_id": "2302.11799",
+  "paper_abstract": "Knowledge-aware question answering (KAQA) requires the model to answer questions over a knowledge base, which is essential for both open-domain QA and domain-specific QA, especially when language models alone cannot provide all the knowledge needed. Despite the promising result of recent KAQA systems which tend to integrate linguistic knowledge from pre-trained language models (PLM) and factual knowledge from knowledge graphs (KG) to answer complex questions, a bottleneck exists in effectively fusing the representations from PLMs and KGs because of (i) the semantic and distributional gaps between them, and (ii) the difficulties in joint reasoning over the provided knowledge from both modalities. To address the above two problems, we propose a Fine-grained Two-stage training framework (FiTs) to boost the KAQA system performance: The first stage aims at aligning representations from the PLM and the KG, thus bridging the modality gaps between them, named knowledge adaptive post-training. The second stage, called knowledge-aware fine-tuning, aims to improve the model's joint reasoning ability based on the aligned representations. In detail, we fine-tune the post-trained model via two auxiliary self-supervised tasks in addition to the QA supervision. Extensive experiments demonstrate that our approach achieves state-of-the-art performance on three benchmarks in the commonsense reasoning (i.e., CommonsenseQA, OpenbookQA) and medical question answering (i.e., MedQA-USMILE) domains.",
+  "prior_works": [
+    {
+      "title": "GreaseLM: Graph REASoning Enhanced Language Models for Question Answering",
+      "authors": "Xingcheng Zhang et al.",
+      "year": 2022,
+      "role": "Baseline",
+      "relationship_sentence": "GreaseLM is the backbone the paper adopts and improves upon—providing the intermediate-layer LM+GNN modality-interaction architecture that FiTs retains while targeting its lack of pre-fusion adaptation, making GreaseLM the primary system the work seeks to outperform.",
+      "arxiv_id": "2201.08860",
+      "url": null
+    },
+    {
+      "title": "QA-GNN: Reasoning with Language Models and Knowledge Graphs for Question Answering",
+      "authors": "Makoto Yasunaga et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "The paper follows QA-GNN's retrieval pipeline and relevance-scoring procedure for assembling KG subgraphs per QA example, using that formulation as the working problem setup for joint LM+KG reasoning.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "KagNet: Knowledge-Aware Graph Networks for Commonsense Reasoning",
+      "authors": "Boyi Lin et al.",
+      "year": 2019,
+      "role": "Gap Identification",
+      "relationship_sentence": "KagNet exemplifies prior LM+KG approaches that inject graph knowledge into language encoders in a largely one-way manner, a limitation FiTs explicitly calls out and seeks to address by improving bidirectional alignment and joint reasoning.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Translating Embeddings for Modeling Multi-relational Data (TransE)",
+      "authors": "Antoine Bordes et al.",
+      "year": 2013,
+      "role": "Inspiration",
+      "relationship_sentence": "The knowledge-backbone regularization objective directly draws on TransE's translation-in-embedding-space idea, motivating the paper's constraint that head + relation ≈ tail in the fused representation space.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Mind the Gap: Understanding the Modality Gap in Multi-modal Contrastive Representation Learning",
+      "authors": "Wenjia Liang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "This analysis of semantic and distributional gaps across modalities motivates the paper's central claim about LM vs. KG representation mismatch and underpins the design of the knowledge-adaptive contrastive post-training to explicitly align modalities.",
+      "arxiv_id": "2203.02053",
+      "url": null
+    },
+    {
+      "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+      "authors": "Alon Talmor et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "CommonsenseQA provides the primary task/dataset formulation (knowledge-aware multiple-choice QA) used to evaluate and drive the methodological choices for retrieval, fusion, and fine-tuning objectives.",
+      "arxiv_id": "1811.00937",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "GreaseLM established the concrete LM+GNN intermediate-layer fusion architecture and two-way interaction mechanism that this line of work builds upon, making it the salient reference architecture and comparative baseline; QA-GNN supplied the practical retrieval and KG subgraph construction procedure used to formulate inputs and relevance scoring; KagNet and similar one-way augmentation methods highlighted the limitations of treating one modality as merely auxiliary and exposed the need for tighter semantic alignment and reciprocal fusion; TransE provided the specific modeling insight—treating relations as translations in embedding space—that directly inspired the knowledge-backbone regularization (head + relation ≈ tail) used as a self-supervised fine-tuning term; empirical analyses like “Mind the gap” documented modality semantic and distributional mismatches, motivating a contrastive alignment objective to reduce semantic and distributional gaps between text-entity and graph-node embeddings; and CommonsenseQA defined the knowledge-aware multiple-choice QA evaluation setup that grounded the design choices. Together, these works created a clear opportunity: existing LM+KG systems possess powerful fusion layers but lack an initialization and auxiliary objectives that (a) align modality representations before fusion and (b) regularize joint reasoning with self-supervised signals; synthesizing retrieval/formulation from QA-GNN, the fusion backbone of GreaseLM, contrastive alignment motivations, and relation-translation priors naturally led to a two-stage recipe—knowledge-adaptive post-training plus knowledge-aware fine-tuning—that directly addresses the identified gaps and improves downstream KAQA performance.",
+  "analysis_timestamp": "2026-03-09T00:19:29.944636",
+  "input_tokens": 14296,
+  "output_tokens": 1092,
+  "innovation_classification": {
+    "primary_pattern": "P04",
+    "secondary_patterns": [
+      "P02",
+      "P10"
+    ],
+    "confidence": "high",
+    "reasoning": "Presents a two-stage, modular LM+GNN pipeline (retrieval, KG subgraph, intermediate fusion) and training schedule; draws on cross-domain synthesis (LMs + GNNs) and injects structural KG inductive bias (TransE-inspired regularization).",
+    "primary_pattern_name": "Modular Pipeline Composition",
+    "secondary_pattern_names": [
+      "Cross-Domain Synthesis",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

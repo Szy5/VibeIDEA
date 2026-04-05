@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory, NamedTemporaryFile
 import arxiv
 import tarfile
 import re
-from .llm import get_llm
+from llm import get_llm
 import requests
 from requests.adapters import HTTPAdapter, Retry
 from loguru import logger

@@ -1,0 +1,55 @@
+# Prior Work Analysis Report
+
+## Target Paper
+
+**Title:** ECLAIR: Enhanced Clarification for Interactive Responses in an Enterprise AI Assistant
+
+**arXiv ID:** [N/A](https://arxiv.org/abs/N/A)
+
+**Abstract:** 
+> Large language models (LLMs) have shown remarkable progress in understanding and generating natural language across various applications. However, they often struggle with resolving ambiguities in real-world, enterprise-level interactions, where context and domain-specific knowledge play a crucial role. In this demonstration, we introduce ECLAIR (Enhanced CLArification for Interactive Responses), a multi-agent framework for interactive disambiguation. ECLAIR enhances ambiguous user query clarification through an interactive process where custom agents are defined, ambiguity reasoning is conducted by the agents, clarification questions are generated, and user feedback is leveraged to refine the final response. When tested on real-world customer data, ECLAIR demonstrates significant improvements in clarification question generation compared to standard few-shot methods.
+
+---
+
+## Key Prior Works (5 papers with direct influence)
+
+### 🏷️ Foundation
+
+**CLAMBER: A Benchmark of Identifying and Clarifying Ambiguous Information Needs in Large Language Models** (2024)
+- *Authors:* T. Zhang et al.
+- *Direct Connection:* CLAMBER formalizes the dual tasks of ambiguity identification and clarification that ECLAIR adopts while shifting the focus from synthetic benchmarks to real enterprise queries.
+
+**New AI Integrations in Adobe Experience Platform** (2024)
+- *Authors:* A. Bhambhri
+- *Direct Connection:* This deployment context and its real user query stream provided the enterprise domain, taxonomy, and data that ECLAIR’s product classifier, concept graph, and entity-linking agents explicitly leverage and evaluate on.
+
+### 🏷️ Inspiration
+
+**Clam: Selective clarification for ambiguous questions with generative language models** (2022) [[arXiv](https://arxiv.org/abs/2212.07769)]
+- *Authors:* L. Kuhn et al.
+- *Direct Connection:* ECLAIR adopts CLAM’s core idea of deciding when to ask a clarifying question and extends it by aggregating multi-agent ambiguity signals and enterprise-specific knowledge to trigger clarifications more precisely.
+
+### 🏷️ Gap Identification
+
+**Clarify when necessary: Resolving ambiguity through interaction with LMs** (2023) [[arXiv](https://arxiv.org/abs/2311.09469)]
+- *Authors:* M. J. Zhang et al.
+- *Direct Connection:* This work’s sequential detect-then-clarify pipeline, which treats ambiguity largely as a lexical problem, directly motivated ECLAIR’s design to integrate contextual and domain-grounded agents that overcome these limitations.
+
+### 🏷️ Baseline
+
+**Prompting and Evaluating Large Language Models for Proactive Dialogues: Clarification, Target-guided, and Non-collaboration** (2023)
+- *Authors:* Y. Deng et al.
+- *Direct Connection:* ECLAIR directly contrasts with and improves over this prompt-based few-shot proactive clarification approach by injecting agent-derived ambiguity evidence and domain signals into the decision and question-generation process.
+
+---
+
+## Synthesis: How Prior Work Led to This Paper
+
+Selective clarification with generative models established that language systems can decide when to ask a question rather than answer directly, with CLAM showing how to trigger clarifications to resolve ambiguity efficiently. Subsequent work on interacting with LMs to clarify when necessary operationalized a sequential detect-then-ask pipeline, demonstrating that LMs can engage users but largely framing ambiguity as a lexical phenomenon. Proactive dialogue prompting studies systematized few-shot and chain-of-thought prompting strategies for generating clarification questions and evaluating when to intervene, providing practical baselines for question quality and timing. In parallel, the CLAMBER benchmark crystallized the two-stage formulation—identifying ambiguity and clarifying it—giving concrete task definitions and metrics, though primarily in synthetic or constrained settings. Finally, the Adobe Experience Platform’s AI Assistant context surfaced real enterprise complexities—product families, entity taxonomies, and domain terminology—highlighting ambiguity types (product references, entities, and concepts) that exceed generic, lexical treatments.
+Against this backdrop, a gap emerged: prompt-based, sequential pipelines could ask questions, but lacked mechanisms to integrate heterogeneous, domain-grounded signals or to prioritize precision in production. ECLAIR naturally synthesizes these threads by retaining the identify-and-clarify framing while replacing purely lexical detection with a multi-agent ensemble—generic ambiguity detection, product disambiguation, entity linking, and concept graph grounding—that injects enterprise context into both the decision to clarify and the question formulation. This shift from prompt-only pipelines to agent-informed interaction directly addresses the benchmarked task’s limitations in real-world settings and delivers higher-precision clarifications suitable for enterprise assistants.
+
+---
+
+*Analysis generated on: 2026-04-05T12:03:54.801858*
+
+*Pipeline: Prior Work Extraction v2.0 (Direct Lineage Focus)*

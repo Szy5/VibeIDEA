@@ -1,0 +1,3323 @@
+{
+  "classified": [
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_2312_06185.json",
+      "title": "KnowGPT: Knowledge Graph based Prompting for Large Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Inference-time KG retrieval and linearized triple prompts to steer LLMs without finetuning.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ACPBench_Reasoning_About_Action_Change_and_Planning.json",
+      "title": "ACPBench: Reasoning About Action, Change, and Planning",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "PDDL-grounded benchmark broadening planning competencies with controlled question synthesis.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ANALOGYKB_Unlocking_Analogical_Reasoning_of_Language_Models_with_A_Million_scale_Knowledge_Base.json",
+      "title": "ANALOGYKB: Unlocking Analogical Reasoning of Language Models with A Million-scale Knowledge Base",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P02",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds an analogy KB by combining KGs with cognitive theory and new relational schemas.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_A_Data_Source_for_Reasoning_Embodied_Agents.json",
+      "title": "A Data Source for Reasoning Embodied Agents",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "medium",
+        "reasoning": "Synthetic, controlled QA dataset for embodied reasoning over dynamic 3D scenes.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_A_Systematic_Exploration_of_Knowledge_Graph_Alignment_with_Large_Language_Models_in_Retrieval_Augmented_Generation.json",
+      "title": "A Systematic Exploration of Knowledge Graph Alignment with Large Language Models in Retrieval Augmented Generation",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P03",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Systematic evaluation of KG-to-text representations and path/ordering pipelines for LLM alignment.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Active_Prompting_with_Chain_of_Thought_for_Large_Language_Models.json",
+      "title": "Active Prompting with Chain-of-Thought for Large Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P15",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Inference-time CoT prompting and self-consistency guide sampling; active exemplar selection treats prompts/data as the lever.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Adapting_to_Non_Stationary_Environments_Multi_Armed_Bandit_Enhanced_Retrieval_Augmented_Generation_on_Knowledge_Graphs.json",
+      "title": "Adapting to Non-Stationary Environments: Multi-Armed Bandit Enhanced Retrieval-Augmented Generation on Knowledge Graphs",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P06",
+        "secondary_patterns": [
+          "P02",
+          "P09"
+        ],
+        "confidence": "medium",
+        "reasoning": "Uses bandit formulations to adapt under uncertainty/non-stationarity, likely combining KG-QA/RAG choices with sequential decision control.",
+        "primary_pattern_name": "Principled Probabilistic Modeling & Uncertainty",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Agentic_Reasoning_A_Streamlined_Framework_for_Enhancing_LLM_Reasoning_with_Agentic_Tools.json",
+      "title": "Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P11"
+        ],
+        "confidence": "high",
+        "reasoning": "Agentic framework composes retrieval, graph-based context, and web search into a coordinated pipeline with inference-time control.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Are_LLMs_Truly_Graph_Savvy_A_Comprehensive_Evaluation_of_Graph_Generation.json",
+      "title": "Are LLMs Truly Graph-Savvy? A Comprehensive Evaluation of Graph Generation",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Focuses on rigorous datasets/benchmarks and evaluation protocols to probe graph reasoning limits via controlled studies.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Augmenting_Math_Word_Problems_via_Iterative_Question_Composing.json",
+      "title": "Augmenting Math Word Problems via Iterative Question Composing",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Iterative problem generation and rejection sampling treat data augmentation and filtering as primary levers to improve math QA.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Automated_Creation_of_Reusable_and_Diverse_Toolsets_for_Enhancing_LLM_Reasoning.json",
+      "title": "Automated Creation of Reusable and Diverse Toolsets for Enhancing LLM Reasoning",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P04",
+          "P15"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Shifts the core primitive from per-instance tools to reusable toolsets, built via a modular create-verify-curate pipeline with iterative sampling/selection for coverage.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Automatically_Generating_Numerous_Context_Driven_SFT_Data_for_LLMs_Across_Diverse_Granularity.json",
+      "title": "Automatically Generating Numerous Context-Driven SFT Data for LLMs Across Diverse Granularity",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P15"
+        ],
+        "confidence": "high",
+        "reasoning": "Engineers large, granular, diverse SFT datasets from contexts and controls coverage/variety via data generation and selection strategies.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_BELLE_A_Bi_Level_Multi_Agent_Reasoning_Framework_for_Multi_Hop_Question_Answering.json",
+      "title": "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P11",
+        "secondary_patterns": [
+          "P04",
+          "P09"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Bi-level multi-agent framework imposes hierarchical planning/execution over retrieval-and-reasoning modules, adapting effort at inference time.",
+        "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_BLADE_Enhancing_Black_Box_Large_Language_Models_with_Small_Domain_Specific_Models.json",
+      "title": "BLADE: Enhancing Black-Box Large Language Models with Small Domain-Specific Models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P08",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Enhances black-box LLMs via inference-time conditioning/recitation and derivative-free low-dimensional controls, composed with retrieval/generation modules.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Basic_Reading_Distillation.json",
+      "title": "Basic Reading Distillation",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P15"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Distillation framed as supervision/data engineering (logits, CoT, rich signals) to construct effective training targets, optimizing data efficiency and diversity.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Benchmarking_Knowledge_Boundary_for_Large_Language_Models_A_Different_Perspective_on_Model_Evaluation.json",
+      "title": "Benchmarking Knowledge Boundary for Large Language Models: A Different Perspective on Model Evaluation",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P01"
+        ],
+        "confidence": "high",
+        "reasoning": "Designs and scales benchmarks to probe LLM knowledge boundaries and prompt sensitivity; reframes knowledge assessment around paraphrase-driven gaps.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Benchmarking_and_Understanding_Compositional_Relational_Reasoning_of_LLMs.json",
+      "title": "Benchmarking and Understanding Compositional Relational Reasoning of LLMs",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P12",
+        "secondary_patterns": [
+          "P05",
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Dissects circuits (e.g., induction heads, path patching) for compositional reasoning and builds controlled tasks to test hypotheses.",
+        "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Beyond_Prompt_Engineering_A_Reinforced_Token_Level_Input_Refinement_for_Large_Language_Models.json",
+      "title": "Beyond Prompt Engineering: A Reinforced Token-Level Input Refinement for Large Language Models",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Introduces an inference-time, RL-driven token-level input editor to suppress distractors, used as a preprocessor module before the LM.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Boosting_Language_Models_Reasoning_with_Chain_of_Knowledge_Prompting.json",
+      "title": "Boosting Language Models Reasoning with Chain-of-Knowledge Prompting",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Composes retrieve–reason–verify loops (CoT + KB retrieval) to improve reasoning at inference without retraining.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Bridging_the_Preference_Gap_between_Retrievers_and_LLMs.json",
+      "title": "Bridging the Preference Gap between Retrievers and LLMs",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P04",
+          "P09"
+        ],
+        "confidence": "medium_high",
+        "reasoning": "Optimizes retrieval selection to match LM preferences (distillation/reranking) within a RAG pipeline, controlling inputs at inference.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_C3oT_Generating_Shorter_Chain_of_Thought_Without_Compromising_Effectiveness.json",
+      "title": "C3oT: Generating Shorter Chain-of-Thought Without Compromising Effectiveness",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P08",
+        "secondary_patterns": [
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Generates shorter CoT as a controlled efficiency approximation at decoding time while preserving accuracy (inference-guided chain length).",
+        "primary_pattern_name": "Approximation Engineering for Scalability",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_CDW_CoT_Clustered_Distance_Weighted_Chain_of_Thoughts_Reasoning.json",
+      "title": "CDW-CoT: Clustered Distance-Weighted Chain-of-Thoughts Reasoning",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P15",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Instance-adaptive selection/weighting of CoT exemplars to guide reasoning at prompt time; treats exemplar choice as data optimization within a retrieval-style pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_CK12_A_Rounded_K12_Knowledge_Graph_Based_Benchmark_for_Chinese_Holistic_Cognition_Evaluation.json",
+      "title": "CK12: A Rounded K12 Knowledge Graph Based Benchmark for Chinese Holistic Cognition Evaluation",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P01",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Designs a KG-structured K12 benchmark to fill coverage gaps and recast evaluation data as a knowledge graph for finer-grained assessment.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Gap-Driven Reframing",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_COGEN_Abductive_Commonsense_Language_Generation.json",
+      "title": "COGEN: Abductive Commonsense Language Generation",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P02",
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds a knowledge-augmented generation pipeline for abductive commonsense, combining KB inferences with neural LM and encoding temporal/causal structure.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Can_Knowledge_Graphs_Make_Large_Language_Models_More_Trustworthy_An_Empirical_Study_Over_Open_ended_Question_Answering.json",
+      "title": "Can Knowledge Graphs Make Large Language Models More Trustworthy? An Empirical Study Over Open-ended Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P09",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Targets trustworthy long-form outputs via factuality evaluation and KG-based verification/guidance, using modular checking at inference time.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Can_LMs_Learn_New_Entities_from_Descriptions_Challenges_in_Propagating_Injected_Knowledge.json",
+      "title": "Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P01",
+        "secondary_patterns": [
+          "P12",
+          "P05"
+        ],
+        "confidence": "moderate",
+        "reasoning": "Addresses a concrete gap—teaching LMs new entities from descriptions—reframing knowledge editing; builds on localized factual mechanisms and evaluation challenges.",
+        "primary_pattern_name": "Gap-Driven Reframing",
+        "secondary_pattern_names": [
+          "Mechanistic Decomposition & Causal Localization",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Can_We_Further_Elicit_Reasoning_in_LLMs_Critic_Guided_Planning_with_Retrieval_Augmentation_for_Solving_Challenging_Tasks.json",
+      "title": "Can We Further Elicit Reasoning in LLMs? Critic-Guided Planning with Retrieval-Augmentation for Solving Challenging Tasks",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P02"
+        ],
+        "confidence": "high",
+        "reasoning": "Composes planning, reasoning, retrieval, and self-critique into a coordinated pipeline; relies on inference-time guidance to steer multi-step solutions.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Capture_the_Key_in_Reasoning_to_Enhance_CoT_Distillation_Generalization.json",
+      "title": "Capture the Key in Reasoning to Enhance CoT Distillation Generalization",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P01"
+        ],
+        "confidence": "high",
+        "reasoning": "Data-centric focus on selecting/synthesizing rationales (counterfactuals, decisive moves) to improve CoT distillation; refines supervision signals.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ChainEdit_Propagating_Ripple_Effects_in_LLM_Knowledge_Editing_through_Logical_Rule_Guided_Chains.json",
+      "title": "ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P10",
+          "P05"
+        ],
+        "confidence": "moderate",
+        "reasoning": "Designs an editing pipeline to propagate logical ripple effects via reasoning chains, injecting structural consistency while evaluating stability/generalization.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Code_Style_In_Context_Learning_for_Knowledge_Based_Question_Answering.json",
+      "title": "Code-Style In-Context Learning for Knowledge-Based Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts KBQA as code/S-expression generation with scaffolds (representation shift), leveraging grammar/structure to improve reliability within an ICL setup.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_CogMG_Collaborative_Augmentation_Between_Large_Language_Model_and_Knowledge_Graph.json",
+      "title": "CogMG: Collaborative Augmentation Between Large Language Model and Knowledge Graph",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P02",
+          "P09",
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Combines KGs and LLMs via ReAct/RAG-style tool pipelines, using graph structure to guide inference at run time.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Inference-Time Control & Guided Sampling",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Complex_Reasoning_over_Logical_Queries_on_Commonsense_Knowledge_Graphs.json",
+      "title": "Complex Reasoning over Logical Queries on Commonsense Knowledge Graphs",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P03",
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Defines a logical query taxonomy and standardized evaluation over commonsense KGs, shaping datasets and protocols.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Com²_A_Causal_Guided_Benchmark_for_Exploring_Complex_Commonsense_Reasoning_in_Large_Language_Models.json",
+      "title": "Com² : A Causal-Guided Benchmark for Exploring Complex Commonsense Reasoning in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P06",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Constructs a causal commonsense benchmark using event-graph representations and Pearl-style interventions/counterfactuals.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Principled Probabilistic Modeling & Uncertainty",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Cracking_Factual_Knowledge_A_Comprehensive_Analysis_of_Degenerate_Knowledge_Neurons_in_Large_Language_Models.json",
+      "title": "Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P12",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Mechanistically localizes and analyzes degenerate knowledge neurons with targeted probes and theory-driven tests.",
+        "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_CypherBench_Towards_Precise_Retrieval_over_Full_scale_Modern_Knowledge_Graphs_in_the_LLM_Era.json",
+      "title": "CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Builds a precise retrieval benchmark; recasts RDF into property graphs and subsets Wikidata to enable Cypher querying.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_DDPrompt_Differential_Diversity_Prompting_in_Large_Language_Models.json",
+      "title": "DDPrompt: Differential Diversity Prompting in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P15"
+        ],
+        "confidence": "high",
+        "reasoning": "Controls and exploits diversity of reasoning at inference via prompting/self-consistency and problem-type–aware exemplar selection.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Debate_on_Graph_A_Flexible_and_Reliable_Reasoning_Framework_for_Large_Language_Models.json",
+      "title": "Debate on Graph: A Flexible and Reliable Reasoning Framework for Large Language Models",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Runs deliberate, tool-grounded search/debate over KGs at inference; interleaves thinking, acting, and pruning as a composed process.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Decoding_on_Graphs_Faithful_and_Sound_Reasoning_on_Knowledge_Graphs_through_Generation_of_Well_Formed_Chains.json",
+      "title": "Decoding on Graphs: Faithful and Sound Reasoning on Knowledge Graphs through Generation of Well-Formed Chains",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts the reasoning primitive to full question graphs and decodes over their structure, integrating LLM–KG components.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Deliberate_Reasoning_in_Language_Models_as_Structure_Aware_Planning_with_an_Accurate_World_Model.json",
+      "title": "Deliberate Reasoning in Language Models as Structure-Aware Planning with an Accurate World Model",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P09",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Injects entailment-tree/structured-planning biases and performs structure-aware search with stepwise verification at inference.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Digest_the_Knowledge_Large_Language_Models_empowered_Message_Passing_for_Knowledge_Graph_Question_Answering.json",
+      "title": "Digest the Knowledge: Large Language Models empowered Message Passing for Knowledge Graph Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P03",
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Synthesizes LLMs with graph message passing; shifts KG inputs (paths/triples) to LM-aligned representations while leveraging graph structure.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_DistilQwen2.5_Industrial_Practices_of_Training_Distilled_Open_Lightweight_Language_Models.json",
+      "title": "DistilQwen2.5: Industrial Practices of Training Distilled Open Lightweight Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Focuses on CoT distillation, curriculum design, and large-scale data augmentation—data selection and supervision as main levers.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Dont_Generate_Discriminate_A_Proposal_for_Grounding_Language_Models_to_Real_World_Environments.json",
+      "title": "Don’t Generate, Discriminate: A Proposal for Grounding Language Models to Real-World Environments",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Uses LMs as discriminators to score candidate programs/actions, steering decisions at inference; fits a generate-then-rank pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Dont_Get_Lost_in_the_Trees_Streamlining_LLM_Reasoning_by_Overcoming_Tree_Search_Exploration_Pitfalls.json",
+      "title": "Don’t Get Lost in the Trees: Streamlining LLM Reasoning by Overcoming Tree Search Exploration Pitfalls",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P08"
+        ],
+        "confidence": "high",
+        "reasoning": "Guides search over thoughts with step-level verifiers and value models, pruning and optimizing exploration at inference time.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Drift_Enhancing_LLM_Faithfulness_in_Rationale_Generation_via_Dual_Reward_Probabilistic_Inference.json",
+      "title": "Drift: Enhancing LLM Faithfulness in Rationale Generation via Dual-Reward Probabilistic Inference",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P06"
+        ],
+        "confidence": "high",
+        "reasoning": "Sequential Monte Carlo with Feynman–Kac potentials reweights decoding trajectories to enforce faithfulness—probabilistic guided sampling.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Principled Probabilistic Modeling & Uncertainty"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Dynamic_Heterogeneous_Graph_Reasoning_with_Language_Models_and_Knowledge_Representation_Learning_for_Commonsense_Questio.json",
+      "title": "Dynamic Heterogeneous-Graph Reasoning with Language Models and Knowledge Representation Learning for Commonsense Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P04",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Injects graph structure via visibility masking and subgraph reasoning; composes retrieval–fusion modules and recasts inputs as graph-augmented tokens.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ECLAIR_Enhanced_Clarification_for_Interactive_Responses_in_an_Enterprise_AI_Assistant.json",
+      "title": "ECLAIR: Enhanced Clarification for Interactive Responses in an Enterprise AI Assistant",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Controls whether to ask vs answer at inference time via a detect-then-ask pipeline; uses prompting/benchmarks for timing and question quality.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_EPERM_An_Evidence_Path_Enhanced_Reasoning_Model_for_Knowledge_Graph_Question_and_Answering.json",
+      "title": "EPERM: An Evidence Path Enhanced Reasoning Model for Knowledge Graph Question and Answering",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P10",
+          "P09"
+        ],
+        "confidence": "medium",
+        "reasoning": "Composes retrieval and reasoning around evidence paths; leverages KG structure (paths) and guided traversal during inference.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Efficient_Embeddings_of_Logical_Variables_for_Query_Answering_over_Incomplete_Knowledge_Graphs.json",
+      "title": "Efficient Embeddings of Logical Variables for Query Answering over Incomplete Knowledge Graphs",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P08"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts the core representation by introducing efficient embeddings for logical variables/operators to improve complex query answering.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Eliciting_Better_Multilingual_Structured_Reasoning_from_LLMs_through_Code.json",
+      "title": "Eliciting Better Multilingual Structured Reasoning from LLMs through Code",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Elicits structured multilingual reasoning via prompt-time controls and structured formats (graphs/code), imposing reasoning scaffolds.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Enabling_LLM_Knowledge_Analysis_via_Extensive_Materialization.json",
+      "title": "Enabling LLM Knowledge Analysis via Extensive Materialization",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Bootstrapped, iterative materialization of LM knowledge emphasizes active sampling/expansion and data-centric analysis.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Encoder_of_Thoughts_Enhancing_Planning_Ability_in_Language_Agents_Through_Structural_Embedding.json",
+      "title": "Encoder of Thoughts: Enhancing Planning Ability in Language Agents Through Structural Embedding",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P09",
+          "P08"
+        ],
+        "confidence": "high",
+        "reasoning": "Introduces encoded/latent representations of thoughts to support planning, reducing prompt/token complexity (representation shift) and leveraging search at inference time.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Enhancing_Chain_of_Thought_Prompting_in_Large_Language_Models_via_Reasoning_Patterns.json",
+      "title": "Enhancing Chain of Thought Prompting in Large Language Models via Reasoning Patterns",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P09",
+          "P07"
+        ],
+        "confidence": "medium",
+        "reasoning": "Focuses on exemplar/rationale selection and unsupervised collection for CoT (data-centric optimization), applied via prompting at inference and informed by controlled analyses of ICL.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Enhancing_Mathematical_Reasoning_in_LLMs_by_Stepwise_Correction.json",
+      "title": "Enhancing Mathematical Reasoning in LLMs by Stepwise Correction",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Improves math reasoning via inference-time sampling, verification, and self-correction loops; composes proposer–verifier modules and uses step-level supervision.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Evaluating_LLM_Reasoning_in_the_Operations_Research_Domain_with_ORQA.json",
+      "title": "Evaluating LLM Reasoning in the Operations Research Domain with ORQA",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P04",
+          "P01"
+        ],
+        "confidence": "high",
+        "reasoning": "Designs task schemas and evaluation protocols to disentangle modeling from coding in OR (data/evaluation engineering), decomposing pipelines and addressing identified evaluation gaps.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Exclusion_of_Thought_Mitigating_Cognitive_Load_in_Large_Language_Models_for_Enhanced_Reasoning_in_Multiple_Choice_Tasks.json",
+      "title": "Exclusion of Thought: Mitigating Cognitive Load in Large Language Models for Enhanced Reasoning in Multiple-Choice Tasks",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P03",
+          "P01"
+        ],
+        "confidence": "medium",
+        "reasoning": "Controls prompt visibility and elimination dynamics at inference to reduce distractor interference (inference-time control), effectively shifting the representation of options based on a diagnosed gap.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Explore_What_LLM_Does_Not_Know_in_Complex_Question_Answering.json",
+      "title": "Explore What LLM Does Not Know in Complex Question Answering",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P01"
+        ],
+        "confidence": "medium",
+        "reasoning": "Targets missing-knowledge detection and gates retrieval at inference for black-box LMs within a RAG pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Fact_Driven_Logical_Reasoning_for_Machine_Reading_Comprehension.json",
+      "title": "Fact-Driven Logical Reasoning for Machine Reading Comprehension",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P11"
+        ],
+        "confidence": "medium",
+        "reasoning": "Injects entity/discourse-structured inductive biases and uses hierarchical relations for logical reasoning.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Faithful_Logical_Reasoning_via_Symbolic_Chain_of_Thought.json",
+      "title": "Faithful Logical Reasoning via Symbolic Chain-of-Thought",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts intermediate reasoning into symbolic logic chains and delegates to external provers in a neuro-symbolic pipeline.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Faithful_Question_Answering_with_Monte_Carlo_Planning.json",
+      "title": "Faithful Question Answering with Monte-Carlo Planning",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P11"
+        ],
+        "confidence": "high",
+        "reasoning": "Uses Monte-Carlo tree search to control entailment-tree construction at inference with modular selection/inference.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Fast_Think_on_Graph_Wider_Deeper_and_Faster_Reasoning_of_Large_Language_Model_on_Knowledge_Graph.json",
+      "title": "Fast Think-on-Graph: Wider, Deeper and Faster Reasoning of Large Language Model on Knowledge Graph",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P08",
+        "secondary_patterns": [
+          "P04",
+          "P11"
+        ],
+        "confidence": "medium",
+        "reasoning": "Employs community-based summaries and controlled graph expansions to scale GraphRAG with fewer LLM calls.",
+        "primary_pattern_name": "Approximation Engineering for Scalability",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Few_shot_In_context_Learning_on_Knowledge_Base_Question_Answering.json",
+      "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P15"
+        ],
+        "confidence": "high",
+        "reasoning": "Training-free KBQA via ICL uses retrieved demonstrations and self-consistency voting at inference, with a post-hoc linking stage—classic inference-time control plus a modular generate-link pipeline and data selection.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_FiTs_Fine_Grained_Two_Stage_Training_for_Knowledge_Aware_Question_Answering.json",
+      "title": "FiTs: Fine-Grained Two-Stage Training for Knowledge-Aware Question Answering",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Tightly couples LM and GNN with a two-stage alignment to bridge modality gaps—hybrid cross-domain fusion with graph-structured inductive bias in a coupled pipeline.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_FlexKBQA_A_Flexible_LLM_Powered_Framework_for_Few_Shot_Knowledge_Base_Question_Answering.json",
+      "title": "FlexKBQA: A Flexible LLM-Powered Framework for Few-Shot Knowledge Base Question Answering",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Uses LLMs to synthesize and verify task-specific data to train compact students, shifting performance gains to data generation and supervision design within a teacher–student pipeline.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_From_Retrieval_to_Generation_A_Simple_and_Unified_Generative_Model_for_End_to_End_Task_Oriented_Dialogue.json",
+      "title": "From Retrieval to Generation: A Simple and Unified Generative Model for End-to-End Task-Oriented Dialogue",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P09",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts KB access as constrained generative decoding (prefix-trie) where entities are generation targets—representation shift enforced by inference-time constraints within a unified pipeline.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_From_Static_to_Dynamic_Knowledge_Metabolism_for_Large_Language_Models.json",
+      "title": "From Static to Dynamic: Knowledge Metabolism for Large Language Models",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P11",
+        "secondary_patterns": [
+          "P06",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Implements multi-store (working vs long-term) memory with dynamic updates and bandit-based trust allocation—hierarchical organization augmented by principled uncertainty-driven control in a modular agent system.",
+        "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+        "secondary_pattern_names": [
+          "Principled Probabilistic Modeling & Uncertainty",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Frugal_LMs_Trained_to_Invoke_Symbolic_Solvers_Achieve_Parameter_Efficient_Arithmetic_Reasoning.json",
+      "title": "Frugal LMs Trained to Invoke Symbolic Solvers Achieve Parameter-Efficient Arithmetic Reasoning",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Composes an LM with external symbolic solvers; uses program/tool calls as an inference-time substrate to let small models offload computation.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_GAMEBoT_Transparent_Assessment_of_LLM_Reasoning_in_Games.json",
+      "title": "GAMEBoT: Transparent Assessment of LLM Reasoning in Games",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Designs transparent, game-based benchmarks and protocols to assess reasoning beyond win rates; tightens evaluation with controlled setups.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_GRAT_Guiding_Retrieval_Augmented_Reasoning_through_Process_Rewards_Tree_Search.json",
+      "title": "GRAT: Guiding Retrieval-Augmented Reasoning through Process Rewards Tree Search",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P15"
+        ],
+        "confidence": "high",
+        "reasoning": "Guides tree-structured, retrieval-augmented reasoning via process rewards and MCTS at inference; uses stepwise signals for self-training.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_GainRAG_Preference_Alignment_in_Retrieval_Augmented_Generation_through_Gain_Signal_Synthesis.json",
+      "title": "GainRAG: Preference Alignment in Retrieval-Augmented Generation through Gain Signal Synthesis",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P05",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Employs contrastive/context-aware decoding to control generation with retrieved context; leverages PPL for selection within a RAG setup.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_GraphCheck_Breaking_Long_Term_Text_Barriers_with_Extracted_Knowledge_Graph_Powered_Fact_Checking.json",
+      "title": "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P03",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Introduces graph-based representations and verification pipelines to evaluate long-form text via atomic/structured fact checking.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_GraphInsight_Unlocking_Insights_in_Large_Language_Models_for_Graph_Structure_Understanding.json",
+      "title": "GraphInsight: Unlocking Insights in Large Language Models for Graph Structure Understanding",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P05",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Controls LLM graph reasoning via prompt ordering/traversal schedules at inference; analyzes position-dependent recall and evaluates ordering effects.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Graph_Counselor_Adaptive_Graph_Exploration_via_Multi_Agent_Synergy_to_Enhance_LLM_Reasoning.json",
+      "title": "Graph Counselor: Adaptive Graph Exploration via Multi-Agent Synergy to Enhance LLM Reasoning",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Adaptive, multi-agent tool use with planning, self-critique, and stepwise graph exploration done at inference-time; composes planner/critic/executor modules.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Graph_Language_Models.json",
+      "title": "Graph Language Models",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Injects graph structure via relative positional biases and Levi-style transformations into transformers; recasts edges/relations for structured attention.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Graph_Neural_Prompting_with_Large_Language_Models.json",
+      "title": "Graph Neural Prompting with Large Language Models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P03",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Composes retrieval, GNN-derived signals, and LLM prompting (incl. soft prompts) into a pipeline; recasts KG subgraphs into prompts and encodes structural cues.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Graph_Reasoning_Transformers_for_Knowledge_Aware_Question_Answering.json",
+      "title": "Graph Reasoning Transformers for Knowledge-Aware Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P03"
+        ],
+        "confidence": "medium_high",
+        "reasoning": "Architectural bias for triplet-level relational reasoning in transformers to align text and KG; uses triplets as core primitives.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Graph_of_Thoughts_Solving_Elaborate_Problems_with_Large_Language_Models.json",
+      "title": "Graph of Thoughts: Solving Elaborate Problems with Large Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P03",
+          "P08",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts reasoning as graph search and controls exploration/selection at inference time beyond tree constraints.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Approximation Engineering for Scalability",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_GrowOVER_How_Can_LLMs_Adapt_to_Growing_Real_World_Knowledge.json",
+      "title": "GrowOVER: How Can LLMs Adapt to Growing Real-World Knowledge?",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P05",
+          "P04",
+          "P15"
+        ],
+        "confidence": "medium",
+        "reasoning": "Manages when to trust retrieval vs parametric knowledge under temporal drift, alongside time-aware data/evaluation updates.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Modular Pipeline Composition",
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_HOLMES_Hyper_Relational_Knowledge_Graphs_for_Multi_hop_Question_Answering_using_LLMs.json",
+      "title": "HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P04",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Shifts evidence to hyper-relational, query-conditioned graphs and composes extraction with graph traversal for multi-hop QA.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Harnessing_Large_Language_Models_for_Knowledge_Graph_Question_Answering_via_Adaptive_Multi_Aspect_Retrieval_Augmentation.json",
+      "title": "Harnessing Large Language Models for Knowledge Graph Question Answering via Adaptive Multi-Aspect Retrieval-Augmentation",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Constructs a selective KGQA pipeline that retrieves, filters, and fuses evidence with inference-time accept/reject controls and graph structure.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Hypothesis_Verification_and_Induction_Grounding_Large_Language_Models_with_Self_Driven_Skill_Learning.json",
+      "title": "Hypothesis, Verification, and Induction: Grounding Large Language Models with Self-Driven Skill Learning",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P11",
+        "secondary_patterns": [
+          "P04",
+          "P03",
+          "P09"
+        ],
+        "confidence": "medium",
+        "reasoning": "Induces reusable skill hierarchies via hypothesis–verification loops, composing modules and creating new primitives for grounded control.",
+        "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Representation Shift & Primitive Recasting",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_INTERACT_Enabling_Interactive_Question_Driven_Learning_in_Large_Language_Models.json",
+      "title": "INTERACT: Enabling Interactive, Question-Driven Learning in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P09",
+          "P06"
+        ],
+        "confidence": "high",
+        "reasoning": "Interactive question selection to reduce uncertainty is active sampling; VOI modeling adds probabilistic grounding and guidance at inference/training.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Principled Probabilistic Modeling & Uncertainty"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_IRIS_Interactive_Research_Ideation_System_for_Accelerating_Scientific_Discovery.json",
+      "title": "IRIS: Interactive Research Ideation System for Accelerating Scientific Discovery",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P05",
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "System composes iterative retrieval, critique, and refinement modules, with evaluative signals steering generation.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Importance_Weighting_Can_Help_Large_Language_Models_Self_Improve.json",
+      "title": "Importance Weighting Can Help Large Language Models Self-Improve",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P06"
+        ],
+        "confidence": "high",
+        "reasoning": "Weights and filters self-generated data for self-improvement; importance weighting brings principled uncertainty/statistical correction.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Principled Probabilistic Modeling & Uncertainty"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Improving_Chain_of_Thought_Reasoning_via_Quasi_Symbolic_Abstractions.json",
+      "title": "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P04",
+          "P09"
+        ],
+        "confidence": "medium",
+        "reasoning": "Adds quasi-symbolic constraints and verifier loops to CoT, injecting structural bias and modular LLM+symbolic control at inference.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Improving_Complex_Reasoning_over_Knowledge_Graph_with_Logic_Aware_Curriculum_Tuning.json",
+      "title": "Improving Complex Reasoning over Knowledge Graph with Logic-Aware Curriculum Tuning",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P03",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Leverages logical structure (computation trees, DNF) for KG reasoning, recasting representations and decomposing queries into modules.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Improving_Retrieval_Augmented_Language_Model_with_Self_Reasoning.json",
+      "title": "Improving Retrieval Augmented Language Model with Self-Reasoning",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Interleaves self-reasoning with retrieval and citation verification at inference, composing retrieval–reason–quote modules and leveraging citation-grounded evaluation.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Inductive_Learning_of_Logical_Theories_with_LLMs_A_Expressivity_graded_Analysis.json",
+      "title": "Inductive Learning of Logical Theories with LLMs: A Expressivity-graded Analysis",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P02",
+          "P07"
+        ],
+        "confidence": "medium",
+        "reasoning": "Constructs expressivity-stratified generators/benchmarks and compares against Popper while using LLM-guided iterative refinement, bridging ILP and LLMs.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Interactive_KBQA_Multi_Turn_Interactions_for_Knowledge_Base_Question_Answering_with_Large_Language_Models.json",
+      "title": "Interactive-KBQA: Multi-Turn Interactions for Knowledge Base Question Answering with Large Language Models",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Builds a multi-turn KBQA agent that drafts, executes, and refines logical forms via KB feedback—modular pipeline with inference-time tool use and KB-structure bias.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Interleaving_Retrieval_with_Chain_of_Thought_Reasoning_for_Knowledge_Intensive_Multi_Step_Questions.json",
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Alternates chain-of-thought with retrieval actions at inference for knowledge-intensive QA, effectively composing reasoning and retrieval modules.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Is_That_Your_Final_Answer_Test_Time_Scaling_Improves_Selective_Question_Answering.json",
+      "title": "Is That Your Final Answer? Test-Time Scaling Improves Selective Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P06",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Combines abstention/calibration with test-time compute scaling to optimize accuracy–coverage utility via inference-time control driven by uncertainty.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Principled Probabilistic Modeling & Uncertainty",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Journey_to_the_Center_of_the_Knowledge_Neurons_Discoveries_of_Language_Independent_Knowledge_Neurons_and_Degenerate_Know.json",
+      "title": "Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P12",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Localizes and manipulates 'knowledge neurons' via IG-based attribution and causal probes, tightening theory with controlled experiments.",
+        "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_KALM_Knowledge_Aware_Integration_of_Local_Document_and_Global_Contexts_for_Long_Document_Understanding.json",
+      "title": "KALM: Knowledge-Aware Integration of Local, Document, and Global Contexts for Long Document Understanding",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Fuses KG graphs and LMs with document-graph signals, leveraging graph structure and fusion modules for knowledge integration.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_KAM_CoT_Knowledge_Augmented_Multimodal_Chain_of_Thoughts_Reasoning.json",
+      "title": "KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P02"
+        ],
+        "confidence": "medium",
+        "reasoning": "Employs CoT prompting at inference, integrating multimodal evidence and retrieval/actions within an explicit reasoning pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_KG_Agent_An_Efficient_Autonomous_Agent_Framework_for_Complex_Reasoning_over_Knowledge_Graph.json",
+      "title": "KG-Agent: An Efficient Autonomous Agent Framework for Complex Reasoning over Knowledge Graph",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Implements thought–action loops and adaptive tool use over structured backends, composing specialized operators at inference time.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_KICE_A_Knowledge_Consolidation_and_Expansion_Framework_for_Relation_Extraction.json",
+      "title": "KICE: A Knowledge Consolidation and Expansion Framework for Relation Extraction",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P10",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Consolidates and expands supervision via self-training and weak labels; injects rule structure and uses synthetic supervisors for RE.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_K_ON_Stacking_Knowledge_on_the_Head_Layer_of_Large_Language_Model.json",
+      "title": "K-ON: Stacking Knowledge on the Head Layer of Large Language Model",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P08",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Hybridizes multi-token/head decoding with KGE-style entity-level objectives at the LLM head to inject knowledge while improving efficiency.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Key_Point_Driven_Data_Synthesis_with_Its_Enhancement_on_Mathematical_Reasoning.json",
+      "title": "Key-Point-Driven Data Synthesis with Its Enhancement on Mathematical Reasoning",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P15",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Engineers concept/key-point–controlled math data generation and evaluation to target specific skills and diversify beyond seed similarity.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Keys_to_Robust_Edits_From_Theoretical_Insights_to_Practical_Advances.json",
+      "title": "Keys to Robust Edits: From Theoretical Insights to Practical Advances",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P12",
+        "secondary_patterns": [
+          "P07",
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Localizes and edits factual mechanisms via keys/adaptors, supported by theory-to-practice experiments to make edits robust.",
+        "primary_pattern_name": "Mechanistic Decomposition & Causal Localization",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_KiRAG_Knowledge_Driven_Iterative_Retriever_for_Enhancing_Retrieval_Augmented_Generation.json",
+      "title": "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P03",
+          "P09",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Composes iterative retrieval+reasoning with triple-based representations to guide evidence at inference and reduce hallucinations.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Inference-Time Control & Guided Sampling",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_KnowPO_Knowledge_Aware_Preference_Optimization_for_Controllable_Knowledge_Selection_in_Retrieval_Augmented_Language_Mode.json",
+      "title": "KnowPO: Knowledge-Aware Preference Optimization for Controllable Knowledge Selection in Retrieval-Augmented Language Models",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P15",
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Introduces knowledge-aware preference data/objectives (length-controlled, conflict/noise-aware) to align models to retrieved evidence.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Knowledge_Editing_with_Dynamic_Knowledge_Graphs_for_Multi_Hop_Question_Answering.json",
+      "title": "Knowledge Editing with Dynamic Knowledge Graphs for Multi-Hop Question Answering",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P01",
+        "secondary_patterns": [
+          "P03",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Targets the gap of consistent sequential knowledge edits and reframes multi-hop QA via a dynamic KG as the core primitive.",
+        "primary_pattern_name": "Gap-Driven Reframing",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Knowledge_Graph_Prompting_for_Multi_Document_Question_Answering.json",
+      "title": "Knowledge Graph Prompting for Multi-Document Question Answering",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P10"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Leverages graph-structured prompting and stepwise thoughts to guide retrieval at inference time within a retrieval–reasoning pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Knowledge_Tagging_with_Large_Language_Model_Based_Multi_Agent_System.json",
+      "title": "Knowledge Tagging with Large Language Model Based Multi-Agent System",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P05",
+          "P09"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds a multi-agent LLM judging/tagging system with CoT prompts, engineering an evaluation-oriented pipeline.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_LLMAL_Bridging_Large_Language_Models_and_Action_Languages_for_Complex_Reasoning_About_Actions.json",
+      "title": "LLM+AL: Bridging Large Language Models and Action Languages for Complex Reasoning About Actions",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P04",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Combines LLM semantic parsing with action languages and ASP solvers in a neuro-symbolic pipeline that encodes causal structure.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_LLM_DR_A_Novel_LLM_Aided_Diffusion_Model_for_Rule_Generation_on_Temporal_Knowledge_Graphs.json",
+      "title": "LLM-DR: A Novel LLM-Aided Diffusion Model for Rule Generation on Temporal Knowledge Graphs",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P09",
+          "P03"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Fuses diffusion models and LLMs for temporal rule generation, using guided sampling and a rule-embedding representation.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Large_Language_Models_Are_Reasoning_Teachers.json",
+      "title": "Large Language Models Are Reasoning Teachers",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P09",
+          "P03"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Uses model-generated rationales with correctness filtering as the primary lever for improvement (data-centric training), while relying on CoT prompting (inference-time guidance) and scratchpads (representation shift).",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Large_Language_Models_Can_Learn_Temporal_Reasoning.json",
+      "title": "Large Language Models Can Learn Temporal Reasoning",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P09",
+          "P05"
+        ],
+        "confidence": "medium",
+        "reasoning": "Combines temporal reasoning formalisms/benchmarks with LLM prompting—cross-domain synthesis—augmented by CoT bootstrapping (inference-time control) and benchmark-driven evaluation.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Large_Language_and_Reasoning_Models_are_Shallow_Disjunctive_Reasoners.json",
+      "title": "Large Language and Reasoning Models are Shallow Disjunctive Reasoners",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P07",
+        "secondary_patterns": [
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Tightens empirical claims with formal qualitative algebras and closure algorithms, using a controlled synthetic benchmark to test reasoning behavior.",
+        "primary_pattern_name": "Formal-Experimental Tightening",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Learning_to_Reason_Over_Time_Timeline_Self_Reflection_for_Improved_Temporal_Reasoning_in_Language_Models.json",
+      "title": "Learning to Reason Over Time: Timeline Self-Reflection for Improved Temporal Reasoning in Language Models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Implements inference-time self-reflection and test-time scaling to iteratively refine temporal reasoning, structured as critique–revise modules.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Lexical_Recall_or_Logical_Reasoning_Probing_the_Limits_of_Reasoning_Abilities_in_Large_Language_Models.json",
+      "title": "Lexical Recall or Logical Reasoning: Probing the Limits of Reasoning Abilities in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Engineers controlled datasets/perturbations to decouple lexical recall from logical reasoning, enabling hypothesis-driven empirical probes.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_LightPROF_A_Lightweight_Reasoning_Framework_for_Large_Language_Model_on_Knowledge_Graph.json",
+      "title": "LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P10",
+          "P02"
+        ],
+        "confidence": "medium",
+        "reasoning": "Framework composes retrieval, KG expansion, and generation; leverages KG structure and adapter-style, parameter-efficient injections.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_LocalRQA_From_Generating_Data_to_Locally_Training_Testing_and_Deploying_Retrieval_Augmented_QA_Systems.json",
+      "title": "LocalRQA: From Generating Data to Locally Training, Testing, and Deploying Retrieval-Augmented QA Systems",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Generates supervision data and locally trains/tests retrievers via distillation signals; data-centric optimization within a retrieval–generation pipeline.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Logical_forms_complement_probability_in_understanding_language_model_and_human_performance.json",
+      "title": "Logical forms complement probability in understanding language model (and human) performance",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07",
+          "P06"
+        ],
+        "confidence": "high",
+        "reasoning": "Proposes evaluation using logical forms plus probability metrics; emphasizes benchmark/metric design with controlled analyses of competence.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening",
+          "Principled Probabilistic Modeling & Uncertainty"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_MARS_Benchmarking_the_Metaphysical_Reasoning_Abilities_of_Language_Models_with_a_Multi_task_Evaluation_Dataset.json",
+      "title": "MARS: Benchmarking the Metaphysical Reasoning Abilities of Language Models with a Multi-task Evaluation Dataset",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Introduces a benchmark for metaphysical/action-consequence reasoning with controlled transitions and interventions to assess capabilities.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_M_RAG_Reinforcing_Large_Language_Model_Performance_through_Retrieval_Augmented_Generation_with_Multiple_Partitions.json",
+      "title": "M-RAG: Reinforcing Large Language Model Performance through Retrieval-Augmented Generation with Multiple Partitions",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Controls retrieval (when/what) and optimizes it with rewards at inference; built atop a RAG pipeline integrating retrieval and generation.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Making_Long_Context_Language_Models_Better_Multi_Hop_Reasoners.json",
+      "title": "Making Long-Context Language Models Better Multi-Hop Reasoners",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P09",
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Defines MuSiQue and citation attribution metrics; applies citation-conditioned/verified-quote answering as inference-time constraints; empirically diagnoses long-context position/noise biases.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Making_Natural_Language_Reasoning_Explainable_and_Faithful.json",
+      "title": "Making Natural Language Reasoning Explainable and Faithful",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P10",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Shifts from free-form CoT to structured, graph-based representations for multi-hop reasoning; injects structural bias; leverages datasets with supporting-fact supervision for faithful explanations.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Marco_o1_v2_Towards_Widening_The_Distillation_Bottleneck_for_Reasoning_Models.json",
+      "title": "Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P06",
+        "secondary_patterns": [
+          "P07",
+          "P08"
+        ],
+        "confidence": "medium",
+        "reasoning": "Introduces principled preference-objective tweaks (e.g., conservative/tempered targets, length-robustness) to handle noisy labels and long-form CoT; guided by analyses of DPO instability and forgetting with scalable adjustments.",
+        "primary_pattern_name": "Principled Probabilistic Modeling & Uncertainty",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening",
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Meta_Tool_Unleash_Open_World_Function_Calling_Capabilities_of_General_Purpose_Large_Language_Models.json",
+      "title": "Meta-Tool: Unleash Open-World Function Calling Capabilities of General-Purpose Large Language Models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P02"
+        ],
+        "confidence": "high",
+        "reasoning": "Builds a modular tool-use pipeline (tool search, retrieval, API matching) where the model autonomously triggers retrieval/function calls at inference; synthesizes LLMs with large API ecosystems.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_MindMap_Constructing_Evidence_Chains_for_Multi_Step_Reasoning_in_Large_Language_Models.json",
+      "title": "MindMap: Constructing Evidence Chains for Multi-Step Reasoning in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P04",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts evidence into protagonist-centered event chains/mind maps; separates selection from inference in a structured pipeline and encodes narrative/event structure to improve multi-step reasoning.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_MindMap_Knowledge_Graph_Prompting_Sparks_Graph_of_Thoughts_in_Large_Language_Models.json",
+      "title": "MindMap: Knowledge Graph Prompting Sparks Graph of Thoughts in Large Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P10",
+          "P09",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts linear CoT into a graph-of-thoughts by injecting KG structure via prompts, shifting the reasoning representation with inference-time guidance.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Inference-Time Control & Guided Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Mitigating_Hallucination_by_Integrating_Knowledge_Graphs_into_LLM_Inference_a_Systematic_Literature_Review.json",
+      "title": "Mitigating Hallucination by Integrating Knowledge Graphs into LLM Inference – a Systematic Literature Review",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [],
+        "confidence": "medium",
+        "reasoning": "Systematic review and taxonomy that organize techniques and evaluation for KG-enhanced LLM hallucination mitigation.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": []
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Mitigating_Large_Language_Model_Hallucinations_via_Autonomous_Knowledge_Graph_Based_Retrofitting.json",
+      "title": "Mitigating Large Language Model Hallucinations via Autonomous Knowledge Graph-Based Retrofitting",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Mitigates hallucinations via post-generation research/revision loops (tool-interactive self-correction) at inference with a modular generate–retrieve–critique pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_MultiTool_CoT_GPT_3_Can_Use_Multiple_External_Tools_with_Chain_of_Thought_Prompting.json",
+      "title": "MultiTool-CoT: GPT-3 Can Use Multiple External Tools with Chain of Thought Prompting",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Uses CoT/ReAct prompting to orchestrate multiple external tools at inference without retraining; guided tool use controls sampling-time behavior.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Multi_Aspect_Explainable_Inductive_Relation_Prediction_by_Sentence_Transformer.json",
+      "title": "Multi-Aspect Explainable Inductive Relation Prediction by Sentence Transformer",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P03",
+          "P02"
+        ],
+        "confidence": "medium",
+        "reasoning": "Injects relational path/Horn-rule structure and confidence as inductive bias while textualizing KG paths for PLM scoring.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Multi_Grained_Knowledge_Retrieval_for_End_to_End_Task_Oriented_Dialog.json",
+      "title": "Multi-Grained Knowledge Retrieval for End-to-End Task-Oriented Dialog",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P01",
+        "secondary_patterns": [
+          "P03"
+        ],
+        "confidence": "high",
+        "reasoning": "Reframes lack of query–doc labels by supervising retrievers from reader signals; adopts multi-grained retrieval primitives.",
+        "primary_pattern_name": "Gap-Driven Reframing",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Multimodal_Reasoning_with_Multimodal_Knowledge_Graph.json",
+      "title": "Multimodal Reasoning with Multimodal Knowledge Graph",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P02",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Synthesizes vision, KG, and LLMs; injects relational inductive bias (RGAT) and uses retrieve-and-inject pipelines.",
+        "primary_pattern_name": "Cross-Domain Synthesis",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_NPHardEval_Dynamic_Benchmark_on_Reasoning_Ability_of_Large_Language_Models_via_Complexity_Classes.json",
+      "title": "NPHardEval: Dynamic Benchmark on Reasoning Ability of Large Language Models via Complexity Classes",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07",
+          "P01"
+        ],
+        "confidence": "high",
+        "reasoning": "Engineers a dynamic benchmark grounded in NP-hardness; links formal complexity with empirical evaluation and reframes test scope.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening",
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Neural_Symbolic_Collaborative_Distillation_Advancing_Small_Language_Models_for_Complex_Reasoning_Tasks.json",
+      "title": "Neural-Symbolic Collaborative Distillation: Advancing Small Language Models for Complex Reasoning Tasks",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P02",
+          "P04"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Data-centric distillation of CoT and evidence into SLMs; combines neural-symbolic cues and retrieval–reasoning pipelines.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_PathReasoner_Modeling_Reasoning_Path_with_Equivalent_Extension_for_Logical_Question_Answering.json",
+      "title": "PathReasoner: Modeling Reasoning Path with Equivalent Extension for Logical Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P03",
+          "P05"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Injects logical structure via graphs/path modeling and uses equivalence-driven augmentation; recasts inputs as structured units.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_PokeMQA_Programmable_knowledge_editing_for_Multi_hop_Question_Answering.json",
+      "title": "PokeMQA: Programmable knowledge editing for Multi-hop Question Answering",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Programmable multi-hop editing composes entity linking, decomposition, conflict checks, and applies edits via external memory at inference.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Promoting_Knowledge_Base_Question_Answering_by_Directing_LLMs_to_Generate_Task_relevant_Logical_Forms.json",
+      "title": "Promoting Knowledge Base Question Answering by Directing LLMs to Generate Task-relevant Logical Forms",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Enforces KB structural constraints and logical-form consistency to direct LLM reasoning within a generate/verify pipeline.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Question_Calibration_and_Multi_Hop_Modeling_for_Temporal_Question_Answering.json",
+      "title": "Question Calibration and Multi-Hop Modeling for Temporal Question Answering",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P04",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Injects temporal KG structure and time-aware embeddings; calibrates questions and fuses KG context in a multi-hop pipeline.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_RATT_A_Thought_Structure_for_Coherent_and_Correct_LLM_Reasoning.json",
+      "title": "RATT: A Thought Structure for Coherent and Correct LLM Reasoning",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P11",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Defines an inference-time thought structure with guided branching/selection and retrieval, enabling hierarchical deliberate reasoning.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Multiscale & Hierarchical Modeling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_REANO_Optimising_Retrieval_Augmented_Reader_Models_through_Knowledge_Graph_Generation.json",
+      "title": "REANO: Optimising Retrieval-Augmented Reader Models through Knowledge Graph Generation",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P04",
+          "P02"
+        ],
+        "confidence": "high",
+        "reasoning": "Imposes explicit relational structure extracted from passages to guide FiD-like readers via a retrieval→IE→reasoning composition.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ROGRAG_A_Robustly_Optimized_GraphRAG_Framework.json",
+      "title": "ROGRAG: A Robustly Optimized GraphRAG Framework",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P03",
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds a graph-centric RAG pipeline (extraction→graph→navigation→summarization); shifts from flat to graph representations and injects structural bias.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_RUBY_An_Effective_Framework_for_Multi_Constraint_Multi_Hop_Question_Generation.json",
+      "title": "RUBY: An Effective Framework for Multi-Constraint Multi-Hop Question Generation",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P11"
+        ],
+        "confidence": "medium",
+        "reasoning": "Introduces adaptive controls, content planning, and stepwise rewriting to steer multi-hop question generation at decode time in a structured, hierarchical process.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_RankCoT_Refining_Knowledge_for_Retrieval_Augmented_Generation_through_Ranking_Chain_of_Thoughts.json",
+      "title": "RankCoT: Refining Knowledge for Retrieval-Augmented Generation through Ranking Chain-of-Thoughts",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P08"
+        ],
+        "confidence": "medium",
+        "reasoning": "Refines RAG via modular retrieve–rank–generate with CoT-guided evidence filtering; reduces context via controlled compression (an approximation for scalability).",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Re2LLM_Reflective_Reinforcement_Large_Language_Model_for_Session_based_Recommendation.json",
+      "title": "Re2LLM: Reflective Reinforcement Large Language Model for Session-based Recommendation",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P02",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Applies self-reflection/CoT-style critique loops to sequential recommendation with persistent memory, adapting LLM reasoning methods within a recommenders pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Cross-Domain Synthesis",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ReConcile_Round_Table_Conference_Improves_Reasoning_via_Consensus_among_Diverse_LLMs.json",
+      "title": "ReConcile: Round-Table Conference Improves Reasoning via Consensus among Diverse LLMs",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Implements multi-model debate, judge, and self-consistency—an inference-time control ensemble—within a modular debate pipeline to improve reasoning.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ReFT_Reasoning_with_Reinforced_Fine_Tuning.json",
+      "title": "ReFT: Reasoning with Reinforced Fine-Tuning",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P15",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Uses verifiable signals (numeric checking, executable programs) to supervise reasoning and reduce human labeling, treating evaluation as supervision.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Data-Centric Optimization & Active Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Re_Tuning_Overcoming_the_Compositionality_Limits_of_Large_Language_Models_with_Recursive_Tuning.json",
+      "title": "Re-Tuning: Overcoming the Compositionality Limits of Large Language Models with Recursive Tuning",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P07",
+        "secondary_patterns": [
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds on controlled algorithmic probes and mechanistic diagnoses (carry, indexing) to guide a targeted retuning for length/compositional generalization.",
+        "primary_pattern_name": "Formal-Experimental Tightening",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Relation_Aware_Language_Graph_Transformer_for_Question_Answering.json",
+      "title": "Relation-Aware Language-Graph Transformer for Question Answering",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P03",
+          "P02"
+        ],
+        "confidence": "high",
+        "reasoning": "Injects relation/meta-path structure into a joint LM–graph transformer, shifting from node-centric to relation-aware representations and fusing KG+LM.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Reversal_of_Thought_Enhancing_Large_Language_Models_with_Preference_Guided_Reverse_Reasoning_Warm_up.json",
+      "title": "Reversal of Thought: Enhancing Large Language Models with Preference-Guided Reverse Reasoning Warm-up",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Leverages preference signals and task-agnostic scaffolds to steer reasoning at inference time, reducing heavy deliberation costs.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_S3cMath_Spontaneous_Step_Level_Self_Correction_Makes_Large_Language_Models_Better_Mathematical_Reasoners.json",
+      "title": "S^3cMath: Spontaneous Step-Level Self-Correction Makes Large Language Models Better Mathematical Reasoners",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P05"
+        ],
+        "confidence": "high",
+        "reasoning": "Implements step-level generate–critique–revise self-correction at inference, enabled by step-wise supervision and checks.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SAC_KG_Exploiting_Large_Language_Models_as_Skilled_Automatic_Constructors_for_Domain_Knowledge_Graph.json",
+      "title": "SAC-KG: Exploiting Large Language Models as Skilled Automatic Constructors for Domain Knowledge Graph",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Uses prompt-and-verify loops and retrieval augmentation to control LLM behavior at inference, orchestrated in a modular extraction pipeline.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SCOP_Evaluating_the_Comprehension_Process_of_Large_Language_Models_from_a_Cognitive_View.json",
+      "title": "SCOP: Evaluating the Comprehension Process of Large Language Models from a Cognitive View",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Operationalizes reading-comprehension processes into evaluable skills and benchmarks grounded in cognitive theory, with controlled assessment design.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SCOTT_Self_Consistent_Chain_of_Thought_Distillation.json",
+      "title": "SCOTT: Self-Consistent Chain-of-Thought Distillation",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P08",
+          "P02"
+        ],
+        "confidence": "high",
+        "reasoning": "Controls inference via self-consistency and contrastive decoding; distills CoT into smaller models (scalable approximation) by synthesizing techniques from prompting, decoding, and distillation.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SEER_Facilitating_Structured_Reasoning_and_Explanation_via_Reinforcement_Learning.json",
+      "title": "SEER: Facilitating Structured Reasoning and Explanation via Reinforcement Learning",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P11",
+          "P10",
+          "P09"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds structured reasoning via entailment trees with modular premise selection and entailment generation, leveraging hierarchical explanations and planning-style inference control.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Multiscale & Hierarchical Modeling",
+          "Inject Structural Inductive Bias",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SR_FoT_A_Syllogistic_Reasoning_Framework_of_Thought_for_Large_Language_Models_Tackling_Knowledge_based_Reasoning_Tasks.json",
+      "title": "SR-FoT: A Syllogistic-Reasoning Framework of Thought for Large Language Models Tackling Knowledge-based Reasoning Tasks",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P10",
+        "secondary_patterns": [
+          "P04",
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Imposes syllogistic logical structure on reasoning (major/minor/conclusion), decomposed into steps and executed at inference with structured prompting/self-consistency.",
+        "primary_pattern_name": "Inject Structural Inductive Bias",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_STaR_SQL_Self_Taught_Reasoner_for_Text_to_SQL.json",
+      "title": "STaR-SQL: Self-Taught Reasoner for Text-to-SQL",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P09",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Self-generated rationales are filtered by outcome correctness for fine-tuning; verifier-guided best-of-N at inference reinforces data-centric and inference-control loops.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Semantic_Exploration_with_Adaptive_Gating_for_Efficient_Problem_Solving_with_Language_Models.json",
+      "title": "Semantic Exploration with Adaptive Gating for Efficient Problem Solving with Language Models",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P08",
+          "P02"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Guides reasoning via self-consistency, MCTS/ToT search, and semantic-equivalence pruning with adaptive gating to make exploration efficient.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability",
+          "Cross-Domain Synthesis"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SeqGPT_An_Out_of_the_Box_Large_Language_Model_for_Open_Domain_Sequence_Understanding.json",
+      "title": "SeqGPT: An Out-of-the-Box Large Language Model for Open Domain Sequence Understanding",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Improves generalization by scaling diverse instruction/task data (including synthetic Self-Instruct) and using schema-structured outputs.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Single_Sequence_Prediction_over_Reasoning_Graphs_for_Multi_hop_QA.json",
+      "title": "Single Sequence Prediction over Reasoning Graphs for Multi-hop QA",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P10",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Recasts the output as a single sequence over reasoning graphs to capture cross-passage links, injecting structured knowledge within a FiD-style pipeline.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Small_Models_Big_Insights_Leveraging_Slim_Proxy_Models_To_Decide_When_and_What_to_Retrieve_for_LLMs.json",
+      "title": "Small Models, Big Insights: Leveraging Slim Proxy Models To Decide When and What to Retrieve for LLMs",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P08"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Inference-time signals and slim proxy controllers decide when/what to retrieve, composing retriever-generator modules while reducing cost.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_SoftCoT_Soft_Chain_of_Thought_for_Efficient_Reasoning_with_LLMs.json",
+      "title": "SoftCoT: Soft Chain-of-Thought for Efficient Reasoning with LLMs",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P08",
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Recasts discrete chain-of-thought into continuous latent ‘soft’ thoughts for efficient, zero-shot-friendly reasoning.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Synergistic_Multi_Agent_Framework_with_Trajectory_Learning_for_Knowledge_Intensive_Tasks.json",
+      "title": "Synergistic Multi-Agent Framework with Trajectory Learning for Knowledge-Intensive Tasks",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P05"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Composes retriever, generator, self-critic, and citation modules with tokenized control and reflective supervision.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_TARGA_Targeted_Synthetic_Data_Generation_for_Practical_Reasoning_over_Structured_Data.json",
+      "title": "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P01"
+        ],
+        "confidence": "high",
+        "reasoning": "Targets synthetic data generation to fill compositional/zero-shot gaps, making data selection the primary lever.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Gap-Driven Reframing"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_T_SciQ_Teaching_Multimodal_Chain_of_Thought_Reasoning_via_Large_Language_Model_Signals_for_Science_Question_Answering.json",
+      "title": "T-SciQ: Teaching Multimodal Chain-of-Thought Reasoning via Large Language Model Signals for Science Question Answering",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Leverages LLM-taught multimodal rationales to replace costly annotations, within a two-stage rationale+answer pipeline.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Table_Critic_A_Multi_Agent_Framework_for_Collaborative_Criticism_and_Refinement_in_Table_Reasoning.json",
+      "title": "Table-Critic: A Multi-Agent Framework for Collaborative Criticism and Refinement in Table Reasoning",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Multi-agent solver–critic setup adds step-level critique and repair at inference to control error propagation.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_TaskLAMA_Probing_the_Complex_Task_Understanding_of_Language_Models.json",
+      "title": "TaskLAMA: Probing the Complex Task Understanding of Language Models",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P03",
+          "P04"
+        ],
+        "confidence": "medium",
+        "reasoning": "Introduces a probing/benchmarking framework for complex task knowledge with graph-based task representations and node-level metrics—primarily dataset/evaluation engineering with representation and pipeline elements.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Temporal_Knowledge_Question_Answering_via_Abstract_Reasoning_Induction.json",
+      "title": "Temporal Knowledge Question Answering via Abstract Reasoning Induction",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P04",
+          "P09",
+          "P11"
+        ],
+        "confidence": "medium",
+        "reasoning": "Recasts temporal KGQA as abstract, compositional programs over temporal operators, executed via multi-step modules and tool-like reasoning, addressing mixed temporal granularities.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inference-Time Control & Guided Sampling",
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_The_Role_of_Exploration_Modules_in_Small_Language_Models_for_Knowledge_Graph_Question_Answering.json",
+      "title": "The Role of Exploration Modules in Small Language Models for Knowledge Graph Question Answering",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P08"
+        ],
+        "confidence": "medium",
+        "reasoning": "Focuses on inference-time exploration control (beam search, dense scoring) in a training-free agent, modularizing exploration from reasoning to make small LMs effective and scalable.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Approximation Engineering for Scalability"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_ThinkSum_Probabilistic_reasoning_over_sets_using_large_language_models.json",
+      "title": "ThinkSum: Probabilistic reasoning over sets using large language models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P06",
+        "secondary_patterns": [
+          "P09",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Implements probabilistic aggregation over sets/rationales (self-consistency, cascades), explicitly modeling uncertainty and combining multiple LM outputs at inference time.",
+        "primary_pattern_name": "Principled Probabilistic Modeling & Uncertainty",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Towards_Complex_Scenarios_Building_End_to_End_Task_Oriented_Dialogue_System_across_Multiple_Knowledge_Bases.json",
+      "title": "Towards Complex Scenarios: Building End-to-End Task-Oriented Dialogue System across Multiple Knowledge Bases",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P10"
+        ],
+        "confidence": "medium",
+        "reasoning": "Builds an end-to-end dialogue system by composing KB retrieval, graph-structured encoding, and generation; injects structural inductive bias via graph modeling of KBs.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Towards_Context_Robust_LLMs_A_Gated_Representation_Fine_tuning_Approach.json",
+      "title": "Towards Context-Robust LLMs: A Gated Representation Fine-tuning Approach",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P03",
+        "secondary_patterns": [
+          "P12",
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Targets and gates hidden-state directions to steer behavior and edit localized knowledge for context robustness.",
+        "primary_pattern_name": "Representation Shift & Primitive Recasting",
+        "secondary_pattern_names": [
+          "Mechanistic Decomposition & Causal Localization",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Towards_Fully_Exploiting_LLM_Internal_States_to_Enhance_Knowledge_Boundary_Perception.json",
+      "title": "Towards Fully Exploiting LLM Internal States to Enhance Knowledge Boundary Perception",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P06"
+        ],
+        "confidence": "high",
+        "reasoning": "Uses internal activation signals at inference to detect truthfulness/answerability and calibrate or control outputs.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Principled Probabilistic Modeling & Uncertainty"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Towards_Trustworthy_Knowledge_Graph_Reasoning_An_Uncertainty_Aware_Perspective.json",
+      "title": "Towards Trustworthy Knowledge Graph Reasoning: An Uncertainty Aware Perspective",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P06",
+        "secondary_patterns": [
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Employs conformal prediction and Learn-Then-Test for uncertainty guarantees within a KG reasoning pipeline.",
+        "primary_pattern_name": "Principled Probabilistic Modeling & Uncertainty",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Tree_of_Reasoning_Question_Decomposition_for_Complex_Question_Answering_with_Large_Language_Models.json",
+      "title": "Tree-of-Reasoning Question Decomposition for Complex Question Answering with Large Language Models",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P11",
+        "secondary_patterns": [
+          "P04",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Implements tree-structured, hierarchical question decomposition with structure-aware prompting and retrieval.",
+        "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_TrustUQA_A_Trustful_Framework_for_Unified_Structured_Data_Question_Answering.json",
+      "title": "TrustUQA: A Trustful Framework for Unified Structured Data Question Answering",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P05"
+        ],
+        "confidence": "medium-high",
+        "reasoning": "Modular tool-calling framework across structured data with inference-time execution and feedback-based example curation.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Truth_Behind_the_Scene_Designing_Evaluations_Benchmarks_to_Assess_LLMs_Task_Specific_Understanding_over_Test_Taking_Stra.json",
+      "title": "Truth Behind the Scene: Designing Evaluations Benchmarks to Assess LLMs’ Task-Specific Understanding over Test-Taking Strategies",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P05",
+        "secondary_patterns": [
+          "P01",
+          "P07"
+        ],
+        "confidence": "high",
+        "reasoning": "Identifies concrete flaws in MMLU and engineers improved evaluation probes/benchmarks, guided by audits and counterfactual tests.",
+        "primary_pattern_name": "Data & Evaluation Engineering",
+        "secondary_pattern_names": [
+          "Gap-Driven Reframing",
+          "Formal-Experimental Tightening"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Turning_Dust_into_Gold_Distilling_Complex_Reasoning_Capabilities_from_LLMs_by_Leveraging_Negative_Data.json",
+      "title": "Turning Dust into Gold: Distilling Complex Reasoning Capabilities from LLMs by Leveraging Negative Data",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P15"
+        ],
+        "confidence": "high",
+        "reasoning": "Organizes distillation, self-enhancement, and self-consistency into a staged pipeline, with inference-time voting and data-driven supervision.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Data-Centric Optimization & Active Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Union_Is_Strength_Unite_the_Power_of_LLMs_and_MLLMs_for_Chart_Question_Answering.json",
+      "title": "Union Is Strength! Unite the Power of LLMs and MLLMs for Chart Question Answering",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P03",
+          "P11"
+        ],
+        "confidence": "high",
+        "reasoning": "Composes LLM decomposition with specialized modules; shifts representation (plot-to-table) and uses hierarchical subquery reasoning.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Representation Shift & Primitive Recasting",
+          "Multiscale & Hierarchical Modeling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Unleashing_LLM_Reasoning_Capability_via_Scalable_Question_Synthesis_from_Scratch.json",
+      "title": "Unleashing LLM Reasoning Capability via Scalable Question Synthesis from Scratch",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P10"
+        ],
+        "confidence": "high",
+        "reasoning": "Treats large-scale question synthesis as the primary lever; engineers datasets and uses concept-graph structure to guide generation.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Inject Structural Inductive Bias"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Verify_and_Edit_A_Knowledge_Enhanced_Chain_of_Thought_Framework.json",
+      "title": "Verify-and-Edit: A Knowledge-Enhanced Chain-of-Thought Framework",
+      "innovation_classification": {
+        "paper_index": 5,
+        "primary_pattern": "P09",
+        "secondary_patterns": [
+          "P04",
+          "P05"
+        ],
+        "confidence": "medium",
+        "reasoning": "Implements inference-time verify-and-edit with retrieval-guided reasoning; modularizes reasoning/retrieval and sharpens evaluation of factuality.",
+        "primary_pattern_name": "Inference-Time Control & Guided Sampling",
+        "secondary_pattern_names": [
+          "Modular Pipeline Composition",
+          "Data & Evaluation Engineering"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Walk_Wisely_on_Graph_Knowledge_Graph_Reasoning_with_Dual_Agents_via_Efficient_Guidance_Exploration.json",
+      "title": "Walk Wisely on Graph: Knowledge Graph Reasoning with Dual Agents via Efficient Guidance-Exploration",
+      "innovation_classification": {
+        "paper_index": 1,
+        "primary_pattern": "P11",
+        "secondary_patterns": [
+          "P08",
+          "P04"
+        ],
+        "confidence": "high",
+        "reasoning": "Dual-agent hierarchical scheme walks a coarse clustered KG to guide fine-grained traversal, a coarse-to-fine multiscale design that also serves as a scalable approximation via a simplified surrogate graph and modular agent composition.",
+        "primary_pattern_name": "Multiscale & Hierarchical Modeling",
+        "secondary_pattern_names": [
+          "Approximation Engineering for Scalability",
+          "Modular Pipeline Composition"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_Why_Prompt_Design_Matters_and_Works_A_Complexity_Analysis_of_Prompt_Search_Space_in_LLMs.json",
+      "title": "Why Prompt Design Matters and Works: A Complexity Analysis of Prompt Search Space in LLMs",
+      "innovation_classification": {
+        "paper_index": 2,
+        "primary_pattern": "P07",
+        "secondary_patterns": [
+          "P09",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Provides a formal complexity account of why CoT prompting works, tying theory to observed capabilities; treats prompt design as an inference-time control and conceptualizes CoT as a discretize–vectorize state recasting.",
+        "primary_pattern_name": "Formal-Experimental Tightening",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_XCOT_Cross_lingual_Instruction_Tuning_for_Cross_lingual_Chain_of_Thought_Reasoning.json",
+      "title": "XCOT: Cross-lingual Instruction Tuning for Cross-lingual Chain-of-Thought Reasoning",
+      "innovation_classification": {
+        "paper_index": 3,
+        "primary_pattern": "P15",
+        "secondary_patterns": [
+          "P05",
+          "P09"
+        ],
+        "confidence": "high",
+        "reasoning": "Improves cross-lingual reasoning primarily through multilingual instruction tuning/data; leverages and extends datasets/benchmarks (MGSM), contrasting with prompt-only inference-time methods.",
+        "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+        "secondary_pattern_names": [
+          "Data & Evaluation Engineering",
+          "Inference-Time Control & Guided Sampling"
+        ]
+      }
+    },
+    {
+      "file_path": "results/recommended_acl_aaai_top300_min7.65_prior_work/prior_work_analysis_iQUEST_An_Iterative_Question_Guided_Framework_for_Knowledge_Base_Question_Answering.json",
+      "title": "iQUEST: An Iterative Question-Guided Framework for Knowledge Base Question Answering",
+      "innovation_classification": {
+        "paper_index": 4,
+        "primary_pattern": "P04",
+        "secondary_patterns": [
+          "P09",
+          "P03"
+        ],
+        "confidence": "medium",
+        "reasoning": "Iterative, question-guided KGQA composes modules for traversal, evidence gathering, and refinement; uses inference-time prompting to control search and recasts questions into decomposed structures for guided reasoning.",
+        "primary_pattern_name": "Modular Pipeline Composition",
+        "secondary_pattern_names": [
+          "Inference-Time Control & Guided Sampling",
+          "Representation Shift & Primitive Recasting"
+        ]
+      }
+    }
+  ],
+  "input_tokens": 47954,
+  "output_tokens": 74447
+}

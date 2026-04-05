@@ -1,0 +1,78 @@
+{
+  "paper_title": "Code-Style In-Context Learning for Knowledge-Based Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Current methods for Knowledge-Based Question Answering (KBQA) usually rely on complex training techniques and model frameworks, leading to many limitations in practical applications. Recently, the emergence of In-Context Learning (ICL) capabilities in Large Language Models (LLMs) provides a simple and training-free semantic parsing paradigm for KBQA: Given a small number of questions and their labeled logical forms as demo examples, LLMs can understand the task intent and generate the logic form for a new question. However, current powerful LLMs have little exposure to logic forms during pre-training, resulting in a high format error rate. To solve this problem, we propose a code-style in-context learning method for KBQA, which converts the generation process of unfamiliar logical form into the more familiar code generation process for LLMs. Experimental results on three mainstream datasets show that our method dramatically mitigated the formatting error problem in generating logic forms while realizing a new SOTA on WebQSP, GrailQA, and GraphQ under the few-shot setting. The code and supplementary files are released at https://github.com/Arthurizijar/KB-Coder.",
+  "prior_works": [
+    {
+      "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+      "authors": "Tianxing Li et al.",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "KB-BINDER established the training-free ICL paradigm for KBQA by prompting LLMs with (question, S-Expression) pairs to directly generate logical forms, whose frequent formatting errors and weak zero-shot generalization are the specific failure modes this paper overcomes by switching to code-style generation and adding schema retrieval.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Beyond I.I.D.: Three Levels of Generalization for Question Answering on Knowledge Bases",
+      "authors": "Yuchen Gu et al.",
+      "year": 2021,
+      "role": "Foundation",
+      "relationship_sentence": "This work provided the GrailQA dataset, the three-level generalization setting (i.i.d., compositional, zero-shot), and the S-Expression logical form grammar that the current paper adopts and operationalizes via a set of meta-functions.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Code4Struct: Code generation for few-shot structured prediction from natural language",
+      "authors": "Xiaozhi Wang et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "Code4Struct’s insight that reframing structured prediction as code generation reduces post‑processing and improves few-shot reliability directly motivates recasting S-Expression synthesis as executable Python function calls.",
+      "arxiv_id": "2210.12810",
+      "url": null
+    },
+    {
+      "title": "Binding Language Models in Symbolic Languages",
+      "authors": "Zhiqiang Cheng et al.",
+      "year": 2022,
+      "role": "Extension",
+      "relationship_sentence": "The practice of exposing function definitions/signatures in the prompt so LMs can compose executable programs is extended here by defining and prompting Python implementations of KBQA meta-functions to generate valid logical forms.",
+      "arxiv_id": "2210.02875",
+      "url": null
+    },
+    {
+      "title": "Chain-Of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "authors": "Jason Wei et al.",
+      "year": 2022,
+      "role": "Inspiration",
+      "relationship_sentence": "The finding that step-by-step reasoning improves LLM performance informs the paper’s shift from one-shot logical-form emission to progressive generation of function-call sequences that mirror decomposed reasoning.",
+      "arxiv_id": "2201.11903",
+      "url": null
+    },
+    {
+      "title": "When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories",
+      "authors": "Amir Mallen et al.",
+      "year": 2023,
+      "role": "Inspiration",
+      "relationship_sentence": "Evidence that retrieval augmentation helps LLMs with uncommon or out-of-distribution facts directly motivates injecting a retrieved, question-related relation name to bolster zero-shot generalization.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Few-shot ICL for KBQA was crystallized by KB-BINDER, which prompted LLMs with (question, S-Expression) pairs to directly produce logical forms, but it frequently yielded malformed outputs and struggled when the test schema had not appeared in demos. The GrailQA benchmark defined this setting concretely, introducing the i.i.d., compositional, and zero-shot splits and standardizing S-Expression grammar for Freebase-style KBQA, thereby anchoring both the target representation and the generalization regimes. Code4Struct showed that reframing structured prediction as code generation and providing code scaffolds improves few-shot reliability and eases post-processing, suggesting a path to reduce formatting errors. Complementing this, work on binding LMs in symbolic languages demonstrated that exposing function definitions/signatures in prompts enables LMs to synthesize executable programs (e.g., SQL), a pattern transferable to KBQA operators. Chain-of-thought prompting established that stepwise decomposition benefits LLM reasoning, encouraging a progressive program-construction view rather than single-shot output. Finally, studies on parametric vs. non-parametric memory showed retrieval augmentation helps when knowledge is rare or out-of-domain, advocating for lightweight schema cues.\nTogether, these threads point to a natural synthesis: represent S-Expressions as a finite set of Python meta-functions, include their code in the prompt, and have the LLM generate a step-by-step function-call sequence instead of raw logical forms—thereby leveraging code-generation priors for correctness and CoT-like decomposition for reliability. Augmenting the prompt with a single retrieved, question-related relation offers a minimal yet effective non-parametric hint to address zero-shot schema gaps defined by GrailQA, yielding lower format errors and stronger generalization than KB-BINDER.",
+  "analysis_timestamp": "2026-04-05T11:57:36.200504",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P03",
+    "secondary_patterns": [
+      "P10",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Recasts KBQA as code/S-expression generation with scaffolds (representation shift), leveraging grammar/structure to improve reliability within an ICL setup.",
+    "primary_pattern_name": "Representation Shift & Primitive Recasting",
+    "secondary_pattern_names": [
+      "Inject Structural Inductive Bias",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

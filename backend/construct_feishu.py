@@ -1,6 +1,6 @@
 from typing import Optional
 from loguru import logger
-from .paper import ArxivPaper
+from paper import ArxivPaper
 
 
 def render_feishu(papers: list[ArxivPaper], max_papers: int = 10) -> str:

@@ -55,3 +55,6 @@ Thumbs.db
 
 # 临时/输出
 feishu_message.txt
+
+data/
+raw_paper/

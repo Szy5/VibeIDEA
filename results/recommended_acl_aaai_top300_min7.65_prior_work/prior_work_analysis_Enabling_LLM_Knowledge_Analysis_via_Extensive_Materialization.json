@@ -1,0 +1,87 @@
+{
+  "paper_title": "Enabling LLM Knowledge Analysis via Extensive Materialization",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Large language models (LLMs) have majorly advanced NLP and AI, and next to their ability to perform a wide range of procedural tasks, a major success factor is their internalized factual knowledge.Since Petroni et al. (2019), analyzing this knowledge has gained attention.However, most approaches investigate one question at a time via modest-sized pre-defined samples, introducing an \"availability bias\" (Tversky and Kahneman, 1973) that prevents the analysis of knowledge (or beliefs) of LLMs beyond the experimenter's predisposition.To address this challenge, we propose a novel methodology to comprehensively materialize an LLM's factual knowledge through recursive querying and result consolidation.Our approach is a milestone for LLM research, for the first time providing constructive insights into the scope and structure of LLM knowledge (or beliefs).As a prototype, we extract a knowledge base (KB) comprising 101 million relational triples for over 2.9 million entities from GPT-4o-mini.We use this KB to exemplarily analyze GPT-4o-mini's factual knowledge in terms of scale, accuracy, bias, cutoff and consistency, at the same time.Our resource is accessible at https://gptkb.org.",
+  "prior_works": [
+    {
+      "title": "Language Models as Knowledge Bases?",
+      "authors": "Fabio Petroni et al.",
+      "year": 2019,
+      "role": "Foundation",
+      "relationship_sentence": "This work established the probing formulation that treats LMs as stores of factual triples, which the current paper generalizes from single-prompt probing to exhaustive, recursive materialization.",
+      "arxiv_id": "1909.01066",
+      "url": null
+    },
+    {
+      "title": "Crawling the Internal Knowledge-Base of Language Models",
+      "authors": "Roi Cohen et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "The paper’s recursive elicitation directly extends Cohen et al.’s LM ‘crawl’ by removing relation-specific prompting, addressing their scalability constraints, and adding consolidation to produce a coherent, large knowledge base.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Extracting Patterns and Relations from the World Wide Web (DIPRE)",
+      "authors": "Sergey Brin",
+      "year": 1998,
+      "role": "Inspiration",
+      "relationship_sentence": "The iterative graph expansion from seed entities explicitly adopts DIPRE’s bootstrapped pattern of discovering new entities from extracted tuples and recursing.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Web-Scale Information Extraction in KnowItAll",
+      "authors": "Oren Etzioni et al.",
+      "year": 2004,
+      "role": "Inspiration",
+      "relationship_sentence": "KnowItAll’s large-scale bootstrapping and open-world tuple harvesting provided the blueprint for broad relational assertion materialization that this work adapts to LLM-generated facts.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "LM-KBC: Knowledge Base Construction from Pre-trained Language Models (Challenge Series)",
+      "authors": "Sneha Singhania et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "LM-KBC framed the task of constructing KB triples from PLMs, whose benchmark-centric, sample-based scope this paper replaces with comprehensive materialization to avoid sampling bias.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Completeness, Recall, and Negation in Open-World Knowledge Bases: A Survey",
+      "authors": "Simon Razniewski et al.",
+      "year": 2024,
+      "role": "Gap Identification",
+      "relationship_sentence": "By documenting the persistent incompleteness of major KBs, this survey motivates a generative, LLM-derived KB as a novel paradigm to cover long-tail slices that traditional pipelines miss.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Towards Ontology Construction with Language Models",
+      "authors": "Maurice Funk et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "Prior LLM-based ontology generation highlighted the difficulty of integrating pre-existing classes, directly motivating this paper’s LLM-guided, incremental taxonomy insertion and update algorithm.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Early work demonstrated that large language models encode factual associations that can be elicited with prompts: Petroni et al. formalized probing LMs as if they were knowledge bases, showing triples could be recovered via cloze-style prompts, while the LM-KBC challenge defined constructing structured triples from PLMs as a task, albeit within benchmark-centric, sample-based setups. In parallel, decades of iterative information extraction established how to scale discovery: Brin’s DIPRE introduced bootstrapped expansion from seed examples by extracting tuples and using discovered entities to recurse, and KnowItAll operationalized large-scale open-world tuple harvesting on the web. More recently, Cohen et al. showed that the same bootstrapped idea could be applied directly to LMs, ‘crawling’ internal knowledge by iteratively prompting for relations and assertions, yet their approach relied on relation-specific prompts and did not tackle consolidation at scale. On the schema side, LLM-driven ontology construction has been explored (e.g., Funk et al.), but methods that generate taxonomies from scratch make it hard to integrate a large set of preexisting, noisy classes. Concurrently, surveys of open-world KBs (e.g., Razniewski et al.) underscored that even the largest curated graphs remain incomplete, especially in the long tail.\nBringing these strands together naturally suggested materializing an LM’s latent knowledge via DIPRE/KnowItAll-style bootstrapped expansion but operating entirely within the LM: extend Cohen et al.’s crawl without relation-specific prompts, elicit structured triples at massive scale, and then resolve global consistency by LLM-guided clustering and an incremental taxonomy that integrates discovered classes. This synthesis avoids sample availability bias, complements incomplete curated KBs, and yields a persistent resource enabling joint analyses of scope, bias, cutoff, and consistency.",
+  "analysis_timestamp": "2026-04-05T11:38:09.568339",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P15",
+    "secondary_patterns": [
+      "P05",
+      "P04"
+    ],
+    "confidence": "high",
+    "reasoning": "Bootstrapped, iterative materialization of LM knowledge emphasizes active sampling/expansion and data-centric analysis.",
+    "primary_pattern_name": "Data-Centric Optimization & Active Sampling",
+    "secondary_pattern_names": [
+      "Data & Evaluation Engineering",
+      "Modular Pipeline Composition"
+    ]
+  }
+}

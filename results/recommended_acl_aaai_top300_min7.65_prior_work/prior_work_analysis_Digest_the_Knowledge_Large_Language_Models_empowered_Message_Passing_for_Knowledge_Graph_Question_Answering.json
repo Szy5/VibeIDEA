@@ -1,0 +1,87 @@
+{
+  "paper_title": "Digest the Knowledge: Large Language Models empowered Message Passing for Knowledge Graph Question Answering",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "Despite their success, large language models (LLMs) suffer from notorious hallucination issue.By introducing external knowledge stored in knowledge graphs (KGs), existing methods use paths as the medium to represent the graph information sent into LLMs.However, paths only contain limited graph structure information and are unorganized with redundant sequentially appearing keywords, which are difficult for LLMs to digest.We aim to find a suitable medium that captures the essence of structural knowledge in KGs.Inspired by Neural Message Passing in Graph Neural Networks, we propose Language Message Passing (LMP), which first learns a concise facts graph by iteratively aggregating neighbor entities and transforming them into semantic facts, and then performs Topological Readout that encodes the graph structure information into multi-level lists of texts to augment LLMs.Our method serves as a brand-new innovative framework that brings a new perspective into KG-enhanced LLMs, and also offers humanlevel semantic explainability with significant performance improvements over existing methods on all five knowledge graph question answering datasets.Our code is available at https://github.com/wanjunhong0/LMP.",
+  "prior_works": [
+    {
+      "title": "Neural Message Passing for Quantum Chemistry",
+      "authors": "Justin Gilmer et al.",
+      "year": 2017,
+      "role": "Inspiration",
+      "relationship_sentence": "The core idea of iteratively aggregating and transforming neighborhood information in a message passing framework directly inspires implementing an LLM-driven, text-space message passing to build a concise 'facts graph'.",
+      "arxiv_id": "1704.01212",
+      "url": null
+    },
+    {
+      "title": "How Powerful are Graph Neural Networks?",
+      "authors": "Keyulu Xu et al.",
+      "year": 2019,
+      "role": "Inspiration",
+      "relationship_sentence": "The concept of graph-level Readout functions for summarizing structure motivates the Topological Readout that encodes depth and width via DFS-numbered, multi-level textual lists.",
+      "arxiv_id": "1810.00826",
+      "url": null
+    },
+    {
+      "title": "Hierarchical Graph Representation Learning with Differentiable Pooling",
+      "authors": "Zhitao Ying et al.",
+      "year": 2018,
+      "role": "Extension",
+      "relationship_sentence": "The pooling notion of coarsening nodes into higher-level units is directly extended by merging l-hop neighbor entities into hyper-entities whose text descriptions are summarized semantic facts.",
+      "arxiv_id": "1806.08804",
+      "url": null
+    },
+    {
+      "title": "Inductive Representation Learning on Large Graphs",
+      "authors": "Will Hamilton et al.",
+      "year": 2017,
+      "role": "Extension",
+      "relationship_sentence": "GraphSAGE’s neighbor sampling to control breadth informs the sampling step that selects top-K l-hop relations per layer to keep LLM-based message passing tractable and focused.",
+      "arxiv_id": "1706.02216",
+      "url": null
+    },
+    {
+      "title": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model with Knowledge Graph",
+      "authors": "Jiashuo Sun et al.",
+      "year": 2024,
+      "role": "Baseline",
+      "relationship_sentence": "As a primary path-based KG-to-LLM baseline, it retrieves and feeds raw paths/triples to LLMs, whose structural and semantic limitations are explicitly addressed by replacing paths with a message-passing-derived facts graph.",
+      "arxiv_id": "unknown",
+      "url": null
+    },
+    {
+      "title": "Retrieve-Rewrite-Answer: A KG-to-Text Enhanced LLMs Framework for Knowledge Graph Question Answering",
+      "authors": "Yike Wu et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By showing raw keyword triples are awkward for LLMs and advocating KG-to-text rewriting, it directly motivates transforming aggregated neighborhoods into concise, question-focused semantic facts.",
+      "arxiv_id": "2309.11206",
+      "url": null
+    },
+    {
+      "title": "HARP: Hierarchical Representation Learning for Networks",
+      "authors": "Haochen Chen et al.",
+      "year": 2018,
+      "role": "Gap Identification",
+      "relationship_sentence": "Its observation that path-level traversals capture depth but miss hierarchical overviews motivates moving beyond paths to a condensed, structured representation that preserves multi-level graph organization.",
+      "arxiv_id": "1706.07845",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "Neural Message Passing established the practice of iteratively aggregating and transforming neighborhood information to derive informative, higher-level graph representations, while later work emphasized explicit Readout functions for producing graph-level summaries. Complementary advances demonstrated how to coarsen graphs via differentiable pooling, merging fine-grained nodes into higher-level constructs, and how neighbor sampling controls computational breadth during message passing. In parallel, knowledge-graph–enhanced LLM systems operationalized retrieval as paths: methods like Think-on-Graph extract and feed raw triples or paths to LLMs for reasoning. However, evidence accumulated that keyword-based triples and paths are semantically awkward for language models, motivating KG-to-text rewriting to better align with LLMs, and theoretical insights on representation learning highlighted that paths capture depth but fail to provide a hierarchical overview of graph structure. Together, these works delineated both a set of powerful graph-structuring primitives and the shortcomings of path-based KG augmentation for LLMs.\nSynthesizing these insights naturally suggested replacing path extraction with a message passing–style pipeline executed in text: sample salient l-hop neighborhoods (as in neighbor sampling), aggregate and transform them into concise semantic statements (aligned with KG-to-text), pool them into hyper-entities (inspired by DiffPool), and apply a readout-like procedure that preserves topology by encoding depth and width into hierarchical multi-level lists. This combination yields a compact, human-interpretable facts graph that captures structure beyond paths and produces LLM-digestible inputs, directly addressing the limitations surfaced by path-centric KG-LLM methods.",
+  "analysis_timestamp": "2026-04-05T11:53:21.468928",
+  "innovation_classification": {
+    "paper_index": 5,
+    "primary_pattern": "P02",
+    "secondary_patterns": [
+      "P03",
+      "P10"
+    ],
+    "confidence": "medium",
+    "reasoning": "Synthesizes LLMs with graph message passing; shifts KG inputs (paths/triples) to LM-aligned representations while leveraging graph structure.",
+    "primary_pattern_name": "Cross-Domain Synthesis",
+    "secondary_pattern_names": [
+      "Representation Shift & Primitive Recasting",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

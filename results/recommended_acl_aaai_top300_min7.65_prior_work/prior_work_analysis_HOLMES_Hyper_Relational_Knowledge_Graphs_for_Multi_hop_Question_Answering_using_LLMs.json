@@ -1,0 +1,87 @@
+{
+  "paper_title": "HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs",
+  "paper_arxiv_id": "N/A",
+  "paper_abstract": "HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs",
+  "prior_works": [
+    {
+      "title": "Leveraging structured information for explainable multi-hop question answering and reasoning",
+      "authors": "Ruosen Li and Xinya Du",
+      "year": 2023,
+      "role": "Baseline",
+      "relationship_sentence": "HOLMES builds on StructQA’s LLM-based triple extraction from supporting documents but addresses its query-agnostic, context-free triples and redundant raw-text prompts by constructing and using only a query-focused, context-qualified graph.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering",
+      "authors": "Zhilin Yang et al.",
+      "year": 2018,
+      "role": "Foundation",
+      "relationship_sentence": "HotpotQA established the multi-hop, multi-document distractor setting and evaluation protocol that directly frames the task and constraints HOLMES targets.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "MuSiQue: Multi-hop Questions via Single-hop Question Composition",
+      "authors": "Harsh Trivedi et al.",
+      "year": 2022,
+      "role": "Foundation",
+      "relationship_sentence": "MuSiQue supplies a controlled-hop benchmark used to evaluate and tune HOLMES’s k-hop traversal and pruning strategies for multi-step reasoning.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Learning to Retrieve Reasoning Paths over Wikipedia Graph for Question Answering",
+      "authors": "Akari Asai et al.",
+      "year": 2020,
+      "role": "Inspiration",
+      "relationship_sentence": "The idea of navigating an entity-document graph to gather multi-hop evidence inspired HOLMES’s breadth-first traversal over a bipartite entity–document graph seeded by query entities.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Hierarchy-aware Multi-hop Question Answering over Knowledge Graphs",
+      "authors": "Junnan Dong et al.",
+      "year": 2023,
+      "role": "Gap Identification",
+      "relationship_sentence": "By highlighting that triple-only KGs omit qualifiers and contextual constraints crucial for inference, this work motivated HOLMES to add document-level qualifiers via a hyper-relational representation.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Iterative Zero-shot LLM Prompting for Knowledge Graph Construction",
+      "authors": "Salvatore Carta et al.",
+      "year": 2023,
+      "role": "Extension",
+      "relationship_sentence": "HOLMES extends the idea of building KGs from unstructured text via zero-shot prompting by augmenting extracted triples into hyper-relational quadruples and then schema-pruning them for QA.",
+      "arxiv_id": "",
+      "url": null
+    },
+    {
+      "title": "Revisiting Relation Extraction in the Era of Large Language Models",
+      "authors": "Somin Wadhwa et al.",
+      "year": 2023,
+      "role": "Related Problem",
+      "relationship_sentence": "This work’s finding that LLMs reliably perform relation extraction with prompting directly informed HOLMES’s triple extraction step during graph construction.",
+      "arxiv_id": "",
+      "url": null
+    }
+  ],
+  "synthesis_narrative": "StructQA showed that prompting LLMs to extract document-level triples and pairing them with raw passages can enable explainable multi-hop QA, but its extraction is query-agnostic and the outputs lack contextual qualifiers, creating ambiguity and long prompts. HotpotQA formalized the distractor-rich, multi-document setting that makes such ambiguity and verbosity especially harmful, and MuSiQue introduced controlled hop complexity that pressures systems to manage evidence traversal and pruning effectively. Earlier, Asai and colleagues demonstrated that multi-hop reasoning benefits from traversing an entity-centric graph over Wikipedia to collect chains of evidence, providing a concrete mechanism for graph navigation seeded by the query. Work on knowledge-graph-based multi-hop QA, such as hierarchy-aware approaches, emphasized that triple-only representations overlook qualifiers and context needed for correct inference. In parallel, iterative zero-shot prompting showed that KGs can be constructed directly from unstructured text, and investigations into LLM-based relation extraction established that prompted LLMs can faithfully extract entities and relations without task-specific training.\nTogether, these works surfaced a clear opportunity: combine query-driven graph navigation with context-preserving representations and prompt-efficient inputs. The natural next step was to construct an entity–document graph from supporting evidence, extract triples via LLM prompting, and upgrade them into hyper-relational structures that retain document-level context. By pruning this graph with a query-aligned schema—guided by in-domain relational patterns—and feeding only the distilled, verbalized facts to the reader LLM, the approach synthesizes traversal, extraction, and context preservation into a compact, query-centered pipeline for multi-hop QA.",
+  "analysis_timestamp": "2026-04-05T12:00:11.162191",
+  "innovation_classification": {
+    "paper_index": 3,
+    "primary_pattern": "P03",
+    "secondary_patterns": [
+      "P04",
+      "P10"
+    ],
+    "confidence": "high",
+    "reasoning": "Shifts evidence to hyper-relational, query-conditioned graphs and composes extraction with graph traversal for multi-hop QA.",
+    "primary_pattern_name": "Representation Shift & Primitive Recasting",
+    "secondary_pattern_names": [
+      "Modular Pipeline Composition",
+      "Inject Structural Inductive Bias"
+    ]
+  }
+}

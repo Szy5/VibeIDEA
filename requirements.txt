@@ -20,9 +20,11 @@ faiss-cpu
 
 # HTTP
 requests
+lxml
 
 # 配置与工具
 python-dotenv
 loguru
 tqdm
 gitignore-parser
+pyarrow
